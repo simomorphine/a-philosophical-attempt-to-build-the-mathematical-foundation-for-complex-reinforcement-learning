@@ -54,11 +54,7 @@ The modern Principle of Least Action can sound deceptively abstract.
 
 We write
 
-$$
-S[\gamma]
-=
-\int_{t_0}^{t_1} L(q,\dot q,t)\,dt
-$$
+$$S[\gamma]=\int_{t_0}^{t_1} L(q,\dot q,t)\,dt$$
 
 and state that the physical trajectory is stationary with respect to variations of the action:
 
