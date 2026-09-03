@@ -282,15 +282,7 @@ It has paid the cost without reducing the debt.
 
 The complete probabilistic structure of a single decision step can therefore be represented as
 
-$$
-\boxed{
-P(A, R, I \mid \theta)
-=
-P(A)\,
-P(R \mid A, \theta)\,
-P(I \mid A, R, \theta)
-}
-$$
+$$P(A,R,I \mid \theta)=P(A)P(R \mid A,\theta)P(I \mid A,R,\theta)$$
 
 where:
 
