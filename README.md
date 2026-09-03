@@ -342,6 +342,7 @@ where
 $$
 C = \mathrm{Re}(Q)
 $$
+
 is the action cost and
 
 $$
@@ -437,13 +438,7 @@ The central hypothesis is that intelligent systems should perhaps be evaluated n
 This gives us a conceptual objective:
 
 $$
-\boxed{
-\text{Intelligence}
-=
-\text{Effective Action}
-+
-\text{Responsible Information Management}
-}
+\boxed{\mathrm{Intelligence}=\mathrm{Effective\ Action}+\mathrm{Responsible\ Information\ Management}}
 $$
 
 Or, in the language of HST:
