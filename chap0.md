@@ -1065,7 +1065,7 @@ with the coefficients and terms determined by physical theory rather than chosen
 Then a physical trajectory would satisfy something like
 
 $$
-\gamma_{*} = \operatorname*{arg\,min}_{\gamma\in\Gamma} \mathcal C[\gamma].
+\gamma_{*} = \mathrm{arg\,min}_{\gamma\in\Gamma} \mathcal C[\gamma].
 $$
 
 Classical action could emerge in one limit.
