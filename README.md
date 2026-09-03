@@ -96,7 +96,7 @@ It is the most efficient accountant imaginable.
 
 ---
 
-## The Universe as an Informational Processor
+## Emergence Phenomenon
 
 The idea that physical systems can be understood computationally or informationally provides a natural bridge toward artificial intelligence.
 
