@@ -330,9 +330,7 @@ $$
 or, in appropriate formulations,
 
 $$
-C[\gamma_{*}]
-=
-\min_\gamma C[\gamma].
+C[\gamma_{*}] = \min_\gamma C[\gamma].
 $$
 
 The quantities are not identical.
@@ -627,13 +625,7 @@ $$
 Instead of assuming that this quantity is simply a conventional distance, HST explores a decomposition of the form
 
 $$
-\boxed{
-Q(s_i,s_j)
-=
-C(s_i,s_j)
-+
-iD(s_i,s_j)
-}
+\boxed{ Q(s_i,s_j) = C(s_i,s_j) + iD(s_i,s_j)}
 $$
 
 where:
@@ -648,13 +640,7 @@ It is a mathematical device for carrying two coupled quantities in a single obje
 The corresponding geometry can then be explored through a metric-like construction such as
 
 $$
-d_\gamma(s_i,s_j)
-=
-\sqrt{
-d(s_i,s_j)^2
-+
-\gamma^2D(s_i,s_j)^2
-}.
+d_\gamma(s_i,s_j) = \sqrt{ d(s_i,s_j)^2 + \gamma^2D(s_i,s_j)^2}.
 $$
 
 The important question is not whether this particular equation is aesthetically appealing.
@@ -799,11 +785,7 @@ we ask:
 Symbolically,
 
 $$
-\boxed{
-S_{\mathrm{action}}
-\sim
-\mathcal F[\text{physical cost}]
-}
+\boxed{ S_{\mathrm{action}} \sim \mathcal F[\text{physical cost}]}
 $$
 
 in appropriate physical limits.
@@ -815,9 +797,7 @@ It could represent a particular regime in which the generalized cost reduces to 
 For example,
 
 $$
-\mathcal C
-\longrightarrow
-S
+\mathcal C \longrightarrow S
 $$
 
 under conservative classical assumptions.
@@ -825,17 +805,13 @@ under conservative classical assumptions.
 Meanwhile, in nonequilibrium systems,
 
 $$
-\mathcal C
-\longrightarrow
-\text{dissipation / thermodynamic cost},
+\mathcal C \longrightarrow \text{dissipation / thermodynamic cost},
 $$
 
 and in information-processing systems,
 
 $$
-\mathcal C
-\longrightarrow
-\text{information-processing cost}.
+\mathcal C \longrightarrow \text{information-processing cost}.
 $$
 
 The same underlying principle would therefore manifest differently depending on the physical regime.
@@ -1073,11 +1049,7 @@ This is, in my view, the strongest form of the idea.
 The dream would be to construct something like
 
 $$
-\boxed{
-\mathcal C[\gamma]
-=
-\text{physical cost of realizing trajectory }\gamma
-}
+\boxed{ \mathcal C[\gamma] = \text{physical cost of realizing trajectory }\gamma}
 $$
 
 and derive known principles as limiting cases.
@@ -1085,16 +1057,7 @@ and derive known principles as limiting cases.
 Perhaps
 
 $$
-\mathcal C
-=
-\mathcal C_{\mathrm{energy}}
-+
-\lambda_1\mathcal C_{\mathrm{information}}
-+
-\lambda_2\mathcal C_{\mathrm{irreversibility}}
-+
-\lambda_3\mathcal C_{\mathrm{constraint}}
-+\cdots
+\mathcal C = \mathcal C_{\mathrm{energy}} + \lambda_1\mathcal C_{\mathrm{information}} + \lambda_2\mathcal C_{\mathrm{irreversibility}} + \lambda_3\mathcal C_{\mathrm{constraint}} +\cdots
 $$
 
 with the coefficients and terms determined by physical theory rather than chosen arbitrarily.
@@ -1102,10 +1065,7 @@ with the coefficients and terms determined by physical theory rather than chosen
 Then a physical trajectory would satisfy something like
 
 $$
-\gamma_*
-=
-\operatorname*{arg\,min}_{\gamma\in\Gamma}
-\mathcal C[\gamma].
+\gamma_{*} = \operatorname*{arg\,min}_{\gamma\in\Gamma} \mathcal C[\gamma].
 $$
 
 Classical action could emerge in one limit.
