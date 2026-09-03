@@ -286,10 +286,10 @@ $$P(A,R,I \mid \theta)=P(A)P(R \mid A,\theta)P(I \mid A,R,\theta)$$
 
 where:
 
-* \(A\) represents the action selected,
-* \(R\) represents the reward received,
-* \(I\) represents whether the outcome was informative,
-* \(\theta\) represents the agent's current model parameters.
+* $A$ represents the action selected,
+* $R$ represents the reward received,
+* $I$ represents whether the outcome was informative,
+* $\theta$ represents the agent's current model parameters.
 
 This factorization reveals a potentially important distinction:
 
