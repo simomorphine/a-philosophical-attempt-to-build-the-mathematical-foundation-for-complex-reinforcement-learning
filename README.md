@@ -60,10 +60,6 @@ From statistical mechanics and thermodynamics to quantum theory and information 
 
 HST explores a particular interpretation of this landscape: perhaps physical systems can be viewed as systems that continuously negotiate between **cost, information, uncertainty, coherence, and constraint**.
 
-This perspective suggests an intriguing hierarchy:
-
-> **Brownian motion → entropy → constraint → structure → coherent dynamics → effective mechanics.**
-
 The claim explored throughout this book is that what we experience as organized physical behavior may emerge from deeper processes involving the competition between disorder, information, energy, and constraint.
 
 Mechanics may therefore be viewed, from one perspective, as thermodynamics under constraint.
@@ -287,13 +283,11 @@ It has paid the cost without reducing the debt.
 The complete probabilistic structure of a single decision step can therefore be represented as
 
 $$
-P(A,R,I\mid\theta)
+P(A, R, I \mid \theta)
 =
-P(A)
-\cdot
-P(R\mid A,\theta)
-\cdot
-P(I\mid A,R,\theta),
+P(A)\,
+P(R \mid A, \theta)\,
+P(I \mid A, R, \theta).
 $$
 
 where:
