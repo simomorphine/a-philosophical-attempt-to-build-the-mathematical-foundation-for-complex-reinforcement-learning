@@ -315,7 +315,7 @@ $$
 }
 $$
 
-where \(i\) is the imaginary unit and **Debt** represents informational debt.
+where $i$ is the imaginary unit and **Debt** represents informational debt.
 
 Within HST, this complex quantity is proposed as a representation of two dimensions of intelligent action.
 
@@ -340,13 +340,12 @@ $$
 where
 
 $$
-C=\operatorname{Re}(Q)
+C = \mathrm{Re}(Q)
 $$
-
 is the action cost and
 
 $$
-D=\operatorname{Im}(Q)
+D=\mathrm{Im}(Q)
 $$
 
 is informational debt.
