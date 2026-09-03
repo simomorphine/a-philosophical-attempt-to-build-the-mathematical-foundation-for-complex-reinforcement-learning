@@ -66,7 +66,7 @@ The mathematical formalism is extraordinarily powerful.
 
 But historically, the concept of action was not introduced merely as an abstract functional.
 
-Pierre-Louis Moreau de Maupertuis associated action with ideas such as **effort, expense, and economy in nature**. The quantity he proposed was interpreted in terms of what nature “spends” in producing motion.[1](https://ar5iv.labs.arxiv.org/html/1512.05339#1#1)
+Pierre-Louis Moreau de Maupertuis associated action with ideas such as **effort, expense, and economy in nature**. The quantity he proposed was interpreted in terms of what nature “spends” in producing motion. ["1"](https://ar5iv.labs.arxiv.org/html/1512.05339#1#1)
 
 This historical interpretation is interesting for HST because it suggests that the language of **cost** is not a modern metaphor artificially imposed on mechanics.
 
