@@ -290,9 +290,7 @@ And under appropriate conditions, there exists an optimal path.
 Schematically,
 
 $$
-s_i
-\xrightarrow{\text{many possible paths}}
-s_f
+s_i \quad \overset{\text{many paths}}{\sim} \quad s_f
 $$
 
 with
@@ -306,9 +304,7 @@ $$
 The optimal trajectory satisfies something resembling
 
 $$
-\gamma_*
-=
-\arg\min_\gamma C[\gamma].
+\gamma_{*} = \arg\min_{\gamma} C[\gamma]
 $$
 
 That structure is remarkably close to the mathematical architecture of variational mechanics.
@@ -334,7 +330,7 @@ $$
 or, in appropriate formulations,
 
 $$
-C[\gamma_*]
+C[\gamma_{*}]
 =
 \min_\gamma C[\gamma].
 $$
