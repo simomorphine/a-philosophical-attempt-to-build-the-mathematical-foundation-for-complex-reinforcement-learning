@@ -297,7 +297,7 @@ This factorization reveals a potentially important distinction:
 
 Probability may therefore be whispering something to us about the deeper nature of utility.
 
-Perhaps \(R\) and \(I\) are not independent objectives.
+Perhaps $R$ and $I$ are not independent objectives.
 
 Perhaps they are projections of a deeper structure.
 
