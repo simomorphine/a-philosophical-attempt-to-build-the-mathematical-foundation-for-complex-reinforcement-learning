@@ -460,12 +460,13 @@ $$V^{*}(s) = \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a
 $$
 Q^{*}(s,a)
 =
-\sum_{s' \in \mathcal{S}}
-p(s' \mid s,a)
+\sum_{s^{\prime}\in\mathcal{S}}
+p(s^{\prime}\mid s,a)
 \left[
-r(s,a,s')
+r(s,a,s^{\prime})
 +
-\lambda \max_{a' \in \mathcal{A}} Q^{*}(s',a')
+\lambda\max_{a^{\prime}\in\mathcal{A}}
+Q^{*}(s^{\prime},a^{\prime})
 \right].
 $$
 
