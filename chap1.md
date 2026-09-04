@@ -455,9 +455,7 @@ $$
 
 **Bellman Optimality Equations:**
 
-$$
-V^{*}(s) = \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a,s') + \lambda V^{*}(s')],
-$$
+$$V^{*}(s) = \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a,s') + \lambda V^{*}(s')],$$
 
 $$
 Q^{*}(s,a) = \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a,s') + \lambda \max_{a' \in \mathcal{A}} Q^{*}(s',a')].
