@@ -877,11 +877,7 @@ the scalarisation favors the policy with lower cost and higher debt.
 For $M_2$, the break-even threshold is
 
 $$
-\mu_2^*
-=
-\frac{1 - 0}{\frac{2}{\mu} - 0}
-=
-\frac{\mu}{2}.
+\mu_2^* = \frac{1 - 0}{\frac{2}{\mu} - 0} = \frac{\mu}{2}.
 $$
 
 Since
@@ -909,18 +905,13 @@ $$
 The break-even point is obtained from
 
 $$
-C(\pi^c) + \mu D(\pi^c)
-=
-C(\pi^d) + \mu D(\pi^d).
+C(\pi^c) + \mu D(\pi^c) = C(\pi^d) + \mu D(\pi^d).
 $$
 
 Solving for $\mu$ gives
 
 $$
-\mu^*
-=
-\frac{C(\pi^d)-C(\pi^c)}
-{D(\pi^c)-D(\pi^d)}.
+\mu^* = \frac{C(\pi^d)-C(\pi^c)} {D(\pi^c)-D(\pi^d)}.
 $$
 
 Hence,
