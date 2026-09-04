@@ -4,7 +4,7 @@
 
 What if we have been looking in the wrong direction for inspiration?
 
-For decades, the field of reinforcement learning has looked to biology—to the intricate workings of animal brains, to human cognition, to the evolutionary strategies that shaped nervous systems over millions of years. This approach has yielded remarkable algorithms, from Deep Q-Networks to AlphaGo. Yet perhaps, in our fascination with the **product of evolution**, we have overlooked the evolutionary process itself—and, more fundamentally, the laws that govern that process.
+For decades, the field of artificial intelligence has looked to biology—to the intricate workings of animal brains, to human cognition, to the evolutionary strategies that shaped nervous systems over millions of years. This approach has yielded remarkable algorithms, from Deep Q-Networks to AlphaGo. Yet perhaps, in our fascination with the **product of evolution**, we have overlooked the evolutionary process itself—and, more fundamentally, the laws that govern that process.
 
 This book proposes a radical shift in perspective. Instead of building algorithms inspired primarily by human and animal intelligence, we will explore the possibility of building algorithms inspired by the universe itself—the physical system that ultimately produced matter, life, brains, and intelligence.
 
