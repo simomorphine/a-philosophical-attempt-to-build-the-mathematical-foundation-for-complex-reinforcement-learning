@@ -406,11 +406,6 @@ $$
 Q^\pi(s,a) = \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a,s') + \lambda Q^\pi(s', \pi(s'))].
 $$
 
-For a deterministic policy $\pi$, this simplifies to:
-
-$$
-Q^\pi(s,a) = \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a,s') + \lambda Q^\pi(s', \pi(s'))].
-$$
 
 **Derivation of the Bellman Equation for $V^\pi$:**
 
