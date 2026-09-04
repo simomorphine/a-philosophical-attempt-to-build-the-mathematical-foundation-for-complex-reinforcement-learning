@@ -250,7 +250,7 @@ The mathematical foundation of RL is the **Markov Decision Process (MDP)** . An 
 |-----------|--------|-------------|
 | **State Space** | $\mathcal{S}$ | A finite set of possible states the environment can be in |
 | **Action Space** | $\mathcal{A}$ | A finite set of actions the agent can take |
-| **Transition Probability** | $p(s';s,a)$ | Probability of transitioning to state $s'$ after taking action $a$ in state $s$ |
+| **Transition Probability** | $p(s'\mid s,a)$ | Probability of transitioning to state $s'$ after taking action $a$ in state $s$ |
 | **Reward Function** | $r(s,a,s')$ | Immediate numerical reward received after transitioning from $s$ to $s'$ via $a$ |
 | **Discount Factor** | $\lambda \in [0,1)$ | Determines the weight of future rewards |
 
@@ -455,17 +455,20 @@ $$
 
 **Bellman Optimality Equations:**
 
-$$V^{*}(s) = \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}} p(s'|s,a) [r(s,a,s') + \lambda V^{*}(s')],$$
+$$
+V^{*}(s) = \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}} p(s' \mid s,a) [ r(s,a,s') + \lambda V^{*}(s') ]
+$$
 
 $$
 Q^{*}(s,a)
 =
-\sum_{s^{\prime}\in\mathcal{S}}
-p(s^{\prime}\mid s,a)
+\sum_{s^{\prime} \in \mathcal{S}}
+p(s^{\prime} \mid s,a)
 \left[
 r(s,a,s^{\prime})
 +
-\lambda\max_{a^{\prime}\in\mathcal{A}}
+\lambda
+\max_{a^{\prime} \in \mathcal{A}}
 Q^{*}(s^{\prime},a^{\prime})
 \right].
 $$
