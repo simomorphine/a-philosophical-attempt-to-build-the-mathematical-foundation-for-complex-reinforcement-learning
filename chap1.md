@@ -693,44 +693,266 @@ where $\mu_i \geq 0$ are weights.
 **The Fundamental Question:** How should we choose $\mu$? There is no principled answer. The choice is often made by trial and error, or based on domain expertise—neither of which is satisfactory for autonomous agents.
 
 ---
-
 ### 1.3.2 The Free Parameter Problem
 
-**Definition 1.7 (The Free Parameter Problem).** For any $\mu > 0$, the optimal policy $\pi^*_\mu$ for the scalarised objective depends on $\mu$. There is no universal $\mu$ that yields the optimal trade-off across all environments.
+**Theorem 1.4 (The Free Parameter Problem).**
 
-**Why This Matters:**
-
-1. **Environment Dependence:** The optimal $\mu$ depends on the environment's structure—its transition probabilities, reward scales, and dynamics.
-
-2. **Scale Sensitivity:** If cost and debt have different scales, the weight must be adjusted. For example, if cost ranges from 0 to 100 and debt ranges from 0 to 1, a small $\mu$ is needed; if the ranges are reversed, a large $\mu$ is needed.
-
-3. **Task Dependence:** Different tasks within the same environment may require different weights. A task with a tight energy budget requires a different $\mu$ than a task where information is critical.
-
-4. **State Dependence:** The optimal balance may differ between early exploration (where debt is high) and late exploitation (where debt is low).
-
-5. **No Ground Truth:** There is no principled way to choose $\mu$ for a new problem. The agent cannot know the optimal $\mu$ without solving the full problem.
-
-**Theorem 1.4 (Non-Existence of Universal $\mu$).** For any fixed $\mu > 0$, there exist MDPs $\mathcal{M}_1$ and $\mathcal{M}_2$ such that the optimal policies for the scalarised objectives are different.
-
-**Proof by Construction:**
-
-Construct $\mathcal{M}_1$ with:
-- Cost range $[0, C_1]$, Debt range $[0, D_1]$ where $C_1 \gg D_1$.
-- The optimal policy for $\mu$ is the cost-minimizing policy (since cost dominates).
-
-Construct $\mathcal{M}_2$ with:
-- Cost range $[0, C_2]$, Debt range $[0, D_2]$ where $D_2 \gg C_2$.
-- The optimal policy for the same $\mu$ is the debt-minimizing policy (since debt dominates).
-
-For $\mu$ to yield the same policy in both environments, we would need:
+Let an environment be characterized by a set of feasible policies, each with cost $C(\pi) \ge 0$ and debt $D(\pi) \ge 0$. Consider the scalarised objective
 
 $$
-\mu C_1 = \mu C_2 \quad \text{and} \quad \mu D_1 = \mu D_2,
+J_\mu(\pi) = C(\pi) + \mu D(\pi),
+\qquad \mu > 0.
 $$
 
-which implies $C_1/D_1 = C_2/D_2$. This is not generally true. Therefore, no single $\mu$ works for both environments. $\square$
+Call a policy **cost-favoring** if, relative to its alternative, it has lower cost and higher debt. Call it **debt-favoring** if it has higher cost and lower debt.
 
-**Corollary 1.1.** Linear scalarisation cannot be universally optimal across all environments.
+Then:
+
+1. **Within-environment dependence.** There exists an MDP $M$ for which the optimal policy changes from cost-favoring to debt-favoring as $\mu$ varies.
+
+2. **Cross-environment inconsistency.** For every fixed $\mu > 0$, there exist two MDPs $M_1$ and $M_2$ for which the same value of $\mu$ selects opposite roles: cost-favoring in one environment and debt-favoring in the other.
+
+Consequently, the scalarisation weight $\mu$ has no environment-independent interpretation as a universal exchange rate between cost and debt.
+
+---
+
+### Proof
+
+#### (1) Within-environment dependence
+
+Consider an MDP with two feasible policies satisfying
+
+$$
+(C(\pi^c), D(\pi^c)) = (0,1),
+$$
+
+and
+
+$$
+(C(\pi^d), D(\pi^d)) = (1,0).
+$$
+
+Their scalarised objectives are
+
+$$
+J_\mu(\pi^c) = \mu,
+\qquad
+J_\mu(\pi^d) = 1.
+$$
+
+Therefore,
+
+$$
+\pi_\mu^* =
+\begin{cases}
+\pi^c, & 0 < \mu < 1, \\[4pt]
+\{\pi^c,\pi^d\}, & \mu = 1, \\[4pt]
+\pi^d, & \mu > 1.
+\end{cases}
+$$
+
+Thus, as $\mu$ crosses the break-even value
+
+$$
+\mu^* = 1,
+$$
+
+the optimal policy switches from the cost-favoring policy $\pi^c$ to the debt-favoring policy $\pi^d$.
+
+Therefore, even within a fixed environment, the effect of $\mu$ is not invariant.
+
+$$
+\boxed{\text{The optimal trade-off depends on } \mu.}
+$$
+
+---
+
+#### (2) Cross-environment inconsistency
+
+Fix an arbitrary $\mu > 0$.
+
+Construct an environment $M_1$ with two feasible policies:
+
+$$
+(C(\pi_1^c), D(\pi_1^c)) = (0,1),
+$$
+
+and
+
+$$
+(C(\pi_1^d), D(\pi_1^d)) = (2\mu,0).
+$$
+
+Then
+
+$$
+J_\mu(\pi_1^c) = \mu,
+$$
+
+while
+
+$$
+J_\mu(\pi_1^d) = 2\mu.
+$$
+
+Since $\mu > 0$,
+
+$$
+\mu < 2\mu,
+$$
+
+and therefore
+
+$$
+\pi_\mu^*(M_1) = \pi_1^c.
+$$
+
+Thus, the fixed value of $\mu$ selects the **cost-favoring** policy in $M_1$.
+
+Now construct a second environment $M_2$ with
+
+$$
+(C(\pi_2^c), D(\pi_2^c)) = \left(0,\frac{2}{\mu}\right),
+$$
+
+and
+
+$$
+(C(\pi_2^d), D(\pi_2^d)) = (1,0).
+$$
+
+Then
+
+$$
+J_\mu(\pi_2^c) = \mu \frac{2}{\mu} = 2,
+$$
+
+while
+
+$$
+J_\mu(\pi_2^d) = 1.
+$$
+
+Hence,
+
+$$
+\pi_\mu^*(M_2) = \pi_2^d.
+$$
+
+Thus, the same fixed value of $\mu$ selects the **debt-favoring** policy in $M_2$.
+
+Since $\mu > 0$ was arbitrary, for every fixed scalarisation weight there exist environments in which that same weight induces opposite qualitative trade-offs.
+
+Therefore,
+
+$$
+\boxed{
+\text{no fixed } \mu > 0
+\text{ can serve as a universal exchange rate between cost and debt.}
+}
+$$
+
+$\blacksquare$
+
+---
+
+### Why the Construction Works
+
+The two environments are constructed so that their break-even thresholds lie on opposite sides of the same fixed $\mu$.
+
+For $M_1$, the break-even threshold is
+
+$$
+\mu_1^* = \frac{2\mu - 0}{1 - 0} = 2\mu.
+$$
+
+Since
+
+$$
+\mu < \mu_1^*,
+$$
+
+the scalarisation favors the policy with lower cost and higher debt.
+
+For $M_2$, the break-even threshold is
+
+$$
+\mu_2^*
+=
+\frac{1 - 0}{\frac{2}{\mu} - 0}
+=
+\frac{\mu}{2}.
+$$
+
+Since
+
+$$
+\mu > \mu_2^*,
+$$
+
+the scalarisation favors the policy with lower debt and higher cost.
+
+Thus, the same numerical value of $\mu$ can produce opposite qualitative behavior solely because the environment changes.
+
+---
+
+### General Break-Even Threshold
+
+More generally, consider two policies $\pi^c$ and $\pi^d$ satisfying
+
+$$
+C(\pi^c) < C(\pi^d),
+\qquad
+D(\pi^c) > D(\pi^d).
+$$
+
+The break-even point is obtained from
+
+$$
+C(\pi^c) + \mu D(\pi^c)
+=
+C(\pi^d) + \mu D(\pi^d).
+$$
+
+Solving for $\mu$ gives
+
+$$
+\mu^*
+=
+\frac{C(\pi^d)-C(\pi^c)}
+{D(\pi^c)-D(\pi^d)}.
+$$
+
+Hence,
+
+$$
+\pi_\mu^* =
+\begin{cases}
+\pi^c, & \mu < \mu^*, \\[4pt]
+\pi^d, & \mu > \mu^*.
+\end{cases}
+$$
+
+Therefore, whenever two policies represent a genuine cost-debt trade-off, the preferred policy depends on the scalarisation weight.
+
+---
+
+### Conclusion
+
+The Free Parameter Problem is therefore twofold:
+
+1. **Within an environment**, changing $\mu$ can change the optimal policy.
+
+2. **Across environments**, the same $\mu$ can produce completely different trade-offs.
+
+Consequently, $\mu$ cannot be interpreted as a universal, environment-independent exchange rate between cost and debt.
+
+The issue is therefore **not scalarisation itself**, but the assumption that a single externally chosen parameter $\mu$ can universally encode the correct trade-off.
+
+### Corollary 1.1 — No Universal Scalarisation Weight
+
+No fixed scalarisation weight $\mu > 0$ can be universally optimal across all environments.
+
 
 ---
 
