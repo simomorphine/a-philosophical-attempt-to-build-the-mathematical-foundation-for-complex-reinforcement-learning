@@ -164,7 +164,6 @@ In this introductory section, we have established the core problem that motivate
 
 5. **Humble Systems Theory:** The HST Equilibrium Axiom asserts that all information processors evolve toward epistemic equilibrium—a state of zero debt. The transition from exploration to exploitation is automatic, driven by geometry.
 
-6. **A Roadmap:** This book develops the mathematical framework, algorithms, and deeper structure that arise from this simple geometric insight.
 
 ---
 
