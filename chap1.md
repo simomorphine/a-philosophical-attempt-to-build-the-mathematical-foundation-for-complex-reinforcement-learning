@@ -745,8 +745,8 @@ Therefore,
 $$
 \pi_\mu^* =
 \begin{cases}
-\pi^c, & 0 < \mu < 1, \\[4pt]
-\{\pi^c,\pi^d\}, & \mu = 1, \\[4pt]
+\pi^c, & 0 < \mu < 1, \\
+\{\pi^c,\pi^d\}, & \mu = 1, \\
 \pi^d, & \mu > 1.
 \end{cases}
 $$
@@ -919,8 +919,8 @@ Hence,
 $$
 \pi_\mu^* =
 \begin{cases}
-\pi^c, & \mu < \mu^*, \\[4pt]
-\pi^d, & \mu > \mu^*.
+\pi^c & \mu < \mu^* \\
+\pi^d & \mu > \mu^*
 \end{cases}
 $$
 
