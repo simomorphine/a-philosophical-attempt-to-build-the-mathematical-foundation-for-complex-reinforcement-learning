@@ -147,45 +147,10 @@ The HST Equilibrium Axiom implies a remarkable property: **the transition from e
 
 No exploration schedule is required. No entropy bonus is needed. No annealing of $\epsilon$ is necessary. The geometry of $\mathbb{C}$ does the work.
 
----
-
-### 1.1.5 What This Book Is About
-
-This book is about the consequences of taking the geometry of cost and debt seriously. We will:
-
-1. **Develop the geometric foundation:** Belief spaces, energy quasi-metrics, the debt function, the complex quasi-metric, and equilibrium concepts. (Chapters 2-7)
-
-2. **Build complex-valued reinforcement learning algorithms:** The Complex MDP (cMDP), Bellman evaluation (proven contraction), Bellman optimality (the central open problem), policy gradients in the complex plane, and the Complex Natural Actor-Critic (CNAC) algorithm. (Chapters 8-12)
-
-3. **Explore deeper structure:** Harmonic analysis of the gradient flow, Kähler geometry and the Bergman conjecture, epistemic equilibrium and the HST Axiom, and the open problems that define the frontier. (Chapters 13-16)
-
-**Key Results We Will Prove:**
-
-- **Evaluation Contraction (Chapter 9):** The Bellman evaluation operator $T^\pi$ is a $\lambda$-contraction on the Banach space of complex value functions.
-
-- **Telescoping Identity (Chapter 9):** Under the potential difference form, the imaginary $Q$-value telescopes to a closed-form expression. When interpreted as negative entropy, this becomes discounted cumulative mutual information.
-
-- **Policy Gradient Theorem (Chapter 11):** The gradient of the complex expected return is given by a REINFORCE-style identity.
-
-- **Lyapunov Function (Chapter 14):** Under the HST Equilibrium Axiom, $|Q|^2$ is a Lyapunov function.
-
-**Open Problems We Will Identify:**
-
-1. **Contraction of the Optimality Operator:** Is the Bellman optimality operator $T$ a contraction? The geometric obstruction is identified; the Bergman Conjecture proposes a resolution.
-
-2. **Existence and Uniqueness:** Does $Q^* = TQ^*$ have a unique solution?
-
-3. **Convergence of Q-Learning:** Does complex Q-learning converge?
-
-4. **Convergence of CNAC:** Does the CNAC algorithm converge?
-
-5. **Kähler Condition:** When is the Hermitian Fisher metric Kähler?
-
-6. **Physics Connections:** Can we formulate a statistical mechanics of learning?
 
 ---
 
-### 1.1.6 Summary of Section 1.1
+### 1.1.5 Summary of Section 1.1
 
 In this introductory section, we have established the core problem that motivates this book:
 
@@ -203,7 +168,7 @@ In this introductory section, we have established the core problem that motivate
 
 ---
 
-### 1.1.7 Exercises for Section 1.1
+### 1.1.6 Exercises for Section 1.1
 
 **Exercise 1.1 (Cost vs. Debt).** Give three real-world examples of systems that face both cost and debt. For each, identify:
 - What constitutes real cost ($c$)
@@ -224,7 +189,7 @@ In this introductory section, we have established the core problem that motivate
 
 ---
 
-### 1.1.8 Further Reading for Section 1.1
+### 1.1.7 Further Reading for Section 1.1
 
 - Sutton, R. S. & Barto, A. G. (2018). *Reinforcement Learning: An Introduction*, 2nd ed. MIT Press. — The standard textbook on RL, covering the scalar reward assumption and its limitations.
 
