@@ -250,7 +250,7 @@ The mathematical foundation of RL is the **Markov Decision Process (MDP)** . An 
 |-----------|--------|-------------|
 | **State Space** | $\mathcal{S}$ | A finite set of possible states the environment can be in |
 | **Action Space** | $\mathcal{A}$ | A finite set of actions the agent can take |
-| **Transition Probability** | $p(s'\|s,a)$ | Probability of transitioning to state $s'$ after taking action $a$ in state $s$ |
+| **Transition Probability** | $p(s';s,a)$ | Probability of transitioning to state $s'$ after taking action $a$ in state $s$ |
 | **Reward Function** | $r(s,a,s')$ | Immediate numerical reward received after transitioning from $s$ to $s'$ via $a$ |
 | **Discount Factor** | $\lambda \in [0,1)$ | Determines the weight of future rewards |
 
