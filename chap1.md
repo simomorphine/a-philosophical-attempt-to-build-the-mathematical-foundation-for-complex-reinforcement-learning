@@ -119,7 +119,7 @@ $$
      (Epistemic equilibrium: zero debt, minimal cost)
 ```
 
-*Figure 1.1: Trajectory in the cost-debt plane. The agent starts with high debt (uncertainty) and moves toward the origin as it gathers information and minimizes cost. The path is determined by the geometry of $\mathbb{C}$, not by external parameters.*
+*Figure 1.1: Trajectory in the cost-debt plane. The agent starts with high debt (uncertainty) and moves toward the origin as it gathers information and minimizes cost. The path is determined by the geometry of* $\mathbb{C}$, *not by external parameters.*
 
 This simple example illustrates the core idea: the geometry of the complex plane provides the balance between cost and debt. No weighting parameter is required.
 
