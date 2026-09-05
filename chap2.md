@@ -1370,13 +1370,13 @@ $$
 
 **Uniform Distribution on 4 Outcomes:**
 
-\( X \in \{1, 2, 3, 4\} \) with \( p(x) = 1/4 \) for all \( x \).
+$X \in {1, 2, 3, 4}$ with $p(x) = 1/4$ for all $x$.
 
 $$
 H(X) = -4 \cdot \frac{1}{4} \log \frac{1}{4} = \log 4 \approx 1.386 \text{ nats (or 2 bits)}
 $$
 
-**Definition 2.13 (Differential Entropy — Continuous).** For a continuous random variable \( X \) with probability density function \( f(x) \), the **differential entropy** is:
+**Definition 2.13 (Differential Entropy — Continuous).** For a continuous random variable $X$ with probability density function $f(x)$, the **differential entropy** is:
 
 $$
 H(X) = -\int_{\mathcal{X}} f(x) \log f(x) \, dx
@@ -1392,11 +1392,11 @@ $$
 H(X) = -\int_0^a \frac{1}{a} \log \frac{1}{a} \, dx = \log a
 $$
 
-- If \( a < 1 \), \( H(X) < 0 \) (negative differential entropy).
-- If \( a = 1 \), \( H(X) = 0 \).
-- If \( a > 1 \), \( H(X) > 0 \).
+- If $a < 1$, $H(X) < 0$ (negative differential entropy).
+- If $a = 1$, $H(X) = 0$.
+- If $a > 1$, $H(X) > 0$.
 
-**Normal Distribution \( \mathcal{N}(\mu, \sigma^2) \):**
+**Normal Distribution $\mathcal{N}(\mu, \sigma^2)$:**
 
 $$
 H(X) = \frac{1}{2} \log(2\pi e \sigma^2)
@@ -1406,46 +1406,46 @@ $$
 
 ### 2.6.3 Joint Entropy and Conditional Entropy
 
-**Definition 2.14 (Joint Entropy).** For two discrete random variables \( X \) and \( Y \) with joint distribution \( p(x,y) \), the **joint entropy** is:
+**Definition 2.14 (Joint Entropy).** For two discrete random variables $X$ and $Y$ with joint distribution $p(x,y)$, the **joint entropy** is:
 
 $$
 H(X, Y) = -\sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} p(x,y) \log p(x,y)
 $$
 
-**Interpretation:** Joint entropy measures the total uncertainty associated with the pair \( (X, Y) \).
+**Interpretation:** Joint entropy measures the total uncertainty associated with the pair $(X, Y)$.
 
-**Definition 2.15 (Conditional Entropy).** For random variables \( X \) and \( Y \) with joint distribution \( p(x,y) \), the **conditional entropy** of \( X \) given \( Y \) is:
+**Definition 2.15 (Conditional Entropy).** For random variables $X$ and $Y$ with joint distribution $p(x,y)$, the **conditional entropy** of $X$ given $Y$ is:
 
 $$
 H(X \mid Y) = \mathbb{E}_Y[H(X \mid Y=y)] = -\sum_{x,y} p(x,y) \log p(x \mid y)
 $$
 
-**Interpretation:** \( H(X \mid Y) \) is the expected uncertainty about \( X \) after observing \( Y \). It measures the remaining uncertainty in \( X \) given knowledge of \( Y \).
+**Interpretation:** $H(X \mid Y)$ is the expected uncertainty about $X$ after observing $Y$. It measures the remaining uncertainty in $X$ given knowledge of $Y$.
 
 **Properties of Conditional Entropy:**
 
-1. **Non-Negativity:** \( H(X \mid Y) \geq 0 \).
+1. **Non-Negativity:** $H(X \mid Y) \geq 0$.
 
-2. **Chain Rule:** \( H(X, Y) = H(X) + H(Y \mid X) = H(Y) + H(X \mid Y) \).
+2. **Chain Rule:** $H(X, Y) = H(X) + H(Y \mid X) = H(Y) + H(X \mid Y)$.
 
-3. **Reduction of Entropy:** \( H(X \mid Y) \leq H(X) \) with equality iff \( X \) and \( Y \) are independent.
+3. **Reduction of Entropy:** $H(X \mid Y) \leq H(X)$ with equality iff $X$ and $Y$ are independent.
 
-4. **Conditioning Reduces Entropy:** \( H(X \mid Y, Z) \leq H(X \mid Y) \).
+4. **Conditioning Reduces Entropy:** $H(X \mid Y, Z) \leq H(X \mid Y)$.
 
 **Example 2.14 (Conditional Entropy).**
 
-Let \( X \) be the outcome of a fair coin toss, and \( Y \) be a perfect observation of \( X \). Then:
-- \( H(X) = \log 2 \approx 0.693 \) nats
-- \( H(X \mid Y) = 0 \) (no uncertainty remains after observing \( Y \))
+Let $X$ be the outcome of a fair coin toss, and $Y$ be a perfect observation of $X$. Then:
+- $H(X) = \log 2 \approx 0.693$ nats
+- $H(X \mid Y) = 0$ (no uncertainty remains after observing $Y$)
 
-Let \( X \) be the outcome of a fair coin toss, and \( Y \) be independent noise. Then:
-- \( H(X \mid Y) = H(X) = \log 2 \) (observing \( Y \) provides no information)
+Let $X$ be the outcome of a fair coin toss, and $Y$ be independent noise. Then:
+- $H(X \mid Y) = H(X) = \log 2$ (observing $Y$ provides no information)
 
 ---
 
 ### 2.6.4 Mutual Information
 
-**Definition 2.16 (Mutual Information).** The **mutual information** between random variables \( X \) and \( Y \) is:
+**Definition 2.16 (Mutual Information).** The **mutual information** between random variables $X$ and $Y$ is:
 
 $$
 I(X; Y) = H(X) - H(X \mid Y) = H(Y) - H(Y \mid X)
@@ -1473,15 +1473,15 @@ $$
 
 **Properties of Mutual Information:**
 
-1. **Non-Negativity:** \( I(X; Y) \geq 0 \), with equality iff \( X \) and \( Y \) are independent.
+1. **Non-Negativity:** $I(X; Y) \geq 0$, with equality iff $X$ and $Y$ are independent.
 
-2. **Symmetry:** \( I(X; Y) = I(Y; X) \).
+2. **Symmetry:** $I(X; Y) = I(Y; X)$.
 
-3. **Chain Rule:** \( I(X_1, X_2; Y) = I(X_1; Y) + I(X_2; Y \mid X_1) \).
+3. **Chain Rule:** $I(X_1, X_2; Y) = I(X_1; Y) + I(X_2; Y \mid X_1)$.
 
-4. **Data Processing Inequality:** If \( X \to Y \to Z \) forms a Markov chain, then \( I(X; Z) \leq I(X; Y) \).
+4. **Data Processing Inequality:** If $X \to Y \to Z \) forms a Markov chain, then \( I(X; Z) \leq I(X; Y)$.
 
-5. **Relation to Correlation:** \( I(X; Y) = 0 \) iff \( X \) and \( Y \) are independent (stronger than zero correlation).
+5. **Relation to Correlation:** $I(X; Y) = 0$ iff $X$ and $Y$ are independent (stronger than zero correlation).
 
 **Interpretation:** Mutual information measures the amount of information one random variable provides about another. It is the reduction in uncertainty about $X$ after observing $Y$ (or vice versa).
 
@@ -1509,7 +1509,7 @@ $$
 
 ### 2.6.5 Relative Entropy (KL Divergence)
 
-**Definition 2.17 (Kullback-Leibler Divergence).** The **KL divergence** (or **relative entropy**) between two probability distributions \( p \) and \( q \) on the same alphabet \( \mathcal{X} \) is:
+**Definition 2.17 (Kullback-Leibler Divergence).** The **KL divergence** (or **relative entropy**) between two probability distributions $p$ and $q$ on the same alphabet $\mathcal{X}$ is:
 
 $$
 D_{\text{KL}}(p \parallel q) = \sum_{x \in \mathcal{X}} p(x) \log \frac{p(x)}{q(x)}
@@ -1517,7 +1517,7 @@ $$
 
 **Properties of KL Divergence:**
 
-1. **Non-Negativity:** \( D_{\text{KL}}(p \parallel q) \geq 0 \), with equality iff \( p = q \).
+1. **Non-Negativity:** $D_{\text{KL}}(p \parallel q) \geq 0$, with equality iff $p = q$.
 
 2. **Not a Metric:** KL divergence is not symmetric and does not satisfy the triangle inequality.
 
