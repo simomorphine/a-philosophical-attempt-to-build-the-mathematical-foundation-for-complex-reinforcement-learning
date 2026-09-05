@@ -1580,21 +1580,21 @@ $$
 
 ### 2.6.9 Exercises for Section 2.6
 
-**Exercise 2.21 (Computing Entropy).** Let \( X \) be a random variable taking values in \( \{1, 2, 3, 4\} \) with probabilities \( [0.1, 0.2, 0.3, 0.4] \). Compute:
-1. \( H(X) \)
+**Exercise 2.21 (Computing Entropy).** Let $X$ be a random variable taking values in ${1, 2, 3, 4}$ with probabilities $[0.1, 0.2, 0.3, 0.4]$. Compute:
+1. $H(X)$
 2. The maximum possible entropy for a 4-outcome variable
 3. The minimum possible entropy
 
-**Exercise 2.22 (Conditional Entropy).** Let \( X \in \{0,1\} \) be fair, and let \( Y \) be a noisy observation of \( X \) such that \( P(Y = X) = 0.8 \) and \( P(Y \neq X) = 0.2 \). Compute:
-1. \( H(X) \)
-2. \( H(X \mid Y) \)
-3. \( I(X; Y) \)
+**Exercise 2.22 (Conditional Entropy).** Let $X \in \{0,1\}$ be fair, and let $Y$ be a noisy observation of $X$ such that $P(Y = X) = 0.8$ and $P(Y \neq X) = 0.2$. Compute:
+1. $H(X)$
+2. $H(X \mid Y)$
+3. $I(X; Y)$
 
-**Exercise 2.23 (Mutual Information).** Prove that \( I(X; Y) \geq 0 \) with equality iff \( X \) and \( Y \) are independent. *Hint: Use the KL divergence formulation or Jensen's inequality.*
+**Exercise 2.23 (Mutual Information).** Prove that $I(X; Y) \geq 0$ with equality iff $X$ and $Y$ are independent. *Hint: Use the KL divergence formulation or Jensen's inequality.*
 
-**Exercise 2.24 (KL Divergence).** Let \( p \) be a Bernoulli distribution with \( p(1) = 0.8 \), and \( q \) with \( q(1) = 0.6 \). Compute \( D_{\text{KL}}(p \parallel q) \) and \( D_{\text{KL}}(q \parallel p) \). Are they equal?
+**Exercise 2.24 (KL Divergence).** Let $p$ be a Bernoulli distribution with $p(1) = 0.8$, and $q$ with $q(1) = 0.6$. Compute $D_{\text{KL}}(p \parallel q)$ and $D_{\text{KL}}(q \parallel p)$. Are they equal?
 
-**Exercise 2.25 (Chain Rule).** Prove the chain rule for entropy: \( H(X, Y) = H(X) + H(Y \mid X) \). Use the definitions of joint and conditional entropy.
+**Exercise 2.25 (Chain Rule).** Prove the chain rule for entropy: $H(X, Y) = H(X) + H(Y \mid X)$. Use the definitions of joint and conditional entropy.
 
 ---
 
