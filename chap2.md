@@ -2035,11 +2035,11 @@ $$
 
 **Examples of Contractions:**
 
-| Space            | Map                                          | Contraction Factor |      |               |   |   |
-| ---------------- | -------------------------------------------- | ------------------ | ---- | ------------- | - | - |
-| $\mathbb{R}$     | $T(x) = x/2$                                 | $\lambda = 1/2$    |      |               |   |   |
-| $\mathbb{R}$     | $T(x) = ax + b$ with $                       | a                  | < 1$ | $\lambda =    | a | $ |
-| $\mathcal{B}(X)$ | $(Tf)(x) = \int k(x,y) f(y) , dy$ with $\int | k                  | < 1$ | $\lambda < 1$ |   |   |
+| Space | Map | Contraction Factor |
+| --- | --- | --- |
+| $\mathbb{R}$ | $T(x) = x/2$ | $\lambda = 1/2$ |
+| $\mathbb{R}$ | $T(x) = ax + b$ with $\lvert a \rvert < 1$ | $\lambda = \lvert a \rvert$ |
+| $\mathcal{B}(X)$ | $(Tf)(x) = \int k(x,y)f(y)\,dy$ with $\sup_x \int \lvert k(x,y) \rvert\,dy < 1$ | $\lambda < 1$ |
 
 **Example 2.22 (A Simple Contraction).**
 
