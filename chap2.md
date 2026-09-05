@@ -100,21 +100,23 @@ where:
 **Arithmetic Operations:**
 
 1. **Addition:**
+   
 $$
 (a + ib) + (c + id) = (a + c) + i(b + d)
 $$
 
-2. **Subtraction:**
+3. **Subtraction:**
+   
 $$
 (a + ib) - (c + id) = (a - c) + i(b - d)
 $$
 
-3. **Multiplication:**
+5. **Multiplication:**
 $$
 (a + ib)(c + id) = (ac - bd) + i(ad + bc)
 $$
 
-4. **Division:**
+6. **Division:**
 $$
 \frac{a + ib}{c + id} = \frac{(a + ib)(c - id)}{(c + id)(c - id)} = \frac{(ac + bd) + i(bc - ad)}{c^2 + d^2}
 $$
