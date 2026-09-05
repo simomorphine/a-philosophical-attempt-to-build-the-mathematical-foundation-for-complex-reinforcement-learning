@@ -176,11 +176,11 @@ $$
 Verify properties:
 
 $$
-z + \bar{z} = 6 = 2\operatorname{Re}(z)
+z + \bar{z} = 6 = 2\mathrm{Re}(z)
 $$
 
 $$
-z - \bar{z} = 8i = 2i\operatorname{Im}(z)
+z - \bar{z} = 8i = 2i\mathrm{Im}(z)
 $$
 
 $$
@@ -205,7 +205,7 @@ $$
 \cos \theta = \frac{a}{|z|}, \quad \sin \theta = \frac{b}{|z|}
 $$
 
-The **principal argument** is $\operatorname{Arg}(z) \in (-\pi, \pi]$.
+The **principal argument** is $\mathrm{Arg}(z) \in (-\pi, \pi]$.
 
 **Properties of the Modulus:**
 
