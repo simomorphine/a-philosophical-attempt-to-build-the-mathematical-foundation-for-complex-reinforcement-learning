@@ -1948,9 +1948,9 @@ Define $d(x,y)$ as the minimum cost of a directed path from $x$ to $y$. Compute:
 
 Functional analysis provides the mathematical framework for studying spaces of functions and operators on those spaces. In reinforcement learning, value functions are functions on state-action spaces, and the Bellman operators are mappings on these function spaces. To prove convergence of RL algorithms, we need tools from functional analysis:
 
-- **Banach spaces:** Complete normed vector spaces where value functions live.
-- **Contraction mappings:** Operators that shrink distances, guaranteeing convergence.
-- **The Banach fixed-point theorem:** The cornerstone of convergence proofs in RL.
+* **Banach spaces:** Complete normed vector spaces where value functions live.
+* **Contraction mappings:** Operators that shrink distances, guaranteeing convergence.
+* **The Banach fixed-point theorem:** The cornerstone of convergence proofs in RL.
 
 This section introduces these concepts, which will be essential for proving the evaluation contraction in Chapter 9 and understanding the optimality obstruction (OP1).
 
@@ -1958,28 +1958,28 @@ This section introduces these concepts, which will be essential for proving the 
 
 ## 2.8.2 Normed Vector Spaces
 
-**Definition 2.29 (Normed Vector Space).** A **normed vector space** is a vector space \( X \) over \( \mathbb{R} \) or \( \mathbb{C} \) equipped with a **norm** \( \|\cdot\|: X \to \mathbb{R}_{\geq 0} \) satisfying:
+**Definition 2.29 (Normed Vector Space).** A **normed vector space** is a vector space $X$ over $\mathbb{R}$ or $\mathbb{C}$ equipped with a **norm** $|\cdot|: X \to \mathbb{R}_{\geq 0}$ satisfying:
 
-1. **Positive Definiteness:** \( \|x\| = 0 \) if and only if \( x = 0 \).
+1. **Positive Definiteness:** $|x| = 0$ if and only if $x = 0$.
 
-2. **Homogeneity:** \( \|\alpha x\| = |\alpha| \|x\| \) for all scalars \( \alpha \) and \( x \in X \).
+2. **Homogeneity:** $|\alpha x| = |\alpha| |x|$ for all scalars $\alpha$ and $x \in X$.
 
-3. **Triangle Inequality:** \( \|x + y\| \leq \|x\| + \|y\| \) for all \( x, y \in X \).
+3. **Triangle Inequality:** $|x + y| \leq |x| + |y|$ for all $x, y \in X$.
 
 **Examples of Normed Spaces:**
 
-| Space | Norm | Description |
-|-------|------|-------------|
-| \( \mathbb{R}^n \) | \( \|x\|_2 = \sqrt{\sum_i x_i^2} \) | Euclidean norm |
-| \( \mathbb{R}^n \) | \( \|x\|_\infty = \max_i |x_i| \) | Supremum norm |
-| \( \mathcal{B}(X, \mathbb{C}) \) | \( \|f\|_\infty = \sup_{x \in X} |f(x)| \) | Supremum norm on bounded functions |
-| \( L^p(\Omega) \) | \( \|f\|_p = (\int_\Omega |f|^p)^{1/p} \) | \( L^p \) norm |
+| Space                        | Norm                          | Description    |            |                                    |
+| ---------------------------- | ----------------------------- | -------------- | ---------- | ---------------------------------- |
+| $\mathbb{R}^n$               | $|x|_2 = \sqrt{\sum_i x_i^2}$ | Euclidean norm |            |                                    |
+| $\mathbb{R}^n$               | $|x|_\infty = \max_i          | x_i            | $          | Supremum norm                      |
+| $\mathcal{B}(X, \mathbb{C})$ | $|f|*\infty = \sup*{x \in X}  | f(x)           | $          | Supremum norm on bounded functions |
+| $L^p(\Omega)$                | $|f|*p = (\int*\Omega         | f              | ^p)^{1/p}$ | $L^p$ norm                         |
 
-**Definition 2.30 (The Supremum Norm).** For a bounded function \( f: X \to \mathbb{C} \), the **supremum norm** (or **uniform norm**) is:
+**Definition 2.30 (The Supremum Norm).** For a bounded function $f: X \to \mathbb{C}$, the **supremum norm** (or **uniform norm**) is:
 
-\[
+$$
 \|f\|_\infty = \sup_{x \in X} |f(x)|
-\]
+$$
 
 **Interpretation:** The supremum norm measures the maximum absolute value of a function. It is the natural norm for value functions in RL because it provides uniform convergence guarantees.
 
@@ -1987,37 +1987,37 @@ This section introduces these concepts, which will be essential for proving the 
 
 ## 2.8.3 Banach Spaces
 
-**Definition 2.31 (Banach Space).** A **Banach space** is a complete normed vector space. That is, every Cauchy sequence in \( X \) converges to a limit in \( X \).
+**Definition 2.31 (Banach Space).** A **Banach space** is a complete normed vector space. That is, every Cauchy sequence in $X$ converges to a limit in $X$.
 
 **Completeness Intuition:** A space is complete if sequences that "should" converge (Cauchy sequences) actually converge to a point in the space. This property is essential for the Banach fixed-point theorem.
 
 **Examples of Banach Spaces:**
 
-1. \( \mathbb{R}^n \) with any norm (Euclidean, supremum, etc.).
+1. $\mathbb{R}^n$ with any norm (Euclidean, supremum, etc.).
 
-2. \( \mathcal{B}(X, \mathbb{C}) \): The space of bounded complex-valued functions on \( X \) with the supremum norm. This is a Banach space.
+2. $\mathcal{B}(X, \mathbb{C})$: The space of bounded complex-valued functions on $X$ with the supremum norm. This is a Banach space.
 
-3. \( L^p(\Omega) \): The space of \( p \)-integrable functions on \( \Omega \) with the \( L^p \) norm. This is a Banach space for \( p \geq 1 \).
+3. $L^p(\Omega)$: The space of $p$-integrable functions on $\Omega$ with the $L^p$ norm. This is a Banach space for $p \geq 1$.
 
-4. \( \mathcal{A}^2(\Omega) \): The Bergman space of holomorphic functions on \( \Omega \) with the \( L^2 \) norm. This is a Banach space (indeed, a Hilbert space).
+4. $\mathcal{A}^2(\Omega)$: The Bergman space of holomorphic functions on $\Omega$ with the $L^2$ norm. This is a Banach space (indeed, a Hilbert space).
 
-**Definition 2.32 (Action-Value Function Space).** For a finite MDP with state space \( \mathcal{S} \) and action space \( \mathcal{A} \), define:
+**Definition 2.32 (Action-Value Function Space).** For a finite MDP with state space $\mathcal{S}$ and action space $\mathcal{A}$, define:
 
-\[
+$$
 \mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C})
-\]
+$$
 
 This is the Banach space of bounded complex action-value functions with the supremum norm:
 
-\[
+$$
 \|Q\|_\infty = \sup_{(s,a) \in \mathcal{S} \times \mathcal{A}} |Q(s,a)|
-\]
+$$
 
 **Why This Space?**
 
-1. **Completeness:** \( \mathcal{Q} \) is complete, so fixed-point theorems apply.
+1. **Completeness:** $\mathcal{Q}$ is complete, so fixed-point theorems apply.
 
-2. **Boundedness:** Value functions in finite MDPs are bounded (rewards are bounded, and \( \lambda < 1 \)).
+2. **Boundedness:** Value functions in finite MDPs are bounded (rewards are bounded, and $\lambda < 1$).
 
 3. **Uniform Convergence:** The supremum norm ensures uniform convergence guarantees.
 
@@ -2025,82 +2025,89 @@ This is the Banach space of bounded complex action-value functions with the supr
 
 ## 2.8.4 Contraction Mappings
 
-**Definition 2.33 (Contraction).** Let \( (X, d) \) be a metric space. A map \( T: X \to X \) is a **\( \lambda \)-contraction** if there exists \( \lambda \in [0, 1) \) such that:
+**Definition 2.33 (Contraction).** Let $(X, d)$ be a metric space. A map $T: X \to X$ is a **$\lambda$-contraction** if there exists $\lambda \in [0, 1)$ such that:
 
-\[
+$$
 d(Tx, Ty) \leq \lambda \, d(x, y) \quad \forall x, y \in X
-\]
+$$
 
-**Interpretation:** A contraction shrinks distances between points by a factor of at least \( \lambda \). Repeated application of a contraction brings points closer together.
+**Interpretation:** A contraction shrinks distances between points by a factor of at least $\lambda$. Repeated application of a contraction brings points closer together.
 
 **Examples of Contractions:**
 
-| Space | Map | Contraction Factor |
-|-------|-----|-------------------|
-| \( \mathbb{R} \) | \( T(x) = x/2 \) | \( \lambda = 1/2 \) |
-| \( \mathbb{R} \) | \( T(x) = ax + b \) with \( |a| < 1 \) | \( \lambda = |a| \) |
-| \( \mathcal{B}(X) \) | \( (Tf)(x) = \int k(x,y) f(y) \, dy \) with \( \int |k| < 1 \) | \( \lambda < 1 \) |
+| Space            | Map                                          | Contraction Factor |      |               |   |   |
+| ---------------- | -------------------------------------------- | ------------------ | ---- | ------------- | - | - |
+| $\mathbb{R}$     | $T(x) = x/2$                                 | $\lambda = 1/2$    |      |               |   |   |
+| $\mathbb{R}$     | $T(x) = ax + b$ with $                       | a                  | < 1$ | $\lambda =    | a | $ |
+| $\mathcal{B}(X)$ | $(Tf)(x) = \int k(x,y) f(y) , dy$ with $\int | k                  | < 1$ | $\lambda < 1$ |   |   |
 
 **Example 2.22 (A Simple Contraction).**
 
-Let \( T: \mathbb{R} \to \mathbb{R} \) be defined by \( T(x) = x/2 + 1 \).
+Let $T: \mathbb{R} \to \mathbb{R}$ be defined by $T(x) = x/2 + 1$.
 
-For any \( x, y \in \mathbb{R} \):
+For any $x, y \in \mathbb{R}$:
 
-\[
+$$
 |T(x) - T(y)| = \left| \frac{x}{2} + 1 - \frac{y}{2} - 1 \right| = \frac{|x - y|}{2}
-\]
+$$
 
-So \( T \) is a \( \lambda \)-contraction with \( \lambda = 1/2 \).
+So $T$ is a $\lambda$-contraction with $\lambda = 1/2$.
 
 ---
 
 ## 2.8.5 The Banach Fixed-Point Theorem
 
-**Theorem 2.12 (Banach Fixed-Point Theorem).** Let \( (X, d) \) be a complete metric space, and let \( T: X \to X \) be a \( \lambda \)-contraction. Then:
+**Theorem 2.12 (Banach Fixed-Point Theorem).** Let $(X, d)$ be a complete metric space, and let $T: X \to X$ be a $\lambda$-contraction. Then:
 
-1. **Existence:** \( T \) has a unique fixed point \( x^* \in X \) such that \( T(x^*) = x^* \).
+1. **Existence:** $T$ has a unique fixed point $x^* \in X$ such that $T(x^*) = x^*$.
 
-2. **Convergence:** For any \( x_0 \in X \), the sequence \( x_{n+1} = T(x_n) \) converges to \( x^* \).
+2. **Convergence:** For any $x_0 \in X$, the sequence $x_{n+1} = T(x_n)$ converges to $x^*$.
 
-3. **Error Bound:** For all \( n \geq 0 \):
+3. **Error Bound:** For all $n \geq 0$:
 
-\[
+$$
 d(x_n, x^*) \leq \frac{\lambda^n}{1 - \lambda} d(x_0, x^*)
-\]
+$$
 
 **Proof Sketch:**
 
-1. **Cauchy Sequence:** Show that \( (x_n) \) is Cauchy:
-   \[
-   d(x_{n+1}, x_n) \leq \lambda^n d(x_1, x_0)
-   \]
-   For \( m > n \), by triangle inequality:
-   \[
-   d(x_m, x_n) \leq \sum_{k=n}^{m-1} \lambda^k d(x_1, x_0) \leq \frac{\lambda^n}{1 - \lambda} d(x_1, x_0) \to 0
-   \]
+1. **Cauchy Sequence:** Show that $(x_n)$ is Cauchy:
 
-2. **Completeness:** Since \( X \) is complete, \( x_n \to x^* \in X \).
+$$
+d(x_{n+1}, x_n) \leq \lambda^n d(x_1, x_0)
+$$
 
-3. **Fixed Point:** By continuity of \( T \):
-   \[
-   T(x^*) = T(\lim_{n \to \infty} x_n) = \lim_{n \to \infty} T(x_n) = \lim_{n \to \infty} x_{n+1} = x^*
-   \]
+For $m > n$, by triangle inequality:
 
-4. **Uniqueness:** If \( x^* \) and \( y^* \) are fixed points:
-   \[
-   d(x^*, y^*) = d(T(x^*), T(y^*)) \leq \lambda d(x^*, y^*)
-   \]
-   Since \( \lambda < 1 \), this implies \( d(x^*, y^*) = 0 \), so \( x^* = y^* \).
+$$
+d(x_m, x_n) \leq \sum_{k=n}^{m-1} \lambda^k d(x_1, x_0) \leq \frac{\lambda^n}{1 - \lambda} d(x_1, x_0) \to 0
+$$
+
+2. **Completeness:** Since $X$ is complete, $x_n \to x^* \in X$.
+
+3. **Fixed Point:** By continuity of $T$:
+
+$$
+T(x^*) = T(\lim_{n \to \infty} x_n) = \lim_{n \to \infty} T(x_n) = \lim_{n \to \infty} x_{n+1} = x^*
+$$
+
+4. **Uniqueness:** If $x^*$ and $y^*$ are fixed points:
+
+$$
+d(x^*, y^*) = d(T(x^*), T(y^*)) \leq \lambda d(x^*, y^*)
+$$
+
+Since $\lambda < 1$, this implies $d(x^*, y^*) = 0$, so $x^* = y^*$.
 
 5. **Error Bound:** Follows from the Cauchy sequence bound:
-   \[
-   d(x_n, x^*) \leq \frac{\lambda^n}{1 - \lambda} d(x_0, x^*)
-   \]
+
+$$
+d(x_n, x^*) \leq \frac{\lambda^n}{1 - \lambda} d(x_0, x^*)
+$$
 
 **Visual Interpretation:**
 
-```
+```text
     x₀ → x₁ → x₂ → x₃ → ... → x*
     
     Each step reduces the distance to x* by factor λ.
@@ -2111,45 +2118,45 @@ d(x_n, x^*) \leq \frac{\lambda^n}{1 - \lambda} d(x_0, x^*)
 
 ## 2.8.6 Application: Bellman Evaluation Contraction
 
-**Definition 2.34 (Bellman Evaluation Operator — Complex Case).** For a fixed policy \( \pi \), the Bellman evaluation operator is:
+**Definition 2.34 (Bellman Evaluation Operator — Complex Case).** For a fixed policy $\pi$, the Bellman evaluation operator is:
 
-\[
+$$
 (T^\pi Q)(s,a) = \sum_{s' \in \mathcal{S}} p(s' \mid s,a) \left[ z(s,a,s') + \lambda Q(s', \pi(s')) \right]
-\]
+$$
 
-where \( z(s,a,s') = c(s,a,s') + i d(s,a,s') \) is the complex utility.
+where $z(s,a,s') = c(s,a,s') + i d(s,a,s')$ is the complex utility.
 
-**Theorem 2.13 (Evaluation Contraction).** \( T^\pi \) is a \( \lambda \)-contraction on \( (\mathcal{Q}, \|\cdot\|_\infty) \).
+**Theorem 2.13 (Evaluation Contraction).** $T^\pi$ is a $\lambda$-contraction on $(\mathcal{Q}, |\cdot|_\infty)$.
 
 **Proof:**
 
-For any \( Q_1, Q_2 \in \mathcal{Q} \) and any \( (s,a) \):
+For any $Q_1, Q_2 \in \mathcal{Q}$ and any $(s,a)$:
 
-\[
+$$
 |(T^\pi Q_1)(s,a) - (T^\pi Q_2)(s,a)| = \left| \sum_{s'} p(s' \mid s,a) \lambda \left[ Q_1(s', \pi(s')) - Q_2(s', \pi(s')) \right] \right|
-\]
+$$
 
 By the triangle inequality:
 
-\[
+$$
 \leq \lambda \sum_{s'} p(s' \mid s,a) |Q_1(s', \pi(s')) - Q_2(s', \pi(s'))|
-\]
+$$
 
-Since \( |Q_1(s', \pi(s')) - Q_2(s', \pi(s'))| \leq \|Q_1 - Q_2\|_\infty \):
+Since $|Q_1(s', \pi(s')) - Q_2(s', \pi(s'))| \leq |Q_1 - Q_2|_\infty$:
 
-\[
+$$
 \leq \lambda \|Q_1 - Q_2\|_\infty \sum_{s'} p(s' \mid s,a) = \lambda \|Q_1 - Q_2\|_\infty
-\]
+$$
 
-Taking the supremum over \( (s,a) \):
+Taking the supremum over $(s,a)$:
 
-\[
+$$
 \|T^\pi Q_1 - T^\pi Q_2\|_\infty \leq \lambda \|Q_1 - Q_2\|_\infty
-\]
+$$
 
-Since \( \lambda \in [0,1) \), \( T^\pi \) is a \( \lambda \)-contraction. \( \square \)
+Since $\lambda \in [0,1)$, $T^\pi$ is a $\lambda$-contraction. $\square$
 
-**Corollary 2.2 (Existence and Uniqueness of \( Q^\pi \)).** By the Banach fixed-point theorem, \( T^\pi \) has a unique fixed point \( Q^\pi \in \mathcal{Q} \), and value iteration converges to \( Q^\pi \) from any starting point.
+**Corollary 2.2 (Existence and Uniqueness of $Q^\pi$).** By the Banach fixed-point theorem, $T^\pi$ has a unique fixed point $Q^\pi \in \mathcal{Q}$, and value iteration converges to $Q^\pi$ from any starting point.
 
 ---
 
@@ -2157,66 +2164,57 @@ Since \( \lambda \in [0,1) \), \( T^\pi \) is a \( \lambda \)-contraction. \( \s
 
 **Definition 2.35 (Bellman Optimality Operator — Complex Case).** The Bellman optimality operator is:
 
-\[
+$$
 (TQ)(s,a) = \sum_{s' \in \mathcal{S}} p(s' \mid s,a) \left[ z(s,a,s') + \lambda Q(s', \pi_Q(s')) \right]
-\]
+$$
 
 where:
 
-\[
+$$
 \pi_Q(s') = \arg\min_{a' \in \mathcal{A}} |Q(s', a')|
-\]
+$$
 
 **The Obstruction:**
 
 The standard contraction proof fails because:
 
-1. \( \mathbb{C} \) is not totally ordered.
+1. $\mathbb{C}$ is not totally ordered.
 
-2. The modulus-greedy selector \( \arg\min_a |Q(s,a)| \) is discontinuous in general.
+2. The modulus-greedy selector $\arg\min_a |Q(s,a)|$ is discontinuous in general.
 
-3. The inequality \( \left| \min_a |f(a)| - \min_a |g(a)| \right| \leq \max_a |f(a) - g(a)| \) does NOT hold in \( \mathbb{C} \).
+3. The inequality $\left| \min_a |f(a)| - \min_a |g(a)| \right| \leq \max_a |f(a) - g(a)|$ does NOT hold in $\mathbb{C}$.
 
 **Counterexample to the Inequality:**
 
-Let \( f(a) = 1 \) for all \( a \), and \( g(a) = -1 \) for all \( a \).
+Let $f(a) = 1$ for all $a$, and $g(a) = -1$ for all $a$.
 
 Then:
-- \( \min_a |f(a)| = 1 \)
-- \( \min_a |g(a)| = 1 \)
-- So \( |\min |f| - \min |g|| = 0 \)
 
-Now let \( f(1) = 1 \), \( f(2) = -1 \), and \( g(1) = -1 \), \( g(2) = 1 \).
+* $\min_a |f(a)| = 1$
+* $\min_a |g(a)| = 1$
+* So $|\min |f| - \min |g|| = 0$
 
-Then:
-- \( \min_a |f(a)| = 1 \)
-- \( \min_a |g(a)| = 1 \)
-- So \( |\min |f| - \min |g|| = 0 \)
-
-But consider the case where the minima occur at different actions:
-
-Let \( f(1) = 1, f(2) = 2 \), and \( g(1) = 2, g(2) = 1 \).
+Now let $f(1) = 1$, $f(2) = -1$, and $g(1) = -1$, $g(2) = 1$.
 
 Then:
-- \( \min_a |f(a)| = 1 \) (at \( a = 1 \))
-- \( \min_a |g(a)| = 1 \) (at \( a = 2 \))
-- So \( |\min |f| - \min |g|| = 0 \)
+
+* $\min_a |f(a)| = 1$
+* $\min_a |g(a)| = 1$
+* So $|\min |f| - \min |g|| = 0$
 
 The inequality fails when the minima are at different actions and the value of the other action differs significantly.
 
 **The Contraction Gap:**
 
-The contraction gap is:
-
-\[
+$$
 \|TQ_1 - TQ_2\|_\infty \leq \lambda \|Q_1 - Q_2\|_\infty + O\left( \left\|\frac{\partial Q}{\partial \bar{z}}\right\|_\infty \right)
-\]
+$$
 
-The gap is zero when \( Q \) is holomorphic (\( \partial Q/\partial \bar{z} = 0 \)).
+The gap is zero when $Q$ is holomorphic ($\partial Q/\partial \bar{z} = 0$).
 
 **Connection to OP1 (Contraction of Optimality Operator):**
 
-The central open problem is whether the Bellman optimality operator \( T \) is a contraction on some subspace of \( \mathcal{Q} \). The Bergman conjecture proposes that \( T \) is a contraction on the Bergman space \( \mathcal{A}^2(\Omega) \) of holomorphic functions.
+The central open problem is whether the Bellman optimality operator $T$ is a contraction on some subspace of $\mathcal{Q}$. The Bergman conjecture proposes that $T$ is a contraction on the Bergman space $\mathcal{A}^2(\Omega)$ of holomorphic functions.
 
 ---
 
@@ -2226,37 +2224,40 @@ The central open problem is whether the Bellman optimality operator \( T \) is a
 
 2. **Banach Space:** Complete normed vector space.
 
-3. **Action-Value Function Space:** \( \mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C}) \) with supremum norm.
+3. **Action-Value Function Space:** $\mathcal{Q} = \mathcal{B}(\mathcal{S} \times \mathcal{A}, \mathbb{C})$ with supremum norm.
 
-4. **Contraction:** \( \|T(x) - T(y)\| \leq \lambda \|x - y\| \) with \( \lambda < 1 \).
+4. **Contraction:** $|T(x) - T(y)| \leq \lambda |x - y|$ with $\lambda < 1$.
 
 5. **Banach Fixed-Point Theorem:** Every contraction on a complete metric space has a unique fixed point.
 
-6. **Bellman Evaluation:** \( T^\pi \) is a \( \lambda \)-contraction, guaranteeing convergence of policy evaluation.
+6. **Bellman Evaluation:** $T^\pi$ is a $\lambda$-contraction, guaranteeing convergence of policy evaluation.
 
-7. **Bellman Optimality:** The standard contraction proof fails in \( \mathbb{C} \) due to the lack of total order and the discontinuity of the modulus-greedy selector.
+7. **Bellman Optimality:** The standard contraction proof fails in $\mathbb{C}$ due to the lack of total order and the discontinuity of the modulus-greedy selector.
 
-8. **The Obstruction:** The non-holomorphic component \( \partial Q/\partial \bar{z} \) causes the contraction gap.
+8. **The Obstruction:** The non-holomorphic component $\partial Q/\partial \bar{z}$ causes the contraction gap.
 
 ---
 
 ## 2.8.9 Exercises for Section 2.8
 
-**Exercise 2.31 (Normed Space Verification).** Verify that \( \|f\|_\infty = \sup_{x \in X} |f(x)| \) satisfies the three properties of a norm:
+**Exercise 2.31 (Normed Space Verification).** Verify that $|f|*\infty = \sup*{x \in X} |f(x)|$ satisfies the three properties of a norm:
+
 1. Positive definiteness
 2. Homogeneity
 3. Triangle inequality
 
-**Exercise 2.32 (Contraction Verification).** Show that \( T(x) = 0.5x + 3 \) is a contraction on \( \mathbb{R} \). What is the contraction factor? What is the fixed point?
+**Exercise 2.32 (Contraction Verification).** Show that $T(x) = 0.5x + 3$ is a contraction on $\mathbb{R}$. What is the contraction factor? What is the fixed point?
 
-**Exercise 2.33 (Banach Fixed-Point Theorem).** Let \( T(x) = \cos(x) \) on \( \mathbb{R} \). Show that \( T \) is a contraction on \( [0, 1] \). Find the fixed point to three decimal places. *(Hint: Use the mean value theorem and the fact that \( |\sin x| \leq 1 \).)*
+**Exercise 2.33 (Banach Fixed-Point Theorem).** Let $T(x) = \cos(x)$ on $\mathbb{R}$. Show that $T$ is a contraction on $[0, 1]$. Find the fixed point to three decimal places. *(Hint: Use the mean value theorem and the fact that $|\sin x| \leq 1$.)*
 
-**Exercise 2.34 (Bellman Evaluation Contraction).** For the Bellman evaluation operator \( T^\pi \), prove the contraction property step by step. Show that:
-\[
+**Exercise 2.34 (Bellman Evaluation Contraction).** For the Bellman evaluation operator $T^\pi$, prove the contraction property step by step. Show that:
+
+$$
 \|T^\pi Q_1 - T^\pi Q_2\|_\infty \leq \lambda \|Q_1 - Q_2\|_\infty
-\]
+$$
 
-**Exercise 2.35 (The Obstruction).** Explain in your own words why the standard contraction proof fails for the Bellman optimality operator in the complex case. What is the role of the non-holomorphic component \( \partial Q/\partial \bar{z} \)?
+**Exercise 2.35 (The Obstruction).** Explain in your own words why the standard contraction proof fails for the Bellman optimality operator in the complex case. What is the role of the non-holomorphic component $\partial Q/\partial \bar{z}$?
+
 
 ---
 
