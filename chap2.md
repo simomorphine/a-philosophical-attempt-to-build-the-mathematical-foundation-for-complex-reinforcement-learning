@@ -88,14 +88,14 @@ where:
 - $i = \sqrt{-1}$ is the imaginary unit, satisfying $i^2 = -1$
 
 **Terminology:**
-- $\operatorname{Re}(z) = a$ is the **real part**
-- $\operatorname{Im}(z) = b$ is the **imaginary part** (a real number!)
+- $\mathrm{Re}(z) = a$ is the **real part**
+- $\mathrm{Im}(z) = b$ is the **imaginary part** (a real number!)
 
 **Examples:**
-- $z = 3 + 4i$: $\operatorname{Re}(z) = 3$, $\operatorname{Im}(z) = 4$
-- $z = -2 + i$: $\operatorname{Re}(z) = -2$, $\operatorname{Im}(z) = 1$
-- $z = 5$: $\operatorname{Re}(z) = 5$, $\operatorname{Im}(z) = 0$ (purely real)
-- $z = 3i$: $\operatorname{Re}(z) = 0$, $\operatorname{Im}(z) = 3$ (purely imaginary)
+- $z = 3 + 4i$: $\mathrm{Re}(z) = 3$, $\mathrm{Im}(z) = 4$
+- $z = -2 + i$: $\mathrm{Re}(z) = -2$, $\mathrm{Im}(z) = 1$
+- $z = 5$: $\mathrm{Re}(z) = 5$, $\mathrm{Im}(z) = 0$ (purely real)
+- $z = 3i$: $\mathrm{Re}(z) = 0$, $\mathrm{Im}(z) = 3$ (purely imaginary)
 
 **Arithmetic Operations:**
 
