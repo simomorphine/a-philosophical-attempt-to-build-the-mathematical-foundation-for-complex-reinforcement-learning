@@ -1407,10 +1407,10 @@ The modulus $|z|$ is a convex function in the cost-debt plane. This ensures that
 
 Consider three actions with different cost-debt trade-offs but the same modulus:
 
-| Action | Cost $c$ | Debt $d$ | $|z|$ |
-|--------|----------|----------|-------|
-| $\pi_1$ | 5 | 0 | 5 |
-| $\pi_2$ | 3 | 4 | 5 |
+| Action | Cost $c$ | Debt $d$ | $|z|$ | \\
+|--------|----------|----------|-------| \\
+| $\pi_1$ | 5 | 0 | 5 | \\
+| $\pi_2$ | 3 | 4 | 5 | \\
 | $\pi_3$ | 4 | 3 | 5 |
 
 All three actions have the same $|z| = 5$ but different cost-debt trade-offs. The geometry selects the action with the most favorable trade-off for the current situation. As the agent learns, the optimal point on the Pareto frontier shifts, and the geometry automatically tracks it.
