@@ -1325,20 +1325,20 @@ This section provides a refresher on the core concepts of information theory tha
 
 ### 2.6.2 Entropy
 
-**Definition 2.12 (Entropy — Discrete).** For a discrete random variable \( X \) taking values in \( \mathcal{X} \) with probability mass function \( p(x) = P(X = x) \), the **entropy** is:
+**Definition 2.12 (Entropy — Discrete).** For a discrete random variable $X$ taking values in $\mathcal{X}$ with probability mass function $p(x) = P(X = x)$, the **entropy** is:
 
 $$
 H(X) = -\sum_{x \in \mathcal{X}} p(x) \log p(x)
 $$
 
-where we define \( 0 \log 0 = 0 \).
+where we define $0 \log 0 = 0$.
 
 **Base of the Logarithm:**
 
 | Base | Unit |
 |------|------|
 | 2 | Bits |
-| \( e \) | Nats |
+| $e$ | Nats |
 | 10 | Dits (or Hartleys) |
 
 In this book, we use **nats** (natural logarithm) unless otherwise specified, as they are mathematically convenient for calculus.
@@ -1347,26 +1347,26 @@ In this book, we use **nats** (natural logarithm) unless otherwise specified, as
 
 **Properties of Entropy:**
 
-1. **Non-Negativity:** \( H(X) \geq 0 \) for all discrete \( X \).
+1. **Non-Negativity:** $H(X) \geq 0$ for all discrete $X$.
 
-2. **Maximum Entropy:** For a random variable with \( |\mathcal{X}| = n \) possible values, \( H(X) \leq \log n \), with equality when \( X \) is uniformly distributed.
+2. **Maximum Entropy:** For a random variable with $\|\mathcal{X}\| = n$ possible values, $H(X) \leq \log n$, with equality when $X$ is uniformly distributed.
 
-3. **Minimum Entropy:** \( H(X) = 0 \) if and only if \( X \) is deterministic (takes a single value with probability 1).
+3. **Minimum Entropy:** $H(X) = 0$ if and only if $X$ is deterministic (takes a single value with probability 1).
 
-4. **Concavity:** \( H(X) \) is a concave function of the probability distribution \( p \).
+4. **Concavity:** $H(X)$ is a concave function of the probability distribution $p$.
 
 5. **Invariance:** Entropy depends only on the probabilities, not on the actual values of the outcomes.
 
 **Example 2.12 (Computing Entropy).**
 
-**Coin Toss (Bernoulli):** \( X \in \{0, 1\} \) with \( P(X=1) = p \).
+**Coin Toss (Bernoulli):** $X \in \{0, 1\}$ with $P(X=1) = p$.
 
 $$
 H(X) = -p \log p - (1-p) \log(1-p)
 $$
 
-- If \( p = 0.5 \): \( H(X) = \log 2 \approx 0.693 \) nats (or 1 bit)
-- If \( p = 0 \) or \( p = 1 \): \( H(X) = 0 \) (deterministic)
+- If $p = 0.5$ : $H(X) = \log 2 \approx 0.693$ nats (or 1 bit)
+- If $p = 0$ or $p = 1$ : $H(X) = 0$ (deterministic)
 
 **Uniform Distribution on 4 Outcomes:**
 
