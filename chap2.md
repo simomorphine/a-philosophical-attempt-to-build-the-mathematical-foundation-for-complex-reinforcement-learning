@@ -1618,5 +1618,327 @@ $$
 - Gray, R. M. (2011). *Entropy and Information Theory*, 2nd ed. Springer. — A concise treatment of information theory.
 
 ---
+# 2.7 Geometry and Topology
+
+## 2.7.1 Introduction
+
+Geometry and topology provide the mathematical language for understanding the structure of spaces, distances, and continuity. In the complex framework, we need concepts that go beyond standard metric spaces because the cost of moving between states is inherently asymmetric—going from state $s$ to state $s'$ may cost more (or be impossible) compared to going back.
+
+This section introduces the key geometric and topological concepts that will be used in Chapters ??:
+
+* **Metric spaces:** The standard notion of distance.
+* **Quasi-metrics:** Asymmetric distances that capture irreversible costs.
+* **Forward and backward balls:** Asymmetric neighborhoods.
+* **Bitopological spaces:** Spaces with two topologies (forward and backward).
+* **Symmetrization:** Converting quasi-metrics into genuine metrics.
+
+---
+
+## 2.7.2 Metric Spaces
+
+**Definition 2.18 (Metric Space).** A **metric space** is a set $X$ equipped with a function $d: X \times X \to \mathbb{R}_{\geq 0}$ (the **metric** or **distance**) satisfying:
+
+1. **Identity of Indiscernibles:** $d(x,y) = 0$ if and only if $x = y$.
+
+2. **Symmetry:** $d(x,y) = d(y,x)$ for all $x, y \in X$.
+
+3. **Triangle Inequality:** $d(x,z) \leq d(x,y) + d(y,z)$ for all $x, y, z \in X$.
+
+**Examples of Metric Spaces:**
+
+| Space          | Metric                                 | Description        |   |                               |
+| -------------- | -------------------------------------- | ------------------ | - | ----------------------------- |
+| $\mathbb{R}$   | $d(x,y) =                              | x - y              | $ | Absolute value                |
+| $\mathbb{R}^n$ | $d(x,y) = \sqrt{\sum_i (x_i - y_i)^2}$ | Euclidean distance |   |                               |
+| $\mathbb{R}^n$ | $d(x,y) = \max_i                       | x_i - y_i          | $ | Supremum (Chebyshev) distance |
+| $\mathbb{R}^n$ | $d(x,y) = \sum_i                       | x_i - y_i          | $ | Manhattan (L1) distance       |
+| Function space | $d(f,g) = \sup_x                       | f(x) - g(x)        | $ | Supremum norm                 |
+
+**Definition 2.19 (Open Ball).** In a metric space $(X, d)$, the **open ball** centered at $x \in X$ with radius $\epsilon > 0$ is:
+
+$$
+B(x, \epsilon) = \{ y \in X \mid d(x,y) < \epsilon \}
+$$
+
+**Definition 2.20 (Topology Induced by a Metric).** A metric $d$ induces a topology on $X$ where the open sets are unions of open balls. This topology satisfies the standard separation axioms (Hausdorff, normal, etc.).
+
+---
+
+## 2.7.3 Quasi-Metrics
+
+In many real-world situations, distance is not symmetric. The cost of going from $x$ to $y$ may differ from the cost of going from $y$ to $x$. This is captured by **quasi-metrics**.
+
+**Definition 2.21 (Quasi-Metric).** A **quasi-metric** on a set $X$ is a function $d: X \times X \to \mathbb{R}_{\geq 0}$ satisfying:
+
+1. **Identity:** $d(x,x) = 0$ for all $x \in X$.
+
+2. **Positivity:** $d(x,y) \geq 0$ for all $x, y \in X$, with $d(x,y) > 0$ for $x \neq y$ (in the strict version).
+
+3. **Triangle Inequality:** $d(x,z) \leq d(x,y) + d(y,z)$ for all $x, y, z \in X$.
+
+4. **No Symmetry Requirement:** $d(x,y)$ may differ from $d(y,x)$.
+
+**Interpretation:** In a quasi-metric, $d(x,y)$ is the "cost" or "effort" required to go from $x$ to $y$. The lack of symmetry captures irreversible processes:
+
+* **Energy expenditure:** Moving uphill costs more than moving downhill.
+* **Time:** Going with the current is faster than going against it.
+* **Information:** Learning new information may cost more than recalling known information.
+* **Reachability:** It may be possible to go from $x$ to $y$ but impossible to go back.
+
+**Example 2.17 (Quasi-Metric on $\mathbb{R}$).**
+
+Define $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$.
+
+* $d(x,x) = 0$ ✓
+* $d(x,y) \geq 0$ ✓
+* Triangle inequality: $d(x,z) = \max{0, z-x} \leq \max{0, y-x} + \max{0, z-y} = d(x,y) + d(y,z)$ ✓
+* Not symmetric: $d(0,1) = 1$ but $d(1,0) = 0$ ✗
+
+**Interpretation:** This quasi-metric measures the "cost" of moving upward on the real line. Moving downward is free (cost 0).
+
+**Example 2.18 (Quasi-Metric on a Graph).**
+
+Consider a directed graph where each directed edge $x \to y$ has a cost $c(x,y)$. Define:
+
+$$
+d(x,y) = \text{minimum cost of a directed path from } x \text{ to } y
+$$
+
+If there is no path from $x$ to $y$, set $d(x,y) = \infty$.
+
+* Identity: $d(x,x) = 0$ (empty path).
+* Triangle inequality: follows from path concatenation.
+* Not symmetric: paths may exist in one direction but not the other.
+
+---
+
+## 2.7.4 Forward and Backward Balls
+
+In a quasi-metric space, there are two natural types of balls, corresponding to the two directions of movement.
+
+**Definition 2.22 (Forward Ball).** The **forward ball** centered at $x \in X$ with radius $\epsilon > 0$ is:
+
+$$
+B^+(x, \epsilon) = \{ y \in X \mid d(x,y) < \epsilon \}
+$$
+
+**Interpretation:** $B^+(x, \epsilon)$ is the set of points that can be reached from $x$ with cost less than $\epsilon$.
+
+**Definition 2.23 (Backward Ball).** The **backward ball** centered at $x \in X$ with radius $\epsilon > 0$ is:
+
+$$
+B^-(x, \epsilon) = \{ y \in X \mid d(y,x) < \epsilon \}
+$$
+
+**Interpretation:** $B^-(x, \epsilon)$ is the set of points that can reach $x$ with cost less than $\epsilon$.
+
+**Visualization:**
+
+```text
+Forward Ball B⁺(x, ε):         Backward Ball B⁻(x, ε):
+Points reachable from x        Points that can reach x
+  
+    *   *   *                       *   *   *
+   *  * x *  *                     *  * x *  *
+    *   *   *                       *   *   *
+```
+
+**Properties:**
+
+1. **Asymmetry:** In general, $B^+(x, \epsilon) \neq B^-(x, \epsilon)$.
+
+2. **Monotonicity:** If $\epsilon_1 < \epsilon_2$, then $B^+(x, \epsilon_1) \subseteq B^+(x, \epsilon_2)$ and similarly for backward balls.
+
+3. **Non-Empty:** $x \in B^+(x, \epsilon) \cap B^-(x, \epsilon)$ for all $\epsilon > 0$.
+
+**Example 2.19 (Forward and Backward Balls on $\mathbb{R}$).**
+
+Let $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$.
+
+* Forward ball: $B^+(x, \epsilon) = { y \mid d(x,y) < \epsilon } = { y \mid 0 \leq y - x < \epsilon } = [x, x + \epsilon)$
+
+* Backward ball: $B^-(x, \epsilon) = { y \mid d(y,x) < \epsilon } = { y \mid 0 \leq x - y < \epsilon } = (x - \epsilon, x]$
+
+So $B^+(x, \epsilon)$ is a rightward interval, while $B^-(x, \epsilon)$ is a leftward interval. The asymmetry is clear.
+
+---
+
+## 2.7.5 Bitopological Spaces
+
+A quasi-metric induces not one but **two** topologies: one from the forward balls and one from the backward balls. This leads to the concept of **bitopological spaces**.
+
+**Definition 2.24 (Bitopological Space).** A **bitopological space** is a triple $(X, \tau_+, \tau_-)$, where $X$ is a set and $\tau_+$ and $\tau_-$ are topologies on $X$.
+
+**Definition 2.25 (Topology Induced by a Quasi-Metric).** A quasi-metric $d$ on $X$ induces:
+
+* **Forward topology** $\tau_+$: generated by the forward balls $B^+(x, \epsilon)$.
+
+* **Backward topology** $\tau_-$: generated by the backward balls $B^-(x, \epsilon)$.
+
+**Properties:**
+
+1. **Not Necessarily Hausdorff:** Bitopological spaces may not be Hausdorff in either topology.
+
+2. **Dual Topologies:** $\tau_+$ and $\tau_-$ are dual in the sense that they are induced by the forward and backward directions of the quasi-metric.
+
+3. **Asymmetric Structure:** The asymmetry of the quasi-metric is reflected in the asymmetry between $\tau_+$ and $\tau_-$.
+
+**Definition 2.26 (Join Topology).** The **join topology** $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$. Its basis consists of sets of the form:
+
+$$
+B^+(x, \epsilon) \cap B^-(x, \delta)
+$$
+
+for $x \in X$ and $\epsilon, \delta > 0$.
+
+**Interpretation:** A neighborhood in the join topology requires both forward and backward proximity simultaneously. This captures bidirectional reachability—points that can both reach and be reached from $x$ within small cost.
+
+**Example 2.20 (Bitopological Structure on $\mathbb{R}$).**
+
+For $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$:
+
+* **Forward topology** $\tau_+$: Generated by intervals $[x, x + \epsilon)$. This is the **rightward** topology.
+
+* **Backward topology** $\tau_-$: Generated by intervals $(x - \epsilon, x]$. This is the **leftward** topology.
+
+* **Join topology** $\tau_+ \vee \tau_-$: Generated by intersections $[x, x + \epsilon) \cap (x - \delta, x] = (x - \delta, x + \epsilon)$. This is the standard Euclidean topology on $\mathbb{R}$.
+
+---
+
+## 2.7.6 Symmetrization of Quasi-Metrics
+
+While quasi-metrics are useful for capturing asymmetric costs, it is often convenient to symmetrize them to obtain a genuine metric.
+
+**Definition 2.27 (Average Distance).** Given a quasi-metric $d$, the **average distance** is:
+
+$$
+d_{\text{avg}}(x,y) = \frac{d(x,y) + d(y,x)}{2}
+$$
+
+**Definition 2.28 (Max Distance).** Given a quasi-metric $d$, the **max distance** is:
+
+$$
+d_{\text{max}}(x,y) = \max\{d(x,y), d(y,x)\}
+$$
+
+**Proposition 2.2 (Properties of Symmetrizations).**
+
+1. $d_{\text{avg}}$ is a genuine metric (satisfies symmetry and the triangle inequality).
+
+2. $d_{\text{max}}$ is a genuine metric.
+
+3. $d_{\text{avg}}$ and $d_{\text{max}}$ are equivalent and define the same topology.
+
+**Proof of Equivalence:**
+
+For all $x, y \in X$:
+
+$$
+d_{\text{avg}}(x,y) = \frac{d(x,y) + d(y,x)}{2} \leq \max\{d(x,y), d(y,x)\} = d_{\text{max}}(x,y)
+$$
+
+And:
+
+$$
+d_{\text{max}}(x,y) = \max\{d(x,y), d(y,x)\} \leq d(x,y) + d(y,x) = 2d_{\text{avg}}(x,y)
+$$
+
+So $d_{\text{avg}} \leq d_{\text{max}} \leq 2d_{\text{avg}}$. Therefore, the metrics are equivalent.
+
+**Example 2.21 (Symmetrization on $\mathbb{R}$).**
+
+For $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$:
+
+* $d(x,y) + d(y,x) = \max{0, y-x} + \max{0, x-y} = |x - y|$
+
+So:
+
+$$
+d_{\text{avg}}(x,y) = \frac{|x - y|}{2}
+$$
+
+$$
+d_{\text{max}}(x,y) = |x - y|
+$$
+
+Both are equivalent to the standard Euclidean metric on $\mathbb{R}$ (up to a factor of 2).
+
+---
+
+## 2.7.7 Key Takeaways
+
+1. **Metric Spaces:** Symmetric distances with triangle inequality.
+
+2. **Quasi-Metrics:** Asymmetric distances capturing irreversible costs.
+
+3. **Interpretation:** $d(x,y)$ is the cost to go from $x$ to $y$.
+
+4. **Forward Ball:** $B^+(x, \epsilon) = { y \mid d(x,y) < \epsilon }$ — points reachable from $x$.
+
+5. **Backward Ball:** $B^-(x, \epsilon) = { y \mid d(y,x) < \epsilon }$ — points that can reach $x$.
+
+6. **Bitopological Space:** $(X, \tau_+, \tau_-)$ with two topologies from forward and backward balls.
+
+7. **Join Topology:** $\tau_+ \vee \tau_-$ captures bidirectional reachability.
+
+8. **Symmetrization:** $d_{\text{avg}}$ and $d_{\text{max}}$ convert quasi-metrics to metrics.
+
+---
+
+## 2.7.9 Exercises for Section 2.7
+
+**Exercise 2.26 (Quasi-Metric Verification).** Define $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$. Verify that:
+
+1. $d(x,x) = 0$
+2. $d(x,y) \geq 0$
+3. The triangle inequality holds
+4. Symmetry fails
+
+**Exercise 2.27 (Forward and Backward Balls).** For the quasi-metric $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$:
+
+1. Compute $B^+(0, 1)$ and $B^-(0, 1)$.
+2. Compute $B^+(2, 0.5)$ and $B^-(2, 0.5)$.
+3. Show that $B^+(x, \epsilon) \cap B^-(x, \delta)$ is an open interval in the Euclidean topology.
+
+**Exercise 2.28 (Symmetrization).** For the quasi-metric $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$:
+
+1. Compute $d_{\text{avg}}(0, 1)$ and $d_{\text{max}}(0, 1)$.
+2. Compute $d_{\text{avg}}(1, 0)$ and $d_{\text{max}}(1, 0)$.
+3. Show that $d_{\text{avg}}$ and $d_{\text{max}}$ are equivalent to the Euclidean metric.
+
+**Exercise 2.29 (Quasi-Metric on a Graph).** Consider a directed graph with vertices ${A, B, C}$ and directed edges:
+
+* $A \to B$ with cost 2
+* $B \to C$ with cost 3
+* $A \to C$ with cost 5
+
+Define $d(x,y)$ as the minimum cost of a directed path from $x$ to $y$. Compute:
+
+1. $d(A, B)$, $d(B, A)$, $d(A, C)$, $d(C, A)$
+2. Verify the triangle inequality for $d(A, C) \leq d(A, B) + d(B, C)$
+3. Show that the quasi-metric is not symmetric
+
+**Exercise 2.30 (Bitopological Structure).** For the quasi-metric $d(x,y) = \max{0, y - x}$ on $\mathbb{R}$:
+
+1. Describe the forward topology $\tau_+$.
+2. Describe the backward topology $\tau_-$.
+3. Show that $\tau_+ \vee \tau_-$ is the standard Euclidean topology.
+
+---
+
+## 2.7.10 Further Reading for Section 2.7
+
+* Kelly, J. C. (1963). "Bitopological Spaces." *Proceedings of the London Mathematical Society*, 13(1):71-89. — The foundational paper on bitopological spaces.
+
+* Fletcher, P. & Lindgren, W. F. (1982). *Quasi-Uniform Spaces*. Marcel Dekker. — A comprehensive treatment of quasi-uniform and quasi-metric spaces.
+
+* Wilson, W. A. (1931). "On Quasi-Metric Spaces." *American Journal of Mathematics*, 53(3):675-684. — Early work on quasi-metrics.
+
+* Künzi, H. P. A. (2001). "Nonsymmetric Distances and Their Associated Topologies." *Handbook of the History of General Topology*, 3:853-968. — A survey of quasi-metric spaces.
+
+* Smyth, M. B. (1988). "Quasi-Uniformities: Reconciling Domains with Metric Spaces." *Lecture Notes in Computer Science*, 298:236-253. — Connections between quasi-metrics and domain theory.
+
+---
+---
 
 
