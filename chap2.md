@@ -1646,13 +1646,13 @@ This section introduces the key geometric and topological concepts that will be 
 
 **Examples of Metric Spaces:**
 
-| Space          | Metric                                 | Description        |   |                               |
-| -------------- | -------------------------------------- | ------------------ | - | ----------------------------- |
-| $\mathbb{R}$   | $d(x,y) =                              | x - y              | $ | Absolute value                |
-| $\mathbb{R}^n$ | $d(x,y) = \sqrt{\sum_i (x_i - y_i)^2}$ | Euclidean distance |   |                               |
-| $\mathbb{R}^n$ | $d(x,y) = \max_i                       | x_i - y_i          | $ | Supremum (Chebyshev) distance |
-| $\mathbb{R}^n$ | $d(x,y) = \sum_i                       | x_i - y_i          | $ | Manhattan (L1) distance       |
-| Function space | $d(f,g) = \sup_x                       | f(x) - g(x)        | $ | Supremum norm                 |
+| Space          | Metric                                 | Description                 |                            
+| -------------- | -------------------------------------- | --------------------------- | 
+| $\mathbb{R}$   | $d(x,y) = \mid x - y \mid$                       |Absolute value               | 
+| $\mathbb{R}^n$ | $d(x,y) = \sqrt{\sum_i (x_i - y_i)^2}$ | Euclidean distance          |                         
+| $\mathbb{R}^n$ | $d(x,y) = \max_i  x_i - y_i$           |Supremum (Chebyshev) distance|  
+| $\mathbb{R}^n$ | $d(x,y) = \sum_i x_i - y_i$            |Manhattan (L1) distance      | 
+| Function space | $d(f,g) = \sup_x f(x) - g(x)$          |Supremum norm                |
 
 **Definition 2.19 (Open Ball).** In a metric space $(X, d)$, the **open ball** centered at $x \in X$ with radius $\epsilon > 0$ is:
 
