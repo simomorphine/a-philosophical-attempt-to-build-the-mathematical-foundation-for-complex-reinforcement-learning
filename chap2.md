@@ -225,6 +225,7 @@ The **principal argument** is $\mathrm{Arg}(z) \in (-\pi, \pi]$.
 **Example 2.3 (Modulus and Argument).**
 
 For $z = 3 + 4i$:
+
 $$
 \|z\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
 $$
@@ -234,6 +235,7 @@ $$
 $$
 
 Verification:
+
 $$
 \cos(53.13^\circ) = 3/5, \quad \sin(53.13^\circ) = 4/5
 $$
