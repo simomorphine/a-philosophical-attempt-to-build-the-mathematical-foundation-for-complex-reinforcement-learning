@@ -1712,9 +1712,9 @@ Which action does the modulus-greedy policy select? Which action would a scalari
 
 ---
 
-## 1.6 Why Complex Numbers Are Not Arbitrary
+## 1.5 Why Complex Numbers Are Not Arbitrary
 
-### 1.6.1 The Uniqueness of the Complex Numbers
+### 1.5.1 The Uniqueness of the Complex Numbers
 
 A natural question arises: why complex numbers? Why not vectors, matrices, quaternions, or some other mathematical structure? The answer is that complex numbers are the *unique* two-dimensional structure that satisfies the properties we need.
 
@@ -1762,7 +1762,7 @@ Therefore, the only two-dimensional real algebra that is a field is $\mathbb{C}$
 
 ---
 
-### 1.6.2 Comparison with Other Representations
+### 1.5.2 Comparison with Other Representations
 
 Let us compare the complex numbers with alternative representations for encoding cost and debt.
 
@@ -1878,7 +1878,7 @@ Let us compare the complex numbers with alternative representations for encoding
 
 ---
 
-### 1.6.3 Why Complex Numbers Are Better Than Vectors
+### 1.5.3 Why Complex Numbers Are Better Than Vectors
 
 The difference between complex numbers and vectors is not merely semantic—it is structural.
 
@@ -1926,7 +1926,7 @@ Complex numbers are not just vectors with a special notation. They are a *differ
 
 ---
 
-### 1.6.4 The Geometric Meaning of Complex Operations
+### 1.5.4 The Geometric Meaning of Complex Operations
 
 The operations on complex numbers have direct geometric interpretations that are relevant to our framework:
 
@@ -1996,7 +1996,7 @@ The operations of the complex plane have *direct* interpretations in terms of co
 
 ---
 
-### 1.6.5 The Phase as a Natural Quantity
+### 1.5.5 The Phase as a Natural Quantity
 
 The phase $\theta = \arg(z)$ is not an arbitrary construction—it emerges naturally from the complex structure.
 
@@ -2033,7 +2033,7 @@ The phase $\theta = \arg(z)$ is part of the algebraic structure of the complex n
 
 ---
 
-### 1.6.6 The Role of the Modulus in a Field
+### 1.5.6 The Role of the Modulus in a Field
 
 The modulus $|z|$ plays a special role in the complex numbers because it is compatible with the field structure:
 
@@ -2070,7 +2070,7 @@ The modulus $|z|$ plays a special role in the complex numbers because it is comp
 
 ---
 
-### 1.6.7 Summary of Section 1.6
+### 1.5.7 Summary of Section 1.5
 
 In this section, we have justified the use of complex numbers as the natural framework for encoding cost and debt:
 
@@ -2092,7 +2092,7 @@ In this section, we have justified the use of complex numbers as the natural fra
 
 ---
 
-### 1.6.8 Exercises for Section 1.6
+### 1.5.8 Exercises for Section 1.5
 
 **Exercise 1.26 (Why Not Vectors?).** Explain why two-dimensional vectors $(c,d)$ are insufficient for our purposes. What operations are missing? What aspects of the complex framework cannot be reproduced with vectors?
 
@@ -2112,7 +2112,7 @@ In this section, we have justified the use of complex numbers as the natural fra
 
 ---
 
-### 1.6.9 Further Reading for Section 1.6
+### 1.5.9 Further Reading for Section 1.5
 
 - Needham, T. (1997). *Visual Complex Analysis*. Oxford University Press. — An accessible introduction to complex analysis with a geometric focus.
 
@@ -2126,9 +2126,9 @@ In this section, we have justified the use of complex numbers as the natural fra
 
 ---
 
-## 1.5 Historical Context and Related Work
+## 1.6 Historical Context and Related Work
 
-### 1.5.1 Multi-Objective Reinforcement Learning (MORL)
+### 1.6.1 Multi-Objective Reinforcement Learning (MORL)
 
 The problem of balancing multiple objectives in sequential decision-making has a long history in reinforcement learning. **Multi-Objective Reinforcement Learning (MORL)** extends classical RL to problems with vector-valued rewards.
 
@@ -2201,7 +2201,7 @@ The complex framework eliminates the need for parameters by recognizing that cos
 
 ---
 
-### 1.5.2 Information-Theoretic RL
+### 1.6.2 Information-Theoretic RL
 
 Information-theoretic approaches to RL use concepts from information theory to guide learning and decision-making.
 
@@ -2268,7 +2268,7 @@ The complex framework provides a parameter-free approach to information-theoreti
 
 ---
 
-### 1.5.3 Complex-Valued Neural Networks
+### 1.6.3 Complex-Valued Neural Networks
 
 Complex-valued neural networks (CVNNs) use complex numbers as building blocks, with applications in signal processing, quantum computing, and more recently, deep learning.
 
@@ -2311,7 +2311,7 @@ We leverage complex numbers not just for representation but for decision-making.
 
 ---
 
-### 1.5.4 Information Geometry and Natural Gradient
+### 1.6.4 Information Geometry and Natural Gradient
 
 Information geometry uses differential geometry to study probability distributions and statistical manifolds.
 
@@ -2348,7 +2348,7 @@ The complex framework has deep connections to information geometry:
 
 ---
 
-### 1.5.5 Bitopological Spaces and Asymmetric Metrics
+### 1.6.5 Bitopological Spaces and Asymmetric Metrics
 
 Bitopological spaces and asymmetric metrics provide a mathematical framework for studying systems with two topologies or asymmetric distances.
 
@@ -2386,7 +2386,7 @@ The complex framework has natural connections to bitopological spaces and asymme
 
 ---
 
-### 1.5.6 Humble Systems Theory (HST)
+### 1.6.6 Humble Systems Theory (HST)
 
 **Humble Systems Theory (HST)** is the overarching framework that unifies the complex approach to RL.
 
@@ -2414,19 +2414,10 @@ The complex framework has natural connections to bitopological spaces and asymme
 | **Information Geometry** | HST connects RL to information geometry |
 | **Bitopological Spaces** | HST provides a possible foundation in asymmetric spaces |
 
-**The HST Equilibrium Axiom:**
-
-**Axiom 1.1 (HST Equilibrium Axiom).** Every Information Processing System evolves toward epistemic equilibrium. Formally, for any system with complex value function $Q^\pi$:
-
-$$
-\lim_{t \to \infty} Q_t^{\pi^*}(S_t, A_t) = 0 \quad \text{almost surely}.
-$$
-
-This axiom is the foundational claim of the theory. It asserts that all information processors are naturally driven to balance cost and information, and that this balance point is the origin of the cost-debt plane.
 
 ---
 
-### 1.5.7 Related Mathematical Fields
+### 1.6.7 Related Mathematical Fields
 
 Several mathematical fields provide tools and insights for the complex framework:
 
@@ -2462,7 +2453,7 @@ Several mathematical fields provide tools and insights for the complex framework
 
 ---
 
-### 1.5.8 Summary of Section 1.5
+### 1.6.8 Summary of Section 1.6
 
 In this section, we have placed the complex framework in historical and intellectual context:
 
@@ -2486,7 +2477,7 @@ The complex framework is not developed in isolation—it builds on and connects 
 
 ---
 
-### 1.5.9 Exercises for Section 1.5
+### 1.6.9 Exercises for Section 1.6
 
 **Exercise 1.21 (Comparison with MORL).** Identify the key differences between the complex approach and standard MORL methods. What problems does the complex approach solve that MORL doesn't? What new challenges does it introduce?
 
@@ -2500,7 +2491,7 @@ The complex framework is not developed in isolation—it builds on and connects 
 
 ---
 
-### 1.5.10 Further Reading for Section 1.5
+### 1.6.10 Further Reading for Section 1.6
 
 **Multi-Objective RL:**
 - Roijers, D. M., Vamplew, P., Whiteson, S., & Dazeley, R. (2013). "A Survey of Multi-Objective Sequential Decision-Making." *Journal of Artificial Intelligence Research*, 48:67-113.
