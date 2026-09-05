@@ -1368,4 +1368,4 @@ Economics of Knowledge](https://arxiv.org/pdf/2603.06630)
 [Humble Machines: Attending to the Underappreciated Costs of
 Misplaced Distrust](https://arxiv.org/pdf/2208.01305v1)
 
-[here Will Be a Scientific Theory of Deep Learning](https://arxiv.org/pdf/2604.21691)
+[There Will Be a Scientific Theory of Deep Learning](https://arxiv.org/pdf/2604.21691)
