@@ -1109,11 +1109,13 @@ $$
 **Example 2.11 (Chain Rule for $|g|^2$).**
 
 Let $f(g) = |g|^2 = g\bar{g}$. Then:
+
 $$
 \frac{\partial f}{\partial g} = \bar{g}, \qquad \frac{\partial f}{\partial \bar{g}} = g
 $$
 
 Using the chain rule:
+
 $$
 \frac{\partial |g|^2}{\partial z} = \bar{g} \frac{\partial g}{\partial z} + g \frac{\partial \bar{g}}{\partial z}
 $$
@@ -1166,21 +1168,25 @@ $$
 $$
 
 From Example 2.9:
+
 $$
 \frac{\partial f}{\partial \eta} = \bar{\eta}, \qquad \frac{\partial f}{\partial \bar{\eta}} = \eta
 $$
 
 So:
+
 $$
 \frac{\partial f}{\partial \theta_j} = \bar{\eta} \frac{\partial \eta}{\partial \theta_j} + \eta \overline{\frac{\partial \eta}{\partial \theta_j}}
 $$
 
 Taking the real part:
+
 $$
 \frac{\partial f}{\partial \theta_j} = 2\mathrm{Re}\left( \bar{\eta} \frac{\partial \eta}{\partial \theta_j} \right)
 $$
 
 Summing over $j$:
+
 $$
 \nabla_\theta f = 2\mathrm{Re}\left( \bar{\eta} \nabla_\theta \eta \right)
 $$
@@ -1216,18 +1222,20 @@ $$
    - $Q_{\bar{h}}$: anti-holomorphic component ($\partial Q_{\bar{h}}/\partial z = 0$)
 
 2. The Bellman optimality operator acts on $Q$ and produces:
-   $$
-   TQ = TQ_h + TQ_{\bar{h}} + \text{cross-terms}
-   $$
 
-3. The cross-terms involve products of $Q_h$ and $Q_{\bar{h}}$, which are non-zero only when $\partial Q/\partial \bar{z} \neq 0$.
+$$
+TQ = TQ_h + TQ_{\bar{h}} + \text{cross-terms}
+$$
 
-4. The contraction gap is:
-   $$
-   \|TQ_1 - TQ_2\| = \lambda \|Q_1 - Q_2\| + O\left(\left\|\frac{\partial Q}{\partial \bar{z}}\right\|_\infty\right)
-   $$
+4. The cross-terms involve products of $Q_h$ and $Q_{\bar{h}}$, which are non-zero only when $\partial Q/\partial \bar{z} \neq 0$.
 
-5. When $Q$ is holomorphic ($\partial Q/\partial \bar{z} = 0$), the cross-terms vanish and $T$ becomes a contraction.
+5. The contraction gap is:
+
+$$
+\|TQ_1 - TQ_2\| = \lambda \|Q_1 - Q_2\| + O\left(\left\|\frac{\partial Q}{\partial \bar{z}}\right\|_\infty\right)
+$$
+
+7. When $Q$ is holomorphic ($\partial Q/\partial \bar{z} = 0$), the cross-terms vanish and $T$ becomes a contraction.
 
 **Interpretation:** The contraction gap is precisely the "non-holomorphicity" of the Q-function. This is why restricting Q-functions to the Bergman space (holomorphic functions) may resolve OP1.
 
