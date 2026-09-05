@@ -1952,7 +1952,7 @@ Functional analysis provides the mathematical framework for studying spaces of f
 * **Contraction mappings:** Operators that shrink distances, guaranteeing convergence.
 * **The Banach fixed-point theorem:** The cornerstone of convergence proofs in RL.
 
-This section introduces these concepts, which will be essential for proving the evaluation contraction in Chapter 9 and understanding the optimality obstruction (OP1).
+This section introduces these concepts, which will be essential for proving the evaluation contraction in Chapter ?? and understanding the optimality obstruction (OP1).
 
 ---
 
@@ -1968,12 +1968,12 @@ This section introduces these concepts, which will be essential for proving the 
 
 **Examples of Normed Spaces:**
 
-| Space                        | Norm                          | Description    |            |                                    |
-| ---------------------------- | ----------------------------- | -------------- | ---------- | ---------------------------------- |
-| $\mathbb{R}^n$               | $|x|_2 = \sqrt{\sum_i x_i^2}$ | Euclidean norm |            |                                    |
-| $\mathbb{R}^n$               | $|x|_\infty = \max_i          | x_i            | $          | Supremum norm                      |
-| $\mathcal{B}(X, \mathbb{C})$ | $|f|*\infty = \sup*{x \in X}  | f(x)           | $          | Supremum norm on bounded functions |
-| $L^p(\Omega)$                | $|f|*p = (\int*\Omega         | f              | ^p)^{1/p}$ | $L^p$ norm                         |
+| Space | Norm | Description |
+| --- | --- | --- |
+| $\mathbb{R}^n$ | $|x|_2 = \sqrt{\sum_i x_i^2}$ | Euclidean norm |
+| $\mathbb{R}^n$ | $|x|_\infty = \max_i |x_i|$ | Supremum norm |
+| $\mathcal{B}(X, \mathbb{C})$ | $|f|_\infty = \sup_{x \in X} |f(x)|$ | Supremum norm on bounded functions |
+| $L^p(\Omega)$ | $|f|_p = \left(\int_\Omega |f(x)|^p \, dx\right)^{1/p}$ | $L^p$ norm |
 
 **Definition 2.30 (The Supremum Norm).** For a bounded function $f: X \to \mathbb{C}$, the **supremum norm** (or **uniform norm**) is:
 
