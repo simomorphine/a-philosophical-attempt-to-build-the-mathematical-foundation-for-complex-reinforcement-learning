@@ -1498,7 +1498,7 @@ The phase $\theta$ provides a continuous measure of the exploration-exploitation
 
 Consider an agent learning a new environment:
 
-| Time | Cost $c$ | Debt $d$ | $|z|$ | $\theta$ | Interpretation |
+| Time | Cost $c$ | Debt $d$ | $\|z\|$ | $\theta$ | Interpretation |
 |------|----------|----------|-------|----------|----------------|
 | $t=0$ | 1 | 10 | 10.05 | 84.3° | Mostly exploration |
 | $t=10$ | 3 | 5 | 5.83 | 59.0° | Exploring, some cost |
