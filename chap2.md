@@ -531,7 +531,7 @@ In later chapters, we will consider the space of holomorphic Q-functions on a bo
 
 **Why This Matters:**
 
-If we can show that the Bellman optimality operator $T$ maps a compact convex set of holomorphic Q-functions into itself, then Schauder's theorem guarantees the existence of a fixed point $Q^*$. This would resolve **OP2** (Existence and Uniqueness) in the affirmative.
+If we can show that the Bellman optimality operator $T$ maps a compact convex set of holomorphic Q-functions into itself, then Schauder's theorem guarantees the existence of a fixed point $Q^*$. This would resolve (Existence and Uniqueness of the Bellman operator) in the affirmative.
 
 **The Challenge:**
 
@@ -561,7 +561,7 @@ The Bergman conjecture:
 
 **The Open Question:**
 
-Is $T$ a contraction (strictly reducing the distance between functions), or merely a continuous map with a fixed point? The compactness of the domain suggests that contraction may hold, but this remains an open problem (OP1).
+Is $T$ a contraction (strictly reducing the distance between functions), or merely a continuous map with a fixed point? The compactness of the domain suggests that contraction may hold, but this remains an open problem.
 
 ---
 
