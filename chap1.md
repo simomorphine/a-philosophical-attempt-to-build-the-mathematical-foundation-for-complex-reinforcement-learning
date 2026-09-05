@@ -1793,7 +1793,7 @@ Let us compare the complex numbers with alternative representations for encoding
 |--------|----------------------|
 | **Addition** | Component-wise |
 | **Multiplication** | $(a+ib)(c+id) = (ac-bd) + i(ad+bc)$ |
-| **Distance** | Modulus $|z| = \sqrt{c^2 + d^2}$ (natural) |
+| **Distance** | Modulus $\|z\| = \sqrt{c^2 + d^2}$ (natural) |
 | **Phase** | $\theta = \arg(z)$ (meaningful) |
 | **Algebraic Structure** | Field |
 | **Analytic Functions** | Rich theory (holomorphic functions, conformal maps) |
