@@ -1,3 +1,30 @@
+## A Note on the Nature of This Work
+
+This work, **“A Humble Philosophical Attempt to Build the Mathematical Foundation for Complex-Valued Reinforcement Learning,”** should **not** be interpreted as a finished scientific discovery, a validated theory, or a complete AI paradigm.
+
+This repository is primarily **my way of learning, exploring, and thinking**. I collect ideas, mathematical formulations, experiments, and references that may help me better understand the subject and, potentially, build a foundation for future work.
+
+I may be **completely wrong about some — or even most — of what is presented here**. The ideas should therefore be treated as exploratory hypotheses and learning material rather than established scientific facts.
+
+### AI Collaboration
+
+This work has been developed in collaboration with **DeepSeek**, which has contributed to the exploration, discussion, development, and refinement of ideas throughout the process.
+
+### Contribution
+
+At the present stage, **I am the sole human contributor to this work**.
+
+### Intellectual Property and Collaboration
+
+This work is subject to **copyright and applicable intellectual-property protections**, including efforts to protect certain aspects through patent-related processes where applicable.
+
+If you find these ideas useful, build upon them, or incorporate concepts from this work into your own research, **please cite the original work appropriately and engage in fair attribution and collaboration**.
+
+At the same time, **collaboration is genuinely welcomed**. If you see an error, a weakness, a better formulation, or a promising direction, I would much rather hear about it than have the idea remain unchallenged.
+
+**This is an invitation to explore, criticize, improve, and build — not a claim of having found the final answer.**
+---
+
 # Introduction
 
 ## The Whisper Chain: From Universe to Algorithm
