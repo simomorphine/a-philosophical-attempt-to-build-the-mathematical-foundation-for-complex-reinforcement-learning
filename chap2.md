@@ -1455,21 +1455,21 @@ $$
 
 1. **In Terms of Joint Distribution:**
 
-   $$
-   I(X; Y) = \sum_{x,y} p(x,y) \log \frac{p(x,y)}{p(x)p(y)}
-   $$
+$$
+I(X; Y) = \sum_{x,y} p(x,y) \log \frac{p(x,y)}{p(x)p(y)}
+$$
 
 3. **In Terms of KL Divergence:**
 
-   $$
-   I(X; Y) = D_{\text{KL}}(p(x,y) \parallel p(x)p(y))
-   $$
+$$
+I(X; Y) = D_{\text{KL}}(p(x,y) \parallel p(x)p(y))
+$$
 
 4. **In Terms of Entropies:**
 
-   $$
-   I(X; Y) = H(X) + H(Y) - H(X, Y)
-   $$
+$$
+I(X; Y) = H(X) + H(Y) - H(X, Y)
+$$
 
 **Properties of Mutual Information:**
 
