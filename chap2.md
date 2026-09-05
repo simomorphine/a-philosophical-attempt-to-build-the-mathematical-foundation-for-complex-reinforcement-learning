@@ -1291,7 +1291,7 @@ The proof will be developed in Chapter 11.
 
 **Exercise 2.18 (Gradient of Squared Modulus).** Let $\eta(\theta) = \theta^2 + i\theta$ for $\theta \in \mathbb{R}$. Compute $\nabla_\theta |\eta(\theta)|^2$ using:
 1. Direct differentiation (treat $\theta$ as real)
-2. The Wirtinger formula: $\nabla_\theta |\eta|^2 = 2\operatorname{Re}(\bar{\eta} \nabla_\theta \eta)$
+2. The Wirtinger formula: $\nabla_\theta |\eta|^2 = 2\mathrm{Re}(\bar{\eta} \nabla_\theta \eta)$
 
 Verify that both methods give the same result.
 
