@@ -1386,7 +1386,7 @@ $$
 
 **Example 2.13 (Differential Entropy).**
 
-**Uniform Distribution on \( [0, a] \):** \( f(x) = 1/a \) for \( x \in [0, a] \).
+**Uniform Distribution on \( [0, a] \):** $f(x) = 1/a$ for $x \in [0, a]$.
 
 $$
 H(X) = -\int_0^a \frac{1}{a} \log \frac{1}{a} \, dx = \log a
@@ -1479,7 +1479,7 @@ $$
 
 3. **Chain Rule:** $I(X_1, X_2; Y) = I(X_1; Y) + I(X_2; Y \mid X_1)$.
 
-4. **Data Processing Inequality:** If $X \to Y \to Z \) forms a Markov chain, then \( I(X; Z) \leq I(X; Y)$.
+4. **Data Processing Inequality:** If $X \to Y \to Z$ forms a Markov chain, then $I(X; Z) \leq I(X; Y)$.
 
 5. **Relation to Correlation:** $I(X; Y) = 0$ iff $X$ and $Y$ are independent (stronger than zero correlation).
 
@@ -1521,11 +1521,11 @@ $$
 
 2. **Not a Metric:** KL divergence is not symmetric and does not satisfy the triangle inequality.
 
-3. **Interpretation:** KL divergence measures the inefficiency of using \( q \) to approximate \( p \). It is the expected extra number of bits (or nats) needed when using \( q \) instead of \( p \).
+3. **Interpretation:** KL divergence measures the inefficiency of using $q$ to approximate $p$. It is the expected extra number of bits (or nats) needed when using $q$ instead of $p$.
 
 **Example 2.16 (KL Divergence).**
 
-Let \( p \) be a Bernoulli distribution with \( p(1) = 0.9, p(0) = 0.1 \), and \( q \) be a Bernoulli distribution with \( q(1) = 0.5, q(0) = 0.5 \).
+Let $p$ be a Bernoulli distribution with $p(1) = 0.9, p(0) = 0.1$, and $q$ be a Bernoulli distribution with $q(1) = 0.5, q(0) = 0.5$.
 
 $$
 D_{\text{KL}}(p \parallel q) = 0.9 \log \frac{0.9}{0.5} + 0.1 \log \frac{0.1}{0.5} \approx 0.9(0.588) + 0.1(-1.609) \approx 0.529 - 0.161 = 0.368 \text{ nats}
@@ -1536,11 +1536,13 @@ $$
 ### 2.6.6 The Chain Rule for Entropy and Mutual Information
 
 **Theorem 2.9 (Chain Rule for Entropy).**
+
 $$
 H(X_1, X_2, \ldots, X_n) = \sum_{i=1}^n H(X_i \mid X_1, \ldots, X_{i-1})
 $$
 
 **Theorem 2.10 (Chain Rule for Mutual Information).**
+
 $$
 I(X_1, X_2, \ldots, X_n; Y) = \sum_{i=1}^n I(X_i; Y \mid X_1, \ldots, X_{i-1})
 $$
@@ -1551,15 +1553,16 @@ $$
 
 ### 2.6.7 Data Processing Inequality
 
-**Theorem 2.11 (Data Processing Inequality).** If \( X \to Y \to Z \) forms a Markov chain (i.e., \( Z \) depends on \( X \) only through \( Y \)), then:
+**Theorem 2.11 (Data Processing Inequality).** If $X \to Y \to Z$ forms a Markov chain (i.e., $Z$ depends on $X$ only through $Y$), then:
 
 $$
 I(X; Z) \leq I(X; Y)
 $$
 
-**Interpretation:** Post-processing cannot increase information. Once you have observed \( Y \), any further processing \( Z = f(Y) \) cannot provide more information about \( X \) than \( Y \) already provides.
+**Interpretation:** Post-processing cannot increase information. Once you have observed $Y$, any further processing $Z = f(Y)$ cannot provide more information about $X$ than $Y$ already provides.
 
-**Corollary:** For any function \( f \):
+**Corollary:** For any function $f$:
+
 $$
 I(X; f(Y)) \leq I(X; Y)
 $$
@@ -1568,19 +1571,19 @@ $$
 
 ### 2.6.8 Key Takeaways
 
-1. **Entropy:** \( H(X) = -\sum_x p(x) \log p(x) \), measures uncertainty.
+1. **Entropy:** $H(X) = -\sum_x p(x) \log p(x)$, measures uncertainty.
 
-2. **Joint Entropy:** \( H(X, Y) \) measures total uncertainty of a pair.
+2. **Joint Entropy:** $H(X, Y)$ measures total uncertainty of a pair.
 
-3. **Conditional Entropy:** \( H(X \mid Y) \) measures remaining uncertainty after observing \( Y \).
+3. **Conditional Entropy:** $H(X \mid Y)$ measures remaining uncertainty after observing $Y$.
 
-4. **Mutual Information:** \( I(X; Y) = H(X) - H(X \mid Y) \), measures information gain.
+4. **Mutual Information:** $I(X; Y) = H(X) - H(X \mid Y)$, measures information gain.
 
-5. **KL Divergence:** \( D_{\text{KL}}(p \parallel q) = \sum_x p(x) \log(p(x)/q(x)) \), measures distance between distributions.
+5. **KL Divergence:** $D_{\text{KL}}(p \parallel q) = \sum_x p(x) \log(p(x)/q(x))$, measures distance between distributions.
 
 6. **Chain Rules:** Decompose joint entropy and mutual information into sums.
 
-7. **Data Processing Inequality:** \( I(X; Z) \leq I(X; Y) \) for Markov chains \( X \to Y \to Z \).
+7. **Data Processing Inequality:** $I(X; Z) \leq I(X; Y)$ for Markov chains $X \to Y \to Z$.
 
 ---
 
