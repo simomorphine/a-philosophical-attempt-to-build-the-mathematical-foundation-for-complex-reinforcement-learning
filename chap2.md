@@ -1201,7 +1201,7 @@ The gradient $\nabla_\theta |\eta(\theta)|^2$ points in the direction that moves
 2. Taking the real part ensures we move in the direction that reduces $|\eta|$.
 3. The factor of 2 comes from the derivative of the square.
 
-This geometric interpretation is crucial for Chapter 11, where we derive policy gradient algorithms that minimize $|Q^\pi|$.
+This geometric interpretation is crucial for Chapter ??, where we derive policy gradient algorithms that minimize $|Q^\pi|$.
 
 ---
 
@@ -1255,7 +1255,7 @@ where $\eta(\theta) = \mathbb{E}[G_t]$ is the complex expected return.
 
 This theorem uses the Wirtinger gradient formula from Theorem 2.6 and the standard REINFORCE identity for the gradient of the expected return.
 
-The proof will be developed in Chapter 11.
+The proof will be developed in Chapter ??.
 
 ---
 
@@ -1275,7 +1275,7 @@ The proof will be developed in Chapter 11.
 
 7. **Bellman Obstruction:** The non-holomorphic component $\partial Q/\partial \bar{z}$ causes the contraction gap.
 
-8. **Policy Gradients:** Wirtinger calculus enables complex policy gradients (Chapter 11).
+8. **Policy Gradients:** Wirtinger calculus enables complex policy gradients (Chapter ??).
 
 ---
 
@@ -1310,6 +1310,303 @@ Verify that both methods give the same result.
 - Remmert, R. (1991). *Theory of Complex Functions*. Springer. — Chapter 1 covers Wirtinger calculus.
 
 - Ahlfors, L. V. (1979). *Complex Analysis*, 3rd ed. McGraw-Hill. — Appendix covers Wirtinger derivatives.
+
+---
+
+## 2.6 Information Theory
+
+### 2.6.1 Introduction
+
+Information theory, founded by Claude Shannon in 1948, provides a mathematical framework for quantifying information, uncertainty, and the transmission of messages. It is fundamental to many areas of science and engineering, including communication systems, data compression, statistical inference, and machine learning.
+
+This section provides a refresher on the core concepts of information theory that will be used throughout the book. Readers familiar with these concepts may skip ahead.
+
+---
+
+### 2.6.2 Entropy
+
+**Definition 2.12 (Entropy — Discrete).** For a discrete random variable \( X \) taking values in \( \mathcal{X} \) with probability mass function \( p(x) = P(X = x) \), the **entropy** is:
+
+$$
+H(X) = -\sum_{x \in \mathcal{X}} p(x) \log p(x)
+$$
+
+where we define \( 0 \log 0 = 0 \).
+
+**Base of the Logarithm:**
+
+| Base | Unit |
+|------|------|
+| 2 | Bits |
+| \( e \) | Nats |
+| 10 | Dits (or Hartleys) |
+
+In this book, we use **nats** (natural logarithm) unless otherwise specified, as they are mathematically convenient for calculus.
+
+**Interpretation:** Entropy measures the average uncertainty or surprise associated with the outcomes of a random variable. Higher entropy means more uncertainty (more "information" is needed on average to describe the outcome).
+
+**Properties of Entropy:**
+
+1. **Non-Negativity:** \( H(X) \geq 0 \) for all discrete \( X \).
+
+2. **Maximum Entropy:** For a random variable with \( |\mathcal{X}| = n \) possible values, \( H(X) \leq \log n \), with equality when \( X \) is uniformly distributed.
+
+3. **Minimum Entropy:** \( H(X) = 0 \) if and only if \( X \) is deterministic (takes a single value with probability 1).
+
+4. **Concavity:** \( H(X) \) is a concave function of the probability distribution \( p \).
+
+5. **Invariance:** Entropy depends only on the probabilities, not on the actual values of the outcomes.
+
+**Example 2.12 (Computing Entropy).**
+
+**Coin Toss (Bernoulli):** \( X \in \{0, 1\} \) with \( P(X=1) = p \).
+
+$$
+H(X) = -p \log p - (1-p) \log(1-p)
+$$
+
+- If \( p = 0.5 \): \( H(X) = \log 2 \approx 0.693 \) nats (or 1 bit)
+- If \( p = 0 \) or \( p = 1 \): \( H(X) = 0 \) (deterministic)
+
+**Uniform Distribution on 4 Outcomes:**
+
+\( X \in \{1, 2, 3, 4\} \) with \( p(x) = 1/4 \) for all \( x \).
+
+$$
+H(X) = -4 \cdot \frac{1}{4} \log \frac{1}{4} = \log 4 \approx 1.386 \text{ nats (or 2 bits)}
+$$
+
+**Definition 2.13 (Differential Entropy — Continuous).** For a continuous random variable \( X \) with probability density function \( f(x) \), the **differential entropy** is:
+
+$$
+H(X) = -\int_{\mathcal{X}} f(x) \log f(x) \, dx
+$$
+
+**Important Note:** Differential entropy can be negative (unlike discrete entropy) and is not invariant under change of variables. It is used primarily for its relationship to mutual information, which is well-defined and non-negative.
+
+**Example 2.13 (Differential Entropy).**
+
+**Uniform Distribution on \( [0, a] \):** \( f(x) = 1/a \) for \( x \in [0, a] \).
+
+$$
+H(X) = -\int_0^a \frac{1}{a} \log \frac{1}{a} \, dx = \log a
+$$
+
+- If \( a < 1 \), \( H(X) < 0 \) (negative differential entropy).
+- If \( a = 1 \), \( H(X) = 0 \).
+- If \( a > 1 \), \( H(X) > 0 \).
+
+**Normal Distribution \( \mathcal{N}(\mu, \sigma^2) \):**
+
+$$
+H(X) = \frac{1}{2} \log(2\pi e \sigma^2)
+$$
+
+---
+
+### 2.6.3 Joint Entropy and Conditional Entropy
+
+**Definition 2.14 (Joint Entropy).** For two discrete random variables \( X \) and \( Y \) with joint distribution \( p(x,y) \), the **joint entropy** is:
+
+$$
+H(X, Y) = -\sum_{x \in \mathcal{X}} \sum_{y \in \mathcal{Y}} p(x,y) \log p(x,y)
+$$
+
+**Interpretation:** Joint entropy measures the total uncertainty associated with the pair \( (X, Y) \).
+
+**Definition 2.15 (Conditional Entropy).** For random variables \( X \) and \( Y \) with joint distribution \( p(x,y) \), the **conditional entropy** of \( X \) given \( Y \) is:
+
+$$
+H(X \mid Y) = \mathbb{E}_Y[H(X \mid Y=y)] = -\sum_{x,y} p(x,y) \log p(x \mid y)
+$$
+
+**Interpretation:** \( H(X \mid Y) \) is the expected uncertainty about \( X \) after observing \( Y \). It measures the remaining uncertainty in \( X \) given knowledge of \( Y \).
+
+**Properties of Conditional Entropy:**
+
+1. **Non-Negativity:** \( H(X \mid Y) \geq 0 \).
+
+2. **Chain Rule:** \( H(X, Y) = H(X) + H(Y \mid X) = H(Y) + H(X \mid Y) \).
+
+3. **Reduction of Entropy:** \( H(X \mid Y) \leq H(X) \) with equality iff \( X \) and \( Y \) are independent.
+
+4. **Conditioning Reduces Entropy:** \( H(X \mid Y, Z) \leq H(X \mid Y) \).
+
+**Example 2.14 (Conditional Entropy).**
+
+Let \( X \) be the outcome of a fair coin toss, and \( Y \) be a perfect observation of \( X \). Then:
+- \( H(X) = \log 2 \approx 0.693 \) nats
+- \( H(X \mid Y) = 0 \) (no uncertainty remains after observing \( Y \))
+
+Let \( X \) be the outcome of a fair coin toss, and \( Y \) be independent noise. Then:
+- \( H(X \mid Y) = H(X) = \log 2 \) (observing \( Y \) provides no information)
+
+---
+
+### 2.6.4 Mutual Information
+
+**Definition 2.16 (Mutual Information).** The **mutual information** between random variables \( X \) and \( Y \) is:
+
+$$
+I(X; Y) = H(X) - H(X \mid Y) = H(Y) - H(Y \mid X)
+$$
+
+**Alternative Formulations:**
+
+1. **In Terms of Joint Distribution:**
+   $$
+   I(X; Y) = \sum_{x,y} p(x,y) \log \frac{p(x,y)}{p(x)p(y)}
+   $$
+
+2. **In Terms of KL Divergence:**
+   $$
+   I(X; Y) = D_{\text{KL}}(p(x,y) \parallel p(x)p(y))
+   $$
+
+3. **In Terms of Entropies:**
+   $$
+   I(X; Y) = H(X) + H(Y) - H(X, Y)
+   $$
+
+**Properties of Mutual Information:**
+
+1. **Non-Negativity:** \( I(X; Y) \geq 0 \), with equality iff \( X \) and \( Y \) are independent.
+
+2. **Symmetry:** \( I(X; Y) = I(Y; X) \).
+
+3. **Chain Rule:** \( I(X_1, X_2; Y) = I(X_1; Y) + I(X_2; Y \mid X_1) \).
+
+4. **Data Processing Inequality:** If \( X \to Y \to Z \) forms a Markov chain, then \( I(X; Z) \leq I(X; Y) \).
+
+5. **Relation to Correlation:** \( I(X; Y) = 0 \) iff \( X \) and \( Y \) are independent (stronger than zero correlation).
+
+**Interpretation:** Mutual information measures the amount of information one random variable provides about another. It is the reduction in uncertainty about \( X \) after observing \( Y \) (or vice versa).
+
+**Example 2.15 (Mutual Information).**
+
+**Perfect Correlation:** Let \( X \in \{0,1\} \) be fair, and \( Y = X \). Then:
+$$
+I(X; Y) = H(X) = \log 2 \approx 0.693 \text{ nats}
+$$
+
+**Independence:** Let \( X \) and \( Y \) be independent fair coin tosses. Then:
+$$
+I(X; Y) = 0
+$$
+
+**Partial Correlation:** Let \( X \) be fair, and \( Y = X \oplus Z \) where \( Z \) is fair noise independent of \( X \). Then:
+$$
+I(X; Y) = H(Y) - H(Y \mid X) = \log 2 - \log 2 = 0.307 \text{ nats}
+$$
+
+---
+
+### 2.6.5 Relative Entropy (KL Divergence)
+
+**Definition 2.17 (Kullback-Leibler Divergence).** The **KL divergence** (or **relative entropy**) between two probability distributions \( p \) and \( q \) on the same alphabet \( \mathcal{X} \) is:
+
+$$
+D_{\text{KL}}(p \parallel q) = \sum_{x \in \mathcal{X}} p(x) \log \frac{p(x)}{q(x)}
+$$
+
+**Properties of KL Divergence:**
+
+1. **Non-Negativity:** \( D_{\text{KL}}(p \parallel q) \geq 0 \), with equality iff \( p = q \).
+
+2. **Not a Metric:** KL divergence is not symmetric and does not satisfy the triangle inequality.
+
+3. **Interpretation:** KL divergence measures the inefficiency of using \( q \) to approximate \( p \). It is the expected extra number of bits (or nats) needed when using \( q \) instead of \( p \).
+
+**Example 2.16 (KL Divergence).**
+
+Let \( p \) be a Bernoulli distribution with \( p(1) = 0.9, p(0) = 0.1 \), and \( q \) be a Bernoulli distribution with \( q(1) = 0.5, q(0) = 0.5 \).
+
+$$
+D_{\text{KL}}(p \parallel q) = 0.9 \log \frac{0.9}{0.5} + 0.1 \log \frac{0.1}{0.5} \approx 0.9(0.588) + 0.1(-1.609) \approx 0.529 - 0.161 = 0.368 \text{ nats}
+$$
+
+---
+
+### 2.6.6 The Chain Rule for Entropy and Mutual Information
+
+**Theorem 2.9 (Chain Rule for Entropy).**
+$$
+H(X_1, X_2, \ldots, X_n) = \sum_{i=1}^n H(X_i \mid X_1, \ldots, X_{i-1})
+$$
+
+**Theorem 2.10 (Chain Rule for Mutual Information).**
+$$
+I(X_1, X_2, \ldots, X_n; Y) = \sum_{i=1}^n I(X_i; Y \mid X_1, \ldots, X_{i-1})
+$$
+
+**Interpretation:** The chain rule allows us to decompose joint entropy (or mutual information) into a sum of conditional terms. This is useful for sequential decision-making where information is acquired over time.
+
+---
+
+### 2.6.7 Data Processing Inequality
+
+**Theorem 2.11 (Data Processing Inequality).** If \( X \to Y \to Z \) forms a Markov chain (i.e., \( Z \) depends on \( X \) only through \( Y \)), then:
+
+$$
+I(X; Z) \leq I(X; Y)
+$$
+
+**Interpretation:** Post-processing cannot increase information. Once you have observed \( Y \), any further processing \( Z = f(Y) \) cannot provide more information about \( X \) than \( Y \) already provides.
+
+**Corollary:** For any function \( f \):
+$$
+I(X; f(Y)) \leq I(X; Y)
+$$
+
+---
+
+### 2.6.8 Key Takeaways
+
+1. **Entropy:** \( H(X) = -\sum_x p(x) \log p(x) \), measures uncertainty.
+
+2. **Joint Entropy:** \( H(X, Y) \) measures total uncertainty of a pair.
+
+3. **Conditional Entropy:** \( H(X \mid Y) \) measures remaining uncertainty after observing \( Y \).
+
+4. **Mutual Information:** \( I(X; Y) = H(X) - H(X \mid Y) \), measures information gain.
+
+5. **KL Divergence:** \( D_{\text{KL}}(p \parallel q) = \sum_x p(x) \log(p(x)/q(x)) \), measures distance between distributions.
+
+6. **Chain Rules:** Decompose joint entropy and mutual information into sums.
+
+7. **Data Processing Inequality:** \( I(X; Z) \leq I(X; Y) \) for Markov chains \( X \to Y \to Z \).
+
+---
+
+### 2.6.9 Exercises for Section 2.6
+
+**Exercise 2.21 (Computing Entropy).** Let \( X \) be a random variable taking values in \( \{1, 2, 3, 4\} \) with probabilities \( [0.1, 0.2, 0.3, 0.4] \). Compute:
+1. \( H(X) \)
+2. The maximum possible entropy for a 4-outcome variable
+3. The minimum possible entropy
+
+**Exercise 2.22 (Conditional Entropy).** Let \( X \in \{0,1\} \) be fair, and let \( Y \) be a noisy observation of \( X \) such that \( P(Y = X) = 0.8 \) and \( P(Y \neq X) = 0.2 \). Compute:
+1. \( H(X) \)
+2. \( H(X \mid Y) \)
+3. \( I(X; Y) \)
+
+**Exercise 2.23 (Mutual Information).** Prove that \( I(X; Y) \geq 0 \) with equality iff \( X \) and \( Y \) are independent. *Hint: Use the KL divergence formulation or Jensen's inequality.*
+
+**Exercise 2.24 (KL Divergence).** Let \( p \) be a Bernoulli distribution with \( p(1) = 0.8 \), and \( q \) with \( q(1) = 0.6 \). Compute \( D_{\text{KL}}(p \parallel q) \) and \( D_{\text{KL}}(q \parallel p) \). Are they equal?
+
+**Exercise 2.25 (Chain Rule).** Prove the chain rule for entropy: \( H(X, Y) = H(X) + H(Y \mid X) \). Use the definitions of joint and conditional entropy.
+
+---
+
+### 2.6.10 Further Reading for Section 2.6
+
+- Cover, T. M. & Thomas, J. A. (2006). *Elements of Information Theory*, 2nd ed. Wiley. — The definitive text on information theory.
+
+- Shannon, C. E. (1948). "A Mathematical Theory of Communication." *Bell System Technical Journal*, 27:379-423, 623-656. — The foundational paper.
+
+- MacKay, D. J. C. (2003). *Information Theory, Inference, and Learning Algorithms*. Cambridge University Press. — An accessible introduction with connections to machine learning.
+
+- Gray, R. M. (2011). *Entropy and Information Theory*, 2nd ed. Springer. — A concise treatment of information theory.
 
 ---
 
