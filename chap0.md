@@ -1364,3 +1364,8 @@ Physical Review E 112, 064116. Published December 11, 2025.
 ### More Generally Related Papers
 [Photons = Tokens: The Physics of AI and the
 Economics of Knowledge](https://arxiv.org/pdf/2603.06630)
+
+[Humble Machines: Attending to the Underappreciated Costs of
+Misplaced Distrust](https://arxiv.org/pdf/2208.01305v1)
+
+[here Will Be a Scientific Theory of Deep Learning](https://arxiv.org/pdf/2604.21691)
