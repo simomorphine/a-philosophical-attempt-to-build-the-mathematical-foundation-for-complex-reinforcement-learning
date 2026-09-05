@@ -1454,16 +1454,19 @@ $$
 **Alternative Formulations:**
 
 1. **In Terms of Joint Distribution:**
+
    $$
    I(X; Y) = \sum_{x,y} p(x,y) \log \frac{p(x,y)}{p(x)p(y)}
    $$
 
-2. **In Terms of KL Divergence:**
+3. **In Terms of KL Divergence:**
+
    $$
    I(X; Y) = D_{\text{KL}}(p(x,y) \parallel p(x)p(y))
    $$
 
-3. **In Terms of Entropies:**
+4. **In Terms of Entropies:**
+
    $$
    I(X; Y) = H(X) + H(Y) - H(X, Y)
    $$
@@ -1480,21 +1483,24 @@ $$
 
 5. **Relation to Correlation:** \( I(X; Y) = 0 \) iff \( X \) and \( Y \) are independent (stronger than zero correlation).
 
-**Interpretation:** Mutual information measures the amount of information one random variable provides about another. It is the reduction in uncertainty about \( X \) after observing \( Y \) (or vice versa).
+**Interpretation:** Mutual information measures the amount of information one random variable provides about another. It is the reduction in uncertainty about $X$ after observing $Y$ (or vice versa).
 
 **Example 2.15 (Mutual Information).**
 
-**Perfect Correlation:** Let \( X \in \{0,1\} \) be fair, and \( Y = X \). Then:
+**Perfect Correlation:** Let $X \in {0,1}$ be fair, and $Y = X$. Then:
+
 $$
 I(X; Y) = H(X) = \log 2 \approx 0.693 \text{ nats}
 $$
 
-**Independence:** Let \( X \) and \( Y \) be independent fair coin tosses. Then:
+**Independence:** Let $X$ and $Y$ be independent fair coin tosses. Then:
+
 $$
 I(X; Y) = 0
 $$
 
-**Partial Correlation:** Let \( X \) be fair, and \( Y = X \oplus Z \) where \( Z \) is fair noise independent of \( X \). Then:
+**Partial Correlation:** Let $X$ be fair, and $Y = X \oplus Z$ where $Z$ is fair noise independent of $X$. Then:
+
 $$
 I(X; Y) = H(Y) - H(Y \mid X) = \log 2 - \log 2 = 0.307 \text{ nats}
 $$
