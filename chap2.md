@@ -746,9 +746,11 @@ For $f(z) = z^2 = (x+iy)^2 = (x^2 - y^2) + i(2xy)$:
 - $v(x,y) = 2xy$
 
 Check Cauchy-Riemann:
+
 $$
 \frac{\partial u}{\partial x} = 2x, \qquad \frac{\partial v}{\partial y} = 2x \quad \checkmark
 $$
+
 $$
 \frac{\partial u}{\partial y} = -2y, \qquad -\frac{\partial v}{\partial x} = -2y \quad \checkmark
 $$
@@ -760,6 +762,7 @@ For $f(z) = \bar{z} = x - iy$:
 - $v(x,y) = -y$
 
 Check Cauchy-Riemann:
+
 $$
 \frac{\partial u}{\partial x} = 1, \qquad \frac{\partial v}{\partial y} = -1 \quad \text{NOT equal}
 $$
