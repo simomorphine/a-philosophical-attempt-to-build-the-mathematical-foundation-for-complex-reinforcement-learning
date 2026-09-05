@@ -1100,7 +1100,7 @@ where $f$ is a non-linear function.
 **Examples:**
 - **Weighted Product:** $f(c,d) = c^\alpha d^\beta$
 - **Tchebycheff:** $f(c,d) = \max(w_c c, w_d d)$
-- **Goal Programming:** Minimize deviation from an ideal point $(c^*, d^*)$
+- **Goal Programming:** Minimize deviation from an ideal point $(c^\*, d^\*)$
 
 **Problems:**
 - Still requires choosing parameters ($\alpha, \beta, w_c, w_d$).
