@@ -161,8 +161,8 @@ $$
 2. $\overline{z_1 z_2} = \bar{z}_1 \bar{z}_2$
 3. $\overline{z_1 / z_2} = \bar{z}_1 / \bar{z}_2$
 4. $\overline{\bar{z}} = z$
-5. $z + \bar{z} = 2\operatorname{Re}(z)$
-6. $z - \bar{z} = 2i\operatorname{Im}(z)$
+5. $z + \bar{z} = 2\mathrm{Re}(z)$
+6. $z - \bar{z} = 2i\mathrm{Im}(z)$
 7. $z\bar{z} = \|z\|^2$ (see Section 2.2.3)
 
 **Example 2.2 (Conjugation).**
