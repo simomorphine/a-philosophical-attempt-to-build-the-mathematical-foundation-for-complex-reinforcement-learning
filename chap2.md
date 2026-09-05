@@ -1028,11 +1028,13 @@ Let's compute the Wirtinger derivatives for some basic functions.
 **Example 2.7 (Derivatives of $z$ and $\bar{z}$).**
 
 For $f(z, \bar{z}) = z$:
+
 $$
 \frac{\partial z}{\partial z} = 1, \qquad \frac{\partial z}{\partial \bar{z}} = 0
 $$
 
 For $f(z, \bar{z}) = \bar{z}$:
+
 $$
 \frac{\partial \bar{z}}{\partial z} = 0, \qquad \frac{\partial \bar{z}}{\partial \bar{z}} = 1
 $$
@@ -1040,11 +1042,13 @@ $$
 **Example 2.8 (Derivatives of $z^2$ and $\bar{z}^2$).**
 
 For $f(z) = z^2$:
+
 $$
 \frac{\partial z^2}{\partial z} = 2z, \qquad \frac{\partial z^2}{\partial \bar{z}} = 0
 $$
 
 For $f(z) = \bar{z}^2$:
+
 $$
 \frac{\partial \bar{z}^2}{\partial z} = 0, \qquad \frac{\partial \bar{z}^2}{\partial \bar{z}} = 2\bar{z}
 $$
@@ -1052,6 +1056,7 @@ $$
 **Example 2.9 (Derivatives of $|z|^2$).**
 
 For $f(z, \bar{z}) = |z|^2 = z\bar{z}$:
+
 $$
 \frac{\partial |z|^2}{\partial z} = \bar{z}, \qquad \frac{\partial |z|^2}{\partial \bar{z}} = z
 $$
@@ -1059,12 +1064,14 @@ $$
 **Verification:**
 
 Using the definition:
+
 $$
 \frac{\partial |z|^2}{\partial z} = \frac{1}{2}\left(\frac{\partial (x^2+y^2)}{\partial x} - i\frac{\partial (x^2+y^2)}{\partial y}\right)
 = \frac{1}{2}(2x - i2y) = x - iy = \bar{z}
 $$
 
 Similarly:
+
 $$
 \frac{\partial |z|^2}{\partial \bar{z}} = \frac{1}{2}(2x + i2y) = x + iy = z
 $$
@@ -1072,11 +1079,13 @@ $$
 **Example 2.10 (Derivatives of Real and Imaginary Parts).**
 
 For $f(z, \bar{z}) = \mathrm{Re}(z) = (z + \bar{z})/2$:
+
 $$
 \frac{\partial \mathrm{Re}(z)}{\partial z} = \frac{1}{2}, \qquad \frac{\partial \mathrm{Re}(z)}{\partial \bar{z}} = \frac{1}{2}
 $$
 
 For $f(z, \bar{z}) = \mathrm{Im}(z) = (z - \bar{z})/(2i)$:
+
 $$
 \frac{\partial \mathrm{Im}(z)}{\partial z} = \frac{1}{2i}, \qquad \frac{\partial \mathrm{Im}(z)}{\partial \bar{z}} = -\frac{1}{2i}
 $$
