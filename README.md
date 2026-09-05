@@ -578,7 +578,7 @@ And then to check whether what we heard was actually there.
 
 ---
 
-## Mental Experiment: The Universe as an Information Processing System
+## Mental Experiment & Simulation Hypothesis
 
 Imagine telling your son: **“If you study, you will succeed.”** From the perspective of an Information Processing System (IPS), this is a measurable piece of information that enters the system and must be processed. The statement describes a relationship between a present action and a possible future state, but the future outcome does not yet exist as an actual state. At the moment the information is received, success and failure remain possible outcomes. The IPS therefore has to process information about a space of possible future states before one of those states becomes realized.
 
