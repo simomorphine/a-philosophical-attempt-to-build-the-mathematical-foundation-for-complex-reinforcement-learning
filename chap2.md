@@ -1972,8 +1972,8 @@ This section introduces these concepts, which will be essential for proving the 
 | --- | --- | --- |
 | $\mathbb{R}^n$ | $\|x\|_2 = \sqrt{\sum_i x_i^2}$ | Euclidean norm |
 | $\mathbb{R}^n$ | $\|x\|_\infty = \max_i \|x_i\|$ | Supremum norm |
-| $\mathcal{B}(X, \mathbb{C})$ | $\|f\|_\infty = \sup_{x \in X} \|f(x)\|$ | Supremum norm on bounded functions |
-| $L^p(\Omega)$ | $\|f\|_p = \left(\int_\Omega \|f(x)\|^p \, dx\right)^{1/p}$ | $L^p$ norm |
+| $\mathcal{B}(X, \mathbb{C})$ | $\|f\|_{\infty} = \sup_{x \in X} \|f(x)\|$ | Supremum norm on bounded functions |
+| $L^p(\Omega)$ | $\|f\|_p = (\int_\Omega \|f(x)\|^p \, dx)^{1/p}$ | $L^p$ norm |
 
 **Definition 2.30 (The Supremum Norm).** For a bounded function $f: X \to \mathbb{C}$, the **supremum norm** (or **uniform norm**) is:
 
