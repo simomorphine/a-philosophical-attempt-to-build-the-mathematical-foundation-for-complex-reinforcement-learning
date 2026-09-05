@@ -379,3 +379,236 @@ This means minimizing $|\mathbb{E}[G_t]|$ is a *lower bound* on the harder crite
 
 ---
 
+## 2.3 The Extended Complex Plane and the Riemann Sphere
+
+### 2.3.1 Why We Need the Extended Plane
+
+In standard complex analysis, we work with the complex plane $\mathbb{C}$. However, for certain theoretical results—particularly the Bergman conjecture in Chapter 10—we need a **compact** space. The complex plane $\mathbb{C}$ is not compact: sequences can "escape to infinity" without converging.
+
+To make $\mathbb{C}$ compact, we add a single point at infinity:
+
+$$
+\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}
+$$
+
+This is called the **extended complex plane** or the **Riemann sphere**.
+
+**Why Compactness Matters:**
+
+1. **Montel's Theorem:** On a compact domain, bounded families of holomorphic functions are precompact (every sequence has a convergent subsequence).
+
+2. **Schauder's Fixed-Point Theorem:** A continuous operator mapping a compact convex subset of a Banach space into itself has a fixed point.
+
+3. **The Bergman Conjecture:** The Bellman optimality operator $T$ may be a contraction on the Bergman space $\mathcal{A}^2(\Omega)$ because the domain is bounded (hence compact in the appropriate topology).
+
+4. **Convergence Guarantees:** Compactness ensures that iterative algorithms converge to a fixed point.
+
+---
+
+### 2.3.2 Definition of the Extended Complex Plane
+
+**Definition 2.6 (Extended Complex Plane).** The extended complex plane is:
+
+$$
+\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}
+$$
+
+where $\infty$ is a single point at infinity, not a complex number.
+
+**Operations with Infinity:**
+
+For $z \in \mathbb{C}$:
+
+1. $z + \infty = \infty$
+2. $z \cdot \infty = \infty$ (for $z \neq 0$)
+3. $z / 0 = \infty$ (for $z \neq 0$)
+4. $z / \infty = 0$ (for $z \neq \infty$)
+5. $\infty / z = \infty$ (for $z \neq 0$)
+
+**Undefined Operations:**
+
+1. $\infty + \infty$ (undefined)
+2. $\infty - \infty$ (undefined)
+3. $0 \cdot \infty$ (undefined)
+4. $\infty / \infty$ (undefined)
+5. $0 / 0$ (undefined)
+
+---
+
+### 2.3.3 The Riemann Sphere
+
+**Definition 2.7 (Riemann Sphere).** The Riemann sphere is a geometric representation of the extended complex plane $\hat{\mathbb{C}}$ as a sphere.
+
+**Construction:**
+
+1. Place a unit sphere on the complex plane, tangent at the origin.
+2. The **south pole** is at the bottom of the sphere (touching the origin).
+3. The **north pole** is at the top of the sphere.
+4. **Stereographic projection** maps points from the sphere to the complex plane (and vice versa).
+
+```
+          North Pole (∞)
+               ▲
+              /|\
+             / | \
+            /  |  \
+           /   |   \
+          /    |    \
+         /     |     \
+        /      |      \
+       /       |       \
+      /        |        \
+     /         |         \
+    /          |          \
+   /           |           \
+  /            |            \
+ /             |             \
+South Pole (0) +-------------→ Complex Plane
+```
+
+**Stereographic Projection Formula:**
+
+For a point $(x, y, z)$ on the unit sphere (with $x^2 + y^2 + z^2 = 1$), the stereographic projection to the complex plane is:
+
+$$
+w = \frac{x + iy}{1 - z}
+$$
+
+Conversely, for a complex number $w = u + iv$, the corresponding point on the sphere is:
+
+$$
+x = \frac{2u}{1 + |w|^2}, \quad y = \frac{2v}{1 + |w|^2}, \quad z = \frac{|w|^2 - 1}{|w|^2 + 1}
+$$
+
+**Properties of Stereographic Projection:**
+
+1. **Conformal:** Preserves angles (but not distances).
+2. **Bijective:** One-to-one correspondence between $\hat{\mathbb{C}}$ and the sphere.
+3. **Continuous:** The mapping and its inverse are continuous.
+4. **Circle-Preserving:** Circles on the sphere map to circles or lines in the plane.
+
+---
+
+### 2.3.4 Compactness of $\hat{\mathbb{C}}$
+
+**Theorem 2.1 (Compactness of the Riemann Sphere).** The extended complex plane $\hat{\mathbb{C}}$ is compact.
+
+**Proof Sketch:**
+
+The Riemann sphere is a closed and bounded subset of $\mathbb{R}^3$ (the unit sphere). By the Heine-Borel theorem, it is compact. Since $\hat{\mathbb{C}}$ is homeomorphic to the Riemann sphere via stereographic projection, $\hat{\mathbb{C}}$ is also compact. $\square$
+
+**Definition 2.8 (Compact Set).** A set $K$ is compact if every open cover has a finite subcover.
+
+**Intuition for Compactness:**
+
+- **Boundedness:** No sequence can "escape to infinity" because infinity is included as a point.
+- **Closedness:** The set contains all its limit points.
+- **Finite Subcover Property:** Any open cover has a finite subcover (the formal definition).
+
+**Why Compactness Matters for RL:**
+
+The Bergman space $\mathcal{A}^2(\Omega)$ on a bounded domain $\Omega \subset \mathbb{C}$ has a compact inclusion into the space of continuous functions on $\Omega$. This compactness is essential for:
+
+1. **Montel's Theorem:** Bounded families of holomorphic functions are normal (have convergent subsequences).
+2. **Schauder's Fixed-Point Theorem:** Compact operators on convex sets have fixed points.
+3. **The Bergman Conjecture:** The Bellman optimality operator $T$ may be a contraction on $\mathcal{A}^2(\Omega)$ due to the compactness of the domain.
+
+---
+
+### 2.3.5 Montel's Theorem
+
+**Theorem 2.2 (Montel's Theorem).** A family $\mathcal{F}$ of holomorphic functions on a domain $\Omega \subset \mathbb{C}$ is **normal** (every sequence has a subsequence that converges uniformly on compact subsets) if and only if it is **locally uniformly bounded** (for every compact $K \subset \Omega$, there exists $M_K$ such that $|f(z)| \leq M_K$ for all $f \in \mathcal{F}$ and $z \in K$).
+
+**Why This Matters:**
+
+In Chapter 10, we will consider the space of holomorphic Q-functions on a bounded domain $\Omega$. Montel's theorem ensures that bounded sequences of such functions have convergent subsequences, which is essential for proving the existence of fixed points.
+
+---
+
+### 2.3.6 Schauder's Fixed-Point Theorem
+
+**Theorem 2.3 (Schauder's Fixed-Point Theorem).** Let $X$ be a Banach space, $K \subset X$ a non-empty compact convex set, and $T: K \to K$ a continuous operator. Then $T$ has a fixed point $x^* \in K$ such that $T(x^*) = x^*$.
+
+**Why This Matters:**
+
+If we can show that the Bellman optimality operator $T$ maps a compact convex set of holomorphic Q-functions into itself, then Schauder's theorem guarantees the existence of a fixed point $Q^*$. This would resolve **OP2** (Existence and Uniqueness) in the affirmative.
+
+**The Challenge:**
+
+Showing that $T$ maps the set into itself and is continuous requires:
+
+1. **Compactness of the domain:** The Bergman space on a bounded domain has compact inclusion into $C(\Omega)$.
+2. **Holomorphic closure:** The modulus-greedy policy $\pi_Q(s) = \arg\min_a |Q(s,a)|$ must preserve holomorphicity.
+3. **Continuity:** $T$ must be continuous in the Bergman norm.
+
+---
+
+### 2.3.7 Connection to the Bergman Conjecture (OP1)
+
+The Bergman conjecture (introduced in Chapter 10) states:
+
+> **Conjecture (Bergman).** The Bellman optimality operator $T$ is a contraction on the Bergman space $\mathcal{A}^2(\Omega)$ for a suitable domain $\Omega \subset \mathbb{C}$.
+
+**How Compactness Supports the Conjecture:**
+
+1. **Bounded Domain:** The Bergman space is defined on a bounded domain $\Omega$, which is compact in the appropriate topology.
+
+2. **Compact Inclusion:** The inclusion $\mathcal{A}^2(\Omega) \hookrightarrow C(\Omega)$ is compact, meaning bounded sets in $\mathcal{A}^2$ are precompact in $C(\Omega)$.
+
+3. **Montel's Theorem:** Bounded families of holomorphic functions on $\Omega$ are normal.
+
+4. **Schauder's Theorem:** If $T$ maps a compact convex set into itself, it has a fixed point.
+
+**The Open Question:**
+
+Is $T$ a contraction (strictly reducing the distance between functions), or merely a continuous map with a fixed point? The compactness of the domain suggests that contraction may hold, but this remains an open problem (OP1).
+
+---
+
+### 2.3.8 Key Takeaways
+
+1. **Extended Complex Plane:** $\hat{\mathbb{C}} = \mathbb{C} \cup \{\infty\}$, adding a point at infinity.
+2. **Riemann Sphere:** A geometric representation of $\hat{\mathbb{C}}$ as a sphere.
+3. **Compactness:** $\hat{\mathbb{C}}$ is compact, unlike $\mathbb{C}$.
+4. **Montel's Theorem:** Bounded families of holomorphic functions are normal on compact domains.
+5. **Schauder's Fixed-Point Theorem:** Continuous operators on compact convex sets have fixed points.
+6. **Connection to OP1:** Compactness supports the Bergman conjecture that $T$ is a contraction on $\mathcal{A}^2(\Omega)$.
+7. **Connection to OP2:** Schauder's theorem may resolve the existence question for $Q^*$.
+
+---
+
+### 2.3.9 Exercises for Section 2.3
+
+**Exercise 2.6 (Stereographic Projection).** For the complex number $w = 1 + i$, compute its stereographic projection onto the Riemann sphere. That is, find $(x, y, z)$ on the unit sphere such that the projection is $w$.
+
+**Exercise 2.7 (Compactness).** Explain why $\mathbb{C}$ is not compact but $\hat{\mathbb{C}}$ is compact. Give an example of a sequence in $\mathbb{C}$ that does not converge but converges in $\hat{\mathbb{C}}$.
+
+**Exercise 2.8 (Montel's Theorem).** State Montel's theorem in your own words. Why is it useful for proving the existence of fixed points in the Bergman space?
+
+**Exercise 2.9 (Schauder's Theorem).** Let $X = \mathbb{R}$, $K = [0, 1]$, and $T(x) = x/2$. Show that $T$ maps $K$ into itself and has a fixed point. Does this example satisfy the conditions of Schauder's theorem? What is the fixed point?
+
+**Exercise 2.10 (Extended Plane Operations).** Determine whether the following operations are defined in $\hat{\mathbb{C}}$:
+1. $\infty + 5$
+2. $\infty - \infty$
+3. $0 \cdot \infty$
+4. $3/0$
+5. $\infty/2$
+6. $\infty/\infty$
+
+---
+
+### 2.3.10 Further Reading for Section 2.3
+
+- Ahlfors, L. V. (1979). *Complex Analysis*, 3rd ed. McGraw-Hill. — Sections on the extended plane and Riemann sphere.
+
+- Needham, T. (1997). *Visual Complex Analysis*. Oxford University Press. — Chapter 3 covers stereographic projection and the Riemann sphere with beautiful visual explanations.
+
+- Conway, J. B. (1978). *Functions of One Complex Variable*, 2nd ed. Springer. — Chapter 1 covers the extended plane and compactness.
+
+- Rudin, W. (1987). *Real and Complex Analysis*, 3rd ed. McGraw-Hill. — Chapter 10 covers Montel's theorem and normal families.
+
+- Kreyszig, E. (1989). *Introductory Functional Analysis with Applications*. Wiley. — Chapter 9 covers Schauder's fixed-point theorem.
+
+---
+
+
