@@ -527,7 +527,7 @@ In later chapters, we will consider the space of holomorphic Q-functions on a bo
 
 ### 2.3.6 Schauder's Fixed-Point Theorem
 
-**Theorem 2.3 (Schauder's Fixed-Point Theorem).** Let $X$ be a Banach space, $K \subset X$ a non-empty compact convex set, and $T: K \to K$ a continuous operator. Then $T$ has a fixed point $x^* \in K$ such that $T(x^*) = x^*$.
+**Theorem 2.3 (Schauder's Fixed-Point Theorem).** Let $X$ be a Banach space, $K \subset X$ a non-empty compact convex set, and $T: K \to K$ a continuous operator. Then $T$ has a fixed point $x^\* \in K$ such that $T(x^\*) = x^\*$.
 
 **Why This Matters:**
 
