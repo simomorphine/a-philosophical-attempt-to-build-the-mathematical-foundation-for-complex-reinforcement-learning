@@ -253,6 +253,7 @@ $$
 where $\theta = \arg(z)$ and $e^{i\theta} = \cos \theta + i \sin \theta$ is **Euler's formula**.
 
 **Euler's Formula:**
+
 $$
 e^{i\theta} = \cos \theta + i \sin \theta
 $$
@@ -289,16 +290,19 @@ $$
 **Example 2.4 (Polar Form).**
 
 For $z = 3 + 4i$:
+
 $$
 z = 5 \cdot e^{i\arctan(4/3)} = 5e^{i53.13^\circ}
 $$
 
 Compute $z^2$ in polar form:
+
 $$
 z^2 = 25 \cdot e^{i106.26^\circ} = 25(\cos 106.26^\circ + i\sin 106.26^\circ) = -7 + 24i
 $$
 
 Verify by direct multiplication:
+
 $$
 (3+4i)^2 = 9 + 24i + 16i^2 = -7 + 24i \quad \checkmark
 $$
@@ -318,11 +322,13 @@ $$
 **Proof:**
 
 Let $Z = X + iY$. Then:
+
 $$
 |\mathbb{E}[Z]| = \sqrt{(\mathbb{E}[X])^2 + (\mathbb{E}[Y])^2}
 $$
 
 By Jensen's inequality (since $t \mapsto \sqrt{t}$ is concave):
+
 $$
 \sqrt{(\mathbb{E}[X])^2 + (\mathbb{E}[Y])^2} \leq \mathbb{E}\left[\sqrt{X^2 + Y^2}\right] = \mathbb{E}[|Z|]
 $$
