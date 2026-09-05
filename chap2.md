@@ -105,18 +105,20 @@ $$
 (a + ib) + (c + id) = (a + c) + i(b + d)
 $$
 
-3. **Subtraction:**
+2. **Subtraction:**
    
 $$
 (a + ib) - (c + id) = (a - c) + i(b - d)
 $$
 
-5. **Multiplication:**
+3. **Multiplication:**
+   
 $$
 (a + ib)(c + id) = (ac - bd) + i(ad + bc)
 $$
 
-6. **Division:**
+4. **Division:**
+   
 $$
 \frac{a + ib}{c + id} = \frac{(a + ib)(c - id)}{(c + id)(c - id)} = \frac{(ac + bd) + i(bc - ad)}{c^2 + d^2}
 $$
@@ -124,16 +126,19 @@ $$
 **Example 2.1 (Complex Arithmetic).**
 
 Compute $(3 + 4i) + (2 - i)$:
+
 $$
 (3 + 4i) + (2 - i) = (3 + 2) + i(4 - 1) = 5 + 3i
 $$
 
 Compute $(3 + 4i)(2 - i)$:
+
 $$
 (3 + 4i)(2 - i) = 6 - 3i + 8i - 4i^2 = 6 + 5i + 4 = 10 + 5i
 $$
 
 Compute $(3 + 4i)/(2 - i)$:
+
 $$
 \frac{3 + 4i}{2 - i} = \frac{(3 + 4i)(2 + i)}{(2 - i)(2 + i)} = \frac{6 + 3i + 8i + 4i^2}{4 + 1} = \frac{2 + 11i}{5} = \frac{2}{5} + \frac{11}{5}i
 $$
@@ -163,17 +168,21 @@ $$
 **Example 2.2 (Conjugation).**
 
 For $z = 3 + 4i$:
+
 $$
 \bar{z} = 3 - 4i
 $$
 
 Verify properties:
+
 $$
 z + \bar{z} = 6 = 2\operatorname{Re}(z)
 $$
+
 $$
 z - \bar{z} = 8i = 2i\operatorname{Im}(z)
 $$
+
 $$
 z\bar{z} = (3+4i)(3-4i) = 9 + 16 = 25 = |z|^2
 $$
