@@ -686,6 +686,7 @@ exists for all $z_0 \in \Omega$.
 **Example 2.5 (Checking Holomorphicity).**
 
 For $f(z) = z^2$:
+
 $$
 \lim_{h \to 0} \frac{(z+h)^2 - z^2}{h} = \lim_{h \to 0} \frac{2zh + h^2}{h} = \lim_{h \to 0} (2z + h) = 2z
 $$
@@ -693,6 +694,7 @@ $$
 So $f'(z) = 2z$ exists for all $z \in \mathbb{C}$. Therefore, $f(z) = z^2$ is holomorphic.
 
 For $f(z) = \bar{z}$:
+
 $$
 \lim_{h \to 0} \frac{\overline{z+h} - \bar{z}}{h} = \lim_{h \to 0} \frac{\bar{h}}{h}
 $$
