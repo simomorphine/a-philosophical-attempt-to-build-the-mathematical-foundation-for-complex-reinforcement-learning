@@ -624,11 +624,12 @@ $$
 is a contraction because:
 
 1. The max operator is non-expansive in $\mathbb{R}$:
-   $$
-   \left| \max_a f(a) - \max_a g(a) \right| \leq \max_a |f(a) - g(a)|
-   $$
 
-2. The transition kernel averages probabilities, which is also non-expansive.
+$$
+\| \max_a f(a) - \max_a g(a) \| \leq \max_a \|f(a) - g(a)\|
+$$
+
+3. The transition kernel averages probabilities, which is also non-expansive.
 
 In the complex framework, the Bellman optimality operator becomes:
 
