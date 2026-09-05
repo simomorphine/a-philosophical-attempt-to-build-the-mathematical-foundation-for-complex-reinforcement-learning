@@ -383,7 +383,7 @@ This means minimizing $|\mathbb{E}[G_t]|$ is a *lower bound* on the harder crite
 
 ### 2.3.1 Why We Need the Extended Plane
 
-In standard complex analysis, we work with the complex plane $\mathbb{C}$. However, for certain theoretical results—particularly the Bergman conjecture in Chapter 10—we need a **compact** space. The complex plane $\mathbb{C}$ is not compact: sequences can "escape to infinity" without converging.
+In standard complex analysis, we work with the complex plane $\mathbb{C}$. However, for certain theoretical results—particularly the Bergman conjecture—we need a **compact** space. The complex plane $\mathbb{C}$ is not compact: sequences can "escape to infinity" without converging.
 
 To make $\mathbb{C}$ compact, we add a single point at infinity:
 
@@ -521,7 +521,7 @@ The Bergman space $\mathcal{A}^2(\Omega)$ on a bounded domain $\Omega \subset \m
 
 **Why This Matters:**
 
-In Chapter 10, we will consider the space of holomorphic Q-functions on a bounded domain $\Omega$. Montel's theorem ensures that bounded sequences of such functions have convergent subsequences, which is essential for proving the existence of fixed points.
+In later chapters, we will consider the space of holomorphic Q-functions on a bounded domain $\Omega$. Montel's theorem ensures that bounded sequences of such functions have convergent subsequences, which is essential for proving the existence of fixed points.
 
 ---
 
@@ -543,9 +543,9 @@ Showing that $T$ maps the set into itself and is continuous requires:
 
 ---
 
-### 2.3.7 Connection to the Bergman Conjecture (OP1)
+### 2.3.7 Connection to the Bergman Conjecture 
 
-The Bergman conjecture (introduced in Chapter 10) states:
+The Bergman conjecture:
 
 > **Conjecture (Bergman).** The Bellman optimality operator $T$ is a contraction on the Bergman space $\mathcal{A}^2(\Omega)$ for a suitable domain $\Omega \subset \mathbb{C}$.
 
@@ -572,8 +572,8 @@ Is $T$ a contraction (strictly reducing the distance between functions), or mere
 3. **Compactness:** $\hat{\mathbb{C}}$ is compact, unlike $\mathbb{C}$.
 4. **Montel's Theorem:** Bounded families of holomorphic functions are normal on compact domains.
 5. **Schauder's Fixed-Point Theorem:** Continuous operators on compact convex sets have fixed points.
-6. **Connection to OP1:** Compactness supports the Bergman conjecture that $T$ is a contraction on $\mathcal{A}^2(\Omega)$.
-7. **Connection to OP2:** Schauder's theorem may resolve the existence question for $Q^*$.
+6. **Bergman conjecture:** Compactness supports the Bergman conjecture that $T$ is a contraction on $\mathcal{A}^2(\Omega)$.
+7. **Schauder's theorem:** Schauder's theorem may resolve the existence question for $Q^*$.
 
 ---
 
