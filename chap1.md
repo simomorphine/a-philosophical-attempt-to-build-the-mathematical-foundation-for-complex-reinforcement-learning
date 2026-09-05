@@ -1032,11 +1032,11 @@ The Pareto frontier is $\{(1,5), (2,3), (4,1), (5,0)\}$. No policy dominates ano
 
 **Scalarisation Analysis:**
 
-- $\mu = 0$: Selects $\pi_4$ (lowest cost).
+- $\mu = 0$: Selects $\pi_1$ (lowest cost).
 - $\mu = 0.5$: Values: $\pi_1 = 3.5, \pi_2 = 3.5, \pi_3 = 4.5, \pi_4 = 5$ → selects $\pi_1$ or $\pi_2$.
 - $\mu = 1$: Values: $\pi_1 = 6, \pi_2 = 5, \pi_3 = 5, \pi_4 = 5$ → selects $\pi_2, \pi_3, \pi_4$.
 - $\mu = 2$: Values: $\pi_1 = 11, \pi_2 = 8, \pi_3 = 6, \pi_4 = 5$ → selects $\pi_4$.
-- $\mu \to \infty$: Selects $\pi_1$ (lowest debt).
+- $\mu \to \infty$: Selects $\pi_4$ (lowest debt).
 
 Different $\mu$ values select different points on the frontier. The optimal $\mu$ depends on the problem.
 
@@ -1054,7 +1054,7 @@ Consider a 3x3 grid world that vividly illustrates the failure of scalarisation:
 
 - $S$ = Start (top-left), $G$ = Goal (bottom-right).
 - Actions: Up, Down, Left, Right.
-- **Cost:** -1 per move (energy consumption).
+- **Cost:** 1 per move (energy consumption).
 - **Debt:** -2 for visiting a new state (information gain), +1 for revisiting a state (no new information).
 
 **Policies and Their Cost-Debt Pairs:**
