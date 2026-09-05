@@ -359,7 +359,3 @@ This means minimizing $|\mathbb{E}[G_t]|$ is a *lower bound* on the harder crite
 
 ---
 
-
----
-
-Would you like me to continue with **Section 2.3: The Extended Complex Plane and the Riemann Sphere**?
