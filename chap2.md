@@ -163,7 +163,7 @@ $$
 4. $\overline{\bar{z}} = z$
 5. $z + \bar{z} = 2\operatorname{Re}(z)$
 6. $z - \bar{z} = 2i\operatorname{Im}(z)$
-7. $z\bar{z} = |z|^2$ (see Section 2.2.3)
+7. $z\bar{z} = \|z\|^2$ (see Section 2.2.3)
 
 **Example 2.2 (Conjugation).**
 
