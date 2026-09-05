@@ -963,8 +963,8 @@ $$
 In standard complex analysis, differentiation is defined only for holomorphic functions. However, many of the functions we encounter in the complex framework are **not holomorphic**:
 
 1. **The Squared Modulus:** $f(z) = |z|^2 = z\bar{z}$ is not holomorphic (as shown in Section 2.4.3).
-2. **The Real Part:** $f(z) = \operatorname{Re}(z) = (z + \bar{z})/2$ is not holomorphic.
-3. **The Imaginary Part:** $f(z) = \operatorname{Im}(z) = (z - \bar{z})/(2i)$ is not holomorphic.
+2. **The Real Part:** $f(z) = \mathrm{Re}(z) = (z + \bar{z})/2$ is not holomorphic.
+3. **The Imaginary Part:** $f(z) = \mathrm{Im}(z) = (z - \bar{z})/(2i)$ is not holomorphic.
 4. **The Objective Function:** In Chapter 11, we will minimize $J(\theta) = |\eta(\theta)|^2$, which is not holomorphic in $\eta$.
 
 **The Challenge:** We need to differentiate these functions to compute gradients for optimization and policy improvement. Standard complex differentiation doesn't work.
@@ -979,7 +979,7 @@ Wirtinger calculus treats $z$ and $\bar{z}$ as **independent variables**. This a
 
 ### 2.5.2 The Wirtinger Derivatives
 
-**Definition 2.10 (Wirtinger Derivatives).** For a function $f(z, \bar{z})$ that is differentiable as a function of $x = \operatorname{Re}(z)$ and $y = \operatorname{Im}(z)$, the **Wirtinger derivatives** are:
+**Definition 2.10 (Wirtinger Derivatives).** For a function $f(z, \bar{z})$ that is differentiable as a function of $x = \mathrm{Re}(z)$ and $y = \mathrm{Im}(z)$, the **Wirtinger derivatives** are:
 
 $$
 \frac{\partial f}{\partial z} = \frac{1}{2}\left(\frac{\partial f}{\partial x} - i\frac{\partial f}{\partial y}\right)
@@ -1071,14 +1071,14 @@ $$
 
 **Example 2.10 (Derivatives of Real and Imaginary Parts).**
 
-For $f(z, \bar{z}) = \operatorname{Re}(z) = (z + \bar{z})/2$:
+For $f(z, \bar{z}) = \mathrm{Re}(z) = (z + \bar{z})/2$:
 $$
-\frac{\partial \operatorname{Re}(z)}{\partial z} = \frac{1}{2}, \qquad \frac{\partial \operatorname{Re}(z)}{\partial \bar{z}} = \frac{1}{2}
+\frac{\partial \mathrm{Re}(z)}{\partial z} = \frac{1}{2}, \qquad \frac{\partial \mathrm{Re}(z)}{\partial \bar{z}} = \frac{1}{2}
 $$
 
-For $f(z, \bar{z}) = \operatorname{Im}(z) = (z - \bar{z})/(2i)$:
+For $f(z, \bar{z}) = \mathrm{Im}(z) = (z - \bar{z})/(2i)$:
 $$
-\frac{\partial \operatorname{Im}(z)}{\partial z} = \frac{1}{2i}, \qquad \frac{\partial \operatorname{Im}(z)}{\partial \bar{z}} = -\frac{1}{2i}
+\frac{\partial \mathrm{Im}(z)}{\partial z} = \frac{1}{2i}, \qquad \frac{\partial \mathrm{Im}(z)}{\partial \bar{z}} = -\frac{1}{2i}
 $$
 
 ---
@@ -1143,7 +1143,7 @@ $$
 **Theorem 2.6 (Gradient of Squared Modulus).** For $\eta: \mathbb{R}^n \to \mathbb{C}$:
 
 $$
-\nabla_\theta |\eta(\theta)|^2 = 2\operatorname{Re}\left( \overline{\eta(\theta)} \cdot \nabla_\theta \eta(\theta) \right)
+\nabla_\theta |\eta(\theta)|^2 = 2\mathrm{Re}\left( \overline{\eta(\theta)} \cdot \nabla_\theta \eta(\theta) \right)
 $$
 
 **Proof:**
@@ -1168,12 +1168,12 @@ $$
 
 Taking the real part:
 $$
-\frac{\partial f}{\partial \theta_j} = 2\operatorname{Re}\left( \bar{\eta} \frac{\partial \eta}{\partial \theta_j} \right)
+\frac{\partial f}{\partial \theta_j} = 2\mathrm{Re}\left( \bar{\eta} \frac{\partial \eta}{\partial \theta_j} \right)
 $$
 
 Summing over $j$:
 $$
-\nabla_\theta f = 2\operatorname{Re}\left( \bar{\eta} \nabla_\theta \eta \right)
+\nabla_\theta f = 2\mathrm{Re}\left( \bar{\eta} \nabla_\theta \eta \right)
 $$
 
 $\square$
@@ -1231,7 +1231,7 @@ In Chapter 11, we will derive the Complex Policy Gradient Theorem. The key resul
 **Theorem 2.7 (Complex Policy Gradient Theorem — Preview).** For a parameterized policy $\pi_\theta$ and complex return $G_t$:
 
 $$
-\nabla_\theta |\eta(\theta)|^2 = 2\operatorname{Re}\left( \overline{\eta(\theta)} \cdot \mathbb{E}\left[ \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(A_t|S_t) G_t \right] \right)
+\nabla_\theta |\eta(\theta)|^2 = 2\mathrm{Re}\left( \overline{\eta(\theta)} \cdot \mathbb{E}\left[ \sum_{t=0}^\infty \nabla_\theta \log \pi_\theta(A_t|S_t) G_t \right] \right)
 $$
 
 where $\eta(\theta) = \mathbb{E}[G_t]$ is the complex expected return.
@@ -1252,7 +1252,7 @@ The proof will be developed in Chapter 11.
 
 4. **Chain Rule:** $\partial(f \circ g)/\partial z = (\partial f/\partial g)(\partial g/\partial z) + (\partial f/\partial \bar{g})(\partial \bar{g}/\partial z)$.
 
-5. **Gradient of Squared Modulus:** $\nabla_\theta |\eta(\theta)|^2 = 2\operatorname{Re}(\bar{\eta} \nabla_\theta \eta)$.
+5. **Gradient of Squared Modulus:** $\nabla_\theta |\eta(\theta)|^2 = 2\mathrm{Re}(\bar{\eta} \nabla_\theta \eta)$.
 
 6. **Geometric Interpretation:** The gradient points toward the origin in $\mathbb{C}$.
 
@@ -1268,7 +1268,7 @@ The proof will be developed in Chapter 11.
 1. $f(z) = z^3$
 2. $f(z) = \bar{z}^3$
 3. $f(z) = z\bar{z}^2$
-4. $f(z) = \operatorname{Re}(z)^2 + \operatorname{Im}(z)^2$
+4. $f(z) = \mathrm{Re}(z)^2 + \mathrm{Im}(z)^2$
 
 **Exercise 2.17 (Holomorphic Check).** For each function in Exercise 2.16, determine whether it is holomorphic. Justify your answer.
 
