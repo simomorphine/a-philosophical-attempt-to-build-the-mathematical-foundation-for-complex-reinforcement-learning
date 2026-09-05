@@ -194,7 +194,7 @@ $$
 **Definition 2.3 (Modulus).** The modulus (or magnitude) of $z = a + ib$ is:
 
 $$
-|z| = \sqrt{a^2 + b^2}
+\|z\| = \sqrt{a^2 + b^2}
 $$
 
 The modulus is the Euclidean distance from the origin to the point $z$ in the complex plane.
@@ -202,7 +202,7 @@ The modulus is the Euclidean distance from the origin to the point $z$ in the co
 **Definition 2.4 (Argument).** The argument of $z = a + ib$ is the angle $\theta$ such that:
 
 $$
-\cos \theta = \frac{a}{|z|}, \quad \sin \theta = \frac{b}{|z|}
+\cos \theta = \frac{a}{\|z\|}, \quad \sin \theta = \frac{b}{\|z\|}
 $$
 
 The **principal argument** is $\mathrm{Arg}(z) \in (-\pi, \pi]$.
