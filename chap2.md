@@ -226,8 +226,9 @@ The **principal argument** is $\mathrm{Arg}(z) \in (-\pi, \pi]$.
 
 For $z = 3 + 4i$:
 $$
-|z| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
+\|z\| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5
 $$
+
 $$
 \theta = \arctan\left(\frac{4}{3}\right) \approx 53.13^\circ
 $$
