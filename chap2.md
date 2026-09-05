@@ -2248,7 +2248,7 @@ The central open problem is whether the Bellman optimality operator $T$ is a con
 
 **Exercise 2.32 (Contraction Verification).** Show that $T(x) = 0.5x + 3$ is a contraction on $\mathbb{R}$. What is the contraction factor? What is the fixed point?
 
-**Exercise 2.33 (Banach Fixed-Point Theorem).** Let $T(x) = \cos(x)$ on $\mathbb{R}$. Show that $T$ is a contraction on $[0, 1]$. Find the fixed point to three decimal places. *(Hint: Use the mean value theorem and the fact that $|\sin x| \leq 1$.)*
+**Exercise 2.33 (Banach Fixed-Point Theorem).** Let $T(x) = \cos(x)$ on $\mathbb{R}$. Show that $T$ is a contraction on $[0, 1]$. Find the fixed point to three decimal places. *(Hint: Use the mean value theorem and the fact that* $|\sin x| \leq 1$.)
 
 **Exercise 2.34 (Bellman Evaluation Contraction).** For the Bellman evaluation operator $T^\pi$, prove the contraction property step by step. Show that:
 
