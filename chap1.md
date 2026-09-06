@@ -688,7 +688,7 @@ where $\mu_i \geq 0$ are weights.
 - **Arbitrary Weights:** The choice of weights is subjective and problem-dependent.
 - **Scale Sensitivity:** Weights must account for the relative scales of different objectives.
 - **No Universal Solution:** Different environments require different weights.
-- **Convexity Assumption:** Linear scalarisation can only find policies on the convex hull of the Pareto frontier.
+- **Convexity Assumption:** Linear scalarisation can recover only the supported Pareto-optimal policies, i.e., Pareto-optimal policies lying on the boundary of the convex hull of the achievable objective set.
 
 **The Fundamental Question:** How should we choose $\mu$? There is no principled answer. The choice is often made by trial and error, or based on domain expertise—neither of which is satisfactory for autonomous agents.
 
