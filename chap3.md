@@ -21,32 +21,32 @@ The chapter is organized as follows:
 
 ### 3.2.1 Definition
 
-**Definition 3.1 (Belief Space).** Let \( \mathcal{B} \) denote the **belief space** of an information processing system. Each belief \( b \in \mathcal{B} \) represents a complete specification of the system's internal configuration—its knowledge, models, parameters, and computational state.
+**Definition 3.1 (Belief Space).** Let $\mathcal{B}$ denote the **belief space** of an information processing system. Each belief $b \in \mathcal{B}$ represents a complete specification of the system's internal configuration—its knowledge, models, parameters, and computational state.
 
 The belief space consists of all configurations reachable with bounded energy cost. We assume:
-1. \( \mathcal{B} \) is a topological space (we can talk about neighborhoods and convergence).
-2. \( \mathcal{B} \) is connected (there are no isolated, unreachable beliefs).
-3. \( \mathcal{B} \) has a natural notion of "closeness" between beliefs.
+1. $\mathcal{B}$ is a topological space (we can talk about neighborhoods and convergence).
+2. $\mathcal{B}$ is connected (there are no isolated, unreachable beliefs).
+3. $\mathcal{B}$ has a natural notion of "closeness" between beliefs.
 
 ### 3.2.2 What Is a Belief?
 
 A belief can be interpreted in several ways, depending on the system:
 
-**For a Bayesian agent:** A belief is a probability distribution over environment states or latent parameters. \( \mathcal{B} \) is the space of probability distributions.
+**For a Bayesian agent:** A belief is a probability distribution over environment states or latent parameters. $\mathcal{B}$ is the space of probability distributions.
 
-**For a neural network:** A belief is the set of weights and activations. \( \mathcal{B} \) is the weight space of the network.
+**For a neural network:** A belief is the set of weights and activations. $\mathcal{B}$ is the weight space of the network.
 
-**For a symbolic reasoner:** A belief is a set of logical propositions. \( \mathcal{B} \) is the space of knowledge bases.
+**For a symbolic reasoner:** A belief is a set of logical propositions. $\mathcal{B}$ is the space of knowledge bases.
 
-**For a physical system:** A belief is the physical configuration of the system. \( \mathcal{B} \) is the configuration space.
+**For a physical system:** A belief is the physical configuration of the system. $\mathcal{B}$ is the configuration space.
 
 Despite these different interpretations, the geometric structure of belief space is universal: beliefs can be compared, transitions have costs, and some transitions are irreversible.
 
 ### 3.2.3 Structure of the Belief Space
 
-We do not assume \( \mathcal{B} \) has a metric structure (that is what we are building). However, we assume:
+We do not assume $\mathcal{B}$ has a metric structure (that is what we are building). However, we assume:
 
-**Axiom 3.2 (Reachability).** For any two beliefs \( b_i, b_j \in \mathcal{B} \), there exists a finite sequence of transitions \( b_i \to b_{i+1} \to \cdots \to b_j \) with finite energy cost.
+**Axiom 3.2 (Reachability).** For any two beliefs $b_i, b_j \in \mathcal{B}$, there exists a finite sequence of transitions $b_i \to b_{i+1} \to \cdots \to b_j$ with finite energy cost.
 
 **Axiom 3.3 (Bounded Energy).** For any belief \( b \in \mathcal{B} \), there is a neighborhood \( U_b \subseteq \mathcal{B} \) such that transitions within \( U_b \) have uniformly bounded energy cost.
 
