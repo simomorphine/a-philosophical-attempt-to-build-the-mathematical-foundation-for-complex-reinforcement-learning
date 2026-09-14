@@ -98,7 +98,7 @@ $$
 B^+(b, \epsilon) \cap B^-(b, \epsilon) \subseteq B_{\text{avg}}(b, \epsilon).
 $$
 
-*Proof.* If $x \in B^+(b, \epsilon) \cap B^-(b, \epsilon)$, then $d_\gamma(b, x) < \epsilon $ and $ d_\gamma(x, b) < \epsilon$. Therefore:
+*Proof.* If $x \in B^+(b, \epsilon) \cap B^-(b, \epsilon)$, then $d_\gamma(b, x) < \epsilon$ and $d_\gamma(x, b) < \epsilon$. Therefore:
 
 $$
 d_{\text{avg}}(b, x) = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2} < \frac{\epsilon + \epsilon}{2} = \epsilon.
