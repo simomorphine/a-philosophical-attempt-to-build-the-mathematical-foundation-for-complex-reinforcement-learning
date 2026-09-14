@@ -31,6 +31,7 @@ The chapter is organized as follows:
 The $\gamma$-distance $d_\gamma$ is asymmetric: $d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)$ in general. To obtain a symmetric distance, we can average the forward and backward costs.
 
 **Definition 7.1 (Average Distance).** The **average distance** is
+
 $$
 d_{\text{avg}}(b, x) = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2}.
 $$
