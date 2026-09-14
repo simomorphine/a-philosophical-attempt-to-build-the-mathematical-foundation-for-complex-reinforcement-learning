@@ -584,7 +584,7 @@ Under differentiability conditions, the inclusion becomes equality.
 
 $$Sym_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$$
 
-**Proof.** We already have $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$ from Theorem 3.1. We need to prove $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$.
+**Proof.** We already have $Sym_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$ from Theorem 3.1. We need to prove $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$.
 
 Let $b \in E_{\mathrm{avg}}$. By definition, $b$ is closed in the average topology $\tau_{\mathrm{avg}}$.
 
