@@ -243,7 +243,8 @@ The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B
 **Proposition 7.13 (Symmetric Points and Equilibrium).** Every locally symmetric point belongs to $E_{\text{avg}}$.
 
 *Proof.* 
-If $b \in \text{Sym}_\gamma(\mathcal{B})$, then for any $\epsilon > 0$, there exists a neighborhood $U$ of $b$ such that $|d_\gamma(b, x) - d_\gamma(x, b)| / d_{\text{avg}}(b, x) < \epsilon$ for all $x \in U$. This implies that the asymmetry is small, so the forward and backward balls approximately coincide. Thus, $b$ is in the closure of the pre-equilibrium set in $\tau_{\text{avg}}$. $\square$
+
+If $b \in Sym_\gamma (\mathcal{B})$, then for any $\epsilon > 0$, there exists a neighborhood $U$ of $b$ such that $|d_\gamma(b, x) - d_\gamma(x, b)| / d_{\text{avg}}(b, x) < \epsilon$ for all $x \in U$. This implies that the asymmetry is small, so the forward and backward balls approximately coincide. Thus, $b$ is in the closure of the pre-equilibrium set in $\tau_{\text{avg}}$. $\square$
 
 **Interpretation:** Locally symmetric points are in equilibrium in the strongest sense ($E_{\text{avg}}$).
 
@@ -268,7 +269,7 @@ $$
 **Definition 7.15 (Fixed Point).** A belief $b^\* \in \mathcal{B}$ is a **fixed point** if
 
 $$
-Q(b^*, b^*) = 0.
+Q(b^\*, b^\*) = 0.
 $$
 
 Trivially, every $b$ satisfies this. The non-trivial condition is that $b^\*$ is a fixed point of the dynamics: the agent's trajectory converges to $b^\*$.
