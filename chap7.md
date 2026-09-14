@@ -242,7 +242,8 @@ The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B
 
 **Proposition 7.13 (Symmetric Points and Equilibrium).** Every locally symmetric point belongs to $E_{\text{avg}}$.
 
-*Proof.* If $b \in \text{Sym}_\gamma(\mathcal{B})$, then for any $\epsilon > 0$, there exists a neighborhood $U$ of $b$ such that $|d_\gamma(b, x) - d_\gamma(x, b)| / d_{\text{avg}}(b, x) < \epsilon $for all$ x \in U$. This implies that the asymmetry is small, so the forward and backward balls approximately coincide. Thus, $b$ is in the closure of the pre-equilibrium set in $\tau_{\text{avg}}$. $\square$
+*Proof.* 
+If $b \in \text{Sym}_\gamma(\mathcal{B})$, then for any $\epsilon > 0$, there exists a neighborhood $U$ of $b$ such that $|d_\gamma(b, x) - d_\gamma(x, b)| / d_{\text{avg}}(b, x) < \epsilon$ for all $x \in U$. This implies that the asymmetry is small, so the forward and backward balls approximately coincide. Thus, $b$ is in the closure of the pre-equilibrium set in $\tau_{\text{avg}}$. $\square$
 
 **Interpretation:** Locally symmetric points are in equilibrium in the strongest sense ($E_{\text{avg}}$).
 
