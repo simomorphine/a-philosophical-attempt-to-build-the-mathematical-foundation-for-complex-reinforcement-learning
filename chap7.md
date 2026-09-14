@@ -410,7 +410,7 @@ $$
 
 4. **Locally Symmetric Points ($\text{Sym}_\gamma$):**
    - Points where the asymmetry vanishes to first order.
-   - $\text{Sym}_\gamma \subseteq E_{\text{avg}}$.
+   - $Sym_\gamma \subseteq E_{\text{avg}}$.
 
 5. **Fixed Points:**
    - Points where $Q(b, b) = 0$.
