@@ -144,38 +144,44 @@ $$
 
 ### 4.4.1 Existence of the Potential
 
-The debt function is defined in terms of a potential \( \psi \). Does every debt function arise from a potential? The answer is yes: any function \( \text{debt}: \mathcal{B} \times \mathcal{B} \to \mathbb{R} \) satisfying additivity and antisymmetry can be represented as \( \text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i) \) for some \( \psi: \mathcal{B} \to \mathbb{R} \).
+The debt function is defined in terms of a potential $\psi$. Does every debt function arise from a potential? The answer is yes: any function $\text{debt}: \mathcal{B} \times \mathcal{B} \to \mathbb{R}$ satisfying additivity and antisymmetry can be represented as $\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i)$ for some $\psi: \mathcal{B} \to \mathbb{R}$.
 
-**Construction:** Fix a reference belief \( b_0 \in \mathcal{B} \). Define
-\[
+**Construction:** Fix a reference belief $b_0 \in \mathcal{B}$. Define
+
+$$
 \psi(b) = \text{debt}(b_0, b).
-\]
-Then for any \( b_i, b_j \):
-\[
+$$
+
+Then for any $b_i, b_j$:
+
+$$
 \psi(b_j) - \psi(b_i) = \text{debt}(b_0, b_j) - \text{debt}(b_0, b_i) = \text{debt}(b_i, b_j),
-\]
+$$
+
 where the last equality follows from additivity:
-\[
+
+$$
 \text{debt}(b_i, b_j) = \text{debt}(b_i, b_0) + \text{debt}(b_0, b_j) = -\text{debt}(b_0, b_i) + \text{debt}(b_0, b_j).
-\]
+$$
 
-Thus, the debt function is completely determined by the potential \( \psi \) up to an additive constant.
+Thus, the debt function is completely determined by the potential $\psi$ up to an additive constant.
 
-### 4.4.2 Interpretation of \( \psi \)
+### 4.4.2 Interpretation of $\psi$
 
-The potential \( \psi(b) \) can be interpreted as the "debt level" of belief \( b \). It is the total debt incurred by moving from a reference belief \( b_0 \) to \( b \).
+The potential $\psi(b)$ can be interpreted as the "debt level" of belief $b$. It is the total debt incurred by moving from a reference belief $b_0$ to $b$.
 
-**Properties of \( \psi \):**
-- \( \psi \) is defined up to an additive constant.
-- \( \psi \) is a scalar field on belief space.
-- \( \psi \) is a **conservative** quantity (gradient of a potential).
+**Properties of $\psi$:**
+- $\psi$ is defined up to an additive constant.
+- $\psi$ is a scalar field on belief space.
+- $\psi$ is a **conservative** quantity (gradient of a potential).
 
 ### 4.4.3 The Debt as a Gradient
 
 In differential geometry terms, the debt function is the gradient of the potential:
-\[
+
+$$
 \text{debt}(b_i, b_j) = \int_{b_i}^{b_j} \nabla \psi \cdot ds.
-\]
+$$
 
 This is path-independent, reflecting the conservative nature of debt.
 
@@ -185,18 +191,19 @@ This is path-independent, reflecting the conservative nature of debt.
 
 ### 4.5.1 The Gauge Freedom
 
-The potential \( \psi \) is not unique. Adding a constant to \( \psi \) does not change the debt function.
+The potential $\psi$ is not unique. Adding a constant to $\psi$ does not change the debt function.
 
-**Proposition 4.7 (Gauge Invariance).** For any constant \( c \in \mathbb{R} \), define \( \psi'(b) = \psi(b) + c \). Then:
-\[
+**Proposition 4.7 (Gauge Invariance).** For any constant $c \in \mathbb{R}$, define $\psi'(b) = \psi(b) + c$. Then:
+
+$$
 \text{debt}_{\psi'}(b_i, b_j) = \text{debt}_{\psi}(b_i, b_j).
-\]
+$$
 
 *Proof.*
-\[
+
+$$
 \psi'(b_j) - \psi'(b_i) = [\psi(b_j) + c] - [\psi(b_i) + c] = \psi(b_j) - \psi(b_i).
-\]
-\( \square \)
+$$
 
 ### 4.5.2 Interpretation of Gauge Invariance
 
