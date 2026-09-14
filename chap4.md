@@ -4,11 +4,11 @@
 
 ## 4.1 Introduction
 
-In Chapter 3, we introduced the energy quasi-metric \( d(b_i, b_j) \) as a measure of the real cost of transitioning between beliefs. However, real cost alone does not capture the full computational burden of belief transitions. There is a second, qualitatively different quantity: **information debt**.
+In Chapter 3, we introduced the energy quasi-metric $d(b_i, b_j)$ as a measure of the real cost of transitioning between beliefs. However, real cost alone does not capture the full computational burden of belief transitions. There is a second, qualitatively different quantity: **information debt**.
 
 Information debt represents the epistemic burden of operating with incomplete or miscalibrated models. It is the "computational obligation" carried by a belief state—the gap between what the agent knows and what it needs to know to act optimally.
 
-Unlike energy cost, which is cumulative and path-dependent, information debt is **conservative** and **path-independent**. It is a potential difference: the debt of a transition depends only on the endpoints, not on the path taken. This makes debt fundamentally different from cost—and naturally leads to the complex quasi-metric of Chapter 5.
+Unlike energy cost, which is cumulative and path-dependent, information debt is **conservative** and **path-independent**. It is a potential difference: the debt of a transition depends only on the endpoints, not on the path taken. This makes debt fundamentally different from cost—and naturally leads to the complex quasi-metric of Chapter ??.
 
 This chapter is organized as follows:
 - **Section 4.2:** Definition and motivation of the debt function.
@@ -36,30 +36,31 @@ In all these cases, there is a quantity that is not captured by energy cost: the
 
 ### 4.2.2 Definition
 
-**Definition 4.1 (Epistemic Potential).** Let \( \psi: \mathcal{B} \to \mathbb{R} \) be a **potential function** on belief space. The potential \( \psi(b) \) quantifies the "computational obligation" or "informational burden" carried by belief \( b \).
+**Definition 4.1 (Epistemic Potential).** Let $\psi: \mathcal{B} \to \mathbb{R}$ be a **potential function** on belief space. The potential $\psi(b)$ quantifies the "computational obligation" or "informational burden" carried by belief $b$.
 
 **Definition 4.2 (Debt Function).** The debt function is defined as
-\[
-\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i).
-\]
 
-The debt of a transition from \( b_i \) to \( b_j \) is the change in potential:
-- **Positive debt:** \( \psi(b_j) > \psi(b_i) \): the agent takes on new obligations by moving to a belief with higher burden.
-- **Negative debt:** \( \psi(b_j) < \psi(b_i) \): the agent pays down existing obligations by moving to a belief with lower burden.
+$$
+\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i).
+$$
+
+The debt of a transition from $b_i$ to $b_j$ is the change in potential:
+- **Positive debt:** $\psi(b_j) > \psi(b_i)$: the agent takes on new obligations by moving to a belief with higher burden.
+- **Negative debt:** $\psi(b_j) < \psi(b_i)$: the agent pays down existing obligations by moving to a belief with lower burden.
 
 ### 4.2.3 Interpretation of the Potential
 
-The potential \( \psi(b) \) can be interpreted in several ways:
+The potential $\psi(b)$ can be interpreted in several ways:
 
-**Entropic Interpretation:** \( \psi(b) = -H(\Theta \mid b) \), where \( H(\Theta \mid b) \) is the conditional entropy of the latent variable \( \Theta \) given belief \( b \). Higher potential means lower entropy (more knowledge, higher burden). This is the interpretation we will use in Chapter 9.
+**Entropic Interpretation:** $\psi(b) = -H(\Theta \mid b)$, where $H(\Theta \mid b)$ is the conditional entropy of the latent variable $\Theta$ given belief $b$. Higher potential means lower entropy (more knowledge, higher burden). This is the interpretation we will use in Chapter ??.
 
-**Computational Interpretation:** \( \psi(b) \) is the minimum number of computational steps required to "represent" belief \( b \). Higher potential means more complex representation.
+**Computational Interpretation:** $\psi(b)$ is the minimum number of computational steps required to "represent" belief $b$. Higher potential means more complex representation.
 
-**Goal Satisfaction Interpretation:** \( \psi(b) \) is the number of unsatisfied goals or obligations at belief \( b \). Higher potential means more outstanding obligations.
+**Goal Satisfaction Interpretation:** $\psi(b)$ is the number of unsatisfied goals or obligations at belief $b$. Higher potential means more outstanding obligations.
 
-**Model Complexity Interpretation:** \( \psi(b) \) is the complexity (e.g., number of parameters) of the model at belief \( b \). Higher potential means more complex model.
+**Model Complexity Interpretation:** $\psi(b)$ is the complexity (e.g., number of parameters) of the model at belief $b$. Higher potential means more complex model.
 
-**Physical Interpretation:** \( \psi(b) \) is the free energy of belief \( b \). Higher potential means higher free energy (less stable).
+**Physical Interpretation:** $\psi(b)$ is the free energy of belief $b$. Higher potential means higher free energy (less stable).
 
 Despite these different interpretations, the mathematical properties of the debt function are universal.
 
@@ -69,55 +70,60 @@ Despite these different interpretations, the mathematical properties of the debt
 
 ### 4.3.1 Identity
 
-**Proposition 4.3 (Identity).** For any belief \( b \in \mathcal{B} \):
-\[
+**Proposition 4.3 (Identity).** For any belief $b \in \mathcal{B}$:
+
+$$
 \text{debt}(b, b) = \psi(b) - \psi(b) = 0.
-\]
+$$
 
 **Interpretation:** Staying in the same belief incurs zero debt. This mirrors the identity property of the energy quasi-metric.
 
 ### 4.3.2 Additivity (Telescoping)
 
-**Proposition 4.4 (Additivity).** For any beliefs \( b_i, b_j, b_k \in \mathcal{B} \):
-\[
+**Proposition 4.4 (Additivity).** For any beliefs $b_i, b_j, b_k \in \mathcal{B}$:
+
+$$
 \text{debt}(b_i, b_k) = \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k).
-\]
+$$
 
 *Proof.*
-\[
+
+$$
 \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k) = [\psi(b_j) - \psi(b_i)] + [\psi(b_k) - \psi(b_j)] = \psi(b_k) - \psi(b_i) = \text{debt}(b_i, b_k).
-\]
-\( \square \)
+$$
+
 
 **Interpretation:** Debt is path-independent. The debt of a multi-step transition is the sum of the debts of the individual steps. This is the **telescoping** property—debts cancel along a path.
 
 ### 4.3.3 Antisymmetry
 
-**Proposition 4.5 (Antisymmetry).** For any beliefs \( b_i, b_j \in \mathcal{B} \):
-\[
+**Proposition 4.5 (Antisymmetry).** For any beliefs $b_i, b_j \in \mathcal{B}$:
+
+$$
 \text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i).
-\]
+$$
 
 *Proof.*
-\[
-\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i) = -[\psi(b_i) - \psi(b_j)] = -\text{debt}(b_j, b_i).
-\]
-\( \square \)
 
-**Interpretation:** Going from \( b_i \) to \( b_j \) incurs the opposite debt of going from \( b_j \) to \( b_i \). If you take on debt by learning, you pay it down by forgetting.
+$$
+\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i) = -[\psi(b_i) - \psi(b_j)] = -\text{debt}(b_j, b_i).
+$$
+
+**Interpretation:** Going from $b_i$ to $b_j$ incurs the opposite debt of going from $b_j$ to $b_i$. If you take on debt by learning, you pay it down by forgetting.
 
 ### 4.3.4 Cycle Invariance
 
-**Proposition 4.6 (Cycle Invariance).** For any closed path \( b_0 \to b_1 \to \cdots \to b_n \to b_0 \):
-\[
+**Proposition 4.6 (Cycle Invariance).** For any closed path $b_0 \to b_1 \to \cdots \to b_n \to b_0$:
+
+$$
 \sum_{k=0}^{n-1} \text{debt}(b_k, b_{k+1}) = 0.
-\]
+$$
 
 *Proof.*
-\[
+
+$$
 \sum_{k=0}^{n-1} \text{debt}(b_k, b_{k+1}) = \sum_{k=0}^{n-1} [\psi(b_{k+1}) - \psi(b_k)] = \psi(b_n) - \psi(b_0) = \psi(b_0) - \psi(b_0) = 0.
-\]
-\( \square \)
+$$
 
 **Interpretation:** Debt is a conservative quantity. No debt is created or destroyed in a closed cycle. This is the fundamental difference between debt (conservative) and energy cost (non-conservative).
 
@@ -125,10 +131,10 @@ Despite these different interpretations, the mathematical properties of the debt
 
 | Property | Debt Function | Energy Quasi-Metric |
 |----------|---------------|---------------------|
-| Identity | \( \text{debt}(b,b) = 0 \) | \( d(b,b) = 0 \) |
-| Additivity | \( \text{debt}(b_i,b_k) = \text{debt}(b_i,b_j) + \text{debt}(b_j,b_k) \) | \( d(b_i,b_k) \leq d(b_i,b_j) + d(b_j,b_k) \) |
-| Symmetry | Antisymmetric \( (\text{debt}(b_i,b_j) = -\text{debt}(b_j,b_i)) \) | No symmetry |
-| Range | \( \mathbb{R} \) (signed) | \( \mathbb{R}_{\geq 0} \) (non-negative) |
+| Identity | $\text{debt}(b,b) = 0$ | $d(b,b) = 0$ |
+| Additivity | $\text{debt}(b_i,b_k) = \text{debt}(b_i,b_j) + \text{debt}(b_j,b_k)$ | $d(b_i,b_k) \leq d(b_i,b_j) + d(b_j,b_k)$ |
+| Symmetry | Antisymmetric $(\text{debt}(b_i,b_j) = -\text{debt}(b_j,b_i))$ | No symmetry |
+| Range | $\mathbb{R}$ (signed) | $\mathbb{R}_{\geq 0}$ (non-negative) |
 | Path Dependence | Path-independent | Path-dependent |
 | Conservative | Yes | No |
 
