@@ -131,33 +131,33 @@ Taking the closure of $U_{\text{pre}}$ in different topologies yields four disti
 
 1. **Average Equilibrium ($E_{\text{avg}}$):**
 
-   $$
-   E_{\text{avg}} = \overline{U_{\text{pre}}}^{\tau_{\text{avg}}}.
-   $$
+$$
+E_{\text{avg}} = \overline{U_{\text{pre}}}^{\tau_{\text{avg}}}.
+$$
 
    The closure of the pre-equilibrium set in the average topology.
 
 3. **Join Equilibrium ($E_\vee$):**
 
-   $$
-   E_\vee = \overline{U_{\text{pre}}}^{\tau_+ \vee \tau_-}.
-   $$
+$$
+E_\vee = \overline{U_{\text{pre}}}^{\tau_+ \vee \tau_-}.
+$$
 
    The closure of the pre-equilibrium set in the join topology.
 
 5. **Forward Equilibrium ($E_\rightarrow$):**
 
-   $$
-   E_\rightarrow = \overline{U_{\text{pre}}}^{\tau_+}.
-   $$
+$$
+E_\rightarrow = \overline{U_{\text{pre}}}^{\tau_+}.
+$$
 
    The closure of the pre-equilibrium set in the forward topology.
 
 7. **Backward Equilibrium ($E_\leftarrow$):**
 
-   $$
-   E_\leftarrow = \overline{U_{\text{pre}}}^{\tau_-}.
-   $$
+$$
+E_\leftarrow = \overline{U_{\text{pre}}}^{\tau_-}.
+$$
 
    The closure of the pre-equilibrium set in the backward topology.
 
