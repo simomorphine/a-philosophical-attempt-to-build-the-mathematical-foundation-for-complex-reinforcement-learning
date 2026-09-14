@@ -392,55 +392,56 @@ $$
 This chapter has formalized equilibrium in belief space:
 
 1. **Symmetrization:**
-   - Average distance: $ d_{\text{avg}}(b, x) = (d_\gamma(b, x) + d_\gamma(x, b))/2 $.
-   - Max distance: $ d_{\text{max}}(b, x) = \max\{d_\gamma(b, x), d_\gamma(x, b)\} $.
-   - $ d_{\text{avg}} $ and $ d_{\text{max}} $ are equivalent and define the same topology.
+   - Average distance: $d_{\text{avg}}(b, x) = (d_\gamma(b, x) + d_\gamma(x, b))/2$.
+   - Max distance: $d_{\text{max}}(b, x) = \max\{d_\gamma(b, x), d_\gamma(x, b)\}$.
+   - $d_{\text{avg}}$ and $d_{\text{max}}$ are equivalent and define the same topology.
 
 2. **Four Equilibrium Concepts:**
-   - $ E_{\text{avg}} $: Closure in the average topology (strongest).
-   - $ E_\vee $: Closure in the join topology.
-   - $ E_\rightarrow $: Closure in the forward topology.
-   - $ E_\leftarrow $: Closure in the backward topology.
+   - $E_{\text{avg}}$: Closure in the average topology (strongest).
+   - $E_\vee$: Closure in the join topology.
+   - $E_\rightarrow$: Closure in the forward topology.
+   - $E_\leftarrow$: Closure in the backward topology.
 
 3. **Equilibrium Hierarchy:**
-   $$
-   E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow.
-   $$
 
-4. **Locally Symmetric Points ($ \text{Sym}_\gamma $):**
+$$
+E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow.
+$$
+
+4. **Locally Symmetric Points ($\text{Sym}_\gamma$):**
    - Points where the asymmetry vanishes to first order.
-   - $ \text{Sym}_\gamma \subseteq E_{\text{avg}} $.
+   - $\text{Sym}_\gamma \subseteq E_{\text{avg}}$.
 
 5. **Fixed Points:**
-   - Points where $ Q(b, b) = 0 $.
+   - Points where $Q(b, b) = 0$.
    - Every fixed point belongs to all four equilibrium subspaces.
 
 6. **Interpretation:**
-   - $ E_{\text{avg}} $: Strong balance (round-trip cost small).
-   - $ E_\vee $: Bidirectional balance (can reach and be reached).
-   - $ E_\rightarrow $ and $ E_\leftarrow $: Directional balance.
+   - $E_{\text{avg}}$: Strong balance (round-trip cost small).
+   - $E_\vee$: Bidirectional balance (can reach and be reached).
+   - $E_\rightarrow$ and $E_\leftarrow$: Directional balance.
 
 7. **RL Connection:** Equilibrium in belief space corresponds to zero value in RL. The HST Equilibrium Axiom asserts convergence to equilibrium.
 
-The equilibrium hierarchy provides a nuanced understanding of what it means for an agent to be "in balance." The strongest concept ($ E_{\text{avg}} $) requires full local symmetry; the weakest concepts ($ E_\rightarrow $ and $ E_\leftarrow $) require only directional balance.
+The equilibrium hierarchy provides a nuanced understanding of what it means for an agent to be "in balance." The strongest concept ($E_{\text{avg}}$) requires full local symmetry; the weakest concepts ($E_\rightarrow$ and $E_\leftarrow$) require only directional balance.
 
 ---
 
 ## Exercises
 
-**Exercise 7.1 (Average Distance).** Prove that $ d_{\text{avg}} $ satisfies the triangle inequality. Use the triangle inequality of $ d_\gamma $.
+**Exercise 7.1 (Average Distance).** Prove that $d_{\text{avg}}$ satisfies the triangle inequality. Use the triangle inequality of $d_\gamma$.
 
-**Exercise 7.2 (Equivalence of $ d_{\text{avg}} $ and $ d_{\text{max}} $).** Show that $ d_{\text{avg}} $ and $ d_{\text{max}} $ are equivalent distances. What is the constant of equivalence?
+**Exercise 7.2 (Equivalence of $d_{\text{avg}}$ and $d_{\text{max}}$).** Show that $d_{\text{avg}}$ and $d_{\text{max}}$ are equivalent distances. What is the constant of equivalence?
 
-**Exercise 7.3 (Intersection Property).** Prove that $ B^+(b, \epsilon) \cap B^-(b, \epsilon) \subseteq B_{\text{avg}}(b, \epsilon) $. Is the reverse inclusion true? If not, provide a counterexample.
+**Exercise 7.3 (Intersection Property).** Prove that $B^+(b, \epsilon) \cap B^-(b, \epsilon) \subseteq B_{\text{avg}}(b, \epsilon)$. Is the reverse inclusion true? If not, provide a counterexample.
 
-**Exercise 7.4 (Equilibrium Hierarchy).** Prove that $ E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow $. When are the inclusions strict?
+**Exercise 7.4 (Equilibrium Hierarchy).** Prove that $E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$. When are the inclusions strict?
 
-**Exercise 7.5 (Locally Symmetric Points).** For the continuous belief space $ \mathcal{B} = \mathbb{R} $ with $ d(x, y) = |y - x| $, find the locally symmetric points. What is $ \text{Sym}_\gamma(\mathcal{B}) $?
+**Exercise 7.5 (Locally Symmetric Points).** For the continuous belief space $\mathcal{B} = \mathbb{R}$ with $d(x, y) = |y - x|$, find the locally symmetric points. What is $\text{Sym}_\gamma(\mathcal{B})$?
 
 **Exercise 7.6 (Fixed Points).** Prove that every fixed point belongs to all four equilibrium subspaces. Is the converse true? If not, provide a counterexample.
 
-**Exercise 7.7 (Equilibrium in RL).** Suppose the agent's value function satisfies $ |Q(s, a)| = 0 $ for all $ (s, a) \in E_{\text{avg}} $. What does this imply about the agent's policy?
+**Exercise 7.7 (Equilibrium in RL).** Suppose the agent's value function satisfies $|Q(s, a)| = 0$ for all $(s, a) \in E_{\text{avg}}$. What does this imply about the agent's policy?
 
 ---
 
@@ -454,16 +455,10 @@ The equilibrium hierarchy provides a nuanced understanding of what it means for 
 
 - Amari, S. (2016). *Information Geometry and Its Applications*. Springer. — The geometry of probability spaces and equilibrium.
 
----
-
-*Chapter 7 has introduced equilibrium in belief space. Part II of the book (Chapters 8-12) translates this geometric framework into reinforcement learning algorithms.*
-
-<br>
 
 ---
----
 
-# Part II — Supplementary Paper
+# Supplementary
 
 *The material below is a standalone paper covering related ground (the equilibrium hierarchy, locally symmetric points) in more technical depth, then extends it with new results — smoothness/non-smoothness conditions, non-smooth counterexamples, physical interpretation, and implications for AGI architecture design. It was included in the uploaded file after Chapter 7; it is kept here as a separate document rather than merged into Chapter 7's numbering, since it has its own self-contained section numbers (1–11).*
 
@@ -474,9 +469,7 @@ The equilibrium hierarchy provides a nuanced understanding of what it means for 
 
 ## A Mathematical Investigation of Reversibility, Stability, and Time's Arrow in Belief Space
 
-**Mohamed Elwardi**
 
-Humble Systems Theory
 
 ---
 
