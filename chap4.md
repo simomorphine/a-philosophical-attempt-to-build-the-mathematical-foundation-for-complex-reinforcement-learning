@@ -343,7 +343,7 @@ $$
 \text{debt}(b^\*, b^\*) = 0.
 $$
 
-The equilibrium belief $b^*$ satisfies $\psi(b^*) = \psi(b^*)$ trivially. More meaningfully, the agent reaches equilibrium when $\psi$ is minimized (or maximized, depending on the interpretation).
+The equilibrium belief $b^\*$ satisfies $\psi(b^\*) = \psi(b^\*)$ trivially. More meaningfully, the agent reaches equilibrium when $\psi$ is minimized (or maximized, depending on the interpretation).
 
 ### 4.8.3 Debt and Information Gain
 
