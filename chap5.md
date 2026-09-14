@@ -351,8 +351,8 @@ The triangle inequality for the modulus means that the total distance in the cos
 
 ### 5.8.1 Example 1: Two-State Belief Space
 
-Let $\mathcal{B} = \{0, 1\}$ with:
-- $d(0, 1) = E_{\text{obs}}$, $d(1, 0) = E_{\text{erase}} \).
+Let $\mathcal{B} = \lbrace 0, 1 \rbrace$ with:
+- $d(0, 1) = E_{\text{obs}}$, $d(1, 0) = E_{\text{erase}}$.
 - $\psi(0) = 0$, $\psi(1) = 1$.
 - $\text{debt}(0, 1) = 1$, $\text{debt}(1, 0) = -1$.
 
