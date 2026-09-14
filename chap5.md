@@ -6,8 +6,8 @@
 
 In Chapters 3 and 4, we introduced two fundamentally different quantities that characterize belief transitions:
 
-- **Energy cost** \( d(b_i, b_j) \): a non-negative, path-dependent, asymmetric measure of real effort.
-- **Information debt** \( \text{debt}(b_i, b_j) \): a signed, path-independent, antisymmetric measure of epistemic burden.
+- **Energy cost** $d(b_i, b_j)$: a non-negative, path-dependent, asymmetric measure of real effort.
+- **Information debt** $\text{debt}(b_i, b_j)$: a signed, path-independent, antisymmetric measure of epistemic burden.
 
 These two quantities are orthogonal in nature: cost is cumulative and irreversible; debt is conservative and reversible. Yet they are inextricably linked in any information processing system—every action has both a cost and an effect on debt.
 
@@ -31,45 +31,56 @@ The chapter is organized as follows:
 ### 5.2.1 The Complex Quasi-Metric
 
 **Definition 5.1 (Complex Quasi-Metric).** The complex quasi-metric on belief space is the function
-\[
-Q: \mathcal{B} \times \mathcal{B} \to \mathbb{C}
-\]
-defined by
-\[
-Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j),
-\]
-where:
-- \( d(b_i, b_j) \) is the energy quasi-metric (real part, non-negative).
-- \( \text{debt}(b_i, b_j) \) is the debt function (imaginary part, signed).
 
-Equivalently, using the potential \( \psi \):
-\[
+$$
+Q: \mathcal{B} \times \mathcal{B} \to \mathbb{C}
+$$
+
+defined by
+
+$$
+Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j),
+$$
+
+where:
+- $d(b_i, b_j)$ is the energy quasi-metric (real part, non-negative).
+- $\text{debt}(b_i, b_j)$ is the debt function (imaginary part, signed).
+
+Equivalently, using the potential $\psi$:
+
+$$
 Q(b_i, b_j) = d(b_i, b_j) + i \cdot [\psi(b_j) - \psi(b_i)].
-\]
+$$
 
 ### 5.2.2 The Modulus and Argument
 
 **Definition 5.2 (Modulus).** The modulus of the complex quasi-metric is
-\[
+
+$$
 |Q(b_i, b_j)| = \sqrt{d(b_i, b_j)^2 + \text{debt}(b_i, b_j)^2}.
-\]
+$$
 
 **Definition 5.3 (Argument).** The argument (phase) is
-\[
+
+$$
 \arg Q(b_i, b_j) = \arctan \left( \frac{\text{debt}(b_i, b_j)}{d(b_i, b_j)} \right),
-\]
-with the convention that \( \arg Q = \pi/2 \) when \( d = 0 \) and \( \text{debt} > 0 \), and \( \arg Q = -\pi/2 \) when \( d = 0 \) and \( \text{debt} < 0 \).
+$$
+
+with the convention that $\arg Q = \pi/2$ when $d = 0$ and $\text{debt} > 0$, and $\arg Q = -\pi/2$ when $d = 0$ and $\text{debt} < 0$.
 
 ### 5.2.3 Polar Form
 
 The complex quasi-metric can be written in polar form:
-\[
+
+$$
 Q(b_i, b_j) = |Q(b_i, b_j)| e^{i\theta(b_i, b_j)},
-\]
+$$
+
 where
-\[
+
+$$
 \theta(b_i, b_j) = \arg Q(b_i, b_j).
-\]
+$$
 
 This representation separates the **magnitude** of the transition (the modulus) from its **nature** (the phase).
 
@@ -79,65 +90,75 @@ This representation separates the **magnitude** of the transition (the modulus) 
 
 ### 5.3.1 Identity
 
-**Proposition 5.4 (Identity).** For any belief \( b \in \mathcal{B} \):
-\[
+**Proposition 5.4 (Identity).** For any belief $b \in \mathcal{B}$:
+
+$$
 Q(b, b) = d(b, b) + i \cdot \text{debt}(b, b) = 0 + i \cdot 0 = 0.
-\]
+$$
 
 **Interpretation:** The complex distance from a belief to itself is zero.
 
 ### 5.3.2 Real Part Non-Negativity
 
-**Proposition 5.5 (Real Part Non-Negativity).** For any beliefs \( b_i, b_j \in \mathcal{B} \):
-\[
+**Proposition 5.5 (Real Part Non-Negativity).** For any beliefs $b_i, b_j \in \mathcal{B}$:
+
+$$
 \Re(Q(b_i, b_j)) = d(b_i, b_j) \geq 0.
-\]
+$$
 
 **Interpretation:** The real part (cost) is always non-negative.
 
 ### 5.3.3 Imaginary Part Antisymmetry
 
-**Proposition 5.6 (Imaginary Part Antisymmetry).** For any beliefs \( b_i, b_j \in \mathcal{B} \):
-\[
+**Proposition 5.6 (Imaginary Part Antisymmetry).** For any beliefs $b_i, b_j \in \mathcal{B}$:
+
+$$
 \Im(Q(b_i, b_j)) = -\Im(Q(b_j, b_i)).
-\]
+$$
 
 *Proof.*
-\[
+
+$$
 \Im(Q(b_i, b_j)) = \text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i) = -\Im(Q(b_j, b_i)).
-\]
-\( \square \)
+$$
+
 
 **Interpretation:** The imaginary part (debt) changes sign when the direction is reversed.
 
 ### 5.3.4 Complex Conjugate Relationship
 
-**Proposition 5.7 (Conjugate Relationship).** For any beliefs \( b_i, b_j \in \mathcal{B} \):
-\[
+**Proposition 5.7 (Conjugate Relationship).** For any beliefs $b_i, b_j \in \mathcal{B}$:
+
+$$
 Q(b_i, b_j) \neq \overline{Q(b_j, b_i)}
-\]
-in general. The equality holds only when \( d(b_i, b_j) = d(b_j, b_i) \) (symmetric cost).
+$$
+
+in general. The equality holds only when $d(b_i, b_j) = d(b_j, b_i)$ (symmetric cost).
 
 *Proof.*
-\[
-\overline{Q(b_j, b_i)} = d(b_j, b_i) - i \cdot \text{debt}(b_j, b_i) = d(b_j, b_i) + i \cdot \text{debt}(b_i, b_j).
-\]
-Comparing with \( Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) \), equality requires \( d(b_i, b_j) = d(b_j, b_i) \). \( \square \)
 
-**Interpretation:** The complex quasi-metric is not Hermitian—it does not satisfy \( Q(b_i, b_j) = \overline{Q(b_j, b_i)} \) unless cost is symmetric.
+$$
+\overline{Q(b_j, b_i)} = d(b_j, b_i) - i \cdot \text{debt}(b_j, b_i) = d(b_j, b_i) + i \cdot \text{debt}(b_i, b_j).
+$$
+
+Comparing with $Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$, equality requires $d(b_i, b_j) = d(b_j, b_i)$. \( \square \)
+
+**Interpretation:** The complex quasi-metric is not Hermitian—it does not satisfy $Q(b_i, b_j) = \overline{Q(b_j, b_i)}$ unless cost is symmetric.
 
 ### 5.3.5 The Telescoping Property for the Imaginary Part
 
-**Proposition 5.8 (Imaginary Telescoping).** For any beliefs \( b_i, b_j, b_k \in \mathcal{B} \):
-\[
+**Proposition 5.8 (Imaginary Telescoping).** For any beliefs $b_i, b_j, b_k \in \mathcal{B}$:
+
+$$
 \Im(Q(b_i, b_k)) = \Im(Q(b_i, b_j)) + \Im(Q(b_j, b_k)).
-\]
+$$
 
 *Proof.* This follows from the additivity of debt:
-\[
+
+$$
 \Im(Q(b_i, b_k)) = \text{debt}(b_i, b_k) = \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k) = \Im(Q(b_i, b_j)) + \Im(Q(b_j, b_k)).
-\]
-\( \square \)
+$$
+
 
 **Interpretation:** The imaginary part telescopes—it is path-independent.
 
@@ -165,11 +186,11 @@ The complex quasi-metric lives in the **cost-debt plane**:
             |
 ```
 
-Each transition \( b_i \to b_j \) is represented by a vector:
+Each transition $b_i \to b_j$ is represented by a vector:
 - The **horizontal component** is the energy cost.
 - The **vertical component** is the information debt.
-- The **length** of the vector is the modulus \( |Q| \).
-- The **angle** \( \theta \) is the exploration-exploitation ratio.
+- The **length** of the vector is the modulus $|Q|$.
+- The **angle** $\theta$ is the exploration-exploitation ratio.
 
 ### 5.4.2 The Four Quadrants
 
