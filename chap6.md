@@ -738,7 +738,7 @@ This chapter has introduced the $\gamma$-distance family:
 5. **Gamma Derivative:**
    - First derivative: $\partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma \geq 0$.
    - Second derivative: $\partial^2 d_\gamma / \partial \gamma^2 = d^2 \cdot \text{debt}^2 / d_\gamma^3 \geq 0$ (convex).
-   - Elasticity: $\mathcal{E}_\gamma = \gamma^2 \cdot \text{debt}^2 / d_\gamma^2 \in [0, 1]$.
+   - Elasticity: $\mathcal{E}_\gamma = \frac{\gamma^2 \cdot \mathrm{debt}^2}{d_\gamma^2} \in [0,1]$.
    - Phase derivative: $\partial \theta_\gamma / \partial \gamma = \text{debt} \cdot d / d_\gamma^2$.
    - Learning schedule: $\gamma(t) = \gamma_0 e^{-\lambda t} + \gamma_\infty$.
 
