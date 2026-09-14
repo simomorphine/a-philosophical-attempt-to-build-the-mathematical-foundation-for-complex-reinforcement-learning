@@ -257,6 +257,7 @@ d(x, y) = \begin{cases}
 \alpha |y - x| & \text{if } y < x,
 \end{cases}
 $$
+
 where $\alpha > 1$. This represents the fact that increasing the estimate (learning more) is cheap ($\alpha = 1$), while decreasing it (forgetting) is expensive ($\alpha > 1$).
 
 The triangle inequality holds: for any $x \leq y \leq z$, $d(x, z) = z - x = (y - x) + (z - y) = d(x, y) + d(y, z)$. For $x \geq y \geq z$, $d(x, z) = \alpha(z - x) \leq \alpha(z - y) + \alpha(y - x) = d(x, y) + d(y, z)$.
