@@ -118,9 +118,18 @@ $$
 
 **Corollary 3.7 (Optimal Paths).** The infimum over all paths from $b_i$ to $b_j$ is well-defined:
 
+```markdown
 $$
-d(b_i, b_j) = \inf \left\{ \sum_{k=0}^{n-1} d(b_k, b_{k+1}) \,\middle|\, b_0 = b_i, b_n = b_j \right\}.
+d(b_i,b_j)
+=
+\inf\left\{
+\sum_{k=0}^{n-1} c(b_k,b_{k+1})
+\;\middle|\;
+b_0=b_i,\; b_n=b_j
+\right\}.
 $$
+```
+
 
 Thus, $d(b_i, b_j)$ is the **shortest path cost** in belief space.
 
