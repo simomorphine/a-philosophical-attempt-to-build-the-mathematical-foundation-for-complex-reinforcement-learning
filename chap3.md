@@ -118,17 +118,9 @@ $$
 
 **Corollary 3.7 (Optimal Paths).** The infimum over all paths from $b_i$ to $b_j$ is well-defined:
 
-```markdown
 $$
-d(b_i,b_j)
-=
-\inf\left\{
-\sum_{k=0}^{n-1} c(b_k,b_{k+1})
-\;\middle|\;
-b_0=b_i,\; b_n=b_j
-\right\}.
+d(b_i, b_j) = \inf \lbrace \sum_{k=0}^{n-1} d(b_k, b_{k+1}) \mid b_0 = b_i,\; b_n = b_j \rbrace
 $$
-```
 
 
 Thus, $d(b_i, b_j)$ is the **shortest path cost** in belief space.
@@ -239,19 +231,19 @@ Symmetric points are the "equilibrium points" where forward and backward costs a
 
 ### 3.6.1 Example 1: A Two-State Belief Space
 
-Let \( \mathcal{B} = \{0, 1\} \), representing a single bit of information. Define:
-- \( d(0, 0) = d(1, 1) = 0 \).
-- \( d(0, 1) = E_{\text{obs}} \) (cost to observe, changing from 0 to 1).
-- \( d(1, 0) = E_{\text{erase}} \) (cost to erase, changing from 1 to 0).
+Let $\mathcal{B} = \{0, 1\}$, representing a single bit of information. Define:
+- $d(0, 0) = d(1, 1) = 0$.
+- $d(0, 1) = E_{\text{obs}}$ (cost to observe, changing from 0 to 1).
+- $d(1, 0) = E_{\text{erase}}$ (cost to erase, changing from 1 to 0).
 
-By Landauer, \( E_{\text{erase}} \gg E_{\text{obs}} \). The quasi-metric is:
+By Landauer, $E_{\text{erase}} \gg E_{\text{obs}}$. The quasi-metric is:
 
-\[
+$$
 d = \begin{pmatrix}
 0 & E_{\text{obs}} \\
 E_{\text{erase}} & 0
 \end{pmatrix}.
-\]
+$$
 
 The triangle inequality requires \( E_{\text{obs}} \leq E_{\text{obs}} + 0 \) and \( E_{\text{erase}} \leq E_{\text{erase}} + 0 \), which hold. The asymmetry gap is \( \Delta(0, 1) = E_{\text{obs}} - E_{\text{erase}} < 0 \).
 
