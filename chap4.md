@@ -279,7 +279,7 @@ Compare with the energy quasi-metric from Chapter 3:
 - $d(0, 1) = E_{\text{obs}}$ (small).
 - $d(1, 0) = E_{\text{erase}}$ (large).
 
-The debt-cost inequality holds: $|\text{debt}(0, 1)| = 1 \leq E_{\text{obs}}$ and $|\text{debt}(1, 0)| = 1 \leq E_{\text{erase}}$.
+The debt-cost inequality holds if $E_{text{obs}} \geq 1$: $|\text{debt}(0, 1)| = 1 \leq E_{\text{obs}}$ and $|\text{debt}(1, 0)| = 1 \leq E_{\text{erase}}$.
 
 ### 4.7.2 Example 2: Continuous Belief Space
 
