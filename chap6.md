@@ -712,33 +712,33 @@ This chapter has introduced the \( \gamma \)-distance family:
    - Join topology \( \tau_+ \vee \tau_- \): bidirectional reachability.
    - Average topology \( \tau_{\text{avg}} \): symmetric version.
 
-8. **RL Connection:** \( d_\gamma \) becomes the objective \( J_\gamma^\pi(s, a) \), and the \( \gamma \)-greedy policy selects actions based on the \( \gamma \)-distance. The gamma derivative informs adaptive scheduling of \( \gamma \).
+8. **RL Connection:** $d_\gamma$ becomes the objective $J_\gamma^\pi(s, a)$, and the $\gamma$-greedy policy selects actions based on the $\gamma$-distance. The gamma derivative informs adaptive scheduling of $\gamma$.
 
-The \( \gamma \)-distance family provides a principled way to interpolate between cost-only and balanced decision-making. The derivative with respect to \( \gamma \) quantifies how the geometry responds to changes in debt weighting, enabling adaptive learning schedules and sensitivity analysis. In Chapter 7, we study the equilibrium structure of this geometry.
+The $\gamma$-distance family provides a principled way to interpolate between cost-only and balanced decision-making. The derivative with respect to $\gamma$ quantifies how the geometry responds to changes in debt weighting, enabling adaptive learning schedules and sensitivity analysis. In Chapter 7, we study the equilibrium structure of this geometry.
 
 ---
 
 ## Exercises
 
-**Exercise 6.1 (\( \gamma \)-Distance Properties).** Verify that \( d_\gamma \) satisfies identity, positivity, and the triangle inequality for \( \gamma = 0.5 \).
+**Exercise 6.1 ($\gamma$-Distance Properties).** Verify that $d_\gamma$ satisfies identity, positivity, and the triangle inequality for $\gamma = 0.5$.
 
-**Exercise 6.2 (Metric Balls).** For the two-state belief space, compute \( B_\gamma(0, \epsilon) \) for \( \gamma = 0, 0.5, 1 \). How does the ball change with \( \gamma \)?
+**Exercise 6.2 (Metric Balls).** For the two-state belief space, compute $B_\gamma(0, \epsilon)$ for $\gamma = 0, 0.5, 1$. How does the ball change with $\gamma$?
 
-**Exercise 6.3 (Topological Comparison).** Prove that \( \tau_{\gamma_1} \subseteq \tau_{\gamma_2} \) for \( \gamma_1 < \gamma_2 \). Construct an example of a set that is open in \( \tau_{\gamma_2} \) but not in \( \tau_{\gamma_1} \).
+**Exercise 6.3 (Topological Comparison).** Prove that $\tau_{\gamma_1} \subseteq \tau_{\gamma_2}$ for $\gamma_1 < \gamma_2$. Construct an example of a set that is open in $\tau_{\gamma_2}$ but not in $\tau_{\gamma_1}$.
 
 **Exercise 6.4 (Bitopological Spaces).** For the two-state belief space, what are the forward and backward topologies? What is the join topology? What is the average topology?
 
-**Exercise 6.5 (Pareto Frontier).** Consider the Pareto frontier \( d^2 + \delta^2 = 1 \). For \( \gamma = 0.5 \), find the point on the frontier that minimizes \( d_\gamma \). Compare with \( \gamma = 0 \) and \( \gamma = 1 \).
+**Exercise 6.5 (Pareto Frontier).** Consider the Pareto frontier $d^2 + \delta^2 = 1$. For $\gamma = 0.5$, find the point on the frontier that minimizes $d_\gamma$. Compare with $\gamma = 0$ and $\gamma = 1$.
 
-**Exercise 6.6 (Geodesics).** For the continuous belief space with \( d(x, y) = |y - x| \) and \( \text{debt}(x, y) = y - x \), find the geodesic from \( x = 0 \) to \( y = 1 \) for \( \gamma = 0, 0.5, 1 \). How does the geodesic change?
+**Exercise 6.6 (Geodesics).** For the continuous belief space with $d(x, y) = |y - x|$ and $\text{debt}(x, y) = y - x$, find the geodesic from $x = 0$ to $y = 1$ for $\gamma = 0, 0.5, 1$. How does the geodesic change?
 
-**Exercise 6.7 (Gamma Derivative).** Compute \( \partial d_\gamma / \partial \gamma \) for the two-state belief space with \( E_{\text{obs}} = 1 \), \( E_{\text{erase}} = 2 \), and \( \gamma = 0.5 \). Interpret the result.
+**Exercise 6.7 (Gamma Derivative).** Compute $\partial d_\gamma / \partial \gamma$ for the two-state belief space with $ E_{\text{obs}} = 1$, $E_{\text{erase}} = 2$, and $\gamma = 0.5$. Interpret the result.
 
-**Exercise 6.8 (Gamma Elasticity).** For the continuous belief space with \( d(x, y) = |y - x| \) and \( \text{debt}(x, y) = \log(p(x)/p(y)) \), compute the elasticity \( \mathcal{E}_\gamma \). For what values of \( \gamma \) is the elasticity \( 1/2 \)?
+**Exercise 6.8 (Gamma Elasticity).** For the continuous belief space with $d(x, y) = |y - x|$ and $\text{debt}(x, y) = \log(p(x)/p(y))$, compute the elasticity $\mathcal{E}_\gamma$. For what values of $\gamma$ is the elasticity $1/2$?
 
-**Exercise 6.9 (Learning Schedule).** Suppose \( \gamma(t) = e^{-t} + 0.1 \). Compute \( \partial d_\gamma / \partial \gamma \) at \( t = 0, 1, 2 \) for a pair of beliefs with \( d = 1 \), \( \text{debt} = 1 \). How does the sensitivity change over time?
+**Exercise 6.9 (Learning Schedule).** Suppose $\gamma(t) = e^{-t} + 0.1$. Compute $\partial d_\gamma / \partial \gamma$ at $t = 0, 1, 2$ for a pair of beliefs with $d = 1$, $\text{debt} = 1$. How does the sensitivity change over time?
 
-**Exercise 6.10 (Optimal \( \gamma \)).** Given a fixed pair of beliefs with \( d = 1 \), \( \text{debt} = 2 \), find the value of \( \gamma \in [0, 1] \) that minimizes \( d_\gamma \). What is the interpretation?
+**Exercise 6.10 (Optimal $\gamma$).** Given a fixed pair of beliefs with $d = 1$, $\text{debt} = 2$, find the value of $ \gamma \in [0, 1]$ that minimizes $d_\gamma$. What is the interpretation?
 
 ---
 
@@ -754,6 +754,4 @@ The \( \gamma \)-distance family provides a principled way to interpolate betwee
 
 - Rockafellar, R. T. (1970). *Convex Analysis*. Princeton University Press. — Background on convexity and derivatives.
 
----
 
-*Chapter 6 has introduced the \( \gamma \)-distance family and its derivative with respect to \( \gamma \). Chapter 7 studies equilibrium in belief space.*
