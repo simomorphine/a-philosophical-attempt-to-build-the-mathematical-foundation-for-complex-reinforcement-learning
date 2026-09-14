@@ -248,7 +248,7 @@ In many systems, there is a relationship between debt and cost:
 **Conjecture 4.8 (Debt-Cost Inequality).** For any transition $b_i \to b_j$:
 
 $$
-|\text{debt}(b_i, b_j)| \leq d(b_i, b_j) almost surley.
+|\text{debt}(b_i, b_j)| \leq d(b_i, b_j), almost-surley.
 $$
 
 **Interpretation:** The magnitude of the debt change cannot exceed the energy cost of the transition. This is a form of the **second law of information thermodynamics**: you cannot reduce debt without spending energy, and you cannot increase debt without gaining energy.
