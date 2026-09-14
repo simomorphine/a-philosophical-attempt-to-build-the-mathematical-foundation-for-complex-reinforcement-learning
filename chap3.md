@@ -94,7 +94,7 @@ Why not a metric? Because symmetry fails for information processing:
 
 4. **Physical asymmetry:** Many physical processes are irreversible. The cost to go forward in time is the energy cost; the cost to go backward is infinite.
 
-**Example:** Let $\mathcal{B} = \{ \text{unknown}, \text{known} \}$. The cost to go from "unknown" to "known" is the energy of observation $E_{\text{obs}}$. The cost to go from "known" to "unknown" is the energy of forgetting $E_{\text{forget}}$, which (by Landauer) is at least $k_B T \ln 2$ for bit erasure. In general, $E_{\text{obs}} \neq E_{\text{forget}}$.
+**Example:** Let $\mathcal{B} = \lbrace \text{unknown}, \text{known} \rbrace$. The cost to go from "unknown" to "known" is the energy of observation $E_{\text{obs}}$. The cost to go from "known" to "unknown" is the energy of forgetting $E_{\text{forget}}$, which (by Landauer) is at least $k_B T \ln 2$ for bit erasure. In general, $E_{\text{obs}} \neq E_{\text{forget}}$.
 
 ### 3.3.4 Properties of the Energy Quasi-Metric
 
