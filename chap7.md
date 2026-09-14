@@ -568,7 +568,7 @@ Therefore, $b \in E_{\mathrm{avg}}$. $\square$
 
 Theorem 3.1 establishes that local reversibility is a sufficient condition for equilibrium in belief space. This aligns with physical intuition: if a system is locally reversible, it cannot sustain directional flows, so it must be in equilibrium.
 
-**Corollary 3.2.** $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$.
+**Corollary 3.2.** $Sym_\gamma(\mathcal{B}) \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$.
 
 **Proof.** Immediate from Theorem 3.1 and the deleted Section 2, Theorem 2.8. $\square$
 
