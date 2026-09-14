@@ -287,7 +287,7 @@ Trivially, every $b$ satisfies this. The non-trivial condition is that $b^\*$ is
 **Definition 7.17 (Fixed Point Set).** The fixed point set is
 
 $$
-\mathcal{F} = \{ b \in \mathcal{B} \mid Q(b, b) = 0 \}.
+\mathcal{F} = \lbrace b \in \mathcal{B} \mid Q(b, b) = 0 \rbrace.
 $$
 
 Trivially, $\mathcal{F} = \mathcal{B}$. However, the **stable fixed points**—those to which the dynamics converges—are a subset of $\mathcal{B}$.
