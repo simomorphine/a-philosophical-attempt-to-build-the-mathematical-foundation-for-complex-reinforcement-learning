@@ -247,7 +247,7 @@ The deformation is smooth and continuous in $\gamma$.
 **Definition 6.5 (Metric Ball).** For $\gamma \in [0, 1]$, $r > 0$, and belief $b \in \mathcal{B}$, the metric ball is
 
 $$
-B_\gamma(b, r) = \{ b' \in \mathcal{B} \mid d_\gamma(b, b') < r \}.
+B_\gamma(b, r) = \lbrace b' \in \mathcal{B} \mid d_\gamma(b, b') < r \rbrace.
 $$
 
 **Effect of $\gamma$ on Balls:**
@@ -259,87 +259,96 @@ $$
 
 ### 6.5.3 Geodesics
 
-**Definition 6.6 (Geodesic).** A geodesic in the \( \gamma \)-geometry is a path \( b(t) \) that minimizes the length:
-\[
+**Definition 6.6 (Geodesic).** A geodesic in the $\gamma$-geometry is a path $b(t)$ that minimizes the length:
+
+$$
 L_\gamma(b) = \int_0^1 d_\gamma(b(t), b(t+dt)) \, dt.
-\]
+$$
 
-**Effect of \( \gamma \) on Geodesics:**
-- For \( \gamma = 0 \), geodesics minimize cost.
-- For \( \gamma > 0 \), geodesics trade off cost and debt.
-- For \( \gamma = 1 \), geodesics minimize the full cost-debt distance.
+**Effect of $\gamma$ on Geodesics:**
+- For $\gamma = 0$, geodesics minimize cost.
+- For $\gamma > 0$, geodesics trade off cost and debt.
+- For $\gamma = 1$, geodesics minimize the full cost-debt distance.
 
-**Interpretation:** As \( \gamma \) increases, optimal paths shift from cost-efficient to debt-aware. An energy-efficient but debt-accumulating path becomes disfavored; a path that pays down debt may become preferred despite higher energy cost.
+**Interpretation:** As $\gamma$ increases, optimal paths shift from cost-efficient to debt-aware. An energy-efficient but debt-accumulating path becomes disfavored; a path that pays down debt may become preferred despite higher energy cost.
 
 ### 6.5.4 The Geometry of the Cost-Debt Plane
 
-The \( \gamma \)-distance induces a family of concentric ellipses in the cost-debt plane. For a fixed distance \( r \), the level set is:
-\[
+The $\gamma$-distance induces a family of concentric ellipses in the cost-debt plane. For a fixed distance $r$, the level set is:
+
+$$
 \{ (c, \delta) \in \mathbb{R}^2 \mid c^2 + \gamma^2 \delta^2 = r^2 \}.
-\]
+$$
 
 This is an ellipse with:
-- Semi-major axis \( r \) along the cost direction.
-- Semi-minor axis \( r/\gamma \) along the debt direction.
+- Semi-major axis $r$ along the cost direction.
+- Semi-minor axis $r/\gamma$ along the debt direction.
 
-As \( \gamma \) increases:
+As $\gamma$ increases:
 - The ellipse becomes narrower in the debt direction.
 - The geometry becomes more sensitive to debt.
 - The level sets deform continuously.
 
 **Visual Interpretation:**
-- \( \gamma = 0 \): The level set degenerates to two vertical lines \( c = \pm r \) (debt ignored).
-- \( \gamma = 1 \): The level set is a circle of radius \( r \) (cost and debt equal).
-- \( 0 < \gamma < 1 \): The level set is an ellipse stretched along the cost axis.
+- $\gamma = 0$: The level set degenerates to two vertical lines $c = \pm r$ (debt ignored).
+- $\gamma = 1$: The level set is a circle of radius $r$ (cost and debt equal).
+- $0 < \gamma < 1$: The level set is an ellipse stretched along the cost axis.
 
-### 6.5.5 The Pareto Frontier and \( \gamma \)
+### 6.5.5 The Pareto Frontier and $\gamma$
 
 The Pareto frontier in the cost-debt plane is the set of points where cost cannot be reduced without increasing debt, and vice versa.
 
-For different \( \gamma \), the \( \gamma \)-distance selects different points on the Pareto frontier:
-- \( \gamma = 0 \): The point with minimum cost (regardless of debt).
-- \( \gamma = 1 \): The point with minimum Euclidean distance to the origin.
-- \( 0 < \gamma < 1 \): An intermediate point.
+For different $\gamma$, the $\gamma$-distance selects different points on the Pareto frontier:
+- $\gamma = 0$: The point with minimum cost (regardless of debt).
+- $\gamma = 1$: The point with minimum Euclidean distance to the origin.
+- $0 < \gamma < 1$: An intermediate point.
 
-**Interpretation:** The parameter \( \gamma \) is a **preference parameter** that selects different trade-offs on the Pareto frontier. Unlike the classical weighting \( \mu \), \( \gamma \) has a geometric interpretation.
+**Interpretation:** The parameter $\gamma$ is a **preference parameter** that selects different trade-offs on the Pareto frontier. Unlike the classical weighting $\mu$, $\gamma$ has a geometric interpretation.
 
 ---
 
-## 6.6 The Derivative with Respect to \( \gamma \)
+## 6.6 The Derivative with Respect to $\gamma$
 
 ### 6.6.1 Definition
 
-The \( \gamma \)-distance depends smoothly on \( \gamma \) for \( \gamma > 0 \). We can therefore differentiate it with respect to \( \gamma \) to understand how the geometry responds to changes in the debt weighting.
+The $\gamma$-distance depends smoothly on $\gamma$ for $\gamma > 0$. We can therefore differentiate it with respect to $\gamma$ to understand how the geometry responds to changes in the debt weighting.
 
-**Definition 6.7 (Gamma Derivative).** For \( \gamma > 0 \) and \( b_i \neq b_j \), the derivative of \( d_\gamma \) with respect to \( \gamma \) is
-\[
+**Definition 6.7 (Gamma Derivative).** For $\gamma > 0$ and $b_i \neq b_j$, the derivative of $d_\gamma$ with respect to $\gamma$ is
+
+$$
 \frac{\partial d_\gamma}{\partial \gamma}(b_i, b_j) = \frac{\gamma \cdot \text{debt}(b_i, b_j)^2}{\sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}}.
-\]
+$$
 
-Equivalently, in terms of \( d_\gamma \) itself:
-\[
+Equivalently, in terms of $d_\gamma$ itself:
+
+$$
 \frac{\partial d_\gamma}{\partial \gamma}(b_i, b_j) = \frac{\gamma \cdot \text{debt}(b_i, b_j)^2}{d_\gamma(b_i, b_j)}.
-\]
+$$
 
-*Proof.* Differentiate \( d_\gamma^2 = d^2 + \gamma^2 \cdot \text{debt}^2 \) with respect to \( \gamma \):
-\[
+*Proof.* Differentiate $d_\gamma^2 = d^2 + \gamma^2 \cdot \text{debt}^2$ with respect to $\gamma$:
+
+$$
 2 d_\gamma \cdot \frac{\partial d_\gamma}{\partial \gamma} = 2\gamma \cdot \text{debt}^2,
-\]
+$$
+
 so
-\[
+
+$$
 \frac{\partial d_\gamma}{\partial \gamma} = \frac{\gamma \cdot \text{debt}^2}{d_\gamma}.
-\]
-\( \square \)
+$$
+
 
 ### 6.6.2 Sign and Monotonicity
 
-**Proposition 6.8 (Monotonicity in \( \gamma \)).** For any \( b_i, b_j \in \mathcal{B} \):
-\[
-\frac{\partial d_\gamma}{\partial \gamma}(b_i, b_j) \geq 0,
-\]
-with equality if and only if \( \text{debt}(b_i, b_j) = 0 \) or \( \gamma = 0 \).
+**Proposition 6.8 (Monotonicity in $\gamma$).** For any $b_i, b_j \in \mathcal{B}$:
 
-*Proof.* The numerator \( \gamma \cdot \text{debt}^2 \) is non-negative for \( \gamma \geq 0 \), and the denominator \( d_\gamma > 0 \) for \( b_i \neq b_j \). Equality holds precisely when \( \gamma = 0 \) or \( \text{debt} = 0 \). \( \square \)
+$$
+\frac{\partial d_\gamma}{\partial \gamma}(b_i, b_j) \geq 0,
+$$
+
+with equality if and only if $\text{debt}(b_i, b_j) = 0$ or $\gamma = 0$.
+
+*Proof.* The numerator $\gamma \cdot \text{debt}^2$ is non-negative for $\gamma \geq 0$, and the denominator $d_\gamma > 0$ for $b_i \neq b_j$. Equality holds precisely when $\gamma = 0$ or $\text{debt} = 0$. 
 
 **Interpretation:** The \( \gamma \)-distance is non-decreasing in \( \gamma \). Increasing \( \gamma \) can only increase (or leave unchanged) the distance between any two beliefs. This confirms that \( \gamma \) acts as a "debt amplifier": the more weight placed on debt, the larger the distance between beliefs with non-zero debt.
 
