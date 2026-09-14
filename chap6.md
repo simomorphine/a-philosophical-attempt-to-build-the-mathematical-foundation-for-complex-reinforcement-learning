@@ -1,25 +1,25 @@
-# Chapter 6: The \( \gamma \)-Distance Family and the Geometry of Exploration
+# Chapter 6: The $\gamma$-Distance Family and the Geometry of Exploration
 
 ---
 
 ## 6.1 Introduction
 
-In Chapter 5, we introduced the complex quasi-metric \( Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j) \) as a unified geometric object. The modulus \( |Q| = \sqrt{d^2 + \text{debt}^2} \) provides a natural, parameter-free measure of total distance.
+In Chapter 5, we introduced the complex quasi-metric $Q(b_i, b_j) = d(b_i, b_j) + i \cdot \text{debt}(b_i, b_j)$ as a unified geometric object. The modulus $|Q| = \sqrt{d^2 + \text{debt}^2}$ provides a natural, parameter-free measure of total distance.
 
 However, there are situations where we may want to **tune** the relative importance of cost and debt. For example:
 - An agent with abundant energy may prioritize debt reduction over cost minimization.
 - An agent with limited energy may prioritize cost minimization over debt reduction.
 - Different environments may require different balances.
 
-Rather than introducing an arbitrary weighting parameter \( \mu \) (which would reintroduce the free parameter problem), we introduce a **one-parameter family of distances** \( d_\gamma \) that continuously interpolates between pure cost and full cost-debt geometry. The parameter \( \gamma \in [0, 1] \) has a natural geometric interpretation: it controls the "weight" of debt in the distance measure.
+Rather than introducing an arbitrary weighting parameter $\mu$ (which would reintroduce the free parameter problem), we introduce a **one-parameter family of distances** $d_\gamma$ that continuously interpolates between pure cost and full cost-debt geometry. The parameter $\gamma \in [0, 1]$ has a natural geometric interpretation: it controls the "weight" of debt in the distance measure.
 
 This chapter is organized as follows:
-- **Section 6.2:** Definition of the \( \gamma \)-distance family.
-- **Section 6.3:** The extremes: \( \gamma = 0 \) and \( \gamma = 1 \).
+- **Section 6.2:** Definition of the $\gamma$-distance family.
+- **Section 6.3:** The extremes: $\gamma = 0$ and $\gamma = 1$.
 - **Section 6.4:** Metric properties (triangle inequality).
-- **Section 6.5:** Geometric interpretation of varying \( \gamma \).
-- **Section 6.6:** The derivative with respect to \( \gamma \).
-- **Section 6.7:** Topological dependence on \( \gamma \).
+- **Section 6.5:** Geometric interpretation of varying $\gamma$.
+- **Section 6.6:** The derivative with respect to $\gamma$.
+- **Section 6.7:** Topological dependence on $\gamma$.
 - **Section 6.8:** The bitopological structure from asymmetry.
 - **Section 6.9:** Examples and interpretations.
 - **Section 6.10:** Relationship to reinforcement learning.
@@ -27,60 +27,65 @@ This chapter is organized as follows:
 
 ---
 
-## 6.2 Definition of the \( \gamma \)-Distance
+## 6.2 Definition of the $\gamma$-Distance
 
-### 6.2.1 The \( \gamma \)-Distance
+### 6.2.1 The $\gamma$-Distance
 
-**Definition 6.1 (\( \gamma \)-Distance).** For \( \gamma \in [0, 1] \), the \( \gamma \)-distance is defined as
-\[
+**Definition 6.1 $\gamma$-Distance).** For $\gamma \in [0, 1]$, the $\gamma$-distance is defined as
+
+$$
 d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2},
-\]
+$$
+
 where:
-- \( d(b_i, b_j) \) is the energy quasi-metric (real cost).
-- \( \text{debt}(b_i, b_j) \) is the debt function.
+- $d(b_i, b_j)$ is the energy quasi-metric (real cost).
+- $\text{debt}(b_i, b_j)$ is the debt function.
 
 Equivalently, in terms of the complex quasi-metric:
-\[
+
+$$
 d_\gamma(b_i, b_j) = \sqrt{\Re(Q)^2 + \gamma^2 \cdot \Im(Q)^2}.
-\]
+$$
 
-### 6.2.2 Interpretation of \( \gamma \)
+### 6.2.2 Interpretation of $\gamma$
 
-The parameter \( \gamma \) controls the relative importance of debt in the distance:
-- \( \gamma = 0 \): Debt is ignored entirely.
-- \( \gamma = 1 \): Debt is fully included (the full modulus).
-- \( 0 < \gamma < 1 \): Debt is partially included.
+The parameter $\gamma$ controls the relative importance of debt in the distance:
+- $\gamma = 0$: Debt is ignored entirely.
+- $\gamma = 1$: Debt is fully included (the full modulus).
+- $0 < \gamma < 1$: Debt is partially included.
 
-**Key Insight:** Unlike the classical weighting parameter \( \mu \), \( \gamma \) is not an arbitrary weight. It is a **geometric parameter** that continuously deforms the metric structure of belief space. It can be interpreted as:
+**Key Insight:** Unlike the classical weighting parameter $\mu$, $\gamma$ is not an arbitrary weight. It is a **geometric parameter** that continuously deforms the metric structure of belief space. It can be interpreted as:
 - **A trade-off parameter:** How much does the agent care about debt relative to cost?
 - **An environmental parameter:** What is the relative importance of cost and debt in the environment?
-- **A learning parameter:** As the agent learns, \( \gamma \) may change (e.g., high \( \gamma \) early, low \( \gamma \) late).
+- **A learning parameter:** As the agent learns, $\gamma$ may change (e.g., high $\gamma$ early, low $\gamma$ late).
 
-### 6.2.3 The \( \gamma \)-Distance as a Weighted Euclidean Norm
+### 6.2.3 The $\gamma$-Distance as a Weighted Euclidean Norm
 
-The \( \gamma \)-distance can be written as:
-\[
+The $\gamma$-distance can be written as:
+
+$$
 d_\gamma(b_i, b_j) = \left\| \bigl( d(b_i, b_j),\; \gamma \cdot \text{debt}(b_i, b_j) \bigr) \right\|_2.
-\]
+$$
 
-This is a weighted Euclidean norm in the cost-debt plane. The weight \( \gamma \) controls the relative importance of debt.
+This is a weighted Euclidean norm in the cost-debt plane. The weight $\gamma$ controls the relative importance of debt.
 
 **Comparison with Classical Weighting:**
-- Classical weighting: \( c + \mu d \) (linear combination, parameter \( \mu \)).
-- \( \gamma \)-distance: \( \sqrt{c^2 + \gamma^2 d^2} \) (Euclidean norm, parameter \( \gamma \)).
+- Classical weighting: $c + \mu d$ (linear combination, parameter $\mu$).
+- $\gamma$-distance: $\sqrt{c^2 + \gamma^2 d^2}$ (Euclidean norm, parameter $\gamma$).
 
-The \( \gamma \)-distance preserves the geometric structure of the cost-debt plane. The classical weighting destroys it (it is a projection onto a line).
+The $\gamma$-distance preserves the geometric structure of the cost-debt plane. The classical weighting destroys it (it is a projection onto a line).
 
 ---
 
 ## 6.3 The Extremes
 
-### 6.3.1 \( \gamma = 0 \): Pure Energy Geometry
+### 6.3.1 $\gamma = 0$: Pure Energy Geometry
 
-When \( \gamma = 0 \):
-\[
+When $\gamma = 0$:
+
+$$
 d_0(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + 0} = d(b_i, b_j).
-\]
+$$
 
 **Interpretation:** The agent ignores debt entirely. The belief space has the geometry of the energy quasi-metric. The agent minimizes cost only.
 
@@ -94,12 +99,13 @@ d_0(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + 0} = d(b_i, b_j).
 - When the agent has perfect information (debt is zero).
 - When cost dominates all other considerations.
 
-### 6.3.2 \( \gamma = 1 \): Full Energy-Debt Geometry
+### 6.3.2 $\gamma = 1$: Full Energy-Debt Geometry
 
-When \( \gamma = 1 \):
-\[
+When $\gamma = 1$:
+
+$$
 d_1(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \text{debt}(b_i, b_j)^2} = |Q(b_i, b_j)|.
-\]
+$$
 
 **Interpretation:** The agent fully considers both cost and debt. The distance is the modulus of the complex quasi-metric.
 
@@ -115,17 +121,18 @@ d_1(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \text{debt}(b_i, b_j)^2} = |Q(b_i, b_j)|.
 
 ### 6.3.3 The Interpolation
 
-For \( 0 < \gamma < 1 \):
-\[
+For $0 < \gamma < 1$:
+
+$$
 d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}.
-\]
+$$
 
 **Interpretation:** The agent partially considers debt. The geometry is a deformation of the full complex geometry.
 
 **Properties:**
 - The distance is a weighted Euclidean norm in the cost-debt plane.
 - The geometry interpolates between pure cost and full cost-debt.
-- The parameter \( \gamma \) controls the deformation.
+- The parameter $\gamma$ controls the deformation.
 
 ---
 
@@ -133,79 +140,91 @@ d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^
 
 ### 6.4.1 Identity and Positivity
 
-**Proposition 6.2 (Identity and Positivity).** For any \( \gamma \in [0, 1] \):
-- \( d_\gamma(b, b) = 0 \).
-- \( d_\gamma(b_i, b_j) \geq 0 \), with equality if and only if \( b_i = b_j \) (assuming cost is positive definite).
+**Proposition 6.2 (Identity and Positivity).** For any $\gamma \in [0, 1]$:
+- $d_\gamma(b, b) = 0$.
+- $d_\gamma(b_i, b_j) \geq 0$, with equality if and only if $b_i = b_j$ (assuming cost is positive definite).
 
-*Proof.* These follow directly from the properties of \( d \) and debt. \( \square \)
+*Proof.* These follow directly from the properties of $d$ and debt. 
 
 ### 6.4.2 Asymmetry
 
-**Proposition 6.3 (Asymmetry).** For \( \gamma > 0 \), \( d_\gamma \) is asymmetric if cost is asymmetric or debt is non-zero:
-\[
+**Proposition 6.3 (Asymmetry).** For $\gamma > 0$, $d_\gamma$ is asymmetric if cost is asymmetric or debt is non-zero:
+
+$$
 d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)
-\]
+$$
+
 in general.
 
 *Proof.*
-\[
-d_\gamma(b_i, b_j)^2 - d_\gamma(b_j, b_i)^2 = [d(b_i, b_j)^2 - d(b_j, b_i)^2] + \gamma^2[\text{debt}(b_i, b_j)^2 - \text{debt}(b_j, b_i)^2].
-\]
-Since \( \text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i) \), the debt terms cancel:
-\[
-d_\gamma(b_i, b_j)^2 - d_\gamma(b_j, b_i)^2 = d(b_i, b_j)^2 - d(b_j, b_i)^2.
-\]
-Thus, asymmetry arises entirely from the asymmetry of the energy quasi-metric. \( \square \)
 
-**Interpretation:** The \( \gamma \)-distance inherits the asymmetry of the energy quasi-metric. Debt does not contribute to asymmetry (it is antisymmetric).
+$$
+d_\gamma(b_i, b_j)^2 - d_\gamma(b_j, b_i)^2 = [d(b_i, b_j)^2 - d(b_j, b_i)^2] + \gamma^2[\text{debt}(b_i, b_j)^2 - \text{debt}(b_j, b_i)^2].
+$$
+
+Since $\text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i)$, the debt terms cancel:
+
+$$
+d_\gamma(b_i, b_j)^2 - d_\gamma(b_j, b_i)^2 = d(b_i, b_j)^2 - d(b_j, b_i)^2.
+$$
+
+Thus, asymmetry arises entirely from the asymmetry of the energy quasi-metric. 
+
+**Interpretation:** The $\gamma$-distance inherits the asymmetry of the energy quasi-metric. Debt does not contribute to asymmetry (it is antisymmetric).
 
 ### 6.4.3 The Triangle Inequality
 
-**Theorem 6.4 (Triangle Inequality for \( d_\gamma \)).** For any \( \gamma \in [0, 1] \) and any beliefs \( b_i, b_j, b_k \in \mathcal{B} \):
-\[
+**Theorem 6.4 (Triangle Inequality for $d_\gamma$).** For any $\gamma \in [0, 1]$ and any beliefs $b_i, b_j, b_k \in \mathcal{B}$:
+
+$$
 d_\gamma(b_i, b_k) \leq d_\gamma(b_i, b_j) + d_\gamma(b_j, b_k).
-\]
+$$
 
-*Proof.* We prove for \( \gamma = 1 \); the result extends to all \( \gamma \in [0, 1] \) by continuity.
+*Proof.* We prove for $\gamma = 1$; the result extends to all $\gamma \in [0, 1]$ by continuity.
 
-For \( \gamma = 1 \):
-\[
+For $\gamma = 1$:
+
+$$
 d_1(b_i, b_k)^2 = d(b_i, b_k)^2 + \text{debt}(b_i, b_k)^2.
-\]
+$$
 
 By the triangle inequality for the energy quasi-metric:
-\[
+
+$$
 d(b_i, b_k) \leq d(b_i, b_j) + d(b_j, b_k).
-\]
+$$
 
 By the telescoping property of debt:
-\[
-\text{debt}(b_i, b_k) = \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k).
-\]
 
-Therefore, in \( \mathbb{R}^2 \):
-\[
+$$
+\text{debt}(b_i, b_k) = \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k).
+$$
+
+Therefore, in $\mathbb{R}^2$:
+
+$$
 (d(b_i, b_k), \text{debt}(b_i, b_k)) \leq_{\text{componentwise}} (d(b_i, b_j) + d(b_j, b_k), \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k)).
-\]
+$$
 
 By the Minkowski inequality:
-\[
+
+$$
 d_1(b_i, b_k) \leq d_1(b_i, b_j) + d_1(b_j, b_k).
-\]
+$$
 
-For \( \gamma < 1 \), the inequality follows from the fact that \( d_\gamma \) is the norm \( \| (d, \gamma \cdot \text{debt}) \|_2 \), and the Minkowski inequality holds for all \( \gamma \in [0, 1] \). \( \square \)
+For $\gamma < 1$, the inequality follows from the fact that $d_\gamma$ is the norm $\| (d, \gamma \cdot \text{debt}) \|_2$, and the Minkowski inequality holds for all $\gamma \in [0, 1]$. 
 
-**Interpretation:** The \( \gamma \)-distance satisfies the triangle inequality for all \( \gamma \in [0, 1] \). It is a genuine quasi-metric (or metric if cost is symmetric).
+**Interpretation:** The $\gamma$-distance satisfies the triangle inequality for all $\gamma \in [0, 1]$. It is a genuine quasi-metric (or metric if cost is symmetric).
 
 ### 6.4.4 Summary of Metric Properties
 
 | Property | Status | Notes |
 |----------|--------|-------|
-| Identity | \( d_\gamma(b, b) = 0 \) | Always holds |
-| Positivity | \( d_\gamma(b_i, b_j) \geq 0 \) | Equality iff \( b_i = b_j \) |
+| Identity | $d_\gamma(b, b) = 0$ | Always holds |
+| Positivity | $d_\gamma(b_i, b_j) \geq 0$ | Equality iff $b_i = b_j$ |
 | Symmetry | Generally asymmetric | Inherited from cost |
-| Triangle inequality | Holds for all \( \gamma \in [0, 1] \) | Via Minkowski |
-| Debt antisymmetry | \( \text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i) \) | Cancels in asymmetry |
+| Triangle inequality | Holds for all $\gamma \in [0, 1]$ | Via Minkowski |
+| Debt antisymmetry | $\text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i)$ | Cancels in asymmetry |
 
 ---
 
@@ -213,29 +232,30 @@ For \( \gamma < 1 \), the inequality follows from the fact that \( d_\gamma \) i
 
 ### 6.5.1 Deformation of the Metric
 
-As \( \gamma \) varies from 0 to 1, the metric structure of belief space continuously deforms:
+As $\gamma$ varies from 0 to 1, the metric structure of belief space continuously deforms:
 
-1. **\( \gamma = 0 \):** The geometry is the energy cost geometry. Metric balls are determined by cost alone.
+1. **$\gamma = 0$:** The geometry is the energy cost geometry. Metric balls are determined by cost alone.
 
-2. **\( 0 < \gamma < 1 \):** The geometry is a deformed version. Debt contributes to distance, but less than cost.
+2. **$0 < \gamma < 1$:** The geometry is a deformed version. Debt contributes to distance, but less than cost.
 
-3. **\( \gamma = 1 \):** The geometry is the full cost-debt geometry. Cost and debt contribute equally (in the Euclidean sense).
+3. **$\gamma = 1$:** The geometry is the full cost-debt geometry. Cost and debt contribute equally (in the Euclidean sense).
 
-The deformation is smooth and continuous in \( \gamma \).
+The deformation is smooth and continuous in $\gamma$.
 
 ### 6.5.2 Metric Balls
 
-**Definition 6.5 (Metric Ball).** For \( \gamma \in [0, 1] \), \( r > 0 \), and belief \( b \in \mathcal{B} \), the metric ball is
-\[
+**Definition 6.5 (Metric Ball).** For $\gamma \in [0, 1]$, $r > 0$, and belief $b \in \mathcal{B}$, the metric ball is
+
+$$
 B_\gamma(b, r) = \{ b' \in \mathcal{B} \mid d_\gamma(b, b') < r \}.
-\]
+$$
 
-**Effect of \( \gamma \) on Balls:**
-- For \( \gamma = 0 \), balls are determined by cost alone.
-- For \( \gamma > 0 \), balls shrink in the debt direction: beliefs with high debt are farther away.
-- For \( \gamma = 1 \), balls are Euclidean balls in the cost-debt plane.
+**Effect of $\gamma$ on Balls:**
+- For $\gamma = 0$, balls are determined by cost alone.
+- For $\gamma > 0$, balls shrink in the debt direction: beliefs with high debt are farther away.
+- For $\gamma = 1$, balls are Euclidean balls in the cost-debt plane.
 
-**Observation:** As \( \gamma \) increases, the balls deform. Beliefs that are close in the \( \gamma = 0 \) geometry may be far apart for \( \gamma > 0 \) if their debt difference is large.
+**Observation:** As $\gamma$ increases, the balls deform. Beliefs that are close in the $\gamma = 0$ geometry may be far apart for $ \gamma > 0$ if their debt difference is large.
 
 ### 6.5.3 Geodesics
 
