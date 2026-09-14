@@ -206,19 +206,19 @@ $$
 ```
 
 **Interpretation:**
-- **Top:** $ E_{\text{avg}} $ is the strongest equilibrium—it requires full local symmetry.
-- **Middle:** $ E_\vee $ requires bidirectional reachability.
-- **Bottom:** $ E_\rightarrow $ and $ E_\leftarrow $ require only directional reachability.
-- **Intersection:** The intersection $ E_\rightarrow \cap E_\leftarrow $ is weaker than $ E_\vee $ (since the join topology is finer than the individual topologies).
+- **Top:** $E_{\text{avg}}$ is the strongest equilibrium—it requires full local symmetry.
+- **Middle:** $E_\vee$ requires bidirectional reachability.
+- **Bottom:** $E_\rightarrow$ and $E_\leftarrow$ require only directional reachability.
+- **Intersection:** The intersection $E_\rightarrow \cap E_\leftarrow$ is weaker than $E_\vee$ (since the join topology is finer than the individual topologies).
 
 ### 7.4.3 When Are the Concepts Equal?
 
 **Proposition 7.10 (Equality Conditions).** The equilibrium concepts coincide under the following conditions:
-- **$ E_{\text{avg}} = E_\vee $:** When the average topology equals the join topology, i.e., when $ d_\gamma $ is symmetric.
-- **$ E_\vee = E_\rightarrow \cap E_\leftarrow $:** When the join topology equals the intersection of the individual topologies, i.e., when forward and backward closures commute.
-- **All equal:** When $ d_\gamma $ is symmetric and the topologies are well-behaved.
+- **$E_{\text{avg}} = E_\vee$:** When the average topology equals the join topology, i.e., when $d_\gamma$ is symmetric.
+- **$E_\vee = E_\rightarrow \cap E_\leftarrow$:** When the join topology equals the intersection of the individual topologies, i.e., when forward and backward closures commute.
+- **All equal:** When $d_\gamma$ is symmetric and the topologies are well-behaved.
 
-**Interpretation:** In general, the hierarchy is strict. The differences between the equilibrium concepts capture the asymmetry of the $ \gamma $-distance.
+**Interpretation:** In general, the hierarchy is strict. The differences between the equilibrium concepts capture the asymmetry of the $\gamma$-distance.
 
 ---
 
@@ -226,33 +226,35 @@ $$
 
 ### 7.5.1 Locally Symmetric Points
 
-**Definition 7.11 (Locally Symmetric Point).** A belief $ b \in \mathcal{B} $ is a **locally symmetric point** of $ d_\gamma $ if
+**Definition 7.11 (Locally Symmetric Point).** A belief $b \in \mathcal{B}$ is a **locally symmetric point** of $d_\gamma$ if
+
 $$
 \liminf_{x \to^{\tau_{\text{avg}}} b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\text{avg}}(b, x)} = 0.
 $$
 
-The set of all locally symmetric points is denoted $ \text{Sym}_\gamma(\mathcal{B}) $.
+The set of all locally symmetric points is denoted $\text{Sym}_\gamma(\mathcal{B})$.
 
-**Interpretation:** At a locally symmetric point, the asymmetry of the $ \gamma $-distance vanishes to first order. The forward and backward costs are locally balanced.
+**Interpretation:** At a locally symmetric point, the asymmetry of the $\gamma$-distance vanishes to first order. The forward and backward costs are locally balanced.
 
-**Remark 7.12.** The limit uses $ \tau_{\text{avg}} $—the natural choice since $ d_{\text{avg}} $ appears in the denominator. Using $ \tau_+ $ or $ \tau_- $ would introduce an asymmetric dependence that obscures the meaning. Note that $ d_{\text{avg}}(b, x) > 0 $ for $ x \neq b $, so the ratio is well-defined away from $ b $.
+**Remark 7.12.** The limit uses $\tau_{\text{avg}}$—the natural choice since $d_{\text{avg}}$ appears in the denominator. Using $\tau_+$ or $\tau_-$ would introduce an asymmetric dependence that obscures the meaning. Note that $d_{\text{avg}}(b, x) > 0$ for $x \neq b$, so the ratio is well-defined away from $b$.
 
 ### 7.5.2 Relationship to Equilibrium
 
-**Proposition 7.13 (Symmetric Points and Equilibrium).** Every locally symmetric point belongs to $ E_{\text{avg}} $.
+**Proposition 7.13 (Symmetric Points and Equilibrium).** Every locally symmetric point belongs to $E_{\text{avg}}$.
 
-*Proof.* If $ b \in \text{Sym}_\gamma(\mathcal{B}) $, then for any $ \epsilon > 0 $, there exists a neighborhood $ U $ of $ b $ such that $ |d_\gamma(b, x) - d_\gamma(x, b)| / d_{\text{avg}}(b, x) < \epsilon $ for all $ x \in U $. This implies that the asymmetry is small, so the forward and backward balls approximately coincide. Thus, $ b $ is in the closure of the pre-equilibrium set in $ \tau_{\text{avg}} $. $ \square $
+*Proof.* If $b \in \text{Sym}_\gamma(\mathcal{B})$, then for any $\epsilon > 0$, there exists a neighborhood $U$ of $b$ such that $|d_\gamma(b, x) - d_\gamma(x, b)| / d_{\text{avg}}(b, x) < \epsilon $for all$ x \in U$. This implies that the asymmetry is small, so the forward and backward balls approximately coincide. Thus, $b$ is in the closure of the pre-equilibrium set in $\tau_{\text{avg}}$. $\square$
 
-**Interpretation:** Locally symmetric points are in equilibrium in the strongest sense ($ E_{\text{avg}} $).
+**Interpretation:** Locally symmetric points are in equilibrium in the strongest sense ($E_{\text{avg}}$).
 
 ### 7.5.3 The Geometry of Symmetric Points
 
-**Proposition 7.14 (Characterization of Symmetric Points).** For a differentiable $ \gamma $-distance, $ b \in \text{Sym}_\gamma(\mathcal{B}) $ if and only if
+**Proposition 7.14 (Characterization of Symmetric Points).** For a differentiable $\gamma$-distance, $b \in \text{Sym}_\gamma(\mathcal{B})$ if and only if
+
 $$
 \nabla d_\gamma(b, \cdot) = -\nabla d_\gamma(\cdot, b) \quad \text{at } b.
 $$
 
-*Proof.* The gradient of the asymmetry vanishes at $ b $ if and only if the directional derivatives of $ d_\gamma(b, \cdot) $ and $ d_\gamma(\cdot, b) $ are negatives of each other. This is equivalent to the local symmetry condition. $ \square $
+*Proof.* The gradient of the asymmetry vanishes at $b$ if and only if the directional derivatives of $d_\gamma(b, \cdot)$ and $d_\gamma(\cdot, b)$ are negatives of each other. This is equivalent to the local symmetry condition. $\square$
 
 **Interpretation:** At a symmetric point, the gradient of the forward distance is the negative of the gradient of the backward distance. The cost landscape is locally symmetric.
 
@@ -262,29 +264,31 @@ $$
 
 ### 7.6.1 Fixed Points of the Complex Quasi-Metric
 
-**Definition 7.15 (Fixed Point).** A belief $ b^* \in \mathcal{B} $ is a **fixed point** if
+**Definition 7.15 (Fixed Point).** A belief $b^\* \in \mathcal{B}$ is a **fixed point** if
+
 $$
 Q(b^*, b^*) = 0.
 $$
 
-Trivially, every $ b $ satisfies this. The non-trivial condition is that $ b^* $ is a fixed point of the dynamics: the agent's trajectory converges to $ b^* $.
+Trivially, every $b$ satisfies this. The non-trivial condition is that $b^\*$ is a fixed point of the dynamics: the agent's trajectory converges to $b^\*$.
 
 ### 7.6.2 Fixed Points and Equilibrium
 
-**Proposition 7.16 (Fixed Points in Equilibrium).** Every fixed point $ b^* $ (where $ Q(b^*, b^*) = 0 $) belongs to all four equilibrium subspaces.
+**Proposition 7.16 (Fixed Points in Equilibrium).** Every fixed point $b^\*$ (where $Q(b^\*, b^\*) = 0$) belongs to all four equilibrium subspaces.
 
-*Proof.* At $ b^* $, $ d_\gamma(b^*, b^*) = 0 $ and $ \text{debt}(b^*, b^*) = 0 $. Therefore, $ b^* $ is in the closure of the pre-equilibrium set in all topologies. $ \square $
+*Proof.* At $b^\*$, $d_\gamma(b^\*, b^\*) = 0$ and $\text{debt}(b^\*, b^\*) = 0$. Therefore, $b^\*$ is in the closure of the pre-equilibrium set in all topologies. $\square$
 
 **Interpretation:** Fixed points are the "true" equilibrium points—they have zero cost and zero debt.
 
 ### 7.6.3 The Fixed Point Set
 
 **Definition 7.17 (Fixed Point Set).** The fixed point set is
+
 $$
 \mathcal{F} = \{ b \in \mathcal{B} \mid Q(b, b) = 0 \}.
 $$
 
-Trivially, $ \mathcal{F} = \mathcal{B} $. However, the **stable fixed points**—those to which the dynamics converges—are a subset of $ \mathcal{B} $.
+Trivially, $\mathcal{F} = \mathcal{B}$. However, the **stable fixed points**—those to which the dynamics converges—are a subset of $\mathcal{B}$.
 
 **Interpretation:** The dynamics of the agent (which we will study in Part II) determines which fixed points are stable. The equilibrium hierarchy characterizes the stability of different fixed points.
 
@@ -294,54 +298,55 @@ Trivially, $ \mathcal{F} = \mathcal{B} $. However, the **stable fixed points**�
 
 ### 7.7.1 Example 1: Two-State Belief Space
 
-Let $ \mathcal{B} = \{0, 1\} $ with:
-- $ d(0, 1) = E_{\text{obs}} $, $ d(1, 0) = E_{\text{erase}} $.
-- $ \text{debt}(0, 1) = 1 $, $ \text{debt}(1, 0) = -1 $.
+Let $\mathcal{B} = \{0, 1\}$ with:
+- $d(0, 1) = E_{\text{obs}}$, $d(1, 0) = E_{\text{erase}}$.
+- $\text{debt}(0, 1) = 1$, $\text{debt}(1, 0) = -1$.
 
 **Average Distance:**
+
 $$
 d_{\text{avg}}(0, 1) = \frac{\sqrt{E_{\text{obs}}^2 + \gamma^2} + \sqrt{E_{\text{erase}}^2 + \gamma^2}}{2}.
 $$
 
 **Equilibrium Concepts:**
-- $ E_{\text{avg}} $: Beliefs where $ d_{\text{avg}} $ is small.
-- $ E_\vee $: Beliefs where both forward and backward distances are small.
-- $ E_\rightarrow $: Beliefs where the forward distance is small.
-- $ E_\leftarrow $: Beliefs where the backward distance is small.
+- $E_{\text{avg}}$: Beliefs where $d_{\text{avg}}$ is small.
+- $E_\vee$: Beliefs where both forward and backward distances are small.
+- $E_\rightarrow$: Beliefs where the forward distance is small.
+- $E_\leftarrow$: Beliefs where the backward distance is small.
 
-**Interpretation:** If $ E_{\text{obs}} \ll E_{\text{erase}} $, then $ 0 $ is in $ E_\rightarrow $ but not in $ E_\leftarrow $. The agent can reach 1 from 0 cheaply, but cannot return cheaply. The asymmetry creates directional equilibrium.
+**Interpretation:** If $E_{\text{obs}} \ll E_{\text{erase}}$, then $0$ is in $E_\rightarrow$ but not in $E_\leftarrow$. The agent can reach 1 from 0 cheaply, but cannot return cheaply. The asymmetry creates directional equilibrium.
 
 ### 7.7.2 Example 2: Continuous Belief Space
 
-Let $ \mathcal{B} = \mathbb{R} $ with:
-- $ d(x, y) = \alpha |y - x| $.
-- $ \text{debt}(x, y) = \log(p(x)/p(y)) $.
+Let $\mathcal{B} = \mathbb{R}$ with:
+- $d(x, y) = \alpha |y - x|$.
+- $\text{debt}(x, y) = \log(p(x)/p(y))$.
 
-**Symmetric Points:** The locally symmetric points are where $ \log(p(x)/p(y)) \approx 0 $ for $ y $ close to $ x $, i.e., where $ p $ is locally constant.
+**Symmetric Points:** The locally symmetric points are where $\log(p(x)/p(y)) \approx 0$ for $y$ close to $x$, i.e., where $p$ is locally constant.
 
 **Equilibrium:** The equilibrium set is the set of beliefs where the distribution is locally uniform (no gradient in probability space). At these points, the agent has no incentive to move—it is in epistemic equilibrium.
 
 ### 7.7.3 Example 3: The Learning Trajectory
 
 Consider the learning trajectory from previous chapters:
-- Start: $ (c, d) = (0, \text{high}) $.
-- End: $ (c, d) = (\text{cost}, 0) $.
+- Start: $(c, d) = (0, \text{high})$.
+- End: $(c, d) = (\text{cost}, 0)$.
 
-**Equilibrium:** The end point $ (\text{cost}, 0) $ is in $ E_{\text{avg}} $ if the cost is small and symmetric. It is in $ E_\rightarrow $ if the cost to reach other beliefs is small. It is in $ E_\leftarrow $ if other beliefs can reach it cheaply.
+**Equilibrium:** The end point $(\text{cost}, 0)$ is in $E_{\text{avg}}$ if the cost is small and symmetric. It is in $E_\rightarrow$ if the cost to reach other beliefs is small. It is in $E_\leftarrow$ if other beliefs can reach it cheaply.
 
 **Interpretation:** The agent reaches equilibrium when it has minimized both cost and debt. The equilibrium hierarchy captures different degrees of balance.
 
 ### 7.7.4 Example 4: The Pareto Frontier
 
-Consider the Pareto frontier in the cost-debt plane: $ d^2 + \delta^2 = 1 $.
+Consider the Pareto frontier in the cost-debt plane: $d^2 + \delta^2 = 1$.
 
-**Equilibrium Points:** The point $ (0, 0) $ is the ideal equilibrium (zero cost, zero debt). However, if the frontier does not include $ (0, 0) $, the closest point on the frontier is $ (1/\sqrt{2}, 1/\sqrt{2}) $.
+**Equilibrium Points:** The point $(0, 0)$ is the ideal equilibrium (zero cost, zero debt). However, if the frontier does not include $(0, 0)$, the closest point on the frontier is $(1/\sqrt{2}, 1/\sqrt{2})$.
 
 **Equilibrium Concepts:**
-- $ E_{\text{avg}} $: Points where the average distance to the frontier is small.
-- $ E_\vee $: Points where both forward and backward distances to the frontier are small.
-- $ E_\rightarrow $: Points where the forward distance to the frontier is small.
-- $ E_\leftarrow $: Points where the backward distance to the frontier is small.
+- $E_{\text{avg}}$: Points where the average distance to the frontier is small.
+- $E_\vee$: Points where both forward and backward distances to the frontier are small.
+- $E_\rightarrow$: Points where the forward distance to the frontier is small.
+- $E_\leftarrow$: Points where the backward distance to the frontier is small.
 
 **Interpretation:** The equilibrium hierarchy captures different ways of being "close" to the ideal point.
 
@@ -351,16 +356,17 @@ Consider the Pareto frontier in the cost-debt plane: $ d^2 + \delta^2 = 1 $.
 
 ### 7.8.1 Equilibrium in Value Space
 
-In reinforcement learning (Part II), the belief space $ \mathcal{B} $ becomes the state space $ \mathcal{S} $. The equilibrium concepts translate to:
+In reinforcement learning (Part II), the belief space $\mathcal{B}$ becomes the state space $\mathcal{S}$. The equilibrium concepts translate to:
 
-- **$ E_{\text{avg}} $:** States where the average cost-debt is small.
-- **$ E_\vee $:** States where both forward and backward costs are small.
-- **$ E_\rightarrow $:** States where the forward cost is small.
-- **$ E_\leftarrow $:** States where the backward cost is small.
+- **$E_{\text{avg}}$:** States where the average cost-debt is small.
+- **$E_\vee$:** States where both forward and backward costs are small.
+- **$E_\rightarrow$:** States where the forward cost is small.
+- **$E_\leftarrow$:** States where the backward cost is small.
 
 ### 7.8.2 Equilibrium and Optimality
 
 **Conjecture 7.18 (Equilibrium and Optimality).** In the limit of infinite learning, the agent's value function satisfies:
+
 $$
 |Q^*(s, a)| = 0 \quad \text{for all } (s, a) \in E_{\text{avg}}.
 $$
@@ -370,6 +376,7 @@ $$
 ### 7.8.3 The HST Equilibrium Axiom
 
 **Axiom 7.19 (HST Equilibrium Axiom).** Every Information Processing System evolves toward epistemic equilibrium. Formally:
+
 $$
 \lim_{t \to \infty} Q_t^{\pi^*}(S_t, A_t) = 0 \quad \text{almost surely}.
 $$
