@@ -434,7 +434,7 @@ $$
 
 Consider an agent in a bandit problem. The agent's belief space is the space of posterior distributions over arm rewards.
 
-- **Early exploration:** The agent takes actions with high debt (high uncertainty) and low cost. The phase is positive (close to \( \pi/2 \)).
+- **Early exploration:** The agent takes actions with high debt (high uncertainty) and low cost. The phase is positive (close to $\pi/2$).
 - **Information gathering:** The agent observes rewards, updating beliefs. Debt decreases.
 - **Late exploitation:** The agent takes actions with low debt (low uncertainty) and high cost (energy spent pulling arms). The phase is negative (close to 0).
 
