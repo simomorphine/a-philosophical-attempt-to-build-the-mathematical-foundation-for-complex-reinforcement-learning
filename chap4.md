@@ -269,7 +269,7 @@ This trade-off is the central tension of exploration-exploitation. In the comple
 
 ### 4.7.1 Example 1: Two-State Belief Space
 
-Let $\mathcal{B} = \{0, 1\}$, representing a single bit of information. Define $\psi(0) = 0$ (no debt) and $\psi(1) = 1$ (one bit of debt).
+Let $\mathcal{B} = \lbrace 0, 1\rbrace$, representing a single bit of information. Define $\psi(0) = 0$ (no debt) and $\psi(1) = 1$ (one bit of debt).
 
 Then:
 - $\text{debt}(0, 1) = \psi(1) - \psi(0) = 1$: learning a bit incurs one unit of debt.
