@@ -568,7 +568,7 @@ The backward ball $B^-(b, \epsilon)$ contains beliefs from which $b$ is reachabl
 **Definition 6.18 (Join Topology).** The join topology $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$. Its basis is
 
 $$
-\mathcal{B}^\vee = \{ B^+(b, \epsilon) \cap B^-(b, \delta) \mid b \in \mathcal{B}, \epsilon, \delta > 0 \}.
+\mathcal{B}^\vee = \lbrace B^+(b, \epsilon) \cap B^-(b, \delta) \mid b \in \mathcal{B}, \epsilon, \delta > 0 \rbrace.
 $$
 
 **Interpretation:** A neighborhood in the join topology requires both forward and backward proximity simultaneously. Beliefs in the intersection are **bidirectionally close**—they are both reachable from $b$ and can reach $b$ with low cost.
