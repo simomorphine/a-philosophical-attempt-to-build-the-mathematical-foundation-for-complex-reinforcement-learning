@@ -57,7 +57,7 @@ Dividing by 2 gives the result. $\square$
 **Definition 7.3 (Max Distance).** The **max distance** is
 
 $$
-d_{\text{max}}(b, x) = \max\{d_\gamma(b, x), d_\gamma(x, b)\}.
+d_{\text{max}}(b, x) = \max \lbrace d_\gamma(b, x), d_\gamma(x, b) \rbrace.
 $$
 
 **Proposition 7.4 (Equivalence of $d_{\text{avg}}$ and $d_{\text{max}}$).** The average and max distances are equivalent and define the same topology:
@@ -75,7 +75,7 @@ $$
 Also,
 
 $$
-d_{\text{max}} = \max\{d_\gamma(b, x), d_\gamma(x, b)\} \leq d_\gamma(b, x) + d_\gamma(x, b) = 2 d_{\text{avg}}.
+d_{\text{max}} = \max \lbrace d_\gamma(b, x), d_\gamma(x, b) \rbrace \leq d_\gamma(b, x) + d_\gamma(x, b) = 2 d_{\text{avg}}.
 $$
 
 $\square$
