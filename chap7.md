@@ -582,7 +582,7 @@ Under differentiability conditions, the inclusion becomes equality.
 
 **Theorem 4.1 (Smoothness Implies Equality).** If $d$ and $\psi$ are $C^1$ (continuously differentiable) on $\mathcal{B}$, then:
 
-$$\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$$
+$$Sym_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$$
 
 **Proof.** We already have $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$ from Theorem 3.1. We need to prove $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$.
 
