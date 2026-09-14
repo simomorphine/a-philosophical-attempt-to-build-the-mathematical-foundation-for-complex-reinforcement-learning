@@ -215,11 +215,11 @@ Gauge invariance means that only **differences** in potential matter, not absolu
 
 While the debt function is gauge-invariant, it is often convenient to choose a specific gauge. Common choices include:
 
-1. **Zero at a reference point:** Set \( \psi(b_0) = 0 \) for some reference belief \( b_0 \). Then \( \psi(b) \) is the debt from \( b_0 \) to \( b \).
+1. **Zero at a reference point:** Set $\psi(b_0) = 0$ for some reference belief $b_0$. Then $\psi(b)$ is the debt from $b_0$ to $b$.
 
-2. **Non-negative potential:** If \( \psi \) represents a "burden," we may want \( \psi(b) \geq 0 \) for all \( b \). This is possible if \( \psi \) is bounded below.
+2. **Non-negative potential:** If $\psi$ represents a "burden," we may want $\psi(b) \geq 0$ for all $b$. This is possible if $\psi$ is bounded below.
 
-3. **Zero at equilibrium:** Set \( \psi(b^*) = 0 \) at the equilibrium belief \( b^* \). Then \( \psi(b) \) measures the distance from equilibrium in debt units.
+3. **Zero at equilibrium:** Set $\psi(b^*) = 0$ at the equilibrium belief $b^*$. Then $\psi(b)$ measures the distance from equilibrium in debt units.
 
 ---
 
@@ -245,10 +245,11 @@ This difference reflects the fact that cost and debt measure different aspects o
 
 In many systems, there is a relationship between debt and cost:
 
-**Conjecture 4.8 (Debt-Cost Inequality).** For any transition \( b_i \to b_j \):
-\[
+**Conjecture 4.8 (Debt-Cost Inequality).** For any transition $b_i \to b_j$:
+
+$$
 |\text{debt}(b_i, b_j)| \leq d(b_i, b_j).
-\]
+$$
 
 **Interpretation:** The magnitude of the debt change cannot exceed the energy cost of the transition. This is a form of the **second law of information thermodynamics**: you cannot reduce debt without spending energy, and you cannot increase debt without gaining energy.
 
@@ -260,7 +261,7 @@ In many systems, there is a trade-off between cost and debt:
 - **Low cost, high debt:** The agent takes a cheap action that increases debt (e.g., making a commitment without full information).
 - **High cost, low debt:** The agent takes an expensive action that reduces debt (e.g., gathering information to resolve uncertainty).
 
-This trade-off is the central tension of exploration-exploitation. In the complex quasi-metric (Chapter 5), cost and debt are combined into a single geometric object that naturally balances them.
+This trade-off is the central tension of exploration-exploitation. In the complex quasi-metric (Chapter ??), cost and debt are combined into a single geometric object that naturally balances them.
 
 ---
 
@@ -268,55 +269,57 @@ This trade-off is the central tension of exploration-exploitation. In the comple
 
 ### 4.7.1 Example 1: Two-State Belief Space
 
-Let \( \mathcal{B} = \{0, 1\} \), representing a single bit of information. Define \( \psi(0) = 0 \) (no debt) and \( \psi(1) = 1 \) (one bit of debt).
+Let $\mathcal{B} = \{0, 1\}$, representing a single bit of information. Define $\psi(0) = 0$ (no debt) and $\psi(1) = 1$ (one bit of debt).
 
 Then:
-- \( \text{debt}(0, 1) = \psi(1) - \psi(0) = 1 \): learning a bit incurs one unit of debt.
-- \( \text{debt}(1, 0) = \psi(0) - \psi(1) = -1 \): forgetting a bit pays down one unit of debt.
+- $\text{debt}(0, 1) = \psi(1) - \psi(0) = 1$: learning a bit incurs one unit of debt.
+- $\text{debt}(1, 0) = \psi(0) - \psi(1) = -1$: forgetting a bit pays down one unit of debt.
 
 Compare with the energy quasi-metric from Chapter 3:
-- \( d(0, 1) = E_{\text{obs}} \) (small).
-- \( d(1, 0) = E_{\text{erase}} \) (large).
+- $d(0, 1) = E_{\text{obs}}$ (small).
+- $d(1, 0) = E_{\text{erase}}$ (large).
 
-The debt-cost inequality holds: \( |\text{debt}(0, 1)| = 1 \leq E_{\text{obs}} \) and \( |\text{debt}(1, 0)| = 1 \leq E_{\text{erase}} \).
+The debt-cost inequality holds: $|\text{debt}(0, 1)| = 1 \leq E_{\text{obs}}$ and $|\text{debt}(1, 0)| = 1 \leq E_{\text{erase}}$.
 
 ### 4.7.2 Example 2: Continuous Belief Space
 
-Let \( \mathcal{B} = \mathbb{R} \), representing the estimated value of a continuous parameter. Define \( \psi(x) = -\log p(x) \), where \( p(x) \) is the probability density of the estimate. This is the **surprisal** or **self-information** of the estimate.
+Let $\mathcal{B} = \mathbb{R}$, representing the estimated value of a continuous parameter. Define $\psi(x) = -\log p(x)$, where $p(x)$ is the probability density of the estimate. This is the **surprisal** or **self-information** of the estimate.
 
 Then:
-\[
+
+$$
 \text{debt}(x, y) = -\log p(y) + \log p(x) = \log \frac{p(x)}{p(y)}.
-\]
+$$
 
 Interpretation:
-- If \( p(y) < p(x) \) (the new estimate is less likely), debt is positive (the agent has taken on epistemic burden).
-- If \( p(y) > p(x) \) (the new estimate is more likely), debt is negative (the agent has reduced epistemic burden).
+- If $p(y) < p(x)$ (the new estimate is less likely), debt is positive (the agent has taken on epistemic burden).
+- If $p(y) > p(x)$ (the new estimate is more likely), debt is negative (the agent has reduced epistemic burden).
 
 ### 4.7.3 Example 3: Hierarchical Belief Space
 
-Let \( \mathcal{B} \) be a tree representing hierarchical knowledge. Define \( \psi(b) = \text{depth}(b) \), the depth of the belief in the tree.
+Let $\mathcal{B}$ be a tree representing hierarchical knowledge. Define $\psi(b) = \text{depth}(b)$, the depth of the belief in the tree.
 
 Then:
-- Moving down the tree (to a more specific belief): \( \text{debt} = 1 \) (increase in debt).
-- Moving up the tree (to a more general belief): \( \text{debt} = -1 \) (decrease in debt).
+- Moving down the tree (to a more specific belief): $\text{debt} = 1$ (increase in debt).
+- Moving up the tree (to a more general belief): $\text{debt} = -1$ (decrease in debt).
 
 Interpretation: More specific beliefs carry more informational burden (more details to track). Generalizing reduces burden.
 
 ### 4.7.4 Example 4: Entropic Potential
 
-Let \( \mathcal{B} \) be the space of probability distributions over a latent variable \( \Theta \). Define \( \psi(p) = -H(p) \), the negative entropy of the distribution.
+Let $\mathcal{B}$ be the space of probability distributions over a latent variable $\Theta$. Define $\psi(p) = -H(p)$, the negative entropy of the distribution.
 
 Then:
-\[
+
+$$
 \text{debt}(p, q) = -H(q) + H(p) = H(p) - H(q).
-\]
+$$
 
 Interpretation:
-- If \( H(q) < H(p) \) (the new distribution has lower entropy), debt is positive (the agent has gained information, increasing epistemic burden).
-- If \( H(q) > H(p) \) (the new distribution has higher entropy), debt is negative (the agent has lost information, reducing epistemic burden).
+- If $H(q) < H(p)$ (the new distribution has lower entropy), debt is positive (the agent has gained information, increasing epistemic burden).
+- If $H(q) > H(p)$ (the new distribution has higher entropy), debt is negative (the agent has lost information, reducing epistemic burden).
 
-This is the interpretation that leads to the mutual information result in Chapter 9.
+This is the interpretation that leads to the mutual information result in Chapter ??.
 
 ---
 
@@ -324,35 +327,39 @@ This is the interpretation that leads to the mutual information result in Chapte
 
 ### 4.8.1 Debt Along Trajectories
 
-Consider a trajectory \( b_0 \to b_1 \to \cdots \to b_n \) in belief space. The total debt along the trajectory is:
-\[
+Consider a trajectory $b_0 \to b_1 \to \cdots \to b_n$ in belief space. The total debt along the trajectory is:
+
+$$
 \sum_{k=0}^{n-1} \text{debt}(b_k, b_{k+1}) = \sum_{k=0}^{n-1} [\psi(b_{k+1}) - \psi(b_k)] = \psi(b_n) - \psi(b_0).
-\]
+$$
 
 Thus, the total debt depends only on the endpoints, not on the path. This is the telescoping property.
 
 ### 4.8.2 Debt and Equilibrium
 
-At epistemic equilibrium (Chapter 7), the agent has no remaining debt:
-\[
-\text{debt}(b^*, b^*) = 0.
-\]
+At epistemic equilibrium (Chapter ??), the agent has no remaining debt:
 
-The equilibrium belief \( b^* \) satisfies \( \psi(b^*) = \psi(b^*) \) trivially. More meaningfully, the agent reaches equilibrium when \( \psi \) is minimized (or maximized, depending on the interpretation).
+$$
+\text{debt}(b^*, b^*) = 0.
+$$
+
+The equilibrium belief $b^*$ satisfies $\psi(b^*) = \psi(b^*)$ trivially. More meaningfully, the agent reaches equilibrium when $\psi$ is minimized (or maximized, depending on the interpretation).
 
 ### 4.8.3 Debt and Information Gain
 
-In the entropic interpretation \( \psi(b) = -H(\Theta \mid b) \), the debt of a transition is the negative change in entropy:
-\[
-\text{debt}(b_i, b_j) = -H(\Theta \mid b_j) + H(\Theta \mid b_i) = H(\Theta \mid b_i) - H(\Theta \mid b_j).
-\]
+In the entropic interpretation $\psi(b) = -H(\Theta \mid b)$, the debt of a transition is the negative change in entropy:
 
-If \( b_j \) is more informative than \( b_i \) (lower entropy), debt is positive. If \( b_j \) is less informative, debt is negative.
+$$
+\text{debt}(b_i, b_j) = -H(\Theta \mid b_j) + H(\Theta \mid b_i) = H(\Theta \mid b_i) - H(\Theta \mid b_j).
+$$
+
+If $b_j$ is more informative than $b_i$ (lower entropy), debt is positive. If $b_j$ is less informative, debt is negative.
 
 The **information gain** is the negative of debt:
-\[
+
+$$
 \text{Information Gain} = -\text{debt}(b_i, b_j) = H(\Theta \mid b_j) - H(\Theta \mid b_i) \geq 0.
-\]
+$$
 
 Thus, debt is negative information gain.
 
@@ -362,41 +369,41 @@ Thus, debt is negative information gain.
 
 This chapter has introduced the debt function:
 
-1. **Debt Function:** \( \text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i) \), where \( \psi \) is an epistemic potential.
+1. **Debt Function:** $\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i)$, where $\psi$ is an epistemic potential.
 
 2. **Properties:**
-   - Identity: \( \text{debt}(b, b) = 0 \).
-   - Additivity (Telescoping): \( \text{debt}(b_i, b_k) = \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k) \).
-   - Antisymmetry: \( \text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i) \).
-   - Cycle Invariance: \( \sum \text{debt} = 0 \) on closed paths.
-   - Gauge Invariance: Adding a constant to \( \psi \) leaves debt unchanged.
+   - Identity: $\text{debt}(b, b) = 0$.
+   - Additivity (Telescoping): $\text{debt}(b_i, b_k) = \text{debt}(b_i, b_j) + \text{debt}(b_j, b_k)$.
+   - Antisymmetry: $\text{debt}(b_i, b_j) = -\text{debt}(b_j, b_i)$.
+   - Cycle Invariance: $\sum \text{debt} = 0$ on closed paths.
+   - Gauge Invariance: Adding a constant to $\psi$ leaves debt unchanged.
 
 3. **Interpretations:**
-   - Entropic: \( \psi = -H \), debt is negative information gain.
-   - Computational: \( \psi \) is model complexity.
-   - Physical: \( \psi \) is free energy.
+   - Entropic: $\psi = -H$, debt is negative information gain.
+   - Computational: $\psi$ is model complexity.
+   - Physical: $\psi$ is free energy.
 
 4. **Contrast with Energy Cost:** Debt is conservative, path-independent, and signed. Energy cost is non-conservative, path-dependent, and non-negative.
 
-5. **Debt-Cost Inequality:** \( |\text{debt}| \leq d \) in many systems.
+5. **Debt-Cost Inequality:** $|\text{debt}| \leq d$ in many systems.
 
 6. **Examples:** Two-state systems, continuous beliefs, hierarchical knowledge, entropic potentials.
 
-The debt function forms the imaginary part of the complex quasi-metric, which we introduce in Chapter 5.
+The debt function forms the imaginary part of the complex quasi-metric, which we introduce in Chapter ??.
 
 ---
 
 ## Exercises
 
-**Exercise 4.1 (Debt Properties).** Verify that the debt function \( \text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i) \) satisfies additivity, antisymmetry, and cycle invariance.
+**Exercise 4.1 (Debt Properties).** Verify that the debt function $\text{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i)$ satisfies additivity, antisymmetry, and cycle invariance.
 
-**Exercise 4.2 (Gauge Invariance).** Show that adding a constant \( c \) to \( \psi \) does not change the debt function. What is the physical interpretation of this invariance?
+**Exercise 4.2 (Gauge Invariance).** Show that adding a constant $c$ to $\psi$ does not change the debt function. What is the physical interpretation of this invariance?
 
-**Exercise 4.3 (Entropic Debt).** Let \( \psi(p) = -H(p) \) be the negative entropy. Compute the debt of a transition from a uniform distribution to a distribution with entropy \( H(q) \). Interpret the result.
+**Exercise 4.3 (Entropic Debt).** Let $\psi(p) = -H(p)$ be the negative entropy. Compute the debt of a transition from a uniform distribution to a distribution with entropy $H(q)$. Interpret the result.
 
-**Exercise 4.4 (Debt-Cost Trade-off).** Consider a transition with cost \( d \) and debt \( \delta \). Suppose \( d = |\delta| + \epsilon \) for some \( \epsilon > 0 \). What does \( \epsilon \) represent? Is it always non-negative?
+**Exercise 4.4 (Debt-Cost Trade-off).** Consider a transition with cost $d$ and debt $\delta$. Suppose $d = |\delta| + \epsilon$ for some $\epsilon > 0$. What does $\epsilon$ represent? Is it always non-negative?
 
-**Exercise 4.5 (Hierarchical Debt).** Consider a hierarchical belief space with depth \( n \). Define \( \psi(b) = \text{depth}(b) \). Compute the debt of moving from depth 0 to depth \( n \), and from depth \( n \) to depth 0. What is the total debt of a round trip?
+**Exercise 4.5 (Hierarchical Debt).** Consider a hierarchical belief space with depth $n$. Define $\psi(b) = \text{depth}(b)$. Compute the debt of moving from depth 0 to depth $n$, and from depth $n$ to depth 0. What is the total debt of a round trip?
 
 ---
 
