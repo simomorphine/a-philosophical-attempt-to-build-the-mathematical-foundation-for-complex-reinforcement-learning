@@ -219,7 +219,7 @@ While the debt function is gauge-invariant, it is often convenient to choose a s
 
 2. **Non-negative potential:** If $\psi$ represents a "burden," we may want $\psi(b) \geq 0$ for all $b$. This is possible if $\psi$ is bounded below.
 
-3. **Zero at equilibrium:** Set $\psi(b^*) = 0$ at the equilibrium belief $b^*$. Then $\psi(b)$ measures the distance from equilibrium in debt units.
+3. **Zero at equilibrium:** Set $\psi(b^\*) = 0$ at the equilibrium belief $b^\*$. Then $\psi(b)$ measures the distance from equilibrium in debt units.
 
 ---
 
