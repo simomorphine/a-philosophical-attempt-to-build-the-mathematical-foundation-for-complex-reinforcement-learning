@@ -479,15 +479,15 @@ This section investigates the mathematical structure underlying this apparent pa
 
 ### 1.2 Main Results
 
-This paper establishes:
+This section establishes:
 
-1. **Theorem 1 (Symmetry Implies Equilibrium):** $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$
+1. **Theorem 1 (Symmetry Implies Equilibrium):** $Sym_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$
 
-2. **Theorem 2 (Smoothness Implies Equality):** If $d$ and $\psi$ are $C^1$, then $\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$
+2. **Theorem 2 (Smoothness Implies Equality):** If $d$ and $\psi$ are $C^1$, then $Sym_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$
 
-3. **Theorem 3 (Non-Smooth Gap):** There exist belief spaces with non-differentiable cost functions such that $\mathrm{Sym}_\gamma(\mathcal{B}) \subsetneq E_{\mathrm{avg}}$
+3. **Theorem 3 (Non-Smooth Gap):** There exist belief spaces with non-differentiable cost functions such that $Sym_\gamma(\mathcal{B}) \subsetneq E_{\mathrm{avg}}$
 
-4. **Theorem 4 (Extended Hierarchy):** $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$
+4. **Theorem 4 (Extended Hierarchy):** $Sym_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$
 
 ---
 
