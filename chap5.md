@@ -344,17 +344,6 @@ $$
 
 The triangle inequality for the modulus means that the total distance in the cost-debt plane is a metric (symmetric if cost is symmetric). This provides a coherent notion of "distance" between beliefs that incorporates both cost and debt.
 
-### 5.7.3 A Generalized Triangle Inequality
-
-The complex quasi-metric itself may satisfy a generalized triangle inequality in $\mathbb{C}$:
-
-**Conjecture 5.10 (Generalized Triangle Inequality).** For any beliefs $b_i, b_j, b_k \in \mathcal{B}$:
-
-$$
-|Q(b_i, b_k)| \leq |Q(b_i, b_j)| + |Q(b_j, b_k)| + |\text{Imaginary Cross Term}|.
-$$
-
-The cross term arises from the fact that the imaginary part telescopes exactly, while the real part only satisfies the triangle inequality. The generalized inequality captures the interplay between cost and debt.
 
 ---
 
