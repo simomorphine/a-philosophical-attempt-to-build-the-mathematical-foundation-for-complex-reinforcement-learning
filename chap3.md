@@ -245,28 +245,29 @@ E_{\text{erase}} & 0
 \end{pmatrix}.
 $$
 
-The triangle inequality requires \( E_{\text{obs}} \leq E_{\text{obs}} + 0 \) and \( E_{\text{erase}} \leq E_{\text{erase}} + 0 \), which hold. The asymmetry gap is \( \Delta(0, 1) = E_{\text{obs}} - E_{\text{erase}} < 0 \).
+The triangle inequality requires $E_{\text{obs}} \leq E_{\text{obs}} + 0$ and $E_{\text{erase}} \leq E_{\text{erase}} + 0$, which hold. The asymmetry gap is $\Delta(0, 1) = E_{\text{obs}} - E_{\text{erase}} < 0$.
 
 ### 3.6.2 Example 2: A Continuous Belief Space
 
-Let \( \mathcal{B} = \mathbb{R} \), representing the estimated value of a continuous parameter. Define:
-\[
+Let $\mathcal{B} = \mathbb{R}$, representing the estimated value of a continuous parameter. Define:
+
+$$
 d(x, y) = \begin{cases}
 |y - x| & \text{if } y \geq x, \\
 \alpha |y - x| & \text{if } y < x,
 \end{cases}
-\]
-where \( \alpha > 1 \). This represents the fact that increasing the estimate (learning more) is cheap (\( \alpha = 1 \)), while decreasing it (forgetting) is expensive (\( \alpha > 1 \)).
+$$
+where $\alpha > 1$. This represents the fact that increasing the estimate (learning more) is cheap ($\alpha = 1$), while decreasing it (forgetting) is expensive ($\alpha > 1$).
 
-The triangle inequality holds: for any \( x \leq y \leq z \), \( d(x, z) = z - x = (y - x) + (z - y) = d(x, y) + d(y, z) \). For \( x \geq y \geq z \), \( d(x, z) = \alpha(z - x) \leq \alpha(z - y) + \alpha(y - x) = d(x, y) + d(y, z) \).
+The triangle inequality holds: for any $x \leq y \leq z$, $d(x, z) = z - x = (y - x) + (z - y) = d(x, y) + d(y, z)$. For $x \geq y \geq z$, $d(x, z) = \alpha(z - x) \leq \alpha(z - y) + \alpha(y - x) = d(x, y) + d(y, z)$.
 
-The asymmetry gap is \( \Delta(x, y) = (1 - \alpha)|x - y| \).
+The asymmetry gap is $\Delta(x, y) = (1 - \alpha)|x - y|$.
 
 ### 3.6.3 Example 3: Hierarchical Belief Space
 
-Let \( \mathcal{B} \) be a tree representing hierarchical knowledge. Moving up the tree (generalizing, forgetting details) is cheap; moving down the tree (specializing, learning details) is expensive. Define:
-- \( d(\text{child}, \text{parent}) = 1 \) (cheap generalization).
-- \( d(\text{parent}, \text{child}) = M \) (expensive specialization).
+Let $\mathcal{B}$ be a tree representing hierarchical knowledge. Moving up the tree (generalizing, forgetting details) is cheap; moving down the tree (specializing, learning details) is expensive. Define:
+- $d(\text{child}, \text{parent}) = 1$ (cheap generalization).
+- $d(\text{parent}, \text{child}) = M$ (expensive specialization).
 
 This asymmetric structure captures the idea that it is easier to forget details than to learn them.
 
@@ -291,7 +292,7 @@ The key difference:
 |----------|---------------------|---------------|
 | Type | Path-dependent | Path-independent |
 | Symmetry | Asymmetric | Antisymmetric |
-| Range | \( \mathbb{R}_{\geq 0} \) | \( \mathbb{R} \) |
+| Range | $\mathbb{R}_{\geq 0}$ | $\mathbb{R}$ |
 | Character | Cumulative | Conservative |
 | Interpretation | Cost | Obligation |
 
@@ -303,15 +304,15 @@ Together, these two quantities form the complex quasi-metric, which is the centr
 
 This chapter has introduced the belief space and the energy quasi-metric:
 
-1. **Belief Space \( \mathcal{B} \):** The space of all possible internal configurations of an information processing system.
+1. **Belief Space $\mathcal{B}$:** The space of all possible internal configurations of an information processing system.
 
-2. **Energy Quasi-Metric \( d \):** A function satisfying identity, non-negativity, and the triangle inequality, but not symmetry.
+2. **Energy Quasi-Metric $d$:** A function satisfying identity, non-negativity, and the triangle inequality, but not symmetry.
 
 3. **Asymmetry:** The lack of symmetry captures the irreversibility of information processing: forgetting is expensive; learning may be cheap.
 
 4. **Triangle Inequality:** Ensures that optimal paths exist and that the belief space has a coherent geometry.
 
-5. **Asymmetry Gap \( \Delta \):** Measures the degree of irreversibility. Locally symmetric points are equilibrium points.
+5. **Asymmetry Gap $\Delta$:** Measures the degree of irreversibility. Locally symmetric points are equilibrium points.
 
 6. **Examples:** Two-state systems, continuous beliefs, hierarchical knowledge.
 
@@ -321,13 +322,13 @@ The energy quasi-metric is the real part of the complex quasi-metric. The imagin
 
 ## Exercises
 
-**Exercise 3.1 (Quasi-Metric Verification).** Verify that the two-state energy quasi-metric \( d(0,1) = E_{\text{obs}} \), \( d(1,0) = E_{\text{erase}} \) satisfies the triangle inequality. What are the conditions on \( E_{\text{obs}} \) and \( E_{\text{erase}} \)?
+**Exercise 3.1 (Quasi-Metric Verification).** Verify that the two-state energy quasi-metric $d(0,1) = E_{\text{obs}}$, $d(1,0) = E_{\text{erase}}$ satisfies the triangle inequality. What are the conditions on $E_{\text{obs}}$ and $E_{\text{erase}}$?
 
-**Exercise 3.2 (Continuous Asymmetry).** For the continuous belief space \( d(x,y) = |y-x|^\alpha \) with \( \alpha > 1 \), is \( d \) a quasi-metric? Does the triangle inequality hold? What about \( \alpha < 1 \)?
+**Exercise 3.2 (Continuous Asymmetry).** For the continuous belief space $d(x,y) = |y-x|^\alpha$ with $\alpha > 1$, is $d$ a quasi-metric? Does the triangle inequality hold? What about $\alpha < 1$?
 
-**Exercise 3.3 (Asymmetry Gap).** For the hierarchical belief space, compute the asymmetry gap \( \Delta(\text{parent}, \text{child}) \). When is it zero?
+**Exercise 3.3 (Asymmetry Gap).** For the hierarchical belief space, compute the asymmetry gap $\Delta(\text{parent}, \text{child})$. When is it zero?
 
-**Exercise 3.4 (Optimal Paths).** Consider a belief space with three beliefs \( \{0,1,2\} \) and costs \( d(0,1) = 1 \), \( d(1,2) = 1 \), \( d(0,2) = 3 \). Does the triangle inequality hold? What is the shortest path from 0 to 2?
+**Exercise 3.4 (Optimal Paths).** Consider a belief space with three beliefs $\{0,1,2\}$ and costs $d(0,1) = 1$, $d(1,2) = 1$, $d(0,2) = 3$. Does the triangle inequality hold? What is the shortest path from 0 to 2?
 
 **Exercise 3.5 (Cost Landscape).** Sketch the cost landscape for the hierarchical belief space. Where are the valleys and peaks? What does an agent's trajectory look like?
 
