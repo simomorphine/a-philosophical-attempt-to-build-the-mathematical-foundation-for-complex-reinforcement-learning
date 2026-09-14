@@ -92,7 +92,7 @@ $$
 
 ### 7.2.4 The Intersection Property
 
-**Proposition 7.6 (Intersection Property).** For any $b \in \mathcal{B} $ and $ \epsilon > 0$:
+**Proposition 7.6 (Intersection Property).** For any $b \in \mathcal{B}$ and $\epsilon > 0$:
 
 $$
 B^+(b, \epsilon) \cap B^-(b, \epsilon) \subseteq B_{\text{avg}}(b, \epsilon).
