@@ -385,7 +385,7 @@ This chapter has introduced the debt function:
 
 4. **Contrast with Energy Cost:** Debt is conservative, path-independent, and signed. Energy cost is non-conservative, path-dependent, and non-negative.
 
-5. **Debt-Cost Inequality:** $|\text{debt}| \leq d$ in many systems.
+5. **Debt-Cost Inequality:** $|\text{debt}| \leq d$ almost surely in many systems (It remains a conjecture).
 
 6. **Examples:** Two-state systems, continuous beliefs, hierarchical knowledge, entropic potentials.
 
