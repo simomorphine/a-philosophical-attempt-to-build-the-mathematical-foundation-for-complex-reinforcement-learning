@@ -255,7 +255,7 @@ $$
 - For $\gamma > 0$, balls shrink in the debt direction: beliefs with high debt are farther away.
 - For $\gamma = 1$, balls are Euclidean balls in the cost-debt plane.
 
-**Observation:** As $\gamma$ increases, the balls deform. Beliefs that are close in the $\gamma = 0$ geometry may be far apart for $ \gamma > 0$ if their debt difference is large.
+**Observation:** As $\gamma$ increases, the balls deform. Beliefs that are close in the $\gamma = 0$ geometry may be far apart for $\gamma > 0$ if their debt difference is large.
 
 ### 6.5.3 Geodesics
 
