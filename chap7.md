@@ -471,7 +471,7 @@ The equilibrium hierarchy provides a nuanced understanding of what it means for 
 
 The relationship between reversibility and equilibrium lies at the heart of thermodynamics, information theory, and the study of complex systems. In classical thermodynamics, equilibrium is characterized by the absence of macroscopic flows and local reversibility—the system appears the same forward and backward in time. However, information processing systems present a more subtle picture: a stable memory state is in equilibrium (it persists), yet it carries information about its past, encoding an arrow of time.
 
-This paper investigates the mathematical structure underlying this apparent paradox. We develop a framework where:
+This section investigates the mathematical structure underlying this apparent paradox. We develop a framework where:
 
 1. **Reversibility** is a local geometric property ($\mathrm{Sym}_\gamma$)
 2. **Equilibrium** is a stability property ($E_{\mathrm{avg}}$)
