@@ -85,7 +85,7 @@ $\square$
 **Definition 7.5 (Average Topology $\tau_{\text{avg}}$).** The **average topology** is the topology induced by the average distance $d_{\text{avg}}$. Its basis consists of balls
 
 $$
-B_{\text{avg}}(b, \epsilon) = \{ x \in \mathcal{B} \mid d_{\text{avg}}(b, x) < \epsilon \}.
+B_{\text{avg}}(b, \epsilon) = \lbrace x \in \mathcal{B} \mid d_{\text{avg}}(b, x) < \epsilon \rbrace.
 $$
 
 **Interpretation:** The average topology is the "symmetric" topology on belief space. It ignores the directionality of cost and treats forward and backward costs symmetrically.
