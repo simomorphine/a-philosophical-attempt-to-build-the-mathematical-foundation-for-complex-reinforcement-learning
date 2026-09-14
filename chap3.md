@@ -231,7 +231,7 @@ Symmetric points are the "equilibrium points" where forward and backward costs a
 
 ### 3.6.1 Example 1: A Two-State Belief Space
 
-Let $\mathcal{B} = \{0, 1\}$, representing a single bit of information. Define:
+Let $\mathcal{B} = \lbrace 0, 1\rbrace $, representing a single bit of information. Define:
 - $d(0, 0) = d(1, 1) = 0$.
 - $d(0, 1) = E_{\text{obs}}$ (cost to observe, changing from 0 to 1).
 - $d(1, 0) = E_{\text{erase}}$ (cost to erase, changing from 1 to 0).
