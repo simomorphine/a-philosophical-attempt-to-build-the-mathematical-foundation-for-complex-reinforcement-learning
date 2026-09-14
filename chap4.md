@@ -340,7 +340,7 @@ Thus, the total debt depends only on the endpoints, not on the path. This is the
 At epistemic equilibrium (Chapter ??), the agent has no remaining debt:
 
 $$
-\text{debt}(b^*, b^*) = 0.
+\text{debt}(b^\*, b^\*) = 0.
 $$
 
 The equilibrium belief $b^*$ satisfies $\psi(b^*) = \psi(b^*)$ trivially. More meaningfully, the agent reaches equilibrium when $\psi$ is minimized (or maximized, depending on the interpretation).
