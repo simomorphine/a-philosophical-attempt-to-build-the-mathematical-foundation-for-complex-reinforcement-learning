@@ -277,7 +277,7 @@ $$
 The $\gamma$-distance induces a family of concentric ellipses in the cost-debt plane. For a fixed distance $r$, the level set is:
 
 $$
-\{ (c, \delta) \in \mathbb{R}^2 \mid c^2 + \gamma^2 \delta^2 = r^2 \}.
+\lbrace (c, \delta) \in \mathbb{R}^2 \mid c^2 + \gamma^2 \delta^2 = r^2 \rbrace.
 $$
 
 This is an ellipse with:
@@ -354,92 +354,105 @@ with equality if and only if $\text{debt}(b_i, b_j) = 0$ or $\gamma = 0$.
 
 ### 6.6.3 The Second Derivative
 
-**Proposition 6.9 (Convexity in \( \gamma \)).** The \( \gamma \)-distance is convex in \( \gamma \) for \( \gamma > 0 \):
-\[
+**Proposition 6.9 (Convexity in $\gamma$).** The $\gamma$-distance is convex in $\gamma$ for $\gamma > 0$:
+
+$$
 \frac{\partial^2 d_\gamma}{\partial \gamma^2}(b_i, b_j) = \frac{d(b_i, b_j)^2 \cdot \text{debt}(b_i, b_j)^2}{d_\gamma(b_i, b_j)^3} \geq 0.
-\]
+$$
 
-*Proof.* Differentiate \( \partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma \) with respect to \( \gamma \):
-\[
+*Proof.* Differentiate $\partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma$ with respect to $\gamma$:
+
+$$
 \frac{\partial^2 d_\gamma}{\partial \gamma^2} = \frac{\text{debt}^2 \cdot d_\gamma - \gamma \cdot \text{debt}^2 \cdot (\partial d_\gamma / \partial \gamma)}{d_\gamma^2}.
-\]
-Substituting \( \partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma \):
-\[
+$$
+
+Substituting $\partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma$:
+
+$$
 \frac{\partial^2 d_\gamma}{\partial \gamma^2} = \frac{\text{debt}^2}{d_\gamma} - \frac{\gamma^2 \cdot \text{debt}^4}{d_\gamma^3} = \frac{\text{debt}^2 \cdot d_\gamma^2 - \gamma^2 \cdot \text{debt}^4}{d_\gamma^3} = \frac{d^2 \cdot \text{debt}^2}{d_\gamma^3} \geq 0.
-\]
-\( \square \)
+$$
 
-**Interpretation:** The marginal effect of increasing \( \gamma \) grows with \( \gamma \). The first unit of debt weight has less impact than the second, and so on. This reflects the fact that the Euclidean norm is convex: the debt contribution accelerates as \( \gamma \) increases.
 
-### 6.6.4 The Elasticity of \( d_\gamma \) with Respect to \( \gamma \)
+**Interpretation:** The marginal effect of increasing $\gamma$ grows with $\gamma$. The first unit of debt weight has less impact than the second, and so on. This reflects the fact that the Euclidean norm is convex: the debt contribution accelerates as $\gamma$ increases.
 
-**Definition 6.10 (Gamma Elasticity).** The elasticity of \( d_\gamma \) with respect to \( \gamma \) is
-\[
+### 6.6.4 The Elasticity of $d_\gamma$ with Respect to $\gamma$
+
+**Definition 6.10 (Gamma Elasticity).** The elasticity of $d_\gamma$ with respect to $\gamma$ is
+
+$$
 \mathcal{E}_\gamma(b_i, b_j) = \frac{\partial d_\gamma}{\partial \gamma} \cdot \frac{\gamma}{d_\gamma} = \frac{\gamma^2 \cdot \text{debt}(b_i, b_j)^2}{d_\gamma(b_i, b_j)^2}.
-\]
+$$
 
-**Interpretation:** The elasticity measures the percentage change in distance per percentage change in \( \gamma \). It satisfies:
-\[
+**Interpretation:** The elasticity measures the percentage change in distance per percentage change in $\gamma$. It satisfies:
+
+$$
 0 \leq \mathcal{E}_\gamma \leq 1.
-\]
+$$
 
 The elasticity is:
-- \( 0 \) when \( \gamma = 0 \) or \( \text{debt} = 0 \).
-- Approaches \( 1 \) as \( \gamma \to \infty \) (debt dominates).
-- Equals \( 1/2 \) when \( d = \gamma \cdot \text{debt} \) (cost and debt contribute equally).
+- $0$ when $\gamma = 0$ or $\text{debt} = 0$.
+- Approaches $1$ as $\gamma \to \infty$ (debt dominates).
+- Equals $1/2$ when $d = \gamma \cdot \text{debt}$ (cost and debt contribute equally).
 
 ### 6.6.5 The Gamma Derivative and the Phase
 
 Recall from Chapter 5 that the phase is
-\[
+
+$$
 \theta = \arctan\left(\frac{\text{debt}}{d}\right).
-\]
-For the \( \gamma \)-distance, the effective phase is
-\[
+$$
+
+For the $\gamma$-distance, the effective phase is
+
+$$
 \theta_\gamma = \arctan\left(\frac{\gamma \cdot \text{debt}}{d}\right).
-\]
+$$
 
-The derivative of \( \theta_\gamma \) with respect to \( \gamma \) is
-\[
+The derivative of $\theta_\gamma$ with respect to $\gamma$ is
+
+$$
 \frac{\partial \theta_\gamma}{\partial \gamma} = \frac{\text{debt} \cdot d}{d^2 + \gamma^2 \cdot \text{debt}^2} = \frac{\text{debt} \cdot d}{d_\gamma^2}.
-\]
+$$
 
-**Interpretation:** The phase increases with \( \gamma \) when \( \text{debt} > 0 \) (and decreases when \( \text{debt} < 0 \)). Increasing \( \gamma \) rotates the effective direction of the complex distance toward the debt axis.
+**Interpretation:** The phase increases with $\gamma$ when $\text{debt} > 0$ (and decreases when $\text{debt} < 0$). Increasing  $\gamma$ rotates the effective direction of the complex distance toward the debt axis.
 
 ### 6.6.6 The Gamma Derivative and the Triangle Inequality
 
-**Proposition 6.11 (Derivative of the Triangle Inequality).** For any \( b_i, b_j, b_k \in \mathcal{B} \):
-\[
-\frac{\partial}{\partial \gamma} d_\gamma(b_i, b_k) \leq \frac{\partial}{\partial \gamma} d_\gamma(b_i, b_j) + \frac{\partial}{\partial \gamma} d_\gamma(b_j, b_k).
-\]
+**Proposition 6.11 (Derivative of the Triangle Inequality).** For any $b_i, b_j, b_k \in \mathcal{B}$:
 
-*Proof.* This follows from differentiating the triangle inequality \( d_\gamma(b_i, b_k) \leq d_\gamma(b_i, b_j) + d_\gamma(b_j, b_k) \) with respect to \( \gamma \). \( \square \)
+$$
+\frac{\partial}{\partial \gamma} d_\gamma(b_i, b_k) \leq \frac{\partial}{\partial \gamma} d_\gamma(b_i, b_j) + \frac{\partial}{\partial \gamma} d_\gamma(b_j, b_k).
+$$
+
+*Proof.* This follows from differentiating the triangle inequality $d_\gamma(b_i, b_k) \leq d_\gamma(b_i, b_j) + d_\gamma(b_j, b_k)$ with respect to $\gamma$. 
 
 **Interpretation:** The triangle inequality is preserved under differentiation. The "debt sensitivity" of the direct path is bounded by the sum of the debt sensitivities of the intermediate paths.
 
 ### 6.6.7 The Gamma Derivative in the Two-State Example
 
-For the two-state belief space \( \mathcal{B} = \{0, 1\} \) with:
-- \( d(0, 1) = E_{\text{obs}} \), \( d(1, 0) = E_{\text{erase}} \).
-- \( \text{debt}(0, 1) = 1 \), \( \text{debt}(1, 0) = -1 \).
+For the two-state belief space $\mathcal{B} = \{0, 1\}$ with:
+- $d(0, 1) = E_{\text{obs}}$, $d(1, 0) = E_{\text{erase}}$.
+- $\text{debt}(0, 1) = 1$, $\text{debt}(1, 0) = -1$.
 
 The gamma derivatives are:
-\[
+
+$$
 \frac{\partial d_\gamma}{\partial \gamma}(0, 1) = \frac{\gamma}{\sqrt{E_{\text{obs}}^2 + \gamma^2}}, \quad
 \frac{\partial d_\gamma}{\partial \gamma}(1, 0) = \frac{\gamma}{\sqrt{E_{\text{erase}}^2 + \gamma^2}}.
-\]
+$$
 
 **Observations:**
-- At \( \gamma = 0 \): both derivatives are \( 0 \) (debt has no effect).
-- As \( \gamma \to \infty \): both derivatives approach \( 1 \) (debt dominates).
-- The derivative is larger for the direction with smaller cost (since the denominator is smaller). Thus, increasing \( \gamma \) affects the cheaper direction more.
+- At $\gamma = 0$: both derivatives are $0$ (debt has no effect).
+- As $\gamma \to \infty$: both derivatives approach $1$ (debt dominates).
+- The derivative is larger for the direction with smaller cost (since the denominator is smaller). Thus, increasing $\gamma$ affects the cheaper direction more.
 
 ### 6.6.8 The Gamma Derivative and Learning
 
-In the learning context, \( \gamma \) may change over time. Let \( \gamma(t) \) be the debt weight at time \( t \). The rate of change of the \( \gamma \)-distance along a learning trajectory is
-\[
+In the learning context, $\gamma$ may change over time. Let $\gamma(t)$ be the debt weight at time $t$. The rate of change of the $\gamma$-distance along a learning trajectory is
+
+$$
 \frac{d}{dt} d_{\gamma(t)}(b_i, b_j) = \frac{\partial d_\gamma}{\partial \gamma} \cdot \dot{\gamma}(t) + \nabla d_\gamma \cdot \dot{b}(t).
-\]
+$$
 
 **Interpretation:**
 - The first term captures the effect of changing the debt weight.
