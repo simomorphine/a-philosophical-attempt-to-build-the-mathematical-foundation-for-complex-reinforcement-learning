@@ -518,11 +518,11 @@ The locally symmetric set has several intuitive interpretations:
 
 ### 2.3 Basic Properties
 
-**Proposition 2.3 (Fixed Points).** Every fixed point $b^*$ (where $Q(b^*, b^*) = 0$) belongs to $\mathrm{Sym}_\gamma(\mathcal{B})$.
+**Proposition 2.3 (Fixed Points).** Every fixed point $b^\*$ (where $Q(b^\*, b^\*) = 0$) belongs to $Sym_\gamma(\mathcal{B})$.
 
-**Proof.** At a fixed point, $d_\gamma(b^*, b^*) = 0$ and $d_{\mathrm{avg}}(b^*, b^*) = 0$. The ratio is trivially zero. $\square$
+**Proof.** At a fixed point, $d_\gamma(b^\*, b^\*) = 0$ and $d_{\mathrm{avg}}(b^\*, b^\*) = 0$. The ratio is trivially zero. $\square$
 
-**Proposition 2.4 (Gauge Invariance).** $\mathrm{Sym}_\gamma(\mathcal{B})$ is invariant under gauge transformations $\psi \mapsto \psi + c$ for $c \in \mathbb{R}$.
+**Proposition 2.4 (Gauge Invariance).** $Sym_\gamma(\mathcal{B})$ is invariant under gauge transformations $\psi \mapsto \psi + c$ for $c \in \mathbb{R}$.
 
 **Proof.** The debt function is gauge-invariant (the deleted Section 2, Proposition 2.2, property 5), so $d_\gamma$ and $d_{\mathrm{avg}}$ are unchanged. $\square$
 
