@@ -108,19 +108,21 @@ with equality if and only if all transitions are zero-cost.
 
 *Proof.* This follows directly from non-negativity. $\square$
 
-**Proposition 3.6 (Subadditivity on Paths).** For any path \( b_0 \to b_1 \to \cdots \to b_n \):
-\[
+**Proposition 3.6 (Subadditivity on Paths).** For any path $b_0 \to b_1 \to \cdots \to b_n$:
+
+$$
 d(b_0, b_n) \leq \sum_{k=0}^{n-1} d(b_k, b_{k+1}).
-\]
+$$
 
-*Proof.* This follows by repeated application of the triangle inequality. \( \square \)
+*Proof.* This follows by repeated application of the triangle inequality. $\square$
 
-**Corollary 3.7 (Optimal Paths).** The infimum over all paths from \( b_i \) to \( b_j \) is well-defined:
-\[
+**Corollary 3.7 (Optimal Paths).** The infimum over all paths from $b_i$ to $b_j$ is well-defined:
+
+$$
 d(b_i, b_j) = \inf \left\{ \sum_{k=0}^{n-1} d(b_k, b_{k+1}) \,\middle|\, b_0 = b_i, b_n = b_j \right\}.
-\]
+$$
 
-Thus, \( d(b_i, b_j) \) is the **shortest path cost** in belief space.
+Thus, $d(b_i, b_j)$ is the **shortest path cost** in belief space.
 
 ---
 
@@ -134,7 +136,7 @@ The triangle inequality is the most important property of the energy quasi-metri
 2. **Optimal paths are well-defined:** There is a coherent notion of "shortest path."
 3. **Geometry is meaningful:** The belief space has a genuine geometric structure.
 
-Without the triangle inequality, the notion of "cost to go from \( b_i \) to \( b_j \)" would be ill-defined, and the energy quasi-metric would be meaningless.
+Without the triangle inequality, the notion of "cost to go from $b_i$ to $b_j$" would be ill-defined, and the energy quasi-metric would be meaningless.
 
 ### 3.4.2 Geometric Interpretation
 
@@ -148,7 +150,7 @@ The triangle inequality can be visualized as follows:
     b_i ---- b_k
 ```
 
-The direct path \( b_i \to b_k \) costs at most the sum of the indirect paths: \( d(b_i, b_k) \leq d(b_i, b_j) + d(b_j, b_k) \).
+The direct path $b_i \to b_k$ costs at most the sum of the indirect paths: $d(b_i, b_k) \leq d(b_i, b_j) + d(b_j, b_k)$.
 
 Geometrically, this means that the belief space is "convex" in the sense that shortcuts are always available. There are no "holes" in belief space that would require going far out of the way to reach a nearby belief.
 
@@ -156,7 +158,7 @@ Geometrically, this means that the belief space is "convex" in the sense that sh
 
 In real systems, the triangle inequality may fail for three reasons:
 
-1. **Information constraints:** A direct transition from \( b_i \) to \( b_k \) may require information that can only be obtained by going through \( b_j \). The direct path is impossible; the indirect path is the only way.
+1. **Information constraints:** A direct transition from $b_i$ to $b_k$ may require information that can only be obtained by going through $b_j$. The direct path is impossible; the indirect path is the only way.
 
 2. **Computational constraints:** The agent may be unable to compute the direct transition due to memory limitations. The indirect path through an intermediate representation is necessary.
 
@@ -172,16 +174,17 @@ When the triangle inequality fails, the energy cost is not a quasi-metric. In th
 
 The asymmetry of the energy quasi-metric has a deep physical basis. In thermodynamics, the second law states that entropy increases over time. Erasing information (decreasing entropy) requires energy; creating information (increasing entropy) can be done for free.
 
-**Landauer's Principle (1961):** Erasing one bit of information requires at least \( k_B T \ln 2 \) energy.
+**Landauer's Principle (1961):** Erasing one bit of information requires at least $k_B T \ln 2$ energy.
 
 This implies:
-- **Cost to forget (erase):** \( d(\text{known}, \text{unknown}) \geq k_B T \ln 2 \).
-- **Cost to learn (observe):** \( d(\text{unknown}, \text{known}) \) may be arbitrarily small if the observation is free.
+- **Cost to forget (erase):** $d(\text{known}, \text{unknown}) \geq k_B T \ln 2$.
+- **Cost to learn (observe):** $d(\text{unknown}, \text{known})$ may be arbitrarily small if the observation is free.
 
 Thus, the energy quasi-metric is asymmetric:
-\[
+
+$$
 d(\text{known}, \text{unknown}) \gg d(\text{unknown}, \text{known}).
-\]
+$$
 
 ### 3.5.2 Information-Theoretic Asymmetry
 
@@ -191,7 +194,7 @@ From an information-theoretic perspective, the asymmetry captures the fact that:
 2. **Losing information** (forgetting, compressing, erasing) is costly.
 3. **Transforming information** may have a cost that depends on the direction of the transformation.
 
-This asymmetry is central to the geometry of belief spaces: the cost of moving from belief \( b_i \) to belief \( b_j \) is the cost of changing one's knowledge state. If \( b_j \) contains more information than \( b_i \), the cost is the cost of acquiring that information. If \( b_j \) contains less information, the cost is the cost of forgetting (which may be high).
+This asymmetry is central to the geometry of belief spaces: the cost of moving from belief $b_i$ to belief $b_j$ is the cost of changing one's knowledge state. If $b_j$ contains more information than $b_i$, the cost is the cost of acquiring that information. If $b_j$ contains less information, the cost is the cost of forgetting (which may be high).
 
 ### 3.5.3 Computational Asymmetry
 
@@ -205,17 +208,19 @@ These asymmetries naturally lead to a quasi-metric structure on the belief space
 
 ### 3.5.4 The Gap Function
 
-**Definition 3.8 (Asymmetry Gap).** For beliefs \( b_i, b_j \in \mathcal{B} \), define the **asymmetry gap** as
-\[
+**Definition 3.8 (Asymmetry Gap).** For beliefs $b_i, b_j \in \mathcal{B}$, define the **asymmetry gap** as
+
+$$
 \Delta(b_i, b_j) = d(b_i, b_j) - d(b_j, b_i).
-\]
+$$
 
-The gap measures the degree of irreversibility between \( b_i \) and \( b_j \). If \( \Delta > 0 \), it is more expensive to go from \( b_i \) to \( b_j \) than to return. If \( \Delta < 0 \), the reverse is true.
+The gap measures the degree of irreversibility between $b_i$ and $b_j$. If $\Delta > 0$, it is more expensive to go from $b_i$ to $b_j$ than to return. If $\Delta < 0$, the reverse is true.
 
-**Definition 3.9 (Symmetric Points).** Beliefs \( b_i, b_j \) are **symmetric** if \( \Delta(b_i, b_j) = 0 \). The set of locally symmetric points \( \text{Sym}(\mathcal{B}) \) consists of beliefs where the gap vanishes in the local limit:
-\[
+**Definition 3.9 (Symmetric Points).** Beliefs $b_i, b_j$ are **symmetric** if $\Delta(b_i, b_j) = 0$. The set of locally symmetric points $\text{Sym}(\mathcal{B})$ consists of beliefs where the gap vanishes in the local limit:
+
+$$
 \liminf_{x \to b} \frac{|d(b,x) - d(x,b)|}{d_{\text{avg}}(b,x)} = 0.
-\]
+$$
 
 Symmetric points are the "equilibrium points" where forward and backward costs are locally balanced.
 
