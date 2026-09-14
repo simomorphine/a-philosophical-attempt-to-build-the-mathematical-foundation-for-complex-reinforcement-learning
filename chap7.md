@@ -35,46 +35,55 @@ $$
 d_{\text{avg}}(b, x) = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2}.
 $$
 
-**Proposition 7.2 ($ d_{\text{avg}} $ is a Metric).** The average distance $ d_{\text{avg}} $ is a genuine metric on $ \mathcal{B} $:
-1. **Identity:** $ d_{\text{avg}}(b, b) = 0 $.
-2. **Symmetry:** $ d_{\text{avg}}(b, x) = d_{\text{avg}}(x, b) $.
-3. **Triangle inequality:** $ d_{\text{avg}}(b, z) \leq d_{\text{avg}}(b, x) + d_{\text{avg}}(x, z) $.
+**Proposition 7.2 ($d_{\text{avg}}$ is a Metric).** The average distance $d_{\text{avg}}$ is a genuine metric on $\mathcal{B}$:
+1. **Identity:** $d_{\text{avg}}(b, b) = 0$.
+2. **Symmetry:** $d_{\text{avg}}(b, x) = d_{\text{avg}}(x, b)$.
+3. **Triangle inequality:** $d_{\text{avg}}(b, z) \leq d_{\text{avg}}(b, x) + d_{\text{avg}}(x, z)$.
 
 *Proof.*
 - Identity and symmetry are immediate.
-- Triangle inequality follows from applying the triangle inequality of $ d_\gamma $ to each direction separately:
+- Triangle inequality follows from applying the triangle inequality of $d_\gamma$ to each direction separately:
+
 $$
 d_\gamma(b, z) + d_\gamma(z, b) \leq [d_\gamma(b, x) + d_\gamma(x, z)] + [d_\gamma(z, x) + d_\gamma(x, b)].
 $$
-Dividing by 2 gives the result. $ \square $
 
-**Interpretation:** The average distance measures the **round-trip cost**—going from $ b $ to $ x $ and back. It is a symmetric measure of "how far apart" two beliefs are in terms of the average cost of traversing between them.
+Dividing by 2 gives the result. $\square$
+
+**Interpretation:** The average distance measures the **round-trip cost**—going from $b$ to $x$ and back. It is a symmetric measure of "how far apart" two beliefs are in terms of the average cost of traversing between them.
 
 ### 7.2.2 The Max Distance
 
 **Definition 7.3 (Max Distance).** The **max distance** is
+
 $$
 d_{\text{max}}(b, x) = \max\{d_\gamma(b, x), d_\gamma(x, b)\}.
 $$
 
-**Proposition 7.4 (Equivalence of $ d_{\text{avg}} $ and $ d_{\text{max}} $).** The average and max distances are equivalent and define the same topology:
+**Proposition 7.4 (Equivalence of $d_{\text{avg}}$ and $d_{\text{max}}$).** The average and max distances are equivalent and define the same topology:
+
 $$
 d_{\text{avg}} \leq d_{\text{max}} \leq 2 d_{\text{avg}}.
 $$
 
 *Proof.*
+
 $$
 d_{\text{avg}} = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2} \leq \max\{d_\gamma(b, x), d_\gamma(x, b)\} = d_{\text{max}}.
 $$
+
 Also,
+
 $$
 d_{\text{max}} = \max\{d_\gamma(b, x), d_\gamma(x, b)\} \leq d_\gamma(b, x) + d_\gamma(x, b) = 2 d_{\text{avg}}.
 $$
-$ \square $
+
+$\square$
 
 ### 7.2.3 The Average Topology
 
-**Definition 7.5 (Average Topology $ \tau_{\text{avg}} $).** The **average topology** is the topology induced by the average distance $ d_{\text{avg}} $. Its basis consists of balls
+**Definition 7.5 (Average Topology $\tau_{\text{avg}}$).** The **average topology** is the topology induced by the average distance $d_{\text{avg}}$. Its basis consists of balls
+
 $$
 B_{\text{avg}}(b, \epsilon) = \{ x \in \mathcal{B} \mid d_{\text{avg}}(b, x) < \epsilon \}.
 $$
@@ -83,18 +92,21 @@ $$
 
 ### 7.2.4 The Intersection Property
 
-**Proposition 7.6 (Intersection Property).** For any $ b \in \mathcal{B} $ and $ \epsilon > 0 $:
+**Proposition 7.6 (Intersection Property).** For any $b \in \mathcal{B} $ and $ \epsilon > 0$:
+
 $$
 B^+(b, \epsilon) \cap B^-(b, \epsilon) \subseteq B_{\text{avg}}(b, \epsilon).
 $$
 
-*Proof.* If $ x \in B^+(b, \epsilon) \cap B^-(b, \epsilon) $, then $ d_\gamma(b, x) < \epsilon $ and $ d_\gamma(x, b) < \epsilon $. Therefore:
+*Proof.* If $x \in B^+(b, \epsilon) \cap B^-(b, \epsilon)$, then $d_\gamma(b, x) < \epsilon $ and $ d_\gamma(x, b) < \epsilon$. Therefore:
+
 $$
 d_{\text{avg}}(b, x) = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2} < \frac{\epsilon + \epsilon}{2} = \epsilon.
 $$
-Thus, $ x \in B_{\text{avg}}(b, \epsilon) $. $ \square $
 
-**Interpretation:** Beliefs that are bidirectionally close (reachable from $ b $ and can reach $ b $) are also close in the average topology. The converse is not necessarily true—beliefs close in average may be far in one direction.
+Thus, $x \in B_{\text{avg}}(b, \epsilon)$. $\square$
+
+**Interpretation:** Beliefs that are bidirectionally close (reachable from $b$ and can reach $b$) are also close in the average topology. The converse is not necessarily true—beliefs close in average may be far in one direction.
 
 ---
 
@@ -102,53 +114,62 @@ Thus, $ x \in B_{\text{avg}}(b, \epsilon) $. $ \square $
 
 ### 7.3.1 Pre-Equilibrium
 
-**Definition 7.7 (Pre-Equilibrium Set).** For thresholds $ \epsilon_b > 0 $ for each $ b \in \mathcal{B} $, the pre-equilibrium set is
+**Definition 7.7 (Pre-Equilibrium Set).** For thresholds $\epsilon_b > 0$ for each $b \in \mathcal{B}$, the pre-equilibrium set is
+
 $$
 U_{\text{pre}} = \bigcup_{b \in \mathcal{B}} B_{\text{avg}}(b, \epsilon_b).
 $$
 
-**Interpretation:** The pre-equilibrium set consists of beliefs that are within some tolerance of being in equilibrium. The thresholds $ \epsilon_b $ can vary with $ b $, allowing for state-dependent tolerances.
+**Interpretation:** The pre-equilibrium set consists of beliefs that are within some tolerance of being in equilibrium. The thresholds $\epsilon_b$ can vary with $b$, allowing for state-dependent tolerances.
 
 ### 7.3.2 Equilibrium Concepts
 
-Taking the closure of $ U_{\text{pre}} $ in different topologies yields four distinct equilibrium concepts:
+Taking the closure of $U_{\text{pre}}$ in different topologies yields four distinct equilibrium concepts:
 
 **Definition 7.8 (Equilibrium Concepts).**
 
-1. **Average Equilibrium ($ E_{\text{avg}} $):**
+1. **Average Equilibrium ($E_{\text{avg}}$):**
+
    $$
    E_{\text{avg}} = \overline{U_{\text{pre}}}^{\tau_{\text{avg}}}.
    $$
+
    The closure of the pre-equilibrium set in the average topology.
 
-2. **Join Equilibrium ($ E_\vee $):**
+3. **Join Equilibrium ($E_\vee$):**
+
    $$
    E_\vee = \overline{U_{\text{pre}}}^{\tau_+ \vee \tau_-}.
    $$
+
    The closure of the pre-equilibrium set in the join topology.
 
-3. **Forward Equilibrium ($ E_\rightarrow $):**
+5. **Forward Equilibrium ($E_\rightarrow$):**
+
    $$
    E_\rightarrow = \overline{U_{\text{pre}}}^{\tau_+}.
    $$
+
    The closure of the pre-equilibrium set in the forward topology.
 
-4. **Backward Equilibrium ($ E_\leftarrow $):**
+7. **Backward Equilibrium ($E_\leftarrow$):**
+
    $$
    E_\leftarrow = \overline{U_{\text{pre}}}^{\tau_-}.
    $$
+
    The closure of the pre-equilibrium set in the backward topology.
 
 ### 7.3.3 Interpretation of Each Equilibrium
 
 | Concept | Topology | Interpretation |
 |---------|----------|----------------|
-| $ E_{\text{avg}} $ | Average | Symmetric balance: round-trip cost is small. |
-| $ E_\vee $ | Join | Bidirectional balance: can reach and be reached with low cost. |
-| $ E_\rightarrow $ | Forward | Directional balance: can be reached with low cost. |
-| $ E_\leftarrow $ | Backward | Directional balance: can reach others with low cost. |
+| $E_{\text{avg}}$ | Average | Symmetric balance: round-trip cost is small. |
+| $E_\vee$ | Join | Bidirectional balance: can reach and be reached with low cost. |
+| $E_\rightarrow$ | Forward | Directional balance: can be reached with low cost. |
+| $E_\leftarrow$ | Backward | Directional balance: can reach others with low cost. |
 
-**Key Insight:** The four equilibrium concepts capture different degrees of balance, from the strongest ($ E_{\text{avg}} $) to the weakest ($ E_\rightarrow $ and $ E_\leftarrow $).
+**Key Insight:** The four equilibrium concepts capture different degrees of balance, from the strongest ($E_{\text{avg}}$) to the weakest ($E_\rightarrow$ and $E_\leftarrow$).
 
 ---
 
@@ -157,14 +178,15 @@ Taking the closure of $ U_{\text{pre}} $ in different topologies yields four dis
 ### 7.4.1 The Main Theorem
 
 **Theorem 7.9 (Equilibrium Hierarchy).** The four equilibrium concepts are nested:
+
 $$
 E_{\text{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow.
 $$
 
 *Proof.*
-1. **$ E_{\text{avg}} \subseteq E_\vee $:** Since $ \tau_{\text{avg}} \subseteq \tau_+ \vee \tau_- $, a set closed in the join topology is also closed in the average topology. Therefore, the closure in $ \tau_{\text{avg}} $ is contained in the closure in $ \tau_+ \vee \tau_- $.
+1. **$E_{\text{avg}} \subseteq E_\vee$:** Since $\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-$, a set closed in the join topology is also closed in the average topology. Therefore, the closure in $\tau_{\text{avg}}$ is contained in the closure in $\tau_+ \vee \tau_-$.
 
-2. **$ E_\vee \subseteq E_\rightarrow \cap E_\leftarrow $:** Since $ \tau_+ \vee \tau_- $ is finer than both $ \tau_+ $ and $ \tau_- $ individually, a set closed in the join topology is closed in both $ \tau_+ $ and $ \tau_- $. Therefore, the closure in $ \tau_+ \vee \tau_- $ is contained in the intersection of the closures in $ \tau_+ $ and $ \tau_- $. $ \square $
+2. **$E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$:** Since $\tau_+ \vee \tau_-$ is finer than both $\tau_+$ and $\tau_-$ individually, a set closed in the join topology is closed in both $\tau_+$ and $\tau_-$. Therefore, the closure in $\tau_+ \vee \tau_-$ is contained in the intersection of the closures in $\tau_+$ and $\tau_-$. $\square$
 
 ### 7.4.2 The Hierarchy Diagram
 
