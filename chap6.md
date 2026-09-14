@@ -430,7 +430,7 @@ $$
 
 ### 6.6.7 The Gamma Derivative in the Two-State Example
 
-For the two-state belief space $\mathcal{B} = \{0, 1\}$ with:
+For the two-state belief space $\mathcal{B} = \lbrace 0, 1\rbrace$ with:
 - $d(0, 1) = E_{\text{obs}}$, $d(1, 0) = E_{\text{erase}}$.
 - $\text{debt}(0, 1) = 1$, $\text{debt}(1, 0) = -1$.
 
