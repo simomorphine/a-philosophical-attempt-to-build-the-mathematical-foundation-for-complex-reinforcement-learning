@@ -541,7 +541,7 @@ The asymmetry of $d_\gamma$ naturally generates two distinct topologies on $\mat
 **Definition 6.15 (Forward Topology $\tau_+$).** The forward topology has basis
 
 $$
-B^+(b, \epsilon) = \{ x \in \mathcal{B} \mid d_\gamma(b, x) < \epsilon \}.
+B^+(b, \epsilon) = \lbrace x \in \mathcal{B} \mid d_\gamma(b, x) < \epsilon \rbrace.
 $$
 
 The forward ball $B^+(b, \epsilon)$ contains beliefs reachable from $b$ with cost less than $\epsilon$.
@@ -549,7 +549,7 @@ The forward ball $B^+(b, \epsilon)$ contains beliefs reachable from $b$ with cos
 **Definition 6.16 (Backward Topology $\tau_-$).** The backward topology has basis
 
 $$
-B^-(b, \epsilon) = \{ x \in \mathcal{B} \mid d_\gamma(x, b) < \epsilon \}.
+B^-(b, \epsilon) = \lbrace x \in \mathcal{B} \mid d_\gamma(x, b) < \epsilon \rbrace.
 $$
 
 The backward ball $B^-(b, \epsilon)$ contains beliefs from which $b$ is reachable with cost less than $\epsilon$.
