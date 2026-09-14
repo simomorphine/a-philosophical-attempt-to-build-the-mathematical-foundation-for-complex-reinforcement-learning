@@ -74,13 +74,13 @@ satisfying:
 
 ### 3.3.2 Interpretation
 
-The energy quasi-metric \( d(b_i, b_j) \) represents the **minimum energy cost** required to transition from belief \( b_i \) to belief \( b_j \).
+The energy quasi-metric $d(b_i, b_j)$ represents the **minimum energy cost** required to transition from belief $b_i$ to belief $b_j$.
 
 - **Identity:** Staying in the same belief costs zero energy.
 - **Non-negativity:** Energy costs are never negative.
-- **Triangle inequality:** The direct cost from \( b_i \) to \( b_k \) is no more than going through an intermediate belief \( b_j \). Equivalently, there is no "shortcut" that costs less than any path through \( b_j \).
+- **Triangle inequality:** The direct cost from $b_i$ to $b_k$ is no more than going through an intermediate belief $b_j$. Equivalently, there is no "shortcut" that costs less than any path through $b_j$.
 
-**Absence of symmetry:** The cost to go from \( b_i \) to \( b_j \) may be different from the cost to go from \( b_j \) to \( b_i \). This reflects the **irreversibility** of many information processing operations.
+**Absence of symmetry:** The cost to go from $b_i$ to $b_j$ may be different from the cost to go from $b_j$ to $b_i$. This reflects the **irreversibility** of many information processing operations.
 
 ### 3.3.3 Why Quasi-Metric?
 
@@ -94,17 +94,19 @@ Why not a metric? Because symmetry fails for information processing:
 
 4. **Physical asymmetry:** Many physical processes are irreversible. The cost to go forward in time is the energy cost; the cost to go backward is infinite.
 
-**Example:** Let \( \mathcal{B} = \{ \text{unknown}, \text{known} \} \). The cost to go from "unknown" to "known" is the energy of observation \( E_{\text{obs}} \). The cost to go from "known" to "unknown" is the energy of forgetting \( E_{\text{forget}} \), which (by Landauer) is at least \( k_B T \ln 2 \) for bit erasure. In general, \( E_{\text{obs}} \neq E_{\text{forget}} \).
+**Example:** Let $\mathcal{B} = \{ \text{unknown}, \text{known} \}$. The cost to go from "unknown" to "known" is the energy of observation $E_{\text{obs}}$. The cost to go from "known" to "unknown" is the energy of forgetting $E_{\text{forget}}$, which (by Landauer) is at least $k_B T \ln 2$ for bit erasure. In general, $E_{\text{obs}} \neq E_{\text{forget}}$.
 
 ### 3.3.4 Properties of the Energy Quasi-Metric
 
-**Proposition 3.5 (Non-Negative Definiteness).** The energy quasi-metric is non-negative definite in the sense that for any finite sequence \( b_1, \ldots, b_n \):
-\[
+**Proposition 3.5 (Non-Negative Definiteness).** The energy quasi-metric is non-negative definite in the sense that for any finite sequence $b_1, \ldots, b_n$:
+
+$$
 \sum_{k=1}^{n-1} d(b_k, b_{k+1}) \geq 0,
-\]
+$$
+
 with equality if and only if all transitions are zero-cost.
 
-*Proof.* This follows directly from non-negativity. \( \square \)
+*Proof.* This follows directly from non-negativity. $\square$
 
 **Proposition 3.6 (Subadditivity on Paths).** For any path \( b_0 \to b_1 \to \cdots \to b_n \):
 \[
