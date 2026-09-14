@@ -48,9 +48,9 @@ We do not assume $\mathcal{B}$ has a metric structure (that is what we are build
 
 **Axiom 3.2 (Reachability).** For any two beliefs $b_i, b_j \in \mathcal{B}$, there exists a finite sequence of transitions $b_i \to b_{i+1} \to \cdots \to b_j$ with finite energy cost.
 
-**Axiom 3.3 (Bounded Energy).** For any belief \( b \in \mathcal{B} \), there is a neighborhood \( U_b \subseteq \mathcal{B} \) such that transitions within \( U_b \) have uniformly bounded energy cost.
+**Axiom 3.3 (Bounded Energy).** For any belief $b \in \mathcal{B}$, there is a neighborhood $U_b \subseteq \mathcal{B}$ such that transitions within $U_b$ have uniformly bounded energy cost.
 
-These axioms ensure that \( \mathcal{B} \) is a coherent space for studying energy costs.
+These axioms ensure that $\mathcal{B}$ is a coherent space for studying energy costs.
 
 ---
 
@@ -59,16 +59,18 @@ These axioms ensure that \( \mathcal{B} \) is a coherent space for studying ener
 ### 3.3.1 Definition
 
 **Definition 3.4 (Energy Quasi-Metric).** An energy quasi-metric is a function
-\[
+
+$$
 d: \mathcal{B} \times \mathcal{B} \to \mathbb{R}_{\geq 0}
-\]
+$$
+
 satisfying:
 
-1. **Identity:** \( d(b_i, b_i) = 0 \) for all \( b_i \in \mathcal{B} \).
-2. **Non-negativity:** \( d(b_i, b_j) \geq 0 \) for all \( b_i, b_j \in \mathcal{B} \).
-3. **Triangle Inequality:** \( d(b_i, b_k) \leq d(b_i, b_j) + d(b_j, b_k) \) for all \( b_i, b_j, b_k \in \mathcal{B} \).
+1. **Identity:** $d(b_i, b_i) = 0$ for all $b_i \in \mathcal{B}$.
+2. **Non-negativity:** $d(b_i, b_j) \geq 0$ for all $b_i, b_j \in \mathcal{B}$.
+3. **Triangle Inequality:** $d(b_i, b_k) \leq d(b_i, b_j) + d(b_j, b_k)$ for all $b_i, b_j, b_k \in \mathcal{B}$.
 
-**No symmetry requirement:** \( d(b_i, b_j) \) may differ from \( d(b_j, b_i) \).
+**No symmetry requirement:** $d(b_i, b_j)$ may differ from $d(b_j, b_i)$.
 
 ### 3.3.2 Interpretation
 
