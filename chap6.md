@@ -350,7 +350,7 @@ with equality if and only if $\text{debt}(b_i, b_j) = 0$ or $\gamma = 0$.
 
 *Proof.* The numerator $\gamma \cdot \text{debt}^2$ is non-negative for $\gamma \geq 0$, and the denominator $d_\gamma > 0$ for $b_i \neq b_j$. Equality holds precisely when $\gamma = 0$ or $\text{debt} = 0$. 
 
-**Interpretation:** The \( \gamma \)-distance is non-decreasing in \( \gamma \). Increasing \( \gamma \) can only increase (or leave unchanged) the distance between any two beliefs. This confirms that \( \gamma \) acts as a "debt amplifier": the more weight placed on debt, the larger the distance between beliefs with non-zero debt.
+**Interpretation:** The $\gamma$-distance is non-decreasing in $\gamma$. Increasing $\gamma$ can only increase (or leave unchanged) the distance between any two beliefs. This confirms that $\gamma$ acts as a "debt amplifier": the more weight placed on debt, the larger the distance between beliefs with non-zero debt.
 
 ### 6.6.3 The Second Derivative
 
@@ -673,66 +673,68 @@ The agent minimizes \( J_\gamma^\pi \) for a given \( \gamma \).
 - \( \gamma = 1 \): The policy minimizes the full modulus (balanced).
 - \( 0 < \gamma < 1 \): The policy minimizes a weighted combination.
 
-### 6.10.3 The Phase and \( \gamma \)
+### 6.10.3 The Phase and $\gamma$
 
-The phase for the \( \gamma \)-distance is:
-\[
+The phase for the $\gamma$-distance is:
+
+$$
 \theta_\gamma(s, a) = \arctan \left( \frac{\gamma \cdot Q_I(s, a)}{Q_R(s, a)} \right).
-\]
+$$
 
-**Interpretation:** The parameter \( \gamma \) scales the debt component of the phase. Increasing \( \gamma \) increases the phase for a given debt-to-cost ratio.
+**Interpretation:** The parameter $\gamma$ scales the debt component of the phase. Increasing $\gamma$ increases the phase for a given debt-to-cost ratio.
 
 ### 6.10.4 The Gamma Derivative in RL
 
-The derivative of the objective with respect to \( \gamma \) is:
-\[
-\frac{\partial J_\gamma^\pi}{\partial \gamma}(s, a) = \frac{\gamma \cdot Q_I^\pi(s, a)^2}{J_\gamma^\pi(s, a)}.
-\]
+The derivative of the objective with respect to $\gamma$ is:
 
-**Interpretation:** The sensitivity of the objective to \( \gamma \) is proportional to the square of the debt value. Actions with high debt have higher sensitivity. This can be used to adapt \( \gamma \) during learning:
-- If the agent wants to reduce debt, increase \( \gamma \).
-- If the agent wants to reduce cost, decrease \( \gamma \).
+$$
+\frac{\partial J_\gamma^\pi}{\partial \gamma}(s, a) = \frac{\gamma \cdot Q_I^\pi(s, a)^2}{J_\gamma^\pi(s, a)}.
+$$
+
+**Interpretation:** The sensitivity of the objective to $\gamma$ is proportional to the square of the debt value. Actions with high debt have higher sensitivity. This can be used to adapt $\gamma$ during learning:
+- If the agent wants to reduce debt, increase $\gamma$.
+- If the agent wants to reduce cost, decrease $\gamma$.
 
 ---
 
 ## 6.11 Summary
 
-This chapter has introduced the \( \gamma \)-distance family:
+This chapter has introduced the $\gamma$-distance family:
 
-1. **Definition:** \( d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2} \).
+1. **Definition:** $d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \text{debt}(b_i, b_j)^2}$.
 
 2. **Extremes:**
-   - \( \gamma = 0 \): Pure cost geometry.
-   - \( \gamma = 1 \): Full cost-debt geometry.
+   - $\gamma = 0$: Pure cost geometry.
+   - $\gamma = 1$: Full cost-debt geometry.
 
 3. **Metric Properties:**
    - Identity, positivity.
    - Asymmetry (inherited from cost).
-   - Triangle inequality (for all \( \gamma \in [0, 1] \)).
+   - Triangle inequality (for all $\gamma \in [0, 1]$).
 
 4. **Geometric Interpretation:**
-   - \( \gamma \) deforms the metric.
+   - $\gamma$ deforms the metric.
    - Metric balls expand/contract.
    - Geodesics shift from cost-efficient to debt-aware.
    - Level sets are ellipses in the cost-debt plane.
 
 5. **Gamma Derivative:**
-   - First derivative: \( \partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma \geq 0 \).
-   - Second derivative: \( \partial^2 d_\gamma / \partial \gamma^2 = d^2 \cdot \text{debt}^2 / d_\gamma^3 \geq 0 \) (convex).
-   - Elasticity: \( \mathcal{E}_\gamma = \gamma^2 \cdot \text{debt}^2 / d_\gamma^2 \in [0, 1] \).
-   - Phase derivative: \( \partial \theta_\gamma / \partial \gamma = \text{debt} \cdot d / d_\gamma^2 \).
-   - Learning schedule: \( \gamma(t) = \gamma_0 e^{-\lambda t} + \gamma_\infty \).
+   - First derivative: $\partial d_\gamma / \partial \gamma = \gamma \cdot \text{debt}^2 / d_\gamma \geq 0$.
+   - Second derivative: $\partial^2 d_\gamma / \partial \gamma^2 = d^2 \cdot \text{debt}^2 / d_\gamma^3 \geq 0$ (convex).
+   - Elasticity: $\mathcal{E}_\gamma = \gamma^2 \cdot \text{debt}^2 / d_\gamma^2 \in [0, 1]$.
+   - Phase derivative: $\partial \theta_\gamma / \partial \gamma = \text{debt} \cdot d / d_\gamma^2$.
+   - Learning schedule: $\gamma(t) = \gamma_0 e^{-\lambda t} + \gamma_\infty$.
 
 6. **Topological Dependence:**
-   - The topology \( \tau_\gamma \) depends continuously on \( \gamma \).
-   - \( \tau_{\gamma_1} \subseteq \tau_{\gamma_2} \) for \( \gamma_1 < \gamma_2 \).
-   - Beliefs with non-zero debt are separated by \( \gamma \).
+   - The topology $\tau_\gamma$ depends continuously on $\gamma$.
+   - $\tau_{\gamma_1} \subseteq \tau_{\gamma_2}$ for $\gamma_1 < \gamma_2$.
+   - Beliefs with non-zero debt are separated by $\gamma$.
 
 7. **Bitopological Structure:**
-   - Forward topology \( \tau_+ \): reachable from \( b \).
-   - Backward topology \( \tau_- \): can reach \( b \).
-   - Join topology \( \tau_+ \vee \tau_- \): bidirectional reachability.
-   - Average topology \( \tau_{\text{avg}} \): symmetric version.
+   - Forward topology $\tau_+$: reachable from $b$.
+   - Backward topology $\tau_-$: can reach $b$.
+   - Join topology $\tau_+ \vee \tau_-$: bidirectional reachability.
+   - Average topology $\tau_{\text{avg}}$: symmetric version.
 
 8. **RL Connection:** $d_\gamma$ becomes the objective $J_\gamma^\pi(s, a)$, and the $\gamma$-greedy policy selects actions based on the $\gamma$-distance. The gamma derivative informs adaptive scheduling of $\gamma$.
 
