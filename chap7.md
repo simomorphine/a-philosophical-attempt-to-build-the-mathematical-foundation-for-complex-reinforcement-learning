@@ -69,7 +69,7 @@ $$
 *Proof.*
 
 $$
-d_{\text{avg}} = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2} \leq \max\{d_\gamma(b, x), d_\gamma(x, b)\} = d_{\text{max}}.
+d_{\text{avg}} = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2} \leq \max \lbrace d_\gamma(b, x), d_\gamma(x, b) \rbrace = d_{\text{max}}.
 $$
 
 Also,
