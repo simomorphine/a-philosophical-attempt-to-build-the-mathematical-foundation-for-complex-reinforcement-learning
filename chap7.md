@@ -651,7 +651,7 @@ $$d(b, x) = |\Delta| + |\Delta|^{1/2}$$
 
 where $\Delta = x - b$. Define the debt function:
 
-$$\operatorname{debt}(b, x) = \Delta$$
+$$\mathrm{debt}(b, x) = \Delta$$
 
 Define the $\gamma$-distance for $\gamma = 1$:
 
@@ -661,7 +661,7 @@ And the reverse distance:
 
 $$d_1(x, b) = \sqrt{(|\Delta| - |\Delta|^{1/2})^2 + \Delta^2}$$
 
-**Note:** The reverse distance uses the fact that $\operatorname{debt}(x, b) = -\Delta$.
+**Note:** The reverse distance uses the fact that $\mathrm{debt}(x, b) = -\Delta$.
 
 ### 5.2 Analysis
 
@@ -777,7 +777,7 @@ In non-smooth systems, there are equilibrium points that are not locally reversi
 
 **Example:** A magnet below its Curie temperature. It is in equilibrium (stable magnetic domains) but retains a memory of its past magnetization. The arrow of time is encoded in the domain structure.
 
-**Example:** An AGI system with learned weights. The weights are in equilibrium (stable) but encode the history of training. The system has memory but is stable.
+**Example:** An AI system with learned weights. The weights are in equilibrium (stable) but encode the history of training. The system has memory but is stable.
 
 ### 7.3 The Gap as Memory
 
@@ -800,9 +800,8 @@ In non-smooth systems, there are equilibrium points that are not locally reversi
 
 ---
 
-## 8. Implications for AGI Architecture Design
+## 8. Implications for AI Architecture Design
 
-> **Editor's note:** The source document lost its headers at this point (likely a copy/paste break). The subsection headers below have been reconstructed from context to restore the section's logical flow — please verify against the original if precision matters.
 
 ### 8.1 The Necessity of the Gap
 
