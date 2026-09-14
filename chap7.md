@@ -458,28 +458,10 @@ The equilibrium hierarchy provides a nuanced understanding of what it means for 
 
 ---
 
-# Supplementary
-
-*The material below is a standalone paper covering related ground (the equilibrium hierarchy, locally symmetric points) in more technical depth, then extends it with new results — smoothness/non-smoothness conditions, non-smooth counterexamples, physical interpretation, and implications for AGI architecture design. It was included in the uploaded file after Chapter 7; it is kept here as a separate document rather than merged into Chapter 7's numbering, since it has its own self-contained section numbers (1–11).*
-
----
----
-
 # The Geometry of Local Symmetry and Equilibrium in Information Processing Systems
 
 ## A Mathematical Investigation of Reversibility, Stability, and Time's Arrow in Belief Space
 
-
-
----
-
-## Abstract
-
-This paper establishes the fundamental relationship between local symmetry and equilibrium in information processing systems. We introduce the locally symmetric set $\mathrm{Sym}_\gamma(\mathcal{B})$ and prove its inclusion in the equilibrium hierarchy $E_{\mathrm{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$. We demonstrate that under differentiability conditions, $\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$—equilibrium is equivalent to local reversibility. Conversely, we construct non-smooth counterexamples where $\mathrm{Sym}_\gamma(\mathcal{B}) \subsetneq E_{\mathrm{avg}}$, revealing that stability can coexist with an irreversible arrow of time. This framework provides a geometric foundation for understanding memory, dissipation, and the emergence of time asymmetry in complex information processing systems, with direct implications for AGI architecture design.
-
-**Keywords:** Belief space, quasi-metric, equilibrium, local symmetry, reversibility, information geometry, AGI, thermodynamics of computation
-
-**MSC Classifications:** 54E35 (Quasi-metrics), 54E55 (Bitopological spaces), 37C10 (Dynamics), 53B20 (Riemannian geometry)
 
 ---
 
@@ -495,16 +477,7 @@ This paper investigates the mathematical structure underlying this apparent para
 2. **Equilibrium** is a stability property ($E_{\mathrm{avg}}$)
 3. **The gap between them** encodes the system's memory of time's arrow
 
-### 1.2 The Belief Space Framework
-
-We work within the belief space $\mathcal{B}$ of an information processing system, equipped with:
-
-- An **energy quasi-metric** $d: \mathcal{B} \times \mathcal{B} \to \mathbb{R}_{\geq 0}$ measuring irreversible computational cost
-- A **debt function** $\operatorname{debt}(b_i, b_j) = \psi(b_j) - \psi(b_i)$ measuring reversible informational obligations
-- A **complex quasi-metric** $Q(b_i, b_j) = d(b_i, b_j) + i \cdot \operatorname{debt}(b_i, b_j)$
-- A **one-parameter family** $d_\gamma(b_i, b_j) = \sqrt{d(b_i, b_j)^2 + \gamma^2 \cdot \operatorname{debt}(b_i, b_j)^2}$ for $\gamma \in [0,1]$
-
-### 1.3 Main Results
+### 1.2 Main Results
 
 This paper establishes:
 
@@ -516,88 +489,23 @@ This paper establishes:
 
 4. **Theorem 4 (Extended Hierarchy):** $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$
 
-### 1.4 Outline
-
-Section 2 reviews the belief space formalism. Section 3 introduces the locally symmetric set. Section 4 establishes the inclusion theorems. Section 5 proves smoothness implies equality. Section 6 constructs non-smooth counterexamples. Section 7 presents the extended hierarchy. Section 8 explores physical interpretation. Section 9 discusses implications for AGI. Section 10 concludes with open questions.
-
 ---
 
-## 2. The Belief Space Formalism
+## 2. Local Symmetry in Belief Space
 
-### 2.1 Basic Definitions
-
-**Definition 2.1 (Belief Space).** Let $\mathcal{B}$ denote the belief space of an information processing system, consisting of all configurations reachable with bounded energy cost. Each belief $b \in \mathcal{B}$ represents a complete specification of the system's configuration.
-
-**Definition 2.2 (Energy Quasi-Metric).** An energy quasi-metric is a function $d: \mathcal{B} \times \mathcal{B} \to \mathbb{R}_{\geq 0}$ satisfying:
-
-1. $d(b, b) = 0$ for all $b \in \mathcal{B}$
-2. $d(b, x) \geq 0$ for all $b, x \in \mathcal{B}$
-3. $d(b, z) \leq d(b, x) + d(x, z)$ for all $b, x, z \in \mathcal{B}$ (triangle inequality)
-
-Symmetry is not required: $d(b, x)$ may differ from $d(x, b)$, reflecting the potential irreversibility of computational processes.
-
-**Definition 2.3 (Debt Function).** Let $\psi: \mathcal{B} \to \mathbb{R}$ be a potential function. The debt function is:
-
-$$\operatorname{debt}(b, x) = \psi(x) - \psi(b)$$
-
-The debt function satisfies:
-1. $\operatorname{debt}(b, b) = 0$
-2. $\operatorname{debt}(b, z) = \operatorname{debt}(b, x) + \operatorname{debt}(x, z)$ (telescoping)
-3. $\operatorname{debt}(b, x) = -\operatorname{debt}(x, b)$ (antisymmetry)
-4. Cycle invariance: $\sum_{k=1}^n \operatorname{debt}(b_k, b_{k+1}) = 0$ for closed paths
-
-**Definition 2.4 ($\gamma$-Distance).** For $\gamma \in [0,1]$, the $\gamma$-distance is:
-
-$$d_\gamma(b, x) = \sqrt{d(b, x)^2 + \gamma^2 \cdot \operatorname{debt}(b, x)^2}$$
-
-At the extremes:
-- $\gamma = 0$: $d_0 = d$ (pure energy)
-- $\gamma = 1$: $d_1 = |Q|$ (full energy-debt metric)
-
-### 2.2 Topological Structures
-
-**Definition 2.5 (Average Distance).**
-
-$$d_{\mathrm{avg}}(b, x) = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2}$$
-
-The average distance is a genuine metric on $\mathcal{B}$.
-
-**Definition 2.6 (Forward and Backward Topologies).**
-
-- **Forward topology** $\tau_+$: generated by forward balls $B^+(b, \epsilon) = \{x \in \mathcal{B} : d_\gamma(b, x) < \epsilon\}$
-
-- **Backward topology** $\tau_-$: generated by backward balls $B^-(b, \epsilon) = \{x \in \mathcal{B} : d_\gamma(x, b) < \epsilon\}$
-
-- **Join topology** $\tau_+ \vee \tau_-$: coarsest topology containing both, with basis $\{B^+(b, \epsilon) \cap B^-(b, \delta) : b \in \mathcal{B}, \epsilon, \delta > 0\}$
-
-**Definition 2.7 (Equilibrium Hierarchy).**
-
-1. $E_{\mathrm{avg}}$: sets closed in $\tau_{\mathrm{avg}}$
-2. $E_\vee$: sets closed in $\tau_+ \vee \tau_-$
-3. $E_\rightarrow$: sets closed in $\tau_+$
-4. $E_\leftarrow$: sets closed in $\tau_-$
-
-**Theorem 2.8 (Equilibrium Hierarchy from [1]).**
-
-$$E_{\mathrm{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
-
----
-
-## 3. Local Symmetry in Belief Space
-
-### 3.1 Definition and Motivation
+### 2.1 Definition and Motivation
 
 The asymmetry $d_\gamma(b, x) \neq d_\gamma(x, b)$ encodes the arrow of time in belief space. However, this asymmetry may vanish locally at certain points, indicating local reversibility.
 
-**Definition 3.1 (Locally Symmetric Point).** A belief $b \in \mathcal{B}$ is called a locally symmetric point of $d_\gamma$ if:
+**Definition 2.1 (Locally Symmetric Point).** A belief $b \in \mathcal{B}$ is called a locally symmetric point of $d_\gamma$ if:
 
 $$\liminf_{x \to \tau_{\mathrm{avg}} b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\mathrm{avg}}(b, x)} = 0$$
 
 The set of all locally symmetric points is denoted $\mathrm{Sym}_\gamma(\mathcal{B})$.
 
-**Remark 3.2.** The limit uses $\tau_{\mathrm{avg}}$—the natural choice since $d_{\mathrm{avg}}$ appears in the denominator. Using $\tau_+$ or $\tau_-$ would introduce an asymmetric dependence that obscures the meaning. Note that $d_{\mathrm{avg}}(b, x) > 0$ for $x \neq b$, so the ratio is well-defined away from $b$.
+**Remark 2.2.** The limit uses $\tau_{\mathrm{avg}}$—the natural choice since $d_{\mathrm{avg}}$ appears in the denominator. Using $\tau_+$ or $\tau_-$ would introduce an asymmetric dependence that obscures the meaning. Note that $d_{\mathrm{avg}}(b, x) > 0$ for $x \neq b$, so the ratio is well-defined away from $b$.
 
-### 3.2 Interpretation
+### 2.2 Interpretation
 
 The locally symmetric set has several intuitive interpretations:
 
@@ -608,29 +516,29 @@ The locally symmetric set has several intuitive interpretations:
 | **Information-theoretic** | Points where the system has no local memory of direction |
 | **Computational** | Points where processes are locally reversible |
 
-### 3.3 Basic Properties
+### 2.3 Basic Properties
 
-**Proposition 3.3 (Fixed Points).** Every fixed point $b^*$ (where $Q(b^*, b^*) = 0$) belongs to $\mathrm{Sym}_\gamma(\mathcal{B})$.
+**Proposition 2.3 (Fixed Points).** Every fixed point $b^*$ (where $Q(b^*, b^*) = 0$) belongs to $\mathrm{Sym}_\gamma(\mathcal{B})$.
 
 **Proof.** At a fixed point, $d_\gamma(b^*, b^*) = 0$ and $d_{\mathrm{avg}}(b^*, b^*) = 0$. The ratio is trivially zero. $\square$
 
-**Proposition 3.4 (Gauge Invariance).** $\mathrm{Sym}_\gamma(\mathcal{B})$ is invariant under gauge transformations $\psi \mapsto \psi + c$ for $c \in \mathbb{R}$.
+**Proposition 2.4 (Gauge Invariance).** $\mathrm{Sym}_\gamma(\mathcal{B})$ is invariant under gauge transformations $\psi \mapsto \psi + c$ for $c \in \mathbb{R}$.
 
-**Proof.** The debt function is gauge-invariant (Proposition 2.2, property 5), so $d_\gamma$ and $d_{\mathrm{avg}}$ are unchanged. $\square$
+**Proof.** The debt function is gauge-invariant (the deleted Section 2, Proposition 2.2, property 5), so $d_\gamma$ and $d_{\mathrm{avg}}$ are unchanged. $\square$
 
 ---
 
-## 4. Symmetry Implies Equilibrium
+## 3. Symmetry Implies Equilibrium
 
 We now prove the central inclusion theorem.
 
-### 4.1 The Inclusion Result
+### 3.1 The Inclusion Result
 
-**Theorem 4.1 (Symmetry Implies Equilibrium).**
+**Theorem 3.1 (Symmetry Implies Equilibrium).**
 
 $$\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$$
 
-**Proof.** Let $b \in \mathrm{Sym}_\gamma(\mathcal{B})$. By Definition 3.1:
+**Proof.** Let $b \in \mathrm{Sym}_\gamma(\mathcal{B})$. By Definition 2.1:
 
 $$\liminf_{x \to \tau_{\mathrm{avg}} b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\mathrm{avg}}(b, x)} = 0$$
 
@@ -656,27 +564,27 @@ But if $E_{\mathrm{avg}}$ is closed and contains $b$, then $x_n$ must eventually
 
 Therefore, $b \in E_{\mathrm{avg}}$. $\square$
 
-### 4.2 Discussion
+### 3.2 Discussion
 
-Theorem 4.1 establishes that local reversibility is a sufficient condition for equilibrium in belief space. This aligns with physical intuition: if a system is locally reversible, it cannot sustain directional flows, so it must be in equilibrium.
+Theorem 3.1 establishes that local reversibility is a sufficient condition for equilibrium in belief space. This aligns with physical intuition: if a system is locally reversible, it cannot sustain directional flows, so it must be in equilibrium.
 
-**Corollary 4.2.** $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$.
+**Corollary 3.2.** $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$.
 
-**Proof.** Immediate from Theorem 4.1 and Theorem 2.8. $\square$
+**Proof.** Immediate from Theorem 3.1 and the deleted Section 2, Theorem 2.8. $\square$
 
 ---
 
-## 5. Smoothness Implies Equality
+## 4. Smoothness Implies Equality
 
 Under differentiability conditions, the inclusion becomes equality.
 
-### 5.1 The Smoothness Theorem
+### 4.1 The Smoothness Theorem
 
-**Theorem 5.1 (Smoothness Implies Equality).** If $d$ and $\psi$ are $C^1$ (continuously differentiable) on $\mathcal{B}$, then:
+**Theorem 4.1 (Smoothness Implies Equality).** If $d$ and $\psi$ are $C^1$ (continuously differentiable) on $\mathcal{B}$, then:
 
 $$\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$$
 
-**Proof.** We already have $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$ from Theorem 4.1. We need to prove $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$.
+**Proof.** We already have $\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}}$ from Theorem 3.1. We need to prove $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$.
 
 Let $b \in E_{\mathrm{avg}}$. By definition, $b$ is closed in the average topology $\tau_{\mathrm{avg}}$.
 
@@ -714,30 +622,30 @@ $$\liminf_{x \to \tau_{\mathrm{avg}} b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}
 
 So $b \in \mathrm{Sym}_\gamma(\mathcal{B})$.
 
-**Conclusion:** $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$. Combined with Theorem 4.1: $\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$. $\square$
+**Conclusion:** $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$. Combined with Theorem 3.1: $\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$. $\square$
 
-### 5.2 The Regularity Condition
+### 4.2 The Regularity Condition
 
-**Remark 5.2.** The proof of Theorem 5.1 requires $d$ and $\psi$ to be $C^1$ at $b$. Is $C^1$ necessary? Consider weaker regularity conditions:
+**Remark 4.2.** The proof of Theorem 4.1 requires $d$ and $\psi$ to be $C^1$ at $b$. Is $C^1$ necessary? Consider weaker regularity conditions:
 
 | Regularity | Sym = E_avg? | Reason |
 |------------|--------------|--------|
 | $C^1$ | ✅ Yes | Taylor expansion gives quadratic asymmetry |
 | Lipschitz | ❌ Not necessarily | Asymmetry can decay linearly, not quadratically |
 | Hölder | ❌ Not necessarily | Asymmetry can decay slower than quadratically |
-| Continuous | ❌ Generally false | Counterexamples exist (Section 6) |
+| Continuous | ❌ Generally false | Counterexamples exist (Section 5) |
 
-**Open Question 5.3.** Is there a weaker condition than $C^1$ that still implies $\mathrm{Sym} = E_{\mathrm{avg}}$? Perhaps $C^{1,\alpha}$ (Hölder continuous derivatives) with $\alpha > 0$?
+**Open Question 4.3.** Is there a weaker condition than $C^1$ that still implies $\mathrm{Sym} = E_{\mathrm{avg}}$? Perhaps $C^{1,\alpha}$ (Hölder continuous derivatives) with $\alpha > 0$?
 
 ---
 
-## 6. Non-Smooth Counterexamples
+## 5. Non-Smooth Counterexamples
 
 We now demonstrate that without differentiability, the inclusion $\mathrm{Sym} \subseteq E_{\mathrm{avg}}$ can be strict.
 
-### 6.1 A 1D Counterexample
+### 5.1 A 1D Counterexample
 
-**Construction 6.1.** Let $\mathcal{B} = \mathbb{R}$. Define the energy quasi-metric:
+**Construction 5.1.** Let $\mathcal{B} = \mathbb{R}$. Define the energy quasi-metric:
 
 $$d(b, x) = |\Delta| + |\Delta|^{1/2}$$
 
@@ -755,9 +663,9 @@ $$d_1(x, b) = \sqrt{(|\Delta| - |\Delta|^{1/2})^2 + \Delta^2}$$
 
 **Note:** The reverse distance uses the fact that $\operatorname{debt}(x, b) = -\Delta$.
 
-### 6.2 Analysis
+### 5.2 Analysis
 
-**Lemma 6.2.** For $b = 0$, we have $b \in E_{\mathrm{avg}}$.
+**Lemma 5.2.** For $b = 0$, we have $b \in E_{\mathrm{avg}}$.
 
 **Proof.** The average distance is:
 
@@ -769,7 +677,7 @@ $$d_{\mathrm{avg}}(0, \Delta) \approx |\Delta| + O(|\Delta|^{3/2})$$
 
 This is positive for all $\Delta \neq 0$ and vanishes only as $\Delta \to 0$. Therefore, $0$ is closed in the average topology, so $0 \in E_{\mathrm{avg}}$. $\square$
 
-**Lemma 6.3.** $0 \notin \mathrm{Sym}_\gamma(\mathcal{B})$ for $\gamma > 0$.
+**Lemma 5.3.** $0 \notin \mathrm{Sym}_\gamma(\mathcal{B})$ for $\gamma > 0$.
 
 **Proof.** Compute the asymmetry:
 
@@ -791,42 +699,42 @@ $$\frac{|d_1(0, \Delta) - d_1(\Delta, 0)|}{d_{\mathrm{avg}}(0, \Delta)} \approx 
 
 Thus the limit infimum is infinite (or diverges), so $0 \notin \mathrm{Sym}_\gamma(\mathcal{B})$. $\square$
 
-### 6.3 The Gap
+### 5.3 The Gap
 
-**Theorem 6.4 (Non-Smooth Gap).** There exists a belief space such that:
+**Theorem 5.4 (Non-Smooth Gap).** There exists a belief space such that:
 
 $$\mathrm{Sym}_\gamma(\mathcal{B}) \subsetneq E_{\mathrm{avg}}$$
 
-**Proof.** The construction in Section 6.1 provides a counterexample where $0 \in E_{\mathrm{avg}}$ but $0 \notin \mathrm{Sym}_\gamma(\mathcal{B})$. Therefore, the inclusion is strict. $\square$
+**Proof.** The construction in Section 5.1 provides a counterexample where $0 \in E_{\mathrm{avg}}$ but $0 \notin \mathrm{Sym}_\gamma(\mathcal{B})$. Therefore, the inclusion is strict. $\square$
 
-### 6.4 Generalization
+### 5.4 Generalization
 
-**Proposition 6.5.** The gap $\mathrm{Sym} \subsetneq E_{\mathrm{avg}}$ occurs whenever the cost function has a singularity at a point $b$ of the form:
+**Proposition 5.5.** The gap $\mathrm{Sym} \subsetneq E_{\mathrm{avg}}$ occurs whenever the cost function has a singularity at a point $b$ of the form:
 
 $$d(b, x) = \|x - b\| + \|x - b\|^\alpha \quad \text{for } 0 < \alpha < 1$$
 
 At such points, $b \in E_{\mathrm{avg}}$ but $b \notin \mathrm{Sym}_\gamma(\mathcal{B})$.
 
-**Proof.** Follows the same argument as Theorem 6.4. $\square$
+**Proof.** Follows the same argument as Theorem 5.4. $\square$
 
 ---
 
-## 7. The Extended Equilibrium Hierarchy
+## 6. The Extended Equilibrium Hierarchy
 
-### 7.1 The Complete Hierarchy
+### 6.1 The Complete Hierarchy
 
-**Theorem 7.1 (Extended Equilibrium Hierarchy).**
+**Theorem 6.1 (Extended Equilibrium Hierarchy).**
 
 $$\mathrm{Sym}_\gamma(\mathcal{B}) \subseteq E_{\mathrm{avg}} \subseteq E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$$
 
 **Proof.** 
-- $\mathrm{Sym} \subseteq E_{\mathrm{avg}}$: Theorem 4.1
-- $E_{\mathrm{avg}} \subseteq E_\vee$: From [1], Theorem 6.8
-- $E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$: From [1], Theorem 6.8
+- $\mathrm{Sym} \subseteq E_{\mathrm{avg}}$: Theorem 3.1
+- $E_{\mathrm{avg}} \subseteq E_\vee$: From [1], Theorem 5.8
+- $E_\vee \subseteq E_\rightarrow \cap E_\leftarrow$: From [1], Theorem 5.8
 
 $\square$
 
-### 7.2 Summary Table
+### 6.2 Summary Table
 
 | Level | Set | Meaning | Condition for Equality |
 |-------|-----|---------|------------------------|
@@ -835,11 +743,11 @@ $\square$
 | 2 | $E_\vee$ | Bidirectional equilibrium | $E_{\mathrm{avg}} = E_\vee$ if global symmetry |
 | 3 | $E_\rightarrow \cap E_\leftarrow$ | Directional stability | $E_\vee = E_\rightarrow \cap E_\leftarrow$ if local symmetry |
 
-### 7.3 When Are Inclusions Strict?
+### 6.3 When Are Inclusions Strict?
 
-**Proposition 7.2.** The inclusions are strict in the following cases:
+**Proposition 6.2.** The inclusions are strict in the following cases:
 
-1. **$\mathrm{Sym} \subsetneq E_{\mathrm{avg}}$**: Non-smooth cost functions (Section 6)
+1. **$\mathrm{Sym} \subsetneq E_{\mathrm{avg}}$**: Non-smooth cost functions (Section 5)
 
 2. **$E_{\mathrm{avg}} \subsetneq E_\vee$**: When the asymmetry does not vanish to first order, but the system is still bidirectionally stable
 
@@ -847,9 +755,9 @@ $\square$
 
 ---
 
-## 8. Physical Interpretation
+## 7. Physical Interpretation
 
-### 8.1 The Sym = E_avg Case (Smooth Systems)
+### 7.1 The Sym = E_avg Case (Smooth Systems)
 
 In smooth systems, $\mathrm{Sym} = E_{\mathrm{avg}}$. This means:
 
@@ -859,7 +767,7 @@ In smooth systems, $\mathrm{Sym} = E_{\mathrm{avg}}$. This means:
 
 **Example:** A gas in thermal equilibrium. At the microscopic level, collisions are reversible. The arrow of time emerges only at the macroscopic level through entropy increase.
 
-### 8.2 The Sym ⊊ E_avg Case (Non-Smooth Systems)
+### 7.2 The Sym ⊊ E_avg Case (Non-Smooth Systems)
 
 In non-smooth systems, there are equilibrium points that are not locally reversible. This means:
 
@@ -871,9 +779,9 @@ In non-smooth systems, there are equilibrium points that are not locally reversi
 
 **Example:** An AGI system with learned weights. The weights are in equilibrium (stable) but encode the history of training. The system has memory but is stable.
 
-### 8.3 The Gap as Memory
+### 7.3 The Gap as Memory
 
-**Proposition 8.1.** The gap $E_{\mathrm{avg}} \setminus \mathrm{Sym}_\gamma(\mathcal{B})$ represents the **memory** of the system:
+**Proposition 7.1.** The gap $E_{\mathrm{avg}} \setminus \mathrm{Sym}_\gamma(\mathcal{B})$ represents the **memory** of the system:
 
 - The system is stable (in $E_{\mathrm{avg}}$)
 - But it is not locally reversible (not in $\mathrm{Sym}_\gamma$)
@@ -881,7 +789,7 @@ In non-smooth systems, there are equilibrium points that are not locally reversi
 
 **Interpretation:** The gap $\mathrm{Sym} \subsetneq E_{\mathrm{avg}}$ quantifies the amount of "irreversible stability" in the system—its capacity to store information without being destabilized.
 
-### 8.4 Connection to Thermodynamics
+### 7.4 Connection to Thermodynamics
 
 | Concept | Mathematical Expression | Physical Meaning |
 |---------|------------------------|------------------|
@@ -892,11 +800,11 @@ In non-smooth systems, there are equilibrium points that are not locally reversi
 
 ---
 
-## 9. Implications for AGI Architecture Design
+## 8. Implications for AGI Architecture Design
 
-> **Editor's note:** The source document lost its headers at this point (likely a copy/paste break). The subsection headers below (9.1, 9.3) have been reconstructed from context to restore the section's logical flow — please verify against the original if precision matters.
+> **Editor's note:** The source document lost its headers at this point (likely a copy/paste break). The subsection headers below have been reconstructed from context to restore the section's logical flow — please verify against the original if precision matters.
 
-### 9.1 The Necessity of the Gap
+### 8.1 The Necessity of the Gap
 
 For a learning system to retain information about its history, it must satisfy:
 
@@ -906,14 +814,14 @@ This means:
 - The system must be in equilibrium (stable)
 - But not locally reversible (must retain memory)
 
-### 9.2 The Gap as Learning Capacity
+### 8.2 The Gap as Learning Capacity
 
-**Proposition 9.2.** The size of the gap $E_{\mathrm{avg}} \setminus \mathrm{Sym}_\gamma(\mathcal{B})$ is a measure of the system's **learning capacity**:
+**Proposition 8.2.** The size of the gap $E_{\mathrm{avg}} \setminus \mathrm{Sym}_\gamma(\mathcal{B})$ is a measure of the system's **learning capacity**:
 
 - Large gap → More capacity to store irreversible information
 - Small gap → Less capacity; system tends to forget
 
-### 9.3 Design Principles
+### 8.3 Design Principles
 
 1. **Maintain equilibrium**: Ensure stability through the cost-debt dynamics
 2. **Allow non-smoothness**: Create conditions for $\mathrm{Sym} \subsetneq E_{\mathrm{avg}}$
@@ -923,7 +831,7 @@ This means:
 
 ---
 
-## 10. Open Questions
+## 9. Open Questions
 
 1. **Exact Regularity Condition:** Is $C^1$ necessary for $\mathrm{Sym} = E_{\mathrm{avg}}$? Or is Lipschitz continuity sufficient? What about $C^{1,\alpha}$?
 
@@ -947,7 +855,7 @@ This means:
 
 ---
 
-## 11. Conclusion
+## 10. Conclusion
 
 We have established the fundamental relationship between local symmetry and equilibrium in belief space. The hierarchy:
 
@@ -977,7 +885,7 @@ $$d_\gamma(b, x) \geq c \cdot \|x - b\|$$
 
 for all $x$ with $\|x - b\| < \epsilon$.
 
-**Proof.** By Definition 2.2, $d(b, b) = 0$ and $d$ is continuous at $b$ (for $C^1$ functions). The result follows from the positive definiteness of the cost function. $\square$
+**Proof.** By the deleted Section 2, Definition 2.2, $d(b, b) = 0$ and $d$ is continuous at $b$ (for $C^1$ functions). The result follows from the positive definiteness of the cost function. $\square$
 
 ### A.2 Smoothness of Asymmetry
 
