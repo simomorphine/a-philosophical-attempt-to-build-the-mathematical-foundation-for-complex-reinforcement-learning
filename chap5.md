@@ -207,7 +207,7 @@ Each transition $b_i \to b_j$ is represented by a vector:
 - **Quadrant I:** The agent explores at high cost (inefficient).
 - **Quadrant III:** The agent forgets at low cost (dangerous).
 
-The modulus \( |Q| \) is the distance from the origin. The agent's goal is to reach the origin—the state of zero cost and zero debt.
+The modulus $|Q|$ is the distance from the origin. The agent's goal is to reach the origin—the state of zero cost and zero debt.
 
 ### 5.4.3 The Pareto Frontier
 
@@ -216,9 +216,9 @@ In multi-objective optimization, the Pareto frontier consists of points where no
 - Cost cannot be reduced without increasing debt.
 - Debt cannot be reduced without increasing cost.
 
-The modulus \( |Q| = \sqrt{c^2 + d^2} \) selects a specific point on the Pareto frontier: the point closest to the origin. This is the **Euclidean projection** of the origin onto the frontier.
+The modulus $|Q| = \sqrt{c^2 + d^2}$ selects a specific point on the Pareto frontier: the point closest to the origin. This is the **Euclidean projection** of the origin onto the frontier.
 
-**Key Insight:** No weighting parameter is needed. The geometry of \( \mathbb{C} \) naturally selects the point on the Pareto frontier that balances cost and debt according to their magnitudes.
+**Key Insight:** No weighting parameter is needed. The geometry of $\mathbb{C}$ naturally selects the point on the Pareto frontier that balances cost and debt according to their magnitudes.
 
 ---
 
@@ -226,22 +226,22 @@ The modulus \( |Q| = \sqrt{c^2 + d^2} \) selects a specific point on the Pareto 
 
 ### 5.5.1 Definition and Interpretation
 
-The modulus \( |Q(b_i, b_j)| = \sqrt{d^2 + \text{debt}^2} \) is the **total distance** between beliefs \( b_i \) and \( b_j \) in the cost-debt plane.
+The modulus $|Q(b_i, b_j)| = \sqrt{d^2 + \text{debt}^2}$ is the **total distance** between beliefs $b_i$ and $b_j$ in the cost-debt plane.
 
 Properties:
-- **Non-negative:** \( |Q| \geq 0 \).
-- **Identity:** \( |Q(b, b)| = 0 \).
-- **No symmetry:** \( |Q(b_i, b_j)| \neq |Q(b_j, b_i)| \) in general, because \( d \) is asymmetric.
-- **Triangle inequality:** Holds in \( \mathbb{R}^2 \) by Minkowski inequality (see Section 5.7).
+- **Non-negative:** $|Q| \geq 0$.
+- **Identity:** $|Q(b, b)| = 0$.
+- **No symmetry:** $|Q(b_i, b_j)| \neq |Q(b_j, b_i)|$ in general, because $d$ is asymmetric.
+- **Triangle inequality:** Holds in $\mathbb{R}^2$ by Minkowski inequality (see Section 5.7).
 
 ### 5.5.2 Why the Modulus?
 
 The modulus is the natural measure of total distance for several reasons:
 
 1. **Geometric:** It is the Euclidean distance in the cost-debt plane.
-2. **Principled:** It arises from the geometry of \( \mathbb{C} \), not from arbitrary weighting.
+2. **Principled:** It arises from the geometry of $\mathbb{C}$, not from arbitrary weighting.
 3. **Parameter-free:** No tuning required.
-4. **Analytic:** The squared modulus \( |Q|^2 \) is smooth and differentiable (unlike the absolute value).
+4. **Analytic:** The squared modulus $|Q|^2$ is smooth and differentiable (unlike the absolute value).
 
 ### 5.5.3 The Squared Modulus
 
