@@ -5,17 +5,17 @@
 ## 7.1 Introduction
 
 In the preceding chapters, we have developed a rich geometric framework for belief spaces:
-- The energy quasi-metric $ d $ (Chapter 3) capturing real cost.
+- The energy quasi-metric $d$ (Chapter 3) capturing real cost.
 - The debt function (Chapter 4) capturing informational burden.
-- The complex quasi-metric $ Q = d + i \cdot \text{debt} $ (Chapter 5) unifying both.
-- The $ \gamma $-distance family $ d_\gamma $ (Chapter 6) interpolating between cost-only and balanced geometries.
+- The complex quasi-metric $Q = d + i \cdot \text{debt}$ (Chapter 5) unifying both.
+- The $\gamma$-distance family $d_\gamma$ (Chapter 6) interpolating between cost-only and balanced geometries.
 
 Now we turn to a central question: **What does it mean for an agent to be in equilibrium?** In classical physics, equilibrium is a state of balance where no net force acts. In information processing, equilibrium is a state where the agent has minimized its total "tension"—the combination of cost and debt.
 
-This chapter formalizes equilibrium in belief space. We introduce four distinct equilibrium concepts, arranged in a hierarchy, and study their properties. The key insight is that the asymmetry of the $ \gamma $-distance gives rise to multiple notions of balance, from strong (local symmetry) to weak (directional reachability).
+This chapter formalizes equilibrium in belief space. We introduce four distinct equilibrium concepts, arranged in a hierarchy, and study their properties. The key insight is that the asymmetry of the $\gamma$-distance gives rise to multiple notions of balance, from strong (local symmetry) to weak (directional reachability).
 
 The chapter is organized as follows:
-- **Section 7.2:** Symmetrization of the $ \gamma $-distance.
+- **Section 7.2:** Symmetrization of the $\gamma$-distance.
 - **Section 7.3:** Four equilibrium concepts.
 - **Section 7.4:** The equilibrium hierarchy.
 - **Section 7.5:** Local asymmetry and symmetric points.
@@ -24,11 +24,11 @@ The chapter is organized as follows:
 
 ---
 
-## 7.2 Symmetrization of the $ \gamma $-Distance
+## 7.2 Symmetrization of the $\gamma$-Distance
 
 ### 7.2.1 The Average Distance
 
-The $ \gamma $-distance $ d_\gamma $ is asymmetric: $ d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i) $ in general. To obtain a symmetric distance, we can average the forward and backward costs.
+The $\gamma$-distance $d_\gamma$ is asymmetric: $d_\gamma(b_i, b_j) \neq d_\gamma(b_j, b_i)$ in general. To obtain a symmetric distance, we can average the forward and backward costs.
 
 **Definition 7.1 (Average Distance).** The **average distance** is
 $$
