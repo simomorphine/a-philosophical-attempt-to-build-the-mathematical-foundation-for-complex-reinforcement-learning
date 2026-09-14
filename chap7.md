@@ -1028,7 +1028,7 @@ for all $x$ with $\|x - b\| < \epsilon$.
 |--------|---------|------------------|
 | $\mathcal{B}$ | Belief space | Definition 2.1 |
 | $d$ | Energy quasi-metric | Definition 2.2 |
-| $\operatorname{debt}$ | Debt function | Definition 2.3 |
+| $\mathrm{debt}$ | Debt function | Definition 2.3 |
 | $\psi$ | Potential function | Definition 2.3 |
 | $d_\gamma$ | $\gamma$-distance | Definition 2.4 |
 | $d_{\mathrm{avg}}$ | Average distance | Definition 2.5 |
