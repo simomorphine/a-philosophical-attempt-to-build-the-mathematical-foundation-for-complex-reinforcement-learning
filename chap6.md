@@ -457,72 +457,78 @@ $$
 **Interpretation:**
 - The first term captures the effect of changing the debt weight.
 - The second term captures the effect of changing beliefs.
-- If \( \dot{\gamma} > 0 \) (increasing debt weight), distances increase for beliefs with non-zero debt.
-- If \( \dot{\gamma} < 0 \) (decreasing debt weight), distances decrease.
+- If $\dot{\gamma} > 0$ (increasing debt weight), distances increase for beliefs with non-zero debt.
+- If $\dot{\gamma} < 0$ (decreasing debt weight), distances decrease.
 
-**Learning Schedule:** A natural learning schedule is to start with high \( \gamma \) (emphasize debt reduction) and decrease \( \gamma \) over time (focus on cost minimization once debt is under control):
-\[
+**Learning Schedule:** A natural learning schedule is to start with high $\gamma$ (emphasize debt reduction) and decrease $\gamma$ over time (focus on cost minimization once debt is under control):
+
+$$
 \gamma(t) = \gamma_0 \cdot e^{-\lambda t} + \gamma_\infty,
-\]
-where \( \gamma_0 \) is the initial debt weight, \( \gamma_\infty \) is the asymptotic debt weight, and \( \lambda \) is the decay rate.
+$$
+
+where $\gamma_0$ is the initial debt weight, $\gamma_\infty$ is the asymptotic debt weight, and $\lambda$ is the decay rate.
 
 ### 6.6.9 Summary of Gamma Derivative Properties
 
 | Property | Expression | Interpretation |
 |----------|------------|----------------|
-| First derivative | \( \dfrac{\gamma \cdot \text{debt}^2}{d_\gamma} \) | Non-negative; debt amplifies distance |
-| Second derivative | \( \dfrac{d^2 \cdot \text{debt}^2}{d_\gamma^3} \) | Non-negative; convex in \( \gamma \) |
-| Elasticity | \( \dfrac{\gamma^2 \cdot \text{debt}^2}{d_\gamma^2} \) | Between 0 and 1; percentage sensitivity |
-| Phase derivative | \( \dfrac{\text{debt} \cdot d}{d_\gamma^2} \) | Rotates toward debt axis |
-| Sign | \( \geq 0 \) | Distance never decreases with \( \gamma \) |
-| Zero condition | \( \text{debt} = 0 \) or \( \gamma = 0 \) | No debt or no debt weight |
+| First derivative | $\dfrac{\gamma \cdot \text{debt}^2}{d_\gamma}$ | Non-negative; debt amplifies distance |
+| Second derivative | $\dfrac{d^2 \cdot \text{debt}^2}{d_\gamma^3}$ | Non-negative; convex in $\gamma$ |
+| Elasticity | $\dfrac{\gamma^2 \cdot \text{debt}^2}{d_\gamma^2}$ | Between 0 and 1; percentage sensitivity |
+| Phase derivative | $\dfrac{\text{debt} \cdot d}{d_\gamma^2}$ | Rotates toward debt axis |
+| Sign | $\geq 0$ | Distance never decreases with $\gamma$ |
+| Zero condition | $\text{debt} = 0$ or $\gamma = 0$ | No debt or no debt weight |
 
 ---
 
-## 6.7 Topological Dependence on \( \gamma \)
+## 6.7 Topological Dependence on $\gamma$
 
-### 6.7.1 Topology Induced by \( d_\gamma \)
+### 6.7.1 Topology Induced by $d_\gamma$
 
-Each \( \gamma \) induces a topology \( \tau_\gamma \) on \( \mathcal{B} \). The basis of \( \tau_\gamma \) is the set of metric balls \( B_\gamma(b, r) \).
+Each $\gamma$ induces a topology $\tau_\gamma$ on $\mathcal{B}$. The basis of $\tau_\gamma$ is the set of metric balls $B_\gamma(b, r)$.
 
-**Proposition 6.12 (Continuity of Topology).** The topology \( \tau_\gamma \) depends continuously on \( \gamma \).
+**Proposition 6.12 (Continuity of Topology).** The topology $\tau_\gamma$ depends continuously on $\gamma$.
 
-*Proof.* The metric \( d_\gamma \) is continuous in \( \gamma \), and the topology induced by a continuous family of metrics is continuous. \( \square \)
+*Proof.* The metric $d_\gamma$ is continuous in $\gamma$, and the topology induced by a continuous family of metrics is continuous. 
 
 ### 6.7.2 Topological Comparison
 
-**Proposition 6.13 (Topological Comparison).** For \( 0 \leq \gamma_1 < \gamma_2 \leq 1 \):
-- \( \tau_{\gamma_1} \subseteq \tau_{\gamma_2} \) (the topology becomes finer as \( \gamma \) increases).
-- Equivalently, open sets in \( \tau_{\gamma_1} \) are also open in \( \tau_{\gamma_2} \).
+**Proposition 6.13 (Topological Comparison).** For $0 \leq \gamma_1 < \gamma_2 \leq 1$:
+- $\tau_{\gamma_1} \subseteq \tau_{\gamma_2}$ (the topology becomes finer as $\gamma$ increases).
+- Equivalently, open sets in $\tau_{\gamma_1}$ are also open in $\tau_{\gamma_2}$.
 
-*Proof.* For any \( b \in \mathcal{B} \) and \( r > 0 \), \( B_{\gamma_1}(b, r) \supseteq B_{\gamma_2}(b, r) \) because the distance increases with \( \gamma \). Thus, the basis for \( \tau_{\gamma_1} \) is coarser. \( \square \)
+*Proof.* For any $b \in \mathcal{B}$ and $r > 0$, $B_{\gamma_1}(b, r) \supseteq B_{\gamma_2}(b, r)$ because the distance increases with $\gamma$. Thus, the basis for $\tau_{\gamma_1}$ is coarser. 
 
-**Interpretation:** As \( \gamma \) increases, the metric becomes more sensitive to debt, so the topology becomes finer (more open sets). Beliefs are distinguished by their debt as well as their cost.
+**Interpretation:** As $\gamma$ increases, the metric becomes more sensitive to debt, so the topology becomes finer (more open sets). Beliefs are distinguished by their debt as well as their cost.
 
 ### 6.7.3 Separation of Beliefs
 
-**Proposition 6.14 (Debt Separation).** For \( \gamma_1 < \gamma_2 \), there exist beliefs \( b_i, b_j \in \mathcal{B} \) such that
-\[
+**Proposition 6.14 (Debt Separation).** For $\gamma_1 < \gamma_2$, there exist beliefs $b_i, b_j \in \mathcal{B}$ such that
+
+$$
 d_{\gamma_1}(b_i, b_j) < d_{\gamma_2}(b_i, b_j)
-\]
-if and only if \( \text{debt}(b_i, b_j) \neq 0 \).
+$$
+
+if and only if $\text{debt}(b_i, b_j) \neq 0$.
 
 *Proof.*
-\[
-d_{\gamma_2}^2 - d_{\gamma_1}^2 = (\gamma_2^2 - \gamma_1^2) \cdot \text{debt}(b_i, b_j)^2.
-\]
-The difference is positive if and only if \( \text{debt}(b_i, b_j) \neq 0 \). \( \square \)
 
-**Interpretation:** Beliefs with non-zero debt are distinguished by \( \gamma \). Increasing \( \gamma \) increases their separation in the metric.
+$$
+d_{\gamma_2}^2 - d_{\gamma_1}^2 = (\gamma_2^2 - \gamma_1^2) \cdot \text{debt}(b_i, b_j)^2.
+$$
+
+The difference is positive if and only if $\text{debt}(b_i, b_j) \neq 0$. 
+
+**Interpretation:** Beliefs with non-zero debt are distinguished by $\gamma$. Increasing $\gamma$ increases their separation in the metric.
 
 ### 6.7.4 The Topological Lattice
 
-The family of topologies \( \{\tau_\gamma\}_{\gamma \in [0,1]} \) forms a lattice under inclusion:
-- \( \tau_0 \) is the coarsest topology (pure cost).
-- \( \tau_1 \) is the finest topology (full cost-debt).
-- For \( \gamma_1 < \gamma_2 \), \( \tau_{\gamma_1} \subseteq \tau_{\gamma_2} \).
+The family of topologies $\{\tau_\gamma\}_{\gamma \in [0,1]}$ forms a lattice under inclusion:
+- $\tau_0$ is the coarsest topology (pure cost).
+- $\tau_1$ is the finest topology (full cost-debt).
+- For $\gamma_1 < \gamma_2$, $\tau_{\gamma_1} \subseteq \tau_{\gamma_2}$.
 
-This lattice structure reflects the monotonicity of the \( \gamma \)-distance in \( \gamma \).
+This lattice structure reflects the monotonicity of the $\gamma$-distance in $\gamma$.
 
 ---
 
@@ -530,62 +536,69 @@ This lattice structure reflects the monotonicity of the \( \gamma \)-distance in
 
 ### 6.8.1 Two Topologies from One Distance
 
-The asymmetry of \( d_\gamma \) naturally generates two distinct topologies on \( \mathcal{B} \):
+The asymmetry of $d_\gamma$ naturally generates two distinct topologies on $\mathcal{B}$:
 
-**Definition 6.15 (Forward Topology \( \tau_+ \)).** The forward topology has basis
-\[
+**Definition 6.15 (Forward Topology $\tau_+$).** The forward topology has basis
+
+$$
 B^+(b, \epsilon) = \{ x \in \mathcal{B} \mid d_\gamma(b, x) < \epsilon \}.
-\]
-The forward ball \( B^+(b, \epsilon) \) contains beliefs reachable from \( b \) with cost less than \( \epsilon \).
+$$
 
-**Definition 6.16 (Backward Topology \( \tau_- \)).** The backward topology has basis
-\[
+The forward ball $B^+(b, \epsilon)$ contains beliefs reachable from $b$ with cost less than $\epsilon$.
+
+**Definition 6.16 (Backward Topology $\tau_-$).** The backward topology has basis
+
+$$
 B^-(b, \epsilon) = \{ x \in \mathcal{B} \mid d_\gamma(x, b) < \epsilon \}.
-\]
-The backward ball \( B^-(b, \epsilon) \) contains beliefs from which \( b \) is reachable with cost less than \( \epsilon \).
+$$
+
+The backward ball $B^-(b, \epsilon)$ contains beliefs from which $b$ is reachable with cost less than $\epsilon$.
 
 ### 6.8.2 Bitopological Space
 
-**Definition 6.17 (Bitopological Space).** The triple \( (\mathcal{B}, \tau_+, \tau_-) \) is the **bitopological space** of the system.
+**Definition 6.17 (Bitopological Space).** The triple $(\mathcal{B}, \tau_+, \tau_-)$ is the **bitopological space** of the system.
 
 **Interpretation:**
-- \( (\mathcal{B}, \tau_+) \): The "forward" space—where can the agent go?
-- \( (\mathcal{B}, \tau_-) \): The "backward" space—where could the agent have come from?
-- The asymmetry of \( d_\gamma \) means these topologies are generally different.
+- $(\mathcal{B}, \tau_+)$: The "forward" space—where can the agent go?
+- $(\mathcal{B}, \tau_-)$: The "backward" space—where could the agent have come from?
+- The asymmetry of $d_\gamma$ means these topologies are generally different.
 
 ### 6.8.3 The Join Topology
 
-**Definition 6.18 (Join Topology).** The join topology \( \tau_+ \vee \tau_- \) is the coarsest topology containing both \( \tau_+ \) and \( \tau_- \). Its basis is
-\[
-\mathcal{B}^\vee = \{ B^+(b, \epsilon) \cap B^-(b, \delta) \mid b \in \mathcal{B}, \epsilon, \delta > 0 \}.
-\]
+**Definition 6.18 (Join Topology).** The join topology $\tau_+ \vee \tau_-$ is the coarsest topology containing both $\tau_+$ and $\tau_-$. Its basis is
 
-**Interpretation:** A neighborhood in the join topology requires both forward and backward proximity simultaneously. Beliefs in the intersection are **bidirectionally close**—they are both reachable from \( b \) and can reach \( b \) with low cost.
+$$
+\mathcal{B}^\vee = \{ B^+(b, \epsilon) \cap B^-(b, \delta) \mid b \in \mathcal{B}, \epsilon, \delta > 0 \}.
+$$
+
+**Interpretation:** A neighborhood in the join topology requires both forward and backward proximity simultaneously. Beliefs in the intersection are **bidirectionally close**—they are both reachable from $b$ and can reach $b$ with low cost.
 
 ### 6.8.4 The Average Topology
 
-**Definition 6.19 (Average Topology).** The average topology \( \tau_{\text{avg}} \) is induced by the average distance
-\[
+**Definition 6.19 (Average Topology).** The average topology $\tau_{\text{avg}}$ is induced by the average distance
+
+$$
 d_{\text{avg}}(b, x) = \frac{d_\gamma(b, x) + d_\gamma(x, b)}{2}.
-\]
+$$
 
 **Proposition 6.20 (Topological Hierarchy).** The average topology is coarser than the join topology:
-\[
-\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-.
-\]
 
-*Proof.* Every set open in \( \tau_{\text{avg}} \) is open in \( \tau_+ \vee \tau_- \), but the reverse is not necessarily true. \( \square \)
+$$
+\tau_{\text{avg}} \subseteq \tau_+ \vee \tau_-.
+$$
+
+*Proof.* Every set open in $\tau_{\text{avg}}$ is open in $\tau_+ \vee \tau_-$, but the reverse is not necessarily true. 
 
 **Interpretation:** The average topology is the "symmetric" version of the bitopological space. The join topology is richer, capturing both forward and backward information.
 
-### 6.8.5 The Bitopological Structure and \( \gamma \)
+### 6.8.5 The Bitopological Structure and $\gamma$
 
-The bitopological structure depends on \( \gamma \):
-- For \( \gamma = 0 \), the forward and backward topologies are determined by cost alone.
-- For \( \gamma > 0 \), debt influences both topologies.
-- For \( \gamma = 1 \), the full cost-debt geometry determines the topologies.
+The bitopological structure depends on $\gamma$:
+- For $\gamma = 0$, the forward and backward topologies are determined by cost alone.
+- For $\gamma > 0$, debt influences both topologies.
+- For $\gamma = 1$, the full cost-debt geometry determines the topologies.
 
-As \( \gamma \) increases, both \( \tau_+ \) and \( \tau_- \) become finer, and the join topology becomes richer.
+As $\gamma$ increases, both $\tau_+$ and $\tau_-$ become finer, and the join topology becomes richer.
 
 ---
 
@@ -593,85 +606,89 @@ As \( \gamma \) increases, both \( \tau_+ \) and \( \tau_- \) become finer, and 
 
 ### 6.9.1 Example 1: Two-State Belief Space
 
-Let \( \mathcal{B} = \{0, 1\} \) with:
-- \( d(0, 1) = E_{\text{obs}} \), \( d(1, 0) = E_{\text{erase}} \).
-- \( \text{debt}(0, 1) = 1 \), \( \text{debt}(1, 0) = -1 \).
+Let $\mathcal{B} = \lbrace 0, 1 \rbrace$ with:
+- $d(0, 1) = E_{\text{obs}}$, $d(1, 0) = E_{\text{erase}}$.
+- $\text{debt}(0, 1) = 1$, $\text{debt}(1, 0) = -1$.
 
 Then:
-\[
+
+$$
 d_\gamma(0, 1) = \sqrt{E_{\text{obs}}^2 + \gamma^2}, \quad d_\gamma(1, 0) = \sqrt{E_{\text{erase}}^2 + \gamma^2}.
-\]
+$$
 
-**Effect of \( \gamma \):**
-- \( \gamma = 0 \): \( d_0(0, 1) = E_{\text{obs}} \), \( d_0(1, 0) = E_{\text{erase}} \).
-- \( \gamma = 1 \): \( d_1(0, 1) = \sqrt{E_{\text{obs}}^2 + 1} \), \( d_1(1, 0) = \sqrt{E_{\text{erase}}^2 + 1} \).
+**Effect of $\gamma$:**
+- $\gamma = 0$: $d_0(0, 1) = E_{\text{obs}}$, $d_0(1, 0) = E_{\text{erase}}$.
+- $\gamma = 1$: $d_1(0, 1) = \sqrt{E_{\text{obs}}^2 + 1}$, $d_1(1, 0) = \sqrt{E_{\text{erase}}^2 + 1}$.
 
-**Topology:** For \( \gamma > 0 \), the forward ball \( B^+(0, \epsilon) \) contains 1 if \( \sqrt{E_{\text{obs}}^2 + \gamma^2} < \epsilon \). The backward ball \( B^-(0, \epsilon) \) contains 1 if \( \sqrt{E_{\text{erase}}^2 + \gamma^2} < \epsilon \). The join topology captures both directions.
+**Topology:** For $\gamma > 0$, the forward ball $B^+(0, \epsilon)$ contains 1 if $\sqrt{E_{\text{obs}}^2 + \gamma^2} < \epsilon$. The backward ball $B^-(0, \epsilon)$ contains 1 if $\sqrt{E_{\text{erase}}^2 + \gamma^2} < \epsilon$. The join topology captures both directions.
 
 ### 6.9.2 Example 2: Continuous Belief Space with Debt
 
-Let \( \mathcal{B} = \mathbb{R} \), with:
-- \( d(x, y) = \alpha |y - x| \).
-- \( \text{debt}(x, y) = \log(p(x)/p(y)) \) (entropic debt).
+Let $\mathcal{B} = \mathbb{R}$, with:
+- $d(x, y) = \alpha |y - x|$.
+- $\text{debt}(x, y) = \log(p(x)/p(y))$ (entropic debt).
 
 Then:
-\[
+
+$$
 d_\gamma(x, y) = \sqrt{\alpha^2 (y - x)^2 + \gamma^2 \left( \log \frac{p(x)}{p(y)} \right)^2}.
-\]
+$$
 
 **Interpretation:**
-- \( \gamma = 0 \): The agent moves in real space only.
-- \( \gamma > 0 \): The agent also moves in probability space.
+- $\gamma = 0$: The agent moves in real space only.
+- $\gamma > 0$: The agent also moves in probability space.
 - The geodesics minimize both real distance and probability distance.
 
 ### 6.9.3 Example 3: The Learning Trajectory Revisited
 
 Consider the learning trajectory from Chapter 5:
-- Start: \( (c, d) = (0, \text{high debt}) \).
-- End: \( (c, d) = (\text{cost}, 0) \).
+- Start: $(c, d) = (0, \text{high debt})$.
+- End: $(c, d) = (\text{cost}, 0)$.
 
-For different \( \gamma \), the optimal path changes:
-- \( \gamma = 0 \): The path minimizes cost only (vertical descent).
-- \( \gamma = 1 \): The path minimizes the Euclidean distance (diagonal descent).
-- \( 0 < \gamma < 1 \): The path is between vertical and diagonal.
+For different $\gamma$, the optimal path changes:
+- $\gamma = 0$: The path minimizes cost only (vertical descent).
+- $\gamma = 1$: The path minimizes the Euclidean distance (diagonal descent).
+- $0 < \gamma < 1$: The path is between vertical and diagonal.
 
-**Interpretation:** \( \gamma \) controls how much the agent values debt reduction relative to cost minimization. Higher \( \gamma \) means the agent takes a more "diagonal" path that pays down debt earlier.
+**Interpretation:** $\gamma$ controls how much the agent values debt reduction relative to cost minimization. Higher $\gamma$ means the agent takes a more "diagonal" path that pays down debt earlier.
 
-### 6.9.4 Example 4: The Pareto Frontier for Different \( \gamma \)
+### 6.9.4 Example 4: The Pareto Frontier for Different $\gamma$
 
 The Pareto frontier in the cost-debt plane is the set of points where cost cannot be reduced without increasing debt, and vice versa.
 
-For different \( \gamma \), the \( \gamma \)-distance selects different points on the Pareto frontier:
-- \( \gamma = 0 \): The point with minimum cost (regardless of debt).
-- \( \gamma = 1 \): The point with minimum Euclidean distance to the origin.
-- \( 0 < \gamma < 1 \): An intermediate point.
+For different $\gamma$, the $\gamma$-distance selects different points on the Pareto frontier:
+- $\gamma = 0$: The point with minimum cost (regardless of debt).
+- $\gamma = 1$: The point with minimum Euclidean distance to the origin.
+- $0 < \gamma < 1$: An intermediate point.
 
-**Interpretation:** The parameter \( \gamma \) is a **preference parameter** that selects different trade-offs on the Pareto frontier. Unlike the classical weighting \( \mu \), \( \gamma \) has a geometric interpretation.
+**Interpretation:** The parameter $\gamma$ is a **preference parameter** that selects different trade-offs on the Pareto frontier. Unlike the classical weighting $\mu$, $\gamma$ has a geometric interpretation.
 
 ---
 
 ## 6.10 Relationship to Reinforcement Learning
 
-### 6.10.1 The \( \gamma \)-Distance for Action-Value Functions
+### 6.10.1 The $\gamma$-Distance for Action-Value Functions
 
-In reinforcement learning (Part II), the \( \gamma \)-distance becomes the objective:
-\[
+In reinforcement learning (Part II), the $\gamma$-distance becomes the objective:
+
+$$
 J_\gamma^\pi(s, a) = \sqrt{Q_R^\pi(s, a)^2 + \gamma^2 \cdot Q_I^\pi(s, a)^2}.
-\]
+$$
 
-The agent minimizes \( J_\gamma^\pi \) for a given \( \gamma \).
+The agent minimizes $J_\gamma^\pi$ for a given $\gamma$.
 
-### 6.10.2 The \( \gamma \)-Greedy Policy
+### 6.10.2 The $\gamma$-Greedy Policy
 
-**Definition 6.21 (\( \gamma \)-Greedy Policy).** Given \( \gamma \in [0, 1] \) and a complex value function \( Q \), the \( \gamma \)-greedy policy is
-\[
+**Definition 6.21 ($\gamma$-Greedy Policy).** Given $\gamma \in [0, 1]$ and a complex value function $Q$, the $\gamma$-greedy policy is
+
+$$
 \pi_\gamma(s) = \arg\min_a \sqrt{Q_R(s, a)^2 + \gamma^2 \cdot Q_I(s, a)^2}.
-\]
+$$
 
 **Interpretation:**
-- \( \gamma = 0 \): The policy minimizes cost only (pure exploitation).
-- \( \gamma = 1 \): The policy minimizes the full modulus (balanced).
-- \( 0 < \gamma < 1 \): The policy minimizes a weighted combination.
+- $\gamma = 0$: The policy minimizes cost only (pure exploitation).
+- $\gamma = 1$: The policy minimizes the full modulus (balanced).
+- $0 < \gamma < 1$: The policy minimizes a weighted combination.
 
 ### 6.10.3 The Phase and $\gamma$
 
