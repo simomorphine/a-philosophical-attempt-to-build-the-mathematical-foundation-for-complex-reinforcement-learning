@@ -269,6 +269,7 @@ $$
 ### 5.6.1 Definition
 
 The phase (argument) of the complex quasi-metric is:
+
 $$
 \theta(b_i, b_j) = \arg Q(b_i, b_j) = \arctan \left( \frac{\text{debt}(b_i, b_j)}{d(b_i, b_j)} \right).
 $$
