@@ -620,9 +620,9 @@ Thus:
 
 $$\liminf_{x \to \tau_{\mathrm{avg}} b} \frac{|d_\gamma(b, x) - d_\gamma(x, b)|}{d_{\mathrm{avg}}(b, x)} = 0$$
 
-So $b \in \mathrm{Sym}_\gamma(\mathcal{B})$.
+So $b \in Sym_\gamma(\mathcal{B})$.
 
-**Conclusion:** $E_{\mathrm{avg}} \subseteq \mathrm{Sym}_\gamma(\mathcal{B})$. Combined with Theorem 3.1: $\mathrm{Sym}_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$. $\square$
+**Conclusion:** $E_{\mathrm{avg}} \subseteq Sym_\gamma(\mathcal{B})$. Combined with Theorem 3.1: $Sym_\gamma(\mathcal{B}) = E_{\mathrm{avg}}$. $\square$
 
 ### 4.2 The Regularity Condition
 
